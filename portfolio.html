@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Portfolio — 2See Media. Reels and design work.">
+  <title>Portfolio | 2See Media</title>
+  <style>
+    :root {
+      --bg:#080808;
+      --bg2:#111111;
+      --text:#f5f6f7;
+      --muted:#a5aaaf;
+      --cyan:#cfd3d8;
+      --cyan2:#9da3aa;
+      --cyan3:#f1f3f5;
+      --line:rgba(207,211,216,.16);
+      --line2:rgba(207,211,216,.28);
+      --shadow:0 28px 90px rgba(0,0,0,.48);
+      --ease:cubic-bezier(.2,.8,.2,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;min-height:100vh;overflow-x:hidden;color:var(--text);
+      font-family:Tahoma,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 10% 8%,rgba(207,211,216,.14),transparent 23%),
+        radial-gradient(circle at 90% 30%,rgba(157,163,170,.11),transparent 26%),
+        radial-gradient(circle at 48% 100%,rgba(18,90,118,.22),transparent 39%),
+        linear-gradient(180deg,#050505,#111111 50%,#080808);
+    }
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px);
+      background-size:52px 52px;
+      mask-image:linear-gradient(to bottom,black,transparent 86%);
+    }
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    button{font-family:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    .cyan-text{
+      background:linear-gradient(180deg,#fff 0%,#dfe2e5 42%,#8e949b 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+
+    .topbar{
+      position:sticky;top:0;z-index:100;background:rgba(3,17,26,.76);
+      backdrop-filter:blur(17px);border-bottom:1px solid rgba(207,211,216,.09);
+    }
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;direction:ltr}
+    .brand-logo{width:51px;height:51px;display:grid;place-items:center;position:relative;animation:floatLogo 4.6s ease-in-out infinite}
+    .brand-logo::before{content:"";position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(207,211,216,.19);animation:spin 7s linear infinite}
+    .brand-logo img{width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 0 13px rgba(207,211,216,.12))}
+    @keyframes floatLogo{50%{transform:translateY(-3px) rotate(1deg)}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .brand-copy strong{display:block;font-size:16px;letter-spacing:1.2px}
+    .brand-copy span{display:block;margin-top:4px;font-size:10px;letter-spacing:2px;color:#c3c7cc}
+    .navlinks{display:flex;gap:8px;align-items:center}
+    .navlinks a{text-decoration:none;color:#c7cbd0;font-size:13px;padding:10px 13px;border-radius:999px;border:1px solid transparent;transition:.24s var(--ease)}
+    .navlinks a:hover,.navlinks .active{color:#f6f7f8;border-color:var(--line);background:rgba(207,211,216,.05)}
+    .nav-cta{background:linear-gradient(135deg,#f4f5f6,#b9bec4)!important;color:#080808!important;font-weight:900;box-shadow:0 9px 28px rgba(207,211,216,.16)}
+    .menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);background:rgba(207,211,216,.035);color:#f0f2f4;border-radius:13px;font-size:20px}
+
+    .hero{
+      padding:78px 0 56px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);
+      background:rgba(207,211,216,.04);border-radius:999px;padding:9px 14px;color:#e3e6e9;font-size:12px;margin-bottom:20px;
+    }
+    .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#ffffff;box-shadow:0 0 18px rgba(207,211,216,.7);animation:pulse 2s infinite}
+    @keyframes pulse{50%{opacity:.45;transform:scale(.75)}}
+    .hero h1{margin:0;font-size:clamp(54px,8vw,103px);line-height:.92;letter-spacing:-3px;direction:ltr;text-align:right}
+    .hero h1 small{display:block;font-size:.18em;letter-spacing:5px;margin-bottom:18px;color:#b7bcc2}
+    .hero p{margin:26px 0 0;max-width:650px;color:#c6c9cd;font-size:17px;line-height:2}
+    .hero-art{
+      min-height:360px;border:1px solid var(--line);border-radius:34px;display:grid;place-items:center;
+      position:relative;overflow:hidden;box-shadow:var(--shadow);
+      background:radial-gradient(circle at 50% 50%,rgba(207,211,216,.13),transparent 32%),linear-gradient(145deg,rgba(207,211,216,.05),rgba(255,255,255,.01));
+    }
+    .hero-art::before,.hero-art::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(207,211,216,.16)}
+    .hero-art::before{width:320px;height:320px;animation:spin 16s linear infinite}
+    .hero-art::after{width:225px;height:225px;border-style:dashed;animation:spin 10s linear infinite reverse}
+    .hero-art img{width:min(68%,310px);position:relative;z-index:2;animation:heroFloat 5s ease-in-out infinite}
+    @keyframes heroFloat{50%{transform:translateY(-14px) rotate(1deg)}}
+
+    .portfolio{padding:32px 0 96px}
+    .section-head{margin-bottom:28px}
+    .section-head h2{margin:0 0 10px;font-size:clamp(30px,4vw,48px)}
+    .section-head p{margin:0;color:var(--muted);line-height:1.9;max-width:690px}
+
+    .accordion{display:grid;gap:18px}
+    .work-section{
+      border:1px solid var(--line);border-radius:30px;overflow:hidden;
+      background:linear-gradient(180deg,rgba(207,211,216,.045),rgba(255,255,255,.016));
+      box-shadow:var(--shadow);
+    }
+    .work-toggle{
+      width:100%;border:0;color:var(--text);background:transparent;cursor:pointer;
+      display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;
+      padding:26px 28px;text-align:right;transition:.28s var(--ease);
+    }
+    .work-toggle:hover{background:rgba(207,211,216,.04)}
+    .work-icon{
+      width:58px;height:58px;border-radius:18px;border:1px solid var(--line2);
+      display:grid;place-items:center;background:rgba(207,211,216,.055);
+      font-size:23px;color:#f2f3f4;box-shadow:0 10px 28px rgba(0,0,0,.22);
+    }
+    .work-copy small{display:block;color:#9fa4aa;font-size:9px;letter-spacing:2px;direction:ltr;margin-bottom:6px}
+    .work-copy strong{font-size:clamp(22px,3vw,34px)}
+    .work-count{display:block;margin-top:6px;color:#9a9fa4;font-size:12px}
+    .chevron{
+      width:44px;height:44px;border:1px solid var(--line);border-radius:50%;
+      display:grid;place-items:center;color:#eef0f2;font-size:18px;transition:.3s var(--ease);
+    }
+    .work-section.open .chevron{transform:rotate(180deg);background:rgba(207,211,216,.08)}
+
+    .work-panel{
+      max-height:0;overflow:hidden;opacity:0;
+      transition:max-height .7s var(--ease),opacity .35s ease,padding .35s ease;
+      padding:0 22px;
+      border-top:1px solid transparent;
+    }
+    .work-section.open .work-panel{
+      max-height:10000px;opacity:1;padding:22px;border-top-color:rgba(207,211,216,.08);
+    }
+
+    .reels-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .reel-card{
+      border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0b0b0b;
+      transition:.3s var(--ease);box-shadow:0 20px 55px rgba(0,0,0,.28);
+    }
+    .reel-card:hover{transform:translateY(-6px);border-color:var(--line2)}
+    .reel-frame{aspect-ratio:9/16;position:relative;background:#0b0b0b;overflow:hidden}
+    .reel-loader{
+      position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+      background:radial-gradient(circle at 50% 45%,rgba(207,211,216,.12),transparent 28%),linear-gradient(160deg,#151515,#0b0b0b);
+      color:#b2b7bd;font-size:9px;letter-spacing:2.2px;direction:ltr;
+    }
+    .reel-loader img{width:88px;opacity:.28}
+    .reel-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;background:transparent}
+    .reel-footer{padding:13px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;direction:ltr}
+    .reel-footer span{font-size:9px;letter-spacing:1.7px;color:#9da2a8}
+    .reel-footer a{text-decoration:none;font-size:11px;color:#d9f4ff}
+
+    .design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .design-card{
+      padding:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;cursor:pointer;
+      background:#0f0f0f;position:relative;aspect-ratio:4/5;box-shadow:0 20px 55px rgba(0,0,0,.28);
+      transition:.3s var(--ease);
+    }
+    .design-card:hover{transform:translateY(-6px);border-color:var(--line2)}
+    .design-card img{width:100%;height:100%;object-fit:cover;transition:.45s var(--ease)}
+    .design-card:hover img{transform:scale(1.035)}
+    .design-hover{
+      position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background:linear-gradient(180deg,transparent,rgba(3,17,26,.15) 45%,rgba(3,17,26,.84));
+      opacity:0;transition:.28s;color:white;
+    }
+    .design-card:hover .design-hover{opacity:1}
+    .design-hover b{font-size:14px;letter-spacing:2px;direction:ltr}
+    .design-hover small{margin-top:5px;color:#c9cdd1;font-size:9px;letter-spacing:1.5px;direction:ltr}
+
+    .lightbox{
+      position:fixed;inset:0;z-index:999;display:none;align-items:center;justify-content:center;
+      padding:22px;background:rgba(1,8,12,.94);backdrop-filter:blur(12px);
+    }
+    .lightbox.open{display:flex}
+    .lightbox img{
+      max-width:min(92vw,900px);max-height:90vh;object-fit:contain;border-radius:18px;
+      border:1px solid rgba(207,211,216,.18);box-shadow:0 35px 120px rgba(0,0,0,.7);
+    }
+    .lightbox-close{
+      position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;
+      border:1px solid var(--line2);background:rgba(7,24,36,.75);color:white;font-size:25px;cursor:pointer;
+    }
+
+    .cta{padding:0 0 90px}
+    .cta-box{
+      padding:38px;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);
+      display:flex;justify-content:space-between;align-items:center;gap:24px;
+      background:radial-gradient(circle at 8% 50%,rgba(207,211,216,.14),transparent 30%),rgba(255,255,255,.018);
+    }
+    .cta-box h2{margin:0 0 9px;font-size:clamp(29px,4vw,45px)}
+    .cta-box p{margin:0;color:#aab0b5;line-height:1.8}
+    .btn{
+      text-decoration:none;padding:14px 20px;border-radius:999px;font-weight:900;
+      background:linear-gradient(135deg,#f4f5f6,#bfc3c8);color:#080808;
+      box-shadow:0 14px 34px rgba(207,211,216,.18);white-space:nowrap;transition:.28s var(--ease)
+    }
+    .btn:hover{transform:translateY(-4px)}
+
+    footer{border-top:1px solid rgba(207,211,216,.08)}
+    .footer{padding:28px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#858a90;font-size:12px}
+    .footer span:last-child{direction:ltr;letter-spacing:2px}
+
+    .reveal{opacity:1;transform:none;transition:.45s var(--ease)}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:1000px){
+      .reels-grid{grid-template-columns:repeat(3,1fr)}
+      .design-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr}
+      .hero-art{min-height:320px}
+      .reels-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:700px){
+      .menu-btn{display:block}
+      .navlinks{
+        display:none;position:absolute;top:82px;right:4%;left:4%;flex-direction:column;align-items:stretch;
+        padding:12px;background:rgba(3,17,26,.97);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)
+      }
+      .navlinks.open{display:flex}
+      .navlinks a{text-align:center}
+      .hero{padding-top:50px}
+      .work-toggle{grid-template-columns:auto 1fr auto;padding:20px 17px;gap:13px}
+      .work-icon{width:50px;height:50px;border-radius:16px}
+      .work-section.open .work-panel{padding:14px}
+      .reels-grid{gap:10px}
+      .reel-card{border-radius:17px}
+      .design-grid{gap:10px}
+      .design-card{border-radius:17px}
+      .cta-box{flex-direction:column;align-items:flex-start}
+      .btn{width:100%;text-align:center}
+    }
+    @media(max-width:440px){
+      .reels-grid{grid-template-columns:1fr 1fr}
+      .design-grid{grid-template-columns:1fr 1fr}
+      .work-copy strong{font-size:22px}
+      .work-copy small{font-size:7px}
+      .work-count{font-size:10px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      .reveal{opacity:1;transform:none}
+    }
+  
+    /* LANGUAGE SWITCH */
+    .lang-toggle{
+      min-width:76px;height:40px;padding:0 12px;border-radius:999px;
+      border:1px solid rgba(207,211,216,.23);
+      background:rgba(207,211,216,.045);
+      color:#f5f6f7;display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;cursor:pointer;font-family:inherit;font-weight:800;font-size:11px;
+      letter-spacing:1px;transition:.26s var(--ease);direction:ltr;
+    }
+    .lang-toggle:hover{
+      transform:translateY(-2px);
+      background:rgba(207,211,216,.10);
+      border-color:rgba(207,211,216,.38);
+      box-shadow:0 10px 28px rgba(176,181,187,.10);
+    }
+    .lang-divider{
+      width:1px;height:15px;background:rgba(255,255,255,.18);
+    }
+    .lang-current{color:#fff}
+    .lang-next{color:#cfd3d8}
+
+    html[dir="ltr"] body{
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    html[dir="ltr"] .section-head,
+    html[dir="ltr"] .hero,
+    html[dir="ltr"] .about-main,
+    html[dir="ltr"] .service,
+    html[dir="ltr"] .step,
+    html[dir="ltr"] .why-item,
+    html[dir="ltr"] .contact-main,
+    html[dir="ltr"] .social-panel,
+    html[dir="ltr"] .cta-box{
+      text-align:left;
+    }
+    html[dir="ltr"] .hero h1{ text-align:left; direction:ltr; }
+    html[dir="ltr"] .contact-link:hover{ transform:translateX(5px); }
+    html[dir="ltr"] .about-chip:hover{ transform:translateX(4px); }
+    html[dir="ltr"] .why-item:hover{ transform:translateX(5px); }
+
+    @media(max-width:760px){
+      .lang-toggle{width:100%;height:44px}
+    }
+
+  
+    /* 2SEE MEDIA BLACK + SILVER IDENTITY */
+    :root{
+      --silver:#cfd3d8;
+      --silver-hi:#f4f5f6;
+      --silver-mid:#9ea4aa;
+      --silver-dark:#656b72;
+      --silver-line:rgba(207,211,216,.18);
+    }
+
+    body{
+      background:
+        radial-gradient(circle at 12% 8%,rgba(235,237,239,.07),transparent 23%),
+        radial-gradient(circle at 88% 34%,rgba(154,160,167,.055),transparent 28%),
+        linear-gradient(180deg,#050505 0%,#0b0b0c 50%,#060606 100%) !important;
+      color:#f4f5f6;
+    }
+
+    .topbar{
+      background:rgba(5,5,5,.82) !important;
+      border-bottom-color:rgba(207,211,216,.10) !important;
+    }
+
+    .tone-about::before{
+      background:
+        radial-gradient(circle at 12% 20%,rgba(238,240,242,.075),transparent 28%),
+        linear-gradient(135deg,#090909 0%,#151515 100%) !important;
+    }
+    .tone-services::before{
+      background:
+        radial-gradient(circle at 88% 18%,rgba(194,199,205,.08),transparent 30%),
+        linear-gradient(135deg,#0c0c0c 0%,#181818 100%) !important;
+    }
+    .tone-process::before{
+      background:
+        radial-gradient(circle at 15% 80%,rgba(218,221,224,.07),transparent 28%),
+        linear-gradient(135deg,#080808 0%,#121212 100%) !important;
+    }
+    .tone-why::before{
+      background:
+        radial-gradient(circle at 82% 30%,rgba(178,183,189,.09),transparent 28%),
+        linear-gradient(135deg,#0a0a0a 0%,#171719 100%) !important;
+    }
+    .tone-contact::before{
+      background:
+        radial-gradient(circle at 50% 10%,rgba(224,227,230,.08),transparent 30%),
+        linear-gradient(135deg,#090909 0%,#151515 100%) !important;
+    }
+
+    .gold-text,
+    .cyan-text{
+      background:linear-gradient(180deg,#ffffff 0%,#d7dade 42%,#8d9399 100%) !important;
+      -webkit-background-clip:text !important;
+      background-clip:text !important;
+      color:transparent !important;
+    }
+
+    .nav-cta,
+    .btn-primary,
+    .btn,
+    .filter-btn.active{
+      background:linear-gradient(135deg,#f3f4f5 0%,#c6cacf 52%,#8e949a 100%) !important;
+      color:#080808 !important;
+      border-color:transparent !important;
+      box-shadow:0 12px 34px rgba(200,204,209,.10) !important;
+    }
+
+    .navlinks a[data-nav-link].active{
+      background:rgba(207,211,216,.10) !important;
+      border-color:rgba(207,211,216,.28) !important;
+      color:#ffffff !important;
+      box-shadow:0 8px 24px rgba(160,165,171,.08) !important;
+    }
+    .navlinks a[data-nav-link]::after{
+      background:linear-gradient(90deg,transparent,#f2f3f4,transparent) !important;
+      box-shadow:0 0 12px rgba(220,223,226,.40) !important;
+    }
+
+    .lang-toggle{
+      border-color:rgba(207,211,216,.22) !important;
+      background:rgba(207,211,216,.045) !important;
+      color:#f2f3f4 !important;
+    }
+    .lang-toggle:hover{
+      background:rgba(207,211,216,.10) !important;
+      border-color:rgba(207,211,216,.36) !important;
+      box-shadow:0 10px 28px rgba(190,194,199,.08) !important;
+    }
+    .lang-next{color:#cfd3d8 !important}
+
+    .work-spotlight{
+      border-color:rgba(207,211,216,.20) !important;
+      background:
+        radial-gradient(circle at 10% 20%,rgba(240,242,244,.09),transparent 24%),
+        radial-gradient(circle at 90% 80%,rgba(145,150,156,.07),transparent 30%),
+        linear-gradient(135deg,rgba(18,18,18,.97),rgba(7,7,7,.98)) !important;
+      box-shadow:0 28px 90px rgba(0,0,0,.48),0 0 0 1px rgba(255,255,255,.014) inset !important;
+    }
+    .work-spotlight::before{
+      background:conic-gradient(from 90deg,transparent,rgba(215,218,221,.055),transparent 24%) !important;
+    }
+    .work-spotlight:hover{
+      border-color:rgba(225,228,231,.38) !important;
+      box-shadow:0 32px 100px rgba(0,0,0,.58),0 0 42px rgba(190,194,199,.07) !important;
+    }
+    .work-spotlight-kicker{color:#c8ccd0 !important}
+    .work-spotlight p{color:#aaaeb3 !important}
+    .work-spotlight-arrow{
+      color:#f3f4f5 !important;
+      border-color:rgba(207,211,216,.26) !important;
+      background:rgba(207,211,216,.055) !important;
+      box-shadow:0 0 28px rgba(200,204,209,.05) !important;
+    }
+    .work-spotlight:hover .work-spotlight-arrow{
+      background:#f1f2f3 !important;
+      color:#080808 !important;
+    }
+
+    .btn-work{
+      border-color:rgba(207,211,216,.30) !important;
+      background:
+        radial-gradient(circle at 18% 20%,rgba(255,255,255,.12),transparent 22%),
+        linear-gradient(135deg,rgba(207,211,216,.13),rgba(130,136,143,.07)) !important;
+      color:#f2f3f4 !important;
+      box-shadow:0 0 0 1px rgba(207,211,216,.03) inset,0 14px 34px rgba(150,155,162,.07) !important;
+    }
+    .btn-work:hover{
+      background:linear-gradient(135deg,#f3f4f5,#bfc3c7) !important;
+      color:#080808 !important;
+    }
+
+    .glass,
+    .work-section,
+    .reel-card,
+    .design-card,
+    .hero-art{
+      border-color:rgba(207,211,216,.13) !important;
+      background-color:rgba(255,255,255,.018) !important;
+    }
+
+    .service-icon,
+    .contact-icon,
+    .work-icon{
+      border-color:rgba(207,211,216,.18) !important;
+      background:rgba(207,211,216,.045) !important;
+      color:#dfe2e5 !important;
+    }
+    .service-icon svg{stroke:#dfe2e5 !important}
+
+    .eyebrow{
+      border-color:rgba(207,211,216,.18) !important;
+      background:rgba(207,211,216,.035) !important;
+      color:#d6d9dc !important;
+    }
+    .eyebrow .dot,
+    .eyebrow::before{
+      background:#f0f1f2 !important;
+      box-shadow:0 0 18px rgba(225,228,231,.42) !important;
+    }
+
+    .hero-art::before,
+    .hero-art::after{
+      border-color:rgba(207,211,216,.14) !important;
+    }
+
+    .marquee-wrap{
+      background:rgba(207,211,216,.018) !important;
+      border-color:rgba(207,211,216,.07) !important;
+    }
+    .marquee{color:#aeb3b8 !important}
+    .marquee span::after{color:#d4d7da !important}
+
+    .social-dock a{
+      color:#dfe2e5 !important;
+      background:rgba(8,8,8,.86) !important;
+      border-color:rgba(207,211,216,.18) !important;
+    }
+    .social-dock a:hover{
+      color:#ffffff !important;
+      background:rgba(207,211,216,.08) !important;
+    }
+
+    .topbar.section-about,
+    .topbar.section-services,
+    .topbar.section-process,
+    .topbar.section-why,
+    .topbar.section-contact{
+      background:rgba(5,5,5,.92) !important;
+      border-bottom-color:rgba(207,211,216,.15) !important;
+    }
+
+
+    /* FINAL LANGUAGE SELECTOR */
+    .lang-switch{
+      height:40px;
+      padding:3px;
+      border-radius:999px;
+      border:1px solid rgba(207,211,216,.22);
+      background:rgba(207,211,216,.045);
+      display:inline-flex;
+      align-items:center;
+      gap:3px;
+      direction:ltr;
+      box-shadow:0 10px 28px rgba(0,0,0,.18);
+    }
+    .lang-switch .lang-divider{display:none}
+    .lang-option{
+      min-width:34px;
+      height:32px;
+      border:0;
+      border-radius:999px;
+      background:transparent;
+      color:#8f949a;
+      cursor:pointer;
+      font-family:inherit;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.8px;
+      transition:.24s ease;
+    }
+    .lang-option:hover{color:#fff}
+    .lang-option.active{
+      background:linear-gradient(135deg,#f4f5f6,#bfc3c8);
+      color:#080808;
+      box-shadow:0 4px 14px rgba(210,214,218,.10);
+    }
+
+    /* LOGO INTRO */
+    .site-intro{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#000;
+      opacity:1;
+      visibility:visible;
+      transition:opacity .75s ease, visibility .75s ease;
+    }
+    .site-intro.hide{
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+    .intro-video{
+      width:min(100vw,720px);
+      height:100vh;
+      object-fit:contain;
+      background:#000;
+    }
+    body.intro-lock{overflow:hidden}
+
+    @media(min-width:900px){
+      .intro-video{
+        width:min(44vw,720px);
+        height:100vh;
+      }
+    }
+    @media(max-width:760px){
+      .lang-switch{
+        width:100%;
+        height:44px;
+        justify-content:center;
+      }
+      .lang-option{
+        min-width:48%;
+        height:36px;
+      }
+      .intro-video{
+        width:100vw;
+        height:100vh;
+      }
+    }
+
+
+    /* ROBUST PORTFOLIO FIRST SCREEN */
+    .portfolio-hero-fixed{
+      min-height:auto !important;
+      display:block !important;
+      padding:64px 0 34px !important;
+    }
+    .portfolio-hero-copy{
+      width:100%;
+      max-width:860px;
+      margin-inline:auto;
+      text-align:center;
+    }
+    .portfolio-hero-copy .eyebrow{
+      margin-inline:auto;
+    }
+    .portfolio-hero-copy h1{
+      text-align:center !important;
+      direction:ltr !important;
+      margin-inline:auto;
+      font-size:clamp(52px,8vw,96px);
+    }
+    .portfolio-hero-copy p{
+      margin:24px auto 0 !important;
+      max-width:760px !important;
+      text-align:center;
+    }
+    .portfolio-quick-actions{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      max-width:620px;
+      margin:28px auto 0;
+    }
+    .quick-work-btn{
+      min-height:82px;
+      border-radius:22px;
+      border:1px solid rgba(207,211,216,.18);
+      background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.055),transparent 28%),
+        linear-gradient(145deg,#151515,#090909);
+      color:#f2f3f4;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      font-family:inherit;
+      font-size:18px;
+      transition:.28s var(--ease);
+      box-shadow:0 18px 55px rgba(0,0,0,.28);
+    }
+    .quick-work-btn span{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      border:1px solid rgba(207,211,216,.20);
+      background:rgba(207,211,216,.05);
+      color:#e8eaec;
+    }
+    .quick-work-btn:hover{
+      transform:translateY(-5px);
+      border-color:rgba(235,237,239,.34);
+      background:linear-gradient(145deg,#1c1c1c,#0d0d0d);
+    }
+    .portfolio .section-head{
+      margin-top:12px;
+    }
+
+    html[dir="ltr"] .portfolio-hero-copy,
+    html[dir="ltr"] .portfolio-hero-copy p{
+      text-align:center !important;
+    }
+
+    @media(max-width:700px){
+      .portfolio-hero-fixed{
+        padding:42px 0 24px !important;
+      }
+      .portfolio-hero-copy h1{
+        font-size:clamp(44px,14vw,70px);
+      }
+      .portfolio-hero-copy p{
+        font-size:15px;
+        line-height:1.9;
+      }
+      .portfolio-quick-actions{
+        gap:10px;
+      }
+      .quick-work-btn{
+        min-height:72px;
+        font-size:15px;
+        border-radius:18px;
+      }
+      .quick-work-btn span{
+        width:34px;height:34px;
+      }
+    }
+
+</style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-logo"><img src="2see-logo.png" alt="2See Media"></div>
+        <div class="brand-copy">
+          <strong>2SEE MEDIA</strong>
+          <span>WE MAKE YOU SEEN</span>
+        </div>
+      </a>
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <nav class="navlinks" id="navlinks">
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#services">خدماتنا</a>
+        <a class="active" href="portfolio.html">أعمالنا</a>
+        <a href="index.html#contact">تواصل</a>
+        
+<div class="lang-switch" id="langSwitch" aria-label="Language">
+  <button type="button" class="lang-option" data-lang="ar">AR</button>
+  <span class="lang-divider"></span>
+  <button type="button" class="lang-option" data-lang="en">EN</button>
+</div>
+
+        <a class="nav-cta" href="https://wa.me/963964603742" target="_blank" rel="noopener">ابدأ معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero portfolio-hero-fixed">
+      <div class="portfolio-hero-copy">
+        
+        <div class="eyebrow">Selected Work • 2See Media</div>
+        <h1><small>2SEE MEDIA</small><span class="cyan-text">أعمالنا</span></h1>
+        <p>
+          اختار نوع العمل يلي بدك تشوفه الريلات والتصاميم مرتبين ضمن أقسام منفصلة
+          وبكبسة واحدة كل قسم بينفتح وبتظهر الأعمال الموجودة داخله
+        </p>
+      
+        <div class="portfolio-quick-actions">
+          <button type="button" class="quick-work-btn" data-open-section="reelsSection">
+            <span>▶</span>
+            <strong>الريلز</strong>
+          </button>
+          <button type="button" class="quick-work-btn" data-open-section="designsSection">
+            <span>▦</span>
+            <strong>التصاميم</strong>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container portfolio">
+      <div class="section-head reveal">
+        <h2>Our <span class="cyan-text">Work</span></h2>
+        
+      </div>
+
+      <div class="accordion">
+        <section class="work-section reveal" id="reelsSection">
+          <button class="work-toggle" type="button" aria-expanded="false">
+            <span class="work-icon">▶</span>
+            <span class="work-copy">
+              <small>VIDEO • INSTAGRAM</small>
+              <strong>Reels</strong>
+              <span class="work-count">36 Selected Reels</span>
+            </span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="work-panel">
+            <div class="reels-grid">
+              
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DWO9c9AEfvN/embed/"
+            title="2See Media Reel 01"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 01</span>
+          <a href="https://www.instagram.com/reel/DWO9c9AEfvN/?igsi=MTF3aWRuZW44Z2FiYQ==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DbBWjecAK0Q/embed/"
+            title="2See Media Reel 02"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 02</span>
+          <a href="https://www.instagram.com/reel/DbBWjecAK0Q/?igsi=MTV3bXUwMXczODF2bg==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DRFNk8GCHAH/embed/"
+            title="2See Media Reel 03"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 03</span>
+          <a href="https://www.instagram.com/reel/DRFNk8GCHAH/?igsi=MWR1ZGs1eXAxa2x4bg==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DaA1DYcM_kV/embed/"
+            title="2See Media Reel 04"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 04</span>
+          <a href="https://www.instagram.com/reel/DaA1DYcM_kV/?igsi=eXdlcm93N2l5MDdt" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/Db5P5s3CVwn/embed/"
+            title="2See Media Reel 05"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 05</span>
+          <a href="https://www.instagram.com/reel/Db5P5s3CVwn/?igsi=dzBpZDIzZDh5NG1r" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DUOQ_0HDLw1/embed/"
+            title="2See Media Reel 06"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 06</span>
+          <a href="https://www.instagram.com/reel/DUOQ_0HDLw1/?igsi=MXA4N2lza2pja3B5cg==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DTDhbdTghJR/embed/"
+            title="2See Media Reel 07"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 07</span>
+          <a href="https://www.instagram.com/reel/DTDhbdTghJR/?igsi=a2Z0eGRxenh3Nmty" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <img src="2see-logo.png" alt="">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DViSoVlE3gi/embed/"
+            title="2See Media Reel 08"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 08</span>
+          <a href="https://www.instagram.com/reel/DViSoVlE3gi/?igsi=MXQ2dm55ZG0zZHAwZQ==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+    
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DdbXusZOExX/embed/"
+            title="2See Media Reel 09"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 09</span>
+          <a href="https://www.instagram.com/reel/DdbXusZOExX/?stkn=MTdjeXh4Y3pudjZ3cw==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DdMaLeVtR5D/embed/"
+            title="2See Media Reel 10"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 10</span>
+          <a href="https://www.instagram.com/reel/DdMaLeVtR5D/?stkn=MTZnZWh2M2N5ejZ5Yw==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/Dc_ksmaDVP4/embed/"
+            title="2See Media Reel 11"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 11</span>
+          <a href="https://www.instagram.com/reel/Dc_ksmaDVP4/?stkn=dXdxaXByNWpnaXY=" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/Dcgtge-NYVx/embed/"
+            title="2See Media Reel 12"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 12</span>
+          <a href="https://www.instagram.com/reel/Dcgtge-NYVx/?stkn=MW96YWhnOGw4ZTBudQ==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/Dcf3ix9Or2n/embed/"
+            title="2See Media Reel 13"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 13</span>
+          <a href="https://www.instagram.com/reel/Dcf3ix9Or2n/?stkn=b2N1YWR2YXBnazdr" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DcVlbz0ORI5/embed/"
+            title="2See Media Reel 14"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 14</span>
+          <a href="https://www.instagram.com/reel/DcVlbz0ORI5/?stkn=bXp5MmR4N2Y2aGNk" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DcEN9PMgk_S/embed/"
+            title="2See Media Reel 15"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 15</span>
+          <a href="https://www.instagram.com/reel/DcEN9PMgk_S/?stkn=MTdoaG9tOWJjNTdwdA==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DbGn9GvAmVJ/embed/"
+            title="2See Media Reel 16"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 16</span>
+          <a href="https://www.instagram.com/reel/DbGn9GvAmVJ/?stkn=MThycmQ4dXV0cnR1aw==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DaLf1DGDiM-/embed/"
+            title="2See Media Reel 17"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 17</span>
+          <a href="https://www.instagram.com/reel/DaLf1DGDiM-/?stkn=MWp3ZzNud2ZrZTJjMQ==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DaM8B4MOI0-/embed/"
+            title="2See Media Reel 18"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 18</span>
+          <a href="https://www.instagram.com/reel/DaM8B4MOI0-/?stkn=aDhucWkwZ3owOWw0" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DYH32R-Bga1/embed/"
+            title="2See Media Reel 19"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 19</span>
+          <a href="https://www.instagram.com/reel/DYH32R-Bga1/?stkn=dGZtdzVybmdzcmkz" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DYWudWkOrnW/embed/"
+            title="2See Media Reel 20"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 20</span>
+          <a href="https://www.instagram.com/reel/DYWudWkOrnW/?stkn=NGdhamhkcWs5bHB2" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DWjt9J7hOd_/embed/"
+            title="2See Media Reel 21"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 21</span>
+          <a href="https://www.instagram.com/reel/DWjt9J7hOd_/?stkn=Nm4wZzUyMWZ0eDFi" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DVofyB7IQmo/embed/"
+            title="2See Media Reel 22"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 22</span>
+          <a href="https://www.instagram.com/reel/DVofyB7IQmo/?stkn=MXgxMmN0MThmenc0dQ==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DUixpqljHUs/embed/"
+            title="2See Media Reel 23"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 23</span>
+          <a href="https://www.instagram.com/reel/DUixpqljHUs/?stkn=NGxqODhiemgzOGFt" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DTszRhtjAZB/embed/"
+            title="2See Media Reel 24"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 24</span>
+          <a href="https://www.instagram.com/reel/DTszRhtjAZB/?stkn=MTEzMTBtZTRlM2M3NA==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DUgVd5AjCi9/embed/"
+            title="2See Media Reel 25"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 25</span>
+          <a href="https://www.instagram.com/reel/DUgVd5AjCi9/?stkn=YWNnYmZiYmUyNGJ6" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DW8_ECuICB1/embed/"
+            title="2See Media Reel 26"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 26</span>
+          <a href="https://www.instagram.com/reel/DW8_ECuICB1/?stkn=cmY3ZnE5Z2R4M2d3" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DWt276WCHgJ/embed/"
+            title="2See Media Reel 27"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 27</span>
+          <a href="https://www.instagram.com/reel/DWt276WCHgJ/?stkn=MWxweTN3cjh6OG5xbw==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DWeK4U6jPHv/embed/"
+            title="2See Media Reel 28"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 28</span>
+          <a href="https://www.instagram.com/reel/DWeK4U6jPHv/?stkn=MTBpc2M3d3pyanIyMg==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DWeWqWvjKBZ/embed/"
+            title="2See Media Reel 29"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 29</span>
+          <a href="https://www.instagram.com/reel/DWeWqWvjKBZ/?stkn=MTU1b25saXVuem1yaQ==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DVzIS15lZR-/embed/"
+            title="2See Media Reel 30"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 30</span>
+          <a href="https://www.instagram.com/reel/DVzIS15lZR-/?stkn=MW9ob2g5eDN6dzZmcw==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DVtssKwoAx0/embed/"
+            title="2See Media Reel 31"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 31</span>
+          <a href="https://www.instagram.com/reel/DVtssKwoAx0/?stkn=MTg4ODgxNDMwbzJyOQ==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DVMe5YhjDUt/embed/"
+            title="2See Media Reel 32"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 32</span>
+          <a href="https://www.instagram.com/reel/DVMe5YhjDUt/?stkn=OGV0emYzbmRyMjZy" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DS21zAPjVY1/embed/"
+            title="2See Media Reel 33"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 33</span>
+          <a href="https://www.instagram.com/reel/DS21zAPjVY1/?stkn=MTUyNTRqanVianRoZA==" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/Db1CzK2gLyP/embed/"
+            title="2See Media Reel 34"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 34</span>
+          <a href="https://www.instagram.com/reel/Db1CzK2gLyP/?stkn=MzB0d2plejQ4aHg=" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DcbiE0LuVPd/embed/"
+            title="2See Media Reel 35"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 35</span>
+          <a href="https://www.instagram.com/reel/DcbiE0LuVPd/?stkn=enltcGhhdDZlbWg3" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <div class="reel-frame">
+          <div class="reel-loader">
+            <span>2SEE MEDIA</span>
+          </div>
+          <iframe
+            src="https://www.instagram.com/reel/DZpuEghuQCM/embed/"
+            title="2See Media Reel 36"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="reel-footer">
+          <span>REEL 36</span>
+          <a href="https://www.instagram.com/reel/DZpuEghuQCM/?stkn=OXlhN3JoaTI5ODh4" target="_blank" rel="noopener">Open ↗</a>
+        </div>
+      </article>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="work-section reveal" id="designsSection">
+          <button class="work-toggle" type="button" aria-expanded="false">
+            <span class="work-icon">▦</span>
+            <span class="work-copy">
+              <small>GRAPHIC • SOCIAL MEDIA</small>
+              <strong>Designs</strong>
+              <span class="work-count">12 Selected Designs</span>
+            </span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="work-panel">
+            <div class="design-grid">
+              
+      <button class="design-card" type="button" data-image="design-01.jpg" aria-label="فتح التصميم 01">
+        <img src="design-01.jpg" alt="2See Media Design 01" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 01</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-02.jpg" aria-label="فتح التصميم 02">
+        <img src="design-02.jpg" alt="2See Media Design 02" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 02</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-03.jpg" aria-label="فتح التصميم 03">
+        <img src="design-03.jpg" alt="2See Media Design 03" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 03</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-04.jpg" aria-label="فتح التصميم 04">
+        <img src="design-04.jpg" alt="2See Media Design 04" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 04</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-05.jpg" aria-label="فتح التصميم 05">
+        <img src="design-05.jpg" alt="2See Media Design 05" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 05</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-06.jpg" aria-label="فتح التصميم 06">
+        <img src="design-06.jpg" alt="2See Media Design 06" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 06</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-07.jpg" aria-label="فتح التصميم 07">
+        <img src="design-07.jpg" alt="2See Media Design 07" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 07</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-08.jpg" aria-label="فتح التصميم 08">
+        <img src="design-08.jpg" alt="2See Media Design 08" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 08</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-09.jpg" aria-label="فتح التصميم 09">
+        <img src="design-09.jpg" alt="2See Media Design 09" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 09</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+    
+
+      <button class="design-card" type="button" data-image="design-10.jpg" aria-label="فتح التصميم 10">
+        <img src="design-10.jpg" alt="2See Media Design 10" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 10</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+
+      <button class="design-card" type="button" data-image="design-11.png" aria-label="فتح التصميم 11">
+        <img src="design-11.png" alt="2See Media Design 11" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 11</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+
+      <button class="design-card" type="button" data-image="design-12.jpg" aria-label="فتح التصميم 12">
+        <img src="design-12.jpg" alt="2See Media Design 12" loading="lazy">
+        <span class="design-hover">
+          <b>DESIGN 12</b>
+          <small>VIEW FULL</small>
+        </span>
+      </button>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>بدك مشروعك يكون<br><span class="cyan-text">العمل الجاي؟</span></h2>
+            <p>احكي معنا ومنبلّش من الفكرة لحد التنفيذ</p>
+          </div>
+          <a class="btn" href="https://wa.me/963964603742" target="_blank" rel="noopener">ابدأ مشروعك معنا ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button">×</button>
+    <img id="lightboxImage" src="" alt="تصميم من أعمال 2See Media">
+  </div>
+
+  <footer>
+    <div class="container footer">
+      <span>© 2026 2See Media All rights reserved</span>
+      <span>WE MAKE YOU SEEN</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navlinks=document.getElementById('navlinks');
+    menuBtn.addEventListener('click',()=>{
+      navlinks.classList.toggle('open');
+      menuBtn.textContent=navlinks.classList.contains('open')?'✕':'☰';
+    });
+
+    document.querySelectorAll('.work-section').forEach(section=>{
+      const btn=section.querySelector('.work-toggle');
+      btn.addEventListener('click',()=>{
+        const willOpen=!section.classList.contains('open');
+        section.classList.toggle('open',willOpen);
+        btn.setAttribute('aria-expanded',willOpen?'true':'false');
+      });
+    });
+
+    const lightbox=document.getElementById('lightbox');
+    const lightboxImage=document.getElementById('lightboxImage');
+    const lightboxClose=document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.design-card').forEach(card=>{
+      card.addEventListener('click',()=>{
+        lightboxImage.src=card.dataset.image;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImage.src='';
+      document.body.style.overflow='';
+    }
+    lightboxClose.addEventListener('click',closeLightbox);
+    lightbox.addEventListener('click',e=>{ if(e.target===lightbox) closeLightbox(); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
+
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.08});
+    document.querySelectorAll('.reveal:not(.show)').forEach(el=>observer.observe(el));
+  
+    const portfolioTranslations={
+      ar:{
+        home:'الرئيسية', services:'خدماتنا', work:'أعمالنا', contact:'تواصل', start:'ابدأ معنا',
+        eyebrow:'أعمال مختارة من 2See Media',
+        heroTitle:'<small>2SEE MEDIA</small><span class="cyan-text">أعمالنا</span>',
+        heroText:'اختار نوع الشغل يلي بدك تشوفه الريلات والتصاميم مرتبين ضمن أقسام منفصلة وبكبسة واحدة كل قسم بينفتح وبتظهر الأعمال الموجودة داخله',
+        sectionTitle:'اختار <span class="cyan-text">شو بدك تشوف</span>',
+        reelsSmall:'فيديو وإنستغرام', reelsTitle:'الريلز', reelsCount:'36 ريل مختار',
+        designsSmall:'جرافيك وسوشال ميديا', designsTitle:'التصاميم', designsCount:'12 تصميم مختار',
+        open:'فتح ↗', viewFull:'عرض كامل',
+        ctaTitle:'بدك مشروعك يكون<br><span class="cyan-text">العمل الجاي</span>', ctaText:'احكي معنا ومنبلّش من الفكرة لحد التنفيذ', ctaButton:'ابدأ مشروعك معنا ↗',
+        footer:'© 2026 2See Media جميع الحقوق محفوظة'
+      },
+      en:{
+        home:'Home', services:'Services', work:'Our Work', contact:'Contact', start:'Start With Us',
+        eyebrow:'Selected Work by 2See Media',
+        heroTitle:'<small>2SEE MEDIA</small><span class="cyan-text">OUR WORK</span>',
+        heroText:'Choose the kind of work you want to explore Reels and designs are organized into separate sections and each section opens with one click',
+        sectionTitle:'Choose <span class="cyan-text">What To Explore</span>',
+        reelsSmall:'VIDEO AND INSTAGRAM', reelsTitle:'Reels', reelsCount:'36 Selected Reels',
+        designsSmall:'GRAPHIC AND SOCIAL MEDIA', designsTitle:'Designs', designsCount:'12 Selected Designs',
+        open:'Open ↗', viewFull:'View Full',
+        ctaTitle:'Want Your Project To Be<br><span class="cyan-text">The Next One</span>', ctaText:'Talk to us and we will take it from idea to execution', ctaButton:'Start Your Project ↗',
+        footer:'© 2026 2See Media All rights reserved'
+      }
+    };
+
+    function applyPortfolioLanguage(lang){
+      const t=portfolioTranslations[lang] || portfolioTranslations.ar;
+      document.documentElement.lang=lang;
+      document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+      localStorage.setItem('2see-lang',lang);
+
+      const text=(sel,val)=>{const el=document.querySelector(sel);if(el)el.textContent=val};
+      const html=(sel,val)=>{const el=document.querySelector(sel);if(el)el.innerHTML=val};
+
+      text('.navlinks a[href="index.html"]',t.home);
+      text('.navlinks a[href="index.html#services"]',t.services);
+      text('.navlinks a[href="portfolio.html"]',t.work);
+      text('.navlinks a[href="index.html#contact"]',t.contact);
+      text('.nav-cta',t.start);
+
+      text('.hero .eyebrow',t.eyebrow);
+      html('.hero h1',t.heroTitle);
+      text('.hero p',t.heroText);
+      html('.section-head h2',t.sectionTitle);
+
+      text('#reelsSection .work-copy small',t.reelsSmall);
+      text('#reelsSection .work-copy strong',t.reelsTitle);
+      text('#reelsSection .work-count',t.reelsCount);
+      document.querySelectorAll('.reel-footer a').forEach(el=>el.textContent=t.open);
+
+      text('#designsSection .work-copy small',t.designsSmall);
+      text('#designsSection .work-copy strong',t.designsTitle);
+      text('#designsSection .work-count',t.designsCount);
+      document.querySelectorAll('.design-hover small').forEach(el=>el.textContent=t.viewFull);
+
+      html('.cta-box h2',t.ctaTitle);
+      text('.cta-box p',t.ctaText);
+      text('.cta-box .btn',t.ctaButton);
+      text('.footer span:first-child',t.footer);
+
+      const current=document.querySelector('.lang-current');
+      const next=document.querySelector('.lang-next');
+      if(current)current.textContent=lang==='ar'?'AR':'EN';
+      if(next)next.textContent=lang==='ar'?'EN':'AR';
+      const btn=document.getElementById('langToggle');
+      if(btn)btn.setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');
+    }
+
+    const savedPortfolioLang=localStorage.getItem('2see-lang') || 'ar';
+    applyPortfolioLanguage(savedPortfolioLang);
+    const portfolioLangToggle=document.getElementById('langToggle');
+    if(portfolioLangToggle){
+      portfolioLangToggle.addEventListener('click',()=>{
+        applyPortfolioLanguage(document.documentElement.lang==='ar'?'en':'ar');
+      });
+    }
+
+    // Correct language buttons: AR always Arabic and EN always English
+    document.querySelectorAll('#langSwitch .lang-option').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        applyPortfolioLanguage(btn.dataset.lang)
+        document.querySelectorAll('#langSwitch .lang-option').forEach(b=>{
+          b.classList.toggle('active', b.dataset.lang === btn.dataset.lang)
+        })
+      })
+    })
+
+    document.querySelectorAll('#langSwitch .lang-option').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.lang === (localStorage.getItem('2see-lang') || 'ar'))
+    })
+
+    // Quick access buttons at the top of Portfolio
+    document.querySelectorAll('.quick-work-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const id=btn.dataset.openSection
+        const section=document.getElementById(id)
+        if(!section) return
+        section.classList.add('open')
+        const toggle=section.querySelector('.work-toggle')
+        if(toggle) toggle.setAttribute('aria-expanded','true')
+        section.scrollIntoView({behavior:'smooth',block:'start'})
+      })
+    })
+
+    function syncQuickWorkLabels(){
+      const lang=document.documentElement.lang || 'ar'
+      const reel=document.querySelector('[data-open-section="reelsSection"] strong')
+      const design=document.querySelector('[data-open-section="designsSection"] strong')
+      if(reel) reel.textContent=lang==='ar'?'الريلز':'Reels'
+      if(design) design.textContent=lang==='ar'?'التصاميم':'Designs'
+    }
+
+    const originalApplyPortfolioLanguage = applyPortfolioLanguage
+    applyPortfolioLanguage = function(lang){
+      originalApplyPortfolioLanguage(lang)
+      syncQuickWorkLabels()
+    }
+    syncQuickWorkLabels()
+
+  </script>
+</body>
+</html>
