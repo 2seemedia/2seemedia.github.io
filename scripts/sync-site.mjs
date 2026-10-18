@@ -13,7 +13,13 @@ async function get(url){
  if(!response.ok)throw Error(`Public source returned ${response.status}: ${new URL(url).pathname}`);
  return response;
 }
-async function readSource(){return Promise.all(requests.map(async p=>(await get(origin+p)).text()))}
+function staticHome(html){
+ // Cloudflare may append per-request diagnostics for its own origin. They have
+ // no role on GitHub Pages and would both break snapshot hashes and request a
+ // nonexistent /cdn-cgi/ path after migration. Preserve every application script.
+ return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,script=>script.includes('window.__CF$cv$params')&&script.includes('/cdn-cgi/challenge-platform/')?'':script);
+}
+async function readSource(){return Promise.all(requests.map(async p=>{const text=await (await get(origin+p)).text();return p==='/'?staticHome(text):text}))}
 async function files(dir){const out=[];for(const entry of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,entry.name);if(entry.isDirectory())out.push(...await files(p));else if(entry.isFile())out.push(p)}return out.sort()}
 async function put(relative,body){const p=path.join(output,relative);await mkdir(path.dirname(p),{recursive:true});await writeFile(p,body)}
 const raw=await readSource();
@@ -54,8 +60,7 @@ const latest=await readSource();
 if(latest.some((s,i)=>s!==raw[i])){
  const changes=latest.flatMap((s,i)=>{
   if(s===raw[i])return [];
-  let at=0;while(at<s.length&&at<raw[i].length&&s[at]===raw[i][at])at++;
-  return [{path:requests[i],lengthBefore:raw[i].length,lengthAfter:s.length,contextBefore:raw[i].slice(Math.max(0,at-80),at+140),contextAfter:s.slice(Math.max(0,at-80),at+140)}];
+  return [{path:requests[i],lengthBefore:raw[i].length,lengthAfter:s.length}];
  });
  console.log('Published source changed during copy:',JSON.stringify(changes));
  throw Error('Content changed during synchronization; the previous published site is preserved. The next run will retry.');
