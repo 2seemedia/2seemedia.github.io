@@ -39,9 +39,7 @@ jobs:
             git push
           fi
       - name: Publish on existing GitHub Pages hosting
-        if: steps.snapshot.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
-        run: |
-          gh api --method POST "repos/$REPOSITORY/pages/builds"
+        run: node scripts/ensure-published.mjs
