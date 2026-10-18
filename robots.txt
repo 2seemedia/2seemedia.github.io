@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://2seemedia.github.io/sitemap.xml
