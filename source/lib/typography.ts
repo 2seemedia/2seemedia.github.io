@@ -1,0 +1,39 @@
+export const fontFamilies={original:'',plex:'Plex,Tahoma,Arial,sans-serif',tahoma:'Tahoma,Arial,sans-serif',arial:'Arial,Tahoma,sans-serif',system:'system-ui,Tahoma,Arial,sans-serif',serif:'"Times New Roman",serif'} as const;
+export type FontFamily=keyof typeof fontFamilies;
+export type TextStyle={font?:FontFamily;color?:string;fontSize?:number;mobileSize?:number;weight?:number;lineHeight?:number;align?:'start'|'center'|'end'|'justify';italic?:boolean;underline?:boolean};
+export type SectionStyle={background?:string;paddingTop?:number;paddingBottom?:number;gap?:number;columns?:number;width?:number};
+export type SiteTypography={global:TextStyle;fields:Record<string,TextStyle>;sections:Record<string,SectionStyle>;portfolioOrder:string[];blocks:Record<string,'hidden'|'deleted'>};
+export const defaultTypography:SiteTypography={global:{},fields:{},sections:{},portfolioOrder:['intro','collection','contact'],blocks:{}};
+const number=(x:unknown,min:number,max:number)=>{if(typeof x!=='number'||!Number.isFinite(x)||x<min||x>max)throw new Error('Invalid text size');return Math.round(x*100)/100};
+export const validColor=(x:unknown)=>{if(typeof x!=='string'||!/^#[0-9a-f]{6}$/i.test(x))throw new Error('Invalid text color');return x.toLowerCase()};
+export function validateTextStyle(x:unknown):TextStyle{
+ if(!x||typeof x!=='object'||Array.isArray(x))throw new Error('Invalid typography');const s=x as TextStyle,r:TextStyle={};
+ if(s.font!==undefined){if(!Object.hasOwn(fontFamilies,s.font))throw new Error('Invalid font');r.font=s.font}
+ if(s.color!==undefined)r.color=validColor(s.color);
+ if(s.fontSize!==undefined)r.fontSize=number(s.fontSize,10,120);if(s.mobileSize!==undefined)r.mobileSize=number(s.mobileSize,10,80);
+ if(s.weight!==undefined){if(![300,400,500,600,700,800,900].includes(s.weight))throw new Error('Invalid font weight');r.weight=s.weight}
+ if(s.lineHeight!==undefined)r.lineHeight=number(s.lineHeight,1,3);
+ if(s.align!==undefined){if(!['start','center','end','justify'].includes(s.align))throw new Error('Invalid text alignment');r.align=s.align}
+ for(const k of ['italic','underline'] as const)if(s[k]!==undefined){if(typeof s[k]!=='boolean')throw new Error('Invalid text option');r[k]=s[k]}
+ return r;
+}
+export function validateTypography(value:unknown):SiteTypography{
+ if(value===undefined)return structuredClone(defaultTypography);if(!value||typeof value!=='object'||Array.isArray(value))throw new Error('Invalid typography');const x=value as SiteTypography;
+ const record=(v:unknown,max=1000)=>{if(!v||typeof v!=='object'||Array.isArray(v)||Object.keys(v).length>max)throw new Error('Invalid text settings');return v as Record<string,unknown>};
+ const fields:Record<string,TextStyle>={};for(const [id,v] of Object.entries(record(x.fields??{}))){if(!/^(translations|portfolio|settings|section|repeat):[\w:-]{1,160}$/.test(id))throw new Error('Invalid text target');fields[id]=validateTextStyle(v)}
+ const sections:Record<string,SectionStyle>={};for(const [id,v] of Object.entries(record(x.sections??{},60))){if(!/^[\w-]{1,80}$/.test(id))throw new Error('Invalid section target');const s=record(v),r:SectionStyle={};if(s.background!==undefined)r.background=validColor(s.background);for(const [k,min,max] of [['paddingTop',0,200],['paddingBottom',0,200],['gap',0,80],['columns',1,4],['width',480,1440]] as const)if(s[k]!==undefined)r[k]=number(s[k],min,max);if(r.columns!==undefined&&!Number.isInteger(r.columns))throw new Error('Invalid columns');sections[id]=r}
+ const order=x.portfolioOrder??defaultTypography.portfolioOrder;if(!Array.isArray(order)||order.length!==3||new Set(order).size!==3||order.some(k=>!['intro','collection','contact'].includes(k)))throw new Error('Invalid portfolio order');
+ const blocks:SiteTypography['blocks']={};for(const [id,state] of Object.entries(record(x.blocks??{},10))){if(!['home:header','home:footer','portfolio:header','portfolio:intro','portfolio:collection','portfolio:contact','portfolio:footer'].includes(id)||!['hidden','deleted'].includes(String(state)))throw new Error('Invalid block visibility');blocks[id]=state as 'hidden'|'deleted'}
+ return {global:validateTextStyle(x.global??{}),fields,sections,portfolioOrder:[...order],blocks};
+}
+function declaration(s:TextStyle,mobile=false){let css='';const add=(k:string,v:string|number)=>{css+=`${k}:${v}!important;`};if(s.font&&fontFamilies[s.font])add('font-family',fontFamilies[s.font]);if(s.color){add('color',s.color);add('-webkit-text-fill-color',s.color)}const size=mobile?(s.mobileSize??(s.fontSize?Math.min(s.fontSize,42):undefined)):s.fontSize;if(size!==undefined)add('font-size',size+'px');if(s.weight)add('font-weight',s.weight);if(s.lineHeight)add('line-height',s.lineHeight);if(s.align)add('text-align',s.align);if(s.italic!==undefined)add('font-style',s.italic?'italic':'normal');if(s.underline!==undefined)add('text-decoration',s.underline?'underline':'none');return css}
+export function typographyCss(input:SiteTypography,scope=''){
+ const t=validateTypography(input),prefix=scope?scope+' ':'';let css='';
+ const globalTargets=['h1','h2','h3','p','a','button','label','.kicker','.eyebrow','.brand strong','.brand span','.footer span','.site-footer span','.about-chip','.marquee span','.gallery-type','.gallery-caption span','.result-meta'];
+ if(Object.keys(t.global).length){const all=[...globalTargets.map(s=>prefix+s),prefix+'[data-text-id][data-text-id]'].join(','),children=prefix+'[data-text-id][data-text-id] *:not([data-text-id])',inherited={...t.global,fontSize:undefined,mobileSize:undefined};css+=`${all}{${declaration(t.global)}}${children}{${declaration(inherited)}}@media(max-width:650px){${all}{${declaration(t.global,true)}}}`}
+ for(const [id,s] of Object.entries(t.fields)){const selector=`${prefix}[data-text-id="${id}"][data-text-id]`;const inherited={...s,fontSize:undefined,mobileSize:undefined};css+=`${selector}{${declaration(s)}}${selector} *:not([data-text-id]){${declaration(inherited)}}@media(max-width:650px){${selector}{${declaration(s,true)}}}`}
+ const sectionIds:Record<string,string>={hero:'home',workTop:'topWorkSpotlight',workBottom:'bottomWorkSpotlight'};
+ for(const [id,s] of Object.entries(t.sections)){const selector=`${prefix}#${sectionIds[id]||id}`;let declarations='';if(s.background)declarations+=`background:${s.background}!important;`;if(s.paddingTop!==undefined)declarations+=`padding-top:${s.paddingTop}px!important;`;if(s.paddingBottom!==undefined)declarations+=`padding-bottom:${s.paddingBottom}px!important;`;css+=`${selector}{${declarations}}`;if(s.width)css+=scope?`${selector}{width:100%!important;max-width:min(${s.width}px,100%)!important;margin-inline:auto}`:`${selector}>.container,${selector}.container{width:min(${s.width}px,92%)!important}`;const grids=['.services','.process','.about-chips','.cms-cards','.works-grid'].map(k=>`${selector} ${k}`).join(',');if(s.gap!==undefined)css+=`${grids}{gap:${s.gap}px!important}`;if(s.columns!==undefined)css+=`${grids}{grid-template-columns:repeat(${s.columns},minmax(0,1fr))!important}@media(max-width:650px){${grids}{grid-template-columns:1fr!important}}`}
+ const targets:Record<string,string>={'home:header':'.topbar','home:footer':'.footer','portfolio:header':'.site-header','portfolio:intro':'.page-intro','portfolio:collection':'.collection','portfolio:contact':'.contact-cta','portfolio:footer':'.site-footer'};for(const id of Object.keys(t.blocks)){const isPortfolio=id.startsWith('portfolio:');if((!!scope)===isPortfolio)css+=`${prefix}${targets[id]}{display:none!important}`}
+ return css;
+}
