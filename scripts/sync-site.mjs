@@ -51,7 +51,15 @@ await Promise.all(Array.from({length:6},async()=>{
 }));
 // Keep one coherent snapshot if the owner edits while the copy is being prepared.
 const latest=await readSource();
-if(latest.some((s,i)=>s!==raw[i]))throw Error('Content changed during synchronization; the previous published site is preserved. The next run will retry.');
+if(latest.some((s,i)=>s!==raw[i])){
+ const changes=latest.flatMap((s,i)=>{
+  if(s===raw[i])return [];
+  let at=0;while(at<s.length&&at<raw[i].length&&s[at]===raw[i][at])at++;
+  return [{path:requests[i],lengthBefore:raw[i].length,lengthAfter:s.length,contextBefore:raw[i].slice(Math.max(0,at-80),at+140),contextAfter:s.slice(Math.max(0,at-80),at+140)}];
+ });
+ console.log('Published source changed during copy:',JSON.stringify(changes));
+ throw Error('Content changed during synchronization; the previous published site is preserved. The next run will retry.');
+}
 const redirect=`<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>أعمالنا | 2SEE Media</title></head><body><a href="/work/">عرض الأعمال · Our work</a><script>location.replace('/work/'+location.search+location.hash)</script></body></html>`;
 await put('portfolio.html',redirect);
 await put('404.html','<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2SEE Media</title><body style="font-family:sans-serif;background:#f7f5f1;color:#801c2b;text-align:center;padding:15vh 1rem"><h1>2SEE MEDIA</h1><p>الصفحة غير موجودة · Page not found</p><a href="/">الرئيسية · Home</a> · <a href="/work/">أعمالنا · Our work</a></body></html>');
