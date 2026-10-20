@@ -1517,7 +1517,24 @@ html[dir="ltr"] .work-spotlight-clean h2{letter-spacing:-1px !important}
   .work-spotlight-clean .work-spotlight-arrow{width:54px;height:54px;flex-basis:54px;font-size:24px}
 }
 
-.manage-site{color:#bfc4ca;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid #f4f5f6;outline-offset:5px}section[id]{scroll-margin-top:100px}html[lang="en"] .hero h1{font-size:clamp(39px,6vw,83px);line-height:1.12;letter-spacing:-1px}html[lang="ar"] .hero h1{line-height:1.35}@media(max-width:760px){.hero h1{font-size:clamp(40px,9vw,68px)!important}.navlinks{max-height:calc(100dvh - 100px);overflow-y:auto}.footer{align-items:center}.hero-actions .btn{white-space:normal}} </style>
+.manage-site{color:#bfc4ca;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid #f4f5f6;outline-offset:5px}section[id]{scroll-margin-top:100px}html[lang="en"] .hero h1{font-size:clamp(39px,6vw,83px);line-height:1.12;letter-spacing:-1px}html[lang="ar"] .hero h1{line-height:1.35}@media(max-width:760px){.hero h1{font-size:clamp(40px,9vw,68px)!important}.navlinks{max-height:calc(100dvh - 100px);overflow-y:auto}.footer{align-items:center}.hero-actions .btn{white-space:normal}} 
+/* Founders section — preview branch only */
+.founders-section{padding:70px 0 8px}
+.founders-heading{text-align:center;margin:0 auto 30px;max-width:680px}
+.founders-heading .kicker{display:block;margin-bottom:12px;letter-spacing:2px}
+.founders-heading h3{font-size:clamp(25px,3.3vw,43px);margin:0 0 12px}
+.founders-heading p{color:var(--muted);line-height:1.9;margin:0}
+.founders-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:860px;margin:auto}
+.founder-card{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.founder-photo{position:relative;aspect-ratio:4/4.6;overflow:hidden;background:linear-gradient(140deg,#2b1822,#0a1420)}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.founder-photo::after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,rgba(2,6,12,.48));pointer-events:none}
+.founder-info{padding:21px 23px 24px;text-align:left;direction:ltr}
+.founder-info strong{display:block;font-size:19px;letter-spacing:.2px}
+.founder-info span{display:block;margin-top:7px;color:#b5c8d5;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+@media(max-width:600px){.founders-section{padding-top:46px}.founders-grid{gap:12px}.founder-card{border-radius:14px}.founder-info{padding:14px 11px 17px}.founder-info strong{font-size:14px}.founder-info span{font-size:10px;letter-spacing:.5px}}
+
+</style>
 <style>
 .lang-switch{
   height:40px;padding:3px;border-radius:999px;
@@ -1741,6 +1758,24 @@ html[dir="rtl"] .home-slider-arrows button>span[aria-hidden]{transform:rotate(18
 <div class="about-chip"><b></b> هوية موحدة بكل نقطة ظهور</div>
 </div>
 </div>
+</div>
+
+<div class="founders-section" aria-labelledby="founders-title">
+ <div class="founders-heading reveal">
+  <span class="kicker">THE PEOPLE BEHIND 2SEE</span>
+  <h3 id="founders-title">العقول وراء الرؤية</h3>
+  <p>وراء كل رؤية، أشخاص بيصنعوها.</p>
+ </div>
+ <div class="founders-grid">
+  <article class="founder-card reveal">
+   <div class="founder-photo"><img src="assets/founders/mohamad-al-shafi.jpg" alt="Mohamad Al-Shafi — Co-founder" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#4c2938,#101924)'"></div>
+   <div class="founder-info"><strong>Mohamad Al-Shafi</strong><span>Co-founder</span></div>
+  </article>
+  <article class="founder-card reveal delay-1">
+   <div class="founder-photo"><img src="assets/founders/esraa-mansour.jpg" alt="Esraa Mansour — Co-founder" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#4c2938,#101924)'"></div>
+   <div class="founder-info"><strong>Esraa Mansour</strong><span>Co-founder</span></div>
+  </article>
+ </div>
 </div>
 </section>
 <section class="content-section section-tone tone-services" data-nav="services" id="services">
