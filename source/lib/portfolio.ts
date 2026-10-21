@@ -1,4 +1,6 @@
-export type Work = {id:string; category:'reel'|'design'|'project';titleAr:string;titleEn:string;descriptionAr:string;descriptionEn:string;client:string;url:string;image:string;visible:boolean;featured:boolean;deleted:boolean};
+import {safeImageUrl,validateImageVariants,type ImageVariants} from './images';
+export const workCategories=['reel','design','ad','motion','project'] as const;
+export type Work = {id:string; category:typeof workCategories[number];titleAr:string;titleEn:string;descriptionAr:string;descriptionEn:string;client:string;url:string;image:string;visible:boolean;featured:boolean;deleted:boolean;service?:string;imageVariants?:ImageVariants};
 export type Collection = {items:Work[];revision:number;updatedAt:string|null};
 export function normalizeLink(value:string){
   if(!value.trim())return '';
@@ -26,14 +28,15 @@ export function validateItems(input:unknown):Work[]{
     const value=x as Record<string,unknown>;
     const str=(key:string,max:number)=>{if(typeof value[key]!=='string'||(value[key] as string).length>max)throw new Error('Invalid '+key);return (value[key] as string).trim()};
     const id=str('id',80);if(!/^[\w-]+$/.test(id)||ids.has(id))throw new Error('Duplicate ID');ids.add(id);
-    const category=str('category',20) as Work['category'];if(!['reel','design','project'].includes(category))throw new Error('Invalid category');
+    const category=str('category',20) as Work['category'];if(!workCategories.includes(category))throw new Error('Invalid category');
     const titleAr=str('titleAr',140),titleEn=str('titleEn',140);if(category!=='reel'&&(!titleAr||!titleEn))throw new Error('Both titles are required');
-    const url=normalizeLink(str('url',2000));if(category!=='design'&&!url)throw new Error('A link is required');
-    if(category==='reel'&&!embedLink(url))throw new Error('Use an Instagram, YouTube or Vimeo video link');
-    const image=str('image',2000);if(image&&!/^\/(assets|media)\/[A-Za-z0-9._-]+$/.test(image)){const u=new URL(image);if(u.protocol!=='https:'||u.username||u.password)throw new Error('Invalid cover URL')}
-    if(category==='design'&&!image&&!url)throw new Error('Add an image or link');
+    const url=normalizeLink(str('url',2000));if(!['design','ad'].includes(category)&&!url)throw new Error('A link is required');
+    if(['reel','motion'].includes(category)&&!embedLink(url))throw new Error('Use an Instagram, YouTube or Vimeo video link');
+    const image=safeImageUrl(str('image',2000));
+    if(['design','ad'].includes(category)&&!image&&!url)throw new Error('Add an image or link');
     for(const k of ['visible','featured','deleted'])if(typeof value[k]!=='boolean')throw new Error('Invalid status');
     if(url&&!value.deleted){if(links.has(url))throw new Error('This link already exists');links.add(url)}
-    return {id,category,titleAr,titleEn,descriptionAr:str('descriptionAr',2000),descriptionEn:str('descriptionEn',2000),client:str('client',100),url,image,visible:value.visible as boolean,featured:value.featured as boolean,deleted:value.deleted as boolean};
+    const service=value.service===undefined?'':str('service',80);if(service&&!/^[\w-]+$/.test(service))throw Error('Invalid service');
+    return {id,category,titleAr,titleEn,descriptionAr:str('descriptionAr',2000),descriptionEn:str('descriptionEn',2000),client:str('client',100),url,image,visible:value.visible as boolean,featured:value.featured as boolean,deleted:value.deleted as boolean,service,imageVariants:validateImageVariants(value.imageVariants)};
   });
 }

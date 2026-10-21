@@ -3,6 +3,7 @@ import type {SiteContent} from './content';
 import {publicWorkTitle} from './work-presentation';
 import {validateSlideshow} from './slideshow';
 import {homeSliderScript} from './home-slider';
+import {imageAttributes} from './images';
 
 const escape=(value:string)=>value.replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]!));
 const localized=(ar:string,en:string)=>`<span class="cms-ar" dir="rtl">${escape(ar)}</span><span class="cms-en" dir="ltr">${escape(en)}</span>`;
@@ -16,9 +17,10 @@ export function projectPath(item:Pick<Work,'id'|'category'>){
 export function renderHomePortfolio(content:SiteContent,items:Work[]){
  const selected=selectHomeWorks(items);
  const cards=selected.map((item,i)=>{
+  const image=imageAttributes(item.image,item.imageVariants,'(max-width:650px) 85vw, 30vw');
   const category=content.fieldStates?.['portfolio:reel']?'':localized(content.portfolio.ar.reel,content.portfolio.en.reel);
   const ar=publicWorkTitle(item,'ar'),en=publicWorkTitle(item,'en');
-  return `<a class="home-work-card" href="${escape(projectPath(item))}" aria-label="${escape(ar||en||'▶ 2SEE Media')}" data-slide="${i}" data-title-ar="${escape(ar)}" data-title-en="${escape(en)}"><img class="home-work-image" src="${escape(item.image)}" alt="" width="720" height="1280" loading="lazy" decoding="async"><span class="home-work-shade"></span><span class="home-work-action" aria-hidden="true">▶</span><div class="home-work-caption">${category?`<span class="home-work-kind" data-text-id="portfolio:reel">${category}</span>`:''}${ar||en?`<h3>${localized(ar,en)}</h3>`:''}${item.client?`<span class="home-work-client">${escape(item.client)}</span>`:''}</div></a>`;
+  return `<a class="home-work-card" href="${escape(projectPath(item))}" aria-label="${escape(ar||en||'▶ 2SEE Media')}" data-slide="${i}" data-title-ar="${escape(ar)}" data-title-en="${escape(en)}"><img class="home-work-image" src="${escape(image.src)}" ${image.srcSet?`srcset="${escape(image.srcSet)}" sizes="${escape(image.sizes!)}"`:""} alt="" width="${image.width||720}" height="${image.height||1280}" loading="lazy" decoding="async"><span class="home-work-shade"></span><span class="home-work-action" aria-hidden="true">▶</span><div class="home-work-caption">${category?`<span class="home-work-kind" data-text-id="portfolio:reel">${category}</span>`:''}${ar||en?`<h3>${localized(ar,en)}</h3>`:''}${item.client?`<span class="home-work-client">${escape(item.client)}</span>`:''}</div></a>`;
  }).join('');
  const slideshow=validateSlideshow(content.design?.slideshow),show=(key:keyof typeof slideshow.controls)=>slideshow.controls[key]==='visible';
  const previous=show('previous')?`<button type="button" data-slider-prev data-slideshow-control="previous">${localized('السابق','Previous')} <span aria-hidden="true">‹</span></button>`:'';

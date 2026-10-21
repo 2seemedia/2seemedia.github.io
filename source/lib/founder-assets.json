@@ -1,0 +1,52 @@
+{
+  "mohamad-alshafi": {
+    "url": "/assets/company-mohamad-alshafi-447265811e.jpg",
+    "variants": {
+      "width": 1408,
+      "height": 2048,
+      "sources": [
+        {
+          "url": "/assets/company-mohamad-alshafi-447265811e-320.webp",
+          "width": 320
+        },
+        {
+          "url": "/assets/company-mohamad-alshafi-447265811e-640.webp",
+          "width": 640
+        },
+        {
+          "url": "/assets/company-mohamad-alshafi-447265811e-960.webp",
+          "width": 960
+        },
+        {
+          "url": "/assets/company-mohamad-alshafi-447265811e-1280.webp",
+          "width": 1280
+        }
+      ]
+    }
+  },
+  "esraa-mansour": {
+    "url": "/assets/company-esraa-mansour-c0fcb344a3.jpg",
+    "variants": {
+      "width": 1362,
+      "height": 2048,
+      "sources": [
+        {
+          "url": "/assets/company-esraa-mansour-c0fcb344a3-320.webp",
+          "width": 320
+        },
+        {
+          "url": "/assets/company-esraa-mansour-c0fcb344a3-640.webp",
+          "width": 640
+        },
+        {
+          "url": "/assets/company-esraa-mansour-c0fcb344a3-960.webp",
+          "width": 960
+        },
+        {
+          "url": "/assets/company-esraa-mansour-c0fcb344a3-1280.webp",
+          "width": 1280
+        }
+      ]
+    }
+  }
+}

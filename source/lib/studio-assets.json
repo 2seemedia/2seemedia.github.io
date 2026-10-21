@@ -1,0 +1,25 @@
+{
+  "url": "/assets/company-studio-eac1739733.png",
+  "variants": {
+    "width": 1448,
+    "height": 1086,
+    "sources": [
+      {
+        "url": "/assets/company-studio-eac1739733-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/company-studio-eac1739733-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/company-studio-eac1739733-960.webp",
+        "width": 960
+      },
+      {
+        "url": "/assets/company-studio-eac1739733-1280.webp",
+        "width": 1280
+      }
+    ]
+  }
+}
