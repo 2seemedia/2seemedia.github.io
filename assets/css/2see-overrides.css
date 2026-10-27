@@ -1,0 +1,324 @@
+/* Small additive overrides only. Original Agency Tailwind stylesheet and motion remain unchanged. */
+[data-cms-section][hidden]{display:none!important}
+.see-modal{width:min(680px,calc(100vw - 28px));max-height:min(90vh,900px);margin:auto;padding:0;border:0;border-radius:22px;overflow:hidden;background:#f1efe9;color:#0e0e0c;box-shadow:0 25px 100px #0008}
+.see-modal::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(8px)}
+.see-modal-header{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,system-ui,sans-serif}
+.see-modal-header button{font-size:20px;border:1px solid #ccc;padding:5px 13px;border-radius:50px}
+.see-modal iframe{display:block;width:100%;height:min(64vh,680px);border:0;background:#121212}
+.see-modal iframe[hidden]{display:none}
+.see-modal-bottom{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:13px 20px;font:12px Inter,system-ui,sans-serif}
+.see-modal-bottom a{font-weight:700;text-decoration:underline;color:var(--color-cobalt)}
+.see-form-notice{margin-top:16px;padding:14px 18px;border:1px solid #aaa;background:#fff;font-size:14px}
+html[dir="rtl"]{font-family:'Tajawal','Inter',sans-serif}
+html[dir="rtl"] body{font-family:'Tajawal','Inter',sans-serif}
+html[dir="rtl"] .display-xl,html[dir="rtl"] .display-lg,html[dir="rtl"] .font-display{font-family:'Tajawal','Bricolage Grotesque',sans-serif}
+html[dir="rtl"] .display-xl{font-size:clamp(2.8rem,8.3vw,9rem);line-height:1.2}
+html[dir="rtl"] .arrow,html[dir="rtl"] .case-arrow svg{transform:scaleX(-1)}
+@media(max-width:680px){.see-modal-bottom{align-items:flex-start;flex-direction:column}.see-modal iframe{height:60vh}}
+
+/* 2SEE identity: black / silver / burgundy. Agency motion remains untouched. */
+:root{--color-paper:#f5f5f5;--color-paper-2:#e9e9e9;--color-ink:#101010;--color-muted:#65656a;--color-line:#dedee0;--color-cobalt:#c91524;--color-cobalt-600:#a70e1e;--color-lime:#c4c4c4}
+html[dir="rtl"]{font-family:'Tajawal',sans-serif}
+html[dir="rtl"] .line-mask>span{line-height:1.35}
+html[dir="rtl"] .display-xl{font-size:clamp(2.3rem,7.6vw,8rem);line-height:1.3;letter-spacing:-.025em}
+html[dir="rtl"] .display-lg{line-height:1.35}
+html[dir="rtl"] .marquee{direction:ltr}
+html[dir="rtl"] .marquee__track{direction:rtl}
+html[dir="rtl"] .eyebrow{letter-spacing:0}
+html[dir="rtl"] .case-arrow svg{transform:scaleX(-1)}
+.site-header [data-language-toggle]{display:inline-flex;align-items:center;gap:7px;font-weight:800;color:var(--color-cobalt)}
+.site-header [data-language-toggle]:before{content:'🌐';font-size:15px}
+.see-founders img{object-fit:cover;width:100%;aspect-ratio:5/6}
+.see-studio-photo{width:100%;height:100%;object-fit:cover}
+.see-modal{background:var(--color-paper);color:var(--color-ink)}
+.see-modal-bottom a{color:var(--color-cobalt)}
+@media(max-width:680px){html[dir="rtl"] .display-xl{font-size:clamp(2.1rem,8.6vw,3.8rem);line-height:1.38}.see-founders img{aspect-ratio:4/5}}
+
+.site-header a[href="index.html"] img{object-fit:contain;filter:drop-shadow(0 0 0 transparent)}
+
+
+/* 2SEE V3 — compact editorial rhythm, original Agency animation system untouched. */
+:root {
+ --font-sans:'DM Sans',system-ui,-apple-system,sans-serif;
+ --font-display:'Manrope',system-ui,-apple-system,sans-serif;
+ --font-mono:'DM Sans',system-ui,sans-serif;
+ --see-gallery-columns:4;
+ --see-title-scale:1;
+ --see-marquee-scale:1;
+}
+body {font-family:var(--font-sans);}
+h1,h2,h3,h4,.font-display,.display-xl,.display-lg {font-family:var(--font-display);}
+html[dir="rtl"] {--font-sans:'Tajawal',sans-serif;--font-display:'Tajawal',sans-serif;--font-mono:'Tajawal',sans-serif;}
+html[dir="rtl"] body,html[dir="rtl"] .font-display,html[dir="rtl"] .display-xl,html[dir="rtl"] .display-lg {font-family:var(--font-display);}
+html[dir="rtl"] body {font-family:var(--font-sans);}
+.site-header a[href="index.html"] span {font-family:'Manrope',sans-serif;letter-spacing:-.065em;}
+/* Titles retain the Agency split-line reveal but no longer dominate entire screens. */
+main h1.display-xl {font-size:clamp(2.45rem,calc(5.3vw * var(--see-title-scale)),5.35rem)!important;line-height:1.09;letter-spacing:-.052em;}
+main h2.display-lg,main .display-lg {font-size:clamp(1.8rem,calc(3.7vw * var(--see-title-scale)),3.3rem)!important;line-height:1.19;letter-spacing:-.035em;}
+main h3.display-lg {font-size:clamp(1.5rem,calc(2.3vw * var(--see-title-scale)),2.3rem)!important;}
+footer .display-lg {font-size:clamp(2rem,calc(4.5vw * var(--see-title-scale)),4rem)!important;line-height:1.15;}
+main .text-7xl,main .text-8xl {font-size:clamp(2.8rem,4.6vw,4.5rem)!important;}
+main section[data-cms-section$=".section1"] {padding-top:clamp(106px,10vw,135px)!important;padding-bottom:44px!important;}
+main section[data-cms-section].py-24 {padding-top:58px!important;padding-bottom:58px!important;}
+main section[data-cms-section].pb-24 {padding-bottom:58px!important;}
+main section[data-cms-section].pt-24 {padding-top:58px!important;}
+main .mt-20 {margin-top:3rem!important;}
+main .mt-14 {margin-top:2.4rem!important;}
+main .mt-12 {margin-top:2.15rem!important;}
+main .mt-10 {margin-top:1.85rem!important;}
+main .mt-8 {margin-top:1.6rem!important;}
+main .gap-y-16 {row-gap:1.75rem!important;}
+/* The black ticker becomes a restrained editorial detail, same marquee animation. */
+main section[data-cms-section="index.section3"] {padding-block:11px!important;margin-top:46px!important;}
+main section[data-cms-section="index.section3"] .marquee__track {font-size:clamp(.92rem,calc(1.65vw * var(--see-marquee-scale)),1.42rem)!important;line-height:1.35;}
+main section[data-cms-section="index.section3"] .marquee__track .gap-10 {gap:1rem!important;}
+main section[data-cms-section="index.section3"] .marquee__track .pr-10 {padding-right:1rem!important;}
+/* Oversized featured reel is now an optional, modest cover with no caption. */
+main section[data-cms-section="index.section2"] {width:min(820px,calc(100% - 3rem))!important;}
+main section[data-cms-section="index.section2"] .case-media {aspect-ratio:16/7!important;max-height:295px;}
+main section[data-cms-section="index.section2"] .case-media img {height:100%;width:100%;object-fit:cover;}
+.see-featured-play {position:absolute;inset-inline-start:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#ffffffdd;color:#101010;display:grid;place-items:center;font-size:15px;box-shadow:0 6px 24px #0003;}
+/* Work covers: compact gallery, no generic reel/design names or descriptive captions. */
+#cms-home-work,#cms-work-grid {display:grid!important;grid-template-columns:repeat(var(--see-gallery-columns),minmax(0,1fr))!important;gap:15px!important;}
+#cms-home-work .case-card,#cms-work-grid .case-card {min-width:0;}
+#cms-home-work .case-media,#cms-work-grid .case-media {aspect-ratio:4/5!important;overflow:hidden;border-radius:13px;background:#1a1a1a;}
+#cms-home-work .case-media img,#cms-work-grid .case-media img {height:100%;width:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.8,.2,1);}
+#cms-home-work a:hover .case-media img,#cms-work-grid a:hover .case-media img {transform:scale(1.045);}
+.see-work-play {position:absolute;inset-inline-end:12px;inset-block-end:12px;width:34px;height:34px;border-radius:50%;background:#f5f5f5df;display:grid;place-items:center;color:#101010;font-size:12px;transition:background .2s,color .2s,transform .2s;}
+.case-card:hover .see-work-play {background:var(--color-cobalt);color:white;transform:scale(1.07);}
+.see-more-wrap {display:flex;justify-content:center;padding-top:27px;}
+.see-more-wrap[hidden]{display:none!important;}
+/* Founders only: full image visible, never cropped; Instagram action per person. */
+.see-founder-grid {max-width:1110px;margin-inline:auto;}
+.see-founder-card {min-width:0;}
+.see-founder-photo-frame {display:flex;align-items:center;justify-content:center;aspect-ratio:5/5.6;max-height:520px;overflow:hidden;border-radius:16px;background:#e8e8e8;}
+.see-founder-photo {width:100%;height:100%;object-fit:contain!important;object-position:center!important;}
+.see-founder-details {display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-top:14px;}
+.see-founder-name {font-size:clamp(1rem,2vw,1.38rem);font-weight:800;line-height:1.35;}
+.see-founder-role {font-size:clamp(.74rem,1.05vw,.9rem);line-height:1.6;color:var(--color-muted);margin-top:5px;}
+.see-founder-instagram {flex:none;width:40px;height:40px;display:grid;place-items:center;border:1px solid #c8c8c8;border-radius:50%;color:#101010;transition:color .2s,border-color .2s,background .2s;}
+.see-founder-instagram:hover,.see-founder-instagram:focus-visible {background:var(--color-cobalt);border-color:var(--color-cobalt);color:white;}
+@media(max-width:850px){#cms-home-work,#cms-work-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}main section[data-cms-section="index.section2"] .case-media{max-height:235px;}}
+@media(max-width:640px){
+ #cms-home-work,#cms-work-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ main h1.display-xl {font-size:clamp(2.18rem,calc(9.2vw * var(--see-title-scale)),3.15rem)!important;line-height:1.16;}
+ main h2.display-lg,main .display-lg {font-size:clamp(1.55rem,calc(6.4vw * var(--see-title-scale)),2.25rem)!important;}
+ main section[data-cms-section$=".section1"] {padding-top:105px!important;padding-bottom:30px!important;}
+ main section[data-cms-section].py-24 {padding-block:40px!important;}
+ main section[data-cms-section].pb-24 {padding-bottom:40px!important;}
+ main section[data-cms-section="index.section3"] {margin-top:30px!important;padding-block:9px!important;}
+ main section[data-cms-section="index.section3"] .marquee__track {font-size:clamp(.83rem,3.3vw,1.1rem)!important;}
+ main section[data-cms-section="index.section2"] {width:calc(100% - 2.5rem)!important;}
+ main section[data-cms-section="index.section2"] .case-media {aspect-ratio:16/9!important;max-height:170px;}
+ #cms-home-work,#cms-work-grid {gap:10px!important;}
+ #cms-home-work .case-media,#cms-work-grid .case-media {border-radius:9px;}
+ .see-work-play {width:28px;height:28px;inset-inline-end:8px;inset-block-end:8px;}
+ .see-founder-grid {gap:12px!important;}
+ .see-founder-photo-frame {border-radius:11px;}
+ .see-founder-details {gap:5px;margin-top:10px;}
+ .see-founder-name {font-size:.95rem;}
+ .see-founder-role {font-size:.73rem;}
+ .see-founder-instagram {width:31px;height:31px;}
+ .see-founder-instagram svg {width:17px;height:17px;}
+}
+
+.see-modal-header,.see-modal-bottom{font-family:var(--font-sans);}
+
+
+/* V4 / 2SEE typographic consistency. Template logo-cell font experiments removed. */
+.logo-cell span,
+.logo-cell span.font-serif,
+.logo-cell span.font-display,
+.logo-cell span.font-sans {
+ font-family:var(--font-sans)!important;
+ font-size:clamp(1.1rem,1.65vw,1.55rem)!important;
+ font-weight:700!important;
+ font-style:normal!important;
+ letter-spacing:0!important;
+ line-height:1.45!important;
+ text-transform:none!important;
+}
+html[dir="rtl"] body,
+html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] option,
+html[dir="rtl"] textarea,
+html[dir="rtl"] label,
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .font-serif,
+html[dir="rtl"] .font-sans,
+html[dir="rtl"] .font-display,
+html[dir="rtl"] .logo-cell span,
+html[dir="rtl"] .field,
+html[dir="rtl"] .check-tile {
+ font-family:var(--font-sans)!important;
+ font-style:normal!important;
+}
+html[dir="rtl"] .logo-cell span{font-weight:700!important;letter-spacing:0!important}
+html[dir="rtl"] .field::placeholder{font-family:var(--font-sans);letter-spacing:0}
+/* Founder portraits are full-width, natural aspect ratio; no padded/gray/white frame. */
+.see-founder-grid{align-items:start}
+.see-founder-photo-frame{
+ display:block!important;aspect-ratio:auto!important;height:auto!important;max-height:none!important;
+ padding:0!important;margin:0!important;background:transparent!important;border:0!important;
+ border-radius:0!important;overflow:visible!important;
+}
+.see-founder-photo-frame img.see-founder-photo,
+.see-founders .see-founder-photo-frame img.see-founder-photo{
+ display:block!important;width:100%!important;height:auto!important;max-height:none!important;
+ aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;
+ border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;
+}
+.see-founder-details{display:block!important;margin-top:14px}
+.see-founder-name-row{
+ display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:7px;
+ font-family:var(--font-display);line-height:1.3;
+}
+.see-founder-instagram{
+ display:inline-flex!important;vertical-align:middle;align-items:center;justify-content:center;
+ flex:0 0 auto;width:32px;height:32px;border:0!important;border-radius:10px;
+ background:transparent!important;color:var(--color-cobalt);
+ transition:transform .28s cubic-bezier(.2,.9,.25,1.35),color .2s,background .2s!important;
+ transform-origin:center;
+}
+.see-founder-instagram:hover,.see-founder-instagram:focus-visible{
+ transform:translateY(-4px) rotate(-10deg) scale(1.12);
+ background:#c9152410!important;color:var(--color-cobalt)!important;
+}
+.see-founder-instagram svg{width:20px;height:20px;transition:transform .28s ease}
+.see-founder-instagram:hover svg,.see-founder-instagram:focus-visible svg{transform:scale(1.06)}
+/* Contact and collaboration applications: two clear submission choices. */
+.see-send-label{font-family:var(--font-sans);font-weight:700;font-size:1rem;margin-bottom:13px}
+.see-send-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.see-contact-send{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;
+ padding:13px 21px;border-radius:999px;white-space:normal;line-height:1.3;transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
+.see-contact-send:hover{transform:translateY(-2px)}
+.see-contact-send svg{flex:0 0 auto}
+.see-btn-outline{border:1px solid var(--color-ink);background:transparent;color:var(--color-ink);font-weight:700}
+.see-btn-outline:hover{background:var(--color-ink);color:#fff}
+.see-send-hint{font-family:var(--font-sans);font-size:.83rem;line-height:1.6;margin-top:12px;max-width:60ch}
+.see-form-notice{font-family:var(--font-sans);margin-top:18px;border:1px solid var(--color-line);
+ border-inline-start:3px solid var(--color-cobalt);background:var(--color-paper-2);color:var(--color-ink);
+ padding:14px 16px;font-size:.9rem;line-height:1.7;border-radius:8px}
+.see-form-notice a{display:inline-block;margin-inline-start:6px;font-weight:800;color:var(--color-cobalt);text-decoration:underline;text-underline-offset:3px}
+.see-form-notice[data-error="true"]{border-inline-start-color:var(--color-cobalt)}
+@media(max-width:640px){
+ .logo-cell span{font-size:clamp(.91rem,3.7vw,1.1rem)!important;line-height:1.4!important}
+ .see-founder-name-row{gap:4px;flex-wrap:wrap}
+ .see-founder-instagram{width:27px;height:27px;border-radius:8px}
+ .see-founder-instagram svg{width:18px;height:18px}
+ .see-contact-send{width:100%;min-height:47px}
+ .see-send-actions{display:grid;grid-template-columns:1fr;width:100%}
+}
+@media(prefers-reduced-motion:reduce){.see-founder-instagram,.see-founder-instagram svg,.see-contact-send{transition:none!important}}
+/* Keep the eighth service cell identical at every breakpoint. */
+.logo-cell span.font-mono{font-family:var(--font-sans)!important;font-size:clamp(1.1rem,1.65vw,1.55rem)!important;font-weight:700!important;font-style:normal!important;letter-spacing:0!important;line-height:1.45!important}
+@media(max-width:640px){.logo-cell span,.logo-cell span.font-display,.logo-cell span.font-sans,.logo-cell span.font-serif,.logo-cell span.font-mono{font-size:clamp(.91rem,3.7vw,1.1rem)!important}}
+/* URLs and email addresses keep their natural LTR order in Arabic forms. */
+html[dir="rtl"] input[type="url"],html[dir="rtl"] input[type="email"]{direction:ltr;text-align:left;unicode-bidi:plaintext}
+/* Portrait width stays restrained on desktop, avoiding an unnecessarily long page. */
+@media(min-width:700px){.see-founder-grid{max-width:920px}}
+
+/* V5 — active navigation. A burgundy underline follows the current page or homepage section. */
+.site-header nav a[data-see-active]{
+ color:var(--color-cobalt)!important;
+ font-weight:800;
+ text-decoration-color:var(--color-cobalt);
+}
+.site-header nav a.link-u[data-see-active]{background-size:100% 2px;}
+.site-header nav a[data-see-active]:focus-visible{outline:2px solid var(--color-cobalt);outline-offset:5px;}
+#mobile-menu nav a[data-see-active]{
+ border-inline-start:3px solid var(--color-cobalt);
+ padding-inline-start:14px;
+}
+@media(prefers-reduced-motion:no-preference){
+ .site-header nav a[data-see-active]{transition:color .22s ease,background-size .22s ease;}
+}
+
+/* V6: exact brand wordmark, stable top navigation, matching portrait dimensions. */
+.site-header a[href="index.html"] > span {font-family:'Manrope',system-ui,sans-serif!important;letter-spacing:-.045em!important;white-space:nowrap;font-size:clamp(.97rem,1.3vw,1.2rem)!important;font-weight:800!important}
+.site-header nav ul {gap:clamp(.55rem,1.15vw,1.45rem)!important}
+.site-header nav a[data-see-active] {transition:none!important}
+.site-header {transform:none!important;top:0!important}
+/* Equal 2:3 photo windows. No white/gray frame, no crop at rest. */
+.see-founder-photo-frame {
+ position:relative!important;display:block!important;
+ width:100%!important;aspect-ratio:2/3!important;height:auto!important;
+ overflow:hidden!important;border:0!important;border-radius:0!important;
+ padding:0!important;background:#710c0e!important;
+}
+.see-founder-photo-frame img.see-founder-photo,
+.see-founders .see-founder-photo-frame img.see-founder-photo {
+ position:absolute!important;inset:0!important;
+ width:100%!important;height:100%!important;
+ max-height:none!important;object-fit:contain!important;object-position:center!important;
+ border:0!important;border-radius:0!important;background:transparent!important;
+ transform:scale(1)!important;
+ transition:transform .62s cubic-bezier(.18,.85,.25,1)!important;
+ will-change:transform;
+}
+.see-founder-photo-frame:hover img.see-founder-photo,
+.see-founder-card:focus-within .see-founder-photo-frame img.see-founder-photo,
+.see-founders .see-founder-photo-frame:hover img.see-founder-photo {
+ transform:scale(1.065)!important;
+}
+@media (max-width:1180px) and (min-width:1024px){
+ .site-header .container-x{gap:12px!important}
+ .site-header nav ul{gap:9px!important;font-size:.85rem!important}
+ .site-header .btn{padding-inline:14px!important}
+}
+@media (prefers-reduced-motion:reduce){
+ .see-founder-photo-frame img.see-founder-photo,
+ .see-founders .see-founder-photo-frame img.see-founder-photo{transition:none!important}
+ .see-founder-photo-frame:hover img.see-founder-photo,
+ .see-founder-card:focus-within .see-founder-photo-frame img.see-founder-photo{transform:none!important}
+}
+
+/* V7 — Home link is visually neutral, like the rest of the header links. */
+.site-header nav a[href="index.html"][data-see-active]{
+ color:inherit!important;font-weight:inherit!important;text-decoration:none!important;
+ background-size:0 2px!important;
+}
+#mobile-menu nav a[href="index.html"][data-see-active]{border-inline-start:0!important;padding-inline-start:0!important}
+/* The Agency base style also underlines [aria-current=page].
+   Keep Home visually neutral until hover, without removing accessibility metadata. */
+.site-header nav a[href="index.html"][aria-current="page"]:not(:hover):not(:focus-visible){background-size:0 1.5px!important}
+/* 2SEE brand logo replaces decorative asterisks in the black scrolling strip. */
+main section[data-cms-section="index.section3"] .marquee__track .see-marquee-logo{
+ display:inline-block!important;flex:0 0 auto!important;
+ height:clamp(35px,3.7vw,49px)!important;width:auto!important;max-width:49px!important;
+ object-fit:contain!important;vertical-align:middle!important;
+ filter:brightness(0) invert(1);opacity:1;
+}
+@media(max-width:640px){main section[data-cms-section="index.section3"] .marquee__track .see-marquee-logo{height:27px!important;max-width:30px!important}}
+/* Mohamad's source is slightly wider than the matching 2:3 frame.
+   Fill only this frame to remove the thin burgundy letterbox line. */
+.see-founder-photo-frame img.see-founder-photo--mohamad,
+.see-founders .see-founder-photo-frame img.see-founder-photo--mohamad{
+ object-fit:cover!important;object-position:center!important;
+}
+/* First visit: elegant, brief logo reveal on charcoal, then reveal the site. */
+.see-intro{display:none;position:fixed;inset:0;z-index:99999;
+ background:#101010;color:#f5f5f5;align-items:center;justify-content:center;
+ padding:24px;isolation:isolate;opacity:1;visibility:visible;
+ transition:opacity .38s ease,visibility .38s ease;}
+html.see-intro-playing .see-intro{display:flex}
+.see-intro--closing{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+.see-intro-content{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;max-width:100%;}
+.see-intro-logo{display:block;width:clamp(130px,17vw,190px);height:auto;max-height:220px;object-fit:contain;
+ opacity:0;transform:translateY(18px) scale(.95);
+ animation:see-intro-appear .85s cubic-bezier(.2,.75,.2,1) .08s both;}
+.see-intro-rule{display:block;width:70px;height:2px;background:#C91524;transform:scaleX(0);
+ animation:see-intro-rule .58s ease .42s forwards;}
+.see-intro-slogan{font-family:Manrope,system-ui,sans-serif;font-size:clamp(10px,1vw,12px);
+ font-weight:700;letter-spacing:.24em;color:#c4c4c4;opacity:0;
+ animation:see-intro-appear .6s ease .5s forwards;}
+.see-intro-skip{position:absolute;bottom:clamp(22px,4vh,46px);inset-inline-end:clamp(18px,4vw,50px);
+ border:1px solid #ffffff40;border-radius:100px;background:transparent;color:#d9d9d9;
+ font-family:Tajawal,system-ui,sans-serif;font-size:13px;padding:8px 16px;cursor:pointer;
+ transition:background .2s,border-color .2s;}
+.see-intro-skip:hover,.see-intro-skip:focus-visible{background:#ffffff1c;border-color:#fff;outline-offset:3px}
+@keyframes see-intro-appear{to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes see-intro-rule{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.see-intro{display:none!important}.see-intro-logo,.see-intro-rule,.see-intro-slogan{animation:none!important}}

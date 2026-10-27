@@ -1,45 +1,10 @@
-name: Sync 2SEE public website
+name: Legacy 2SEE sync (retired after Agency V7 launch)
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['client/**', 'scripts/**', 'website-home/**', '.github/workflows/sync-site.yml']
-  schedule:
-    - cron: '2-59/5 * * * *'
 permissions:
-  contents: write
-  pages: write
-concurrency:
-  group: 2see-public-sync
-  cancel-in-progress: false
+  contents: read
 jobs:
-  sync:
+  retired:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '24'
-      - name: Copy published dashboard content
-        id: snapshot
-        run: node scripts/sync-site.mjs
-      - name: Check every public asset
-        if: steps.snapshot.outputs.changed == 'true'
-        run: node scripts/verify-site.mjs .snapshot
-      - name: Save complete public version
-        if: steps.snapshot.outputs.changed == 'true'
-        run: |
-          rsync -a .snapshot/ ./
-          git config user.name '2SEE website sync'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- index.html work assets media data portfolio.html .nojekyll 404.html robots.txt sitemap.xml
-          if ! git diff --cached --quiet; then
-            git commit -m 'Sync published 2SEE content and media'
-            git push
-          fi
-      - name: Publish on existing GitHub Pages hosting
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPOSITORY: ${{ github.repository }}
-        run: node scripts/ensure-published.mjs
+      - run: echo 'Legacy sync retired. Agency V7 content is maintained through dashboard.html.'
