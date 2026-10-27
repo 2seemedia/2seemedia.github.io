@@ -7,7 +7,7 @@ const content=JSON.parse(await readFile(path.join(root,'data/content.json'),'utf
 const portfolio=JSON.parse(await readFile(path.join(root,'data/portfolio.json'),'utf8'));
 const manifest=JSON.parse(await readFile(path.join(root,'data/snapshot.json'),'utf8'));
 if(/chatgpt\.(?:site|com)|OAI-Sites-Authorization|https?:[^"<>\s]+\/admin|\/cdn-cgi\//.test(home+work+JSON.stringify(content)+JSON.stringify(portfolio)))throw Error('Public output contains a private-host dependency');
-if(/http-equiv=["']?refresh/i.test(home)||!home.includes('cmsRaw')||!home.includes('homeReelTrack'))throw Error('Homepage export is incomplete');
+if(/http-equiv=["']?refresh/i.test(home)||!home.includes('id="videoDialog"')||!home.includes('/data/portfolio.json')||!home.includes('id="primaryNav"'))throw Error('Homepage export is incomplete');
 if(!portfolio.items.length||manifest.works!==portfolio.items.length)throw Error('Portfolio was not copied');
 if(portfolio.items.some(w=>w.deleted||!w.visible))throw Error('Non-public work in snapshot');
 async function allFiles(dir){const out=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())out.push(...await allFiles(p));else out.push(p)}return out}

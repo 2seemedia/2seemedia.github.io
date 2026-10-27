@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['client/**', 'scripts/**', '.github/workflows/sync-site.yml']
+    paths: ['client/**', 'scripts/**', 'website-home/**', '.github/workflows/sync-site.yml']
   schedule:
     - cron: '2-59/5 * * * *'
 permissions:

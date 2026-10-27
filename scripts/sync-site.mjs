@@ -29,7 +29,9 @@ if(!home.startsWith('<!DOCTYPE html>')||!home.includes('2SEE')||!home.includes('
 if(!content.design||!content.portfolio?.ar||!content.portfolio?.en||!Array.isArray(portfolio.items)||portfolio.items.some(w=>w.deleted||!w.visible))throw Error('Invalid public content');
 const clientFiles=await files('client');
 const clientBytes=await Promise.all(clientFiles.map(p=>readFile(p)));
-const fingerprint=hash(Buffer.concat([...raw.map(s=>Buffer.from(s)),...clientBytes]));
+const siteHome=await readFile('website-home/index.html','utf8');
+if(!siteHome.includes('id="videoDialog"')||!siteHome.includes('/data/portfolio.json'))throw Error('Approved homepage missing');
+const fingerprint=hash(Buffer.concat([...raw.map(s=>Buffer.from(s)),...clientBytes,Buffer.from(siteHome)]));
 let previous=null;try{previous=JSON.parse(await readFile('data/snapshot.json','utf8'))}catch{}
 if(previous?.fingerprint===fingerprint&&!process.env.FORCE_SNAPSHOT){
  if(process.env.GITHUB_OUTPUT)await writeFile(process.env.GITHUB_OUTPUT,'changed=false\n',{flag:'a'});
@@ -39,10 +41,10 @@ await rm(output,{recursive:true,force:true});await mkdir(output,{recursive:true}
 await cp('client',output,{recursive:true});
 // The public site has only local links/assets; its owner dashboard stays separate.
 const localize=text=>text.replaceAll(origin,'');
-await put('index.html',localize(home));
+await put('index.html',siteHome);
 await put('data/content.json',localize(JSON.stringify(content)));
 await put('data/portfolio.json',localize(JSON.stringify(portfolio)));
-const references=[...raw,...clientBytes.map(b=>b.toString())].join('\n');
+const references=[...raw,siteHome,...clientBytes.map(b=>b.toString())].join('\n');
 const assetPaths=[...new Set([...references.matchAll(/\/(?:assets|media)\/[A-Za-z0-9_.-]+/g)].map(m=>m[0]))];
 // Each uploaded asset has a unique immutable path. Reuse checked-in copies.
 let cursor=0;let downloaded=0;
