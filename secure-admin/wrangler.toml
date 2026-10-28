@@ -1,4 +1,4 @@
-# Staging only. Production deployment requires a separate reviewed configuration.
+# Production publishing enabled after owner approval on 2026-10-28; Worker URL retained.
 name = "2see-admin-staging"
 main = "worker.js"
 compatibility_date = "2026-10-01"
@@ -12,10 +12,10 @@ html_handling = "none"
 not_found_handling = "none"
 [vars]
 GITHUB_REPO = "2seemedia/2seemedia.github.io"
-GITHUB_BRANCH = "admin/content-staging"
+GITHUB_BRANCH = "main"
 PRODUCTION_BRANCH = "main"
 PUBLISH_ENABLED = "true"
-PRODUCTION_APPROVED = "false"
+PRODUCTION_APPROVED = "true"
 AUTH_MODE = "password"
 # ADMIN_PASSWORD is a Worker Secret set by the owner; never add it here.
 [[ratelimits]]
