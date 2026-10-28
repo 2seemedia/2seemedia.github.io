@@ -14,7 +14,7 @@ not_found_handling = "none"
 GITHUB_REPO = "2seemedia/2seemedia.github.io"
 GITHUB_BRANCH = "admin/content-staging"
 PRODUCTION_BRANCH = "main"
-PUBLISH_ENABLED = "false"
+PUBLISH_ENABLED = "true"
 PRODUCTION_APPROVED = "false"
 AUTH_MODE = "password"
 # ADMIN_PASSWORD is a Worker Secret set by the owner; never add it here.
