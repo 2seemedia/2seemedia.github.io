@@ -31,7 +31,8 @@
     document.documentElement.style.setProperty('--font-sans','"'+arabicFont+'",sans-serif');
   }
 
-  var page=window.SEE_PREVIEW_PAGE||(location.pathname.split('/').pop()||'index.html');
+  var route=location.pathname.replace(/\/+$/,'').split('/').pop()||'index';
+  var page=window.SEE_PREVIEW_PAGE||(route.includes('.')?route:route+'.html');
   if(!data.pages[page])page='index.html';
   var entries=data.pages[page]||[];
   var byKey={};entries.forEach(function(e){byKey[e.key]=e});
