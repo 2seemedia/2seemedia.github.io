@@ -25,7 +25,8 @@
         "section": "general",
         "label": "Skip to content",
         "en": "Skip to content",
-        "ar": "انتقل إلى المحتوى"
+        "ar": "انتقل إلى المحتوى",
+        "style": {}
       },
       {
         "key": "index.t002",
@@ -33,7 +34,8 @@
         "section": "header",
         "label": "2SEE",
         "en": "2See Media",
-        "ar": "2See Media"
+        "ar": "2See Media",
+        "style": {}
       },
       {
         "key": "index.t003",
@@ -41,7 +43,8 @@
         "section": "header",
         "label": "Work",
         "en": "Work",
-        "ar": "أعمالنا"
+        "ar": "أعمالنا",
+        "style": {}
       },
       {
         "key": "index.t004",
@@ -49,7 +52,8 @@
         "section": "header",
         "label": "Services",
         "en": "Services",
-        "ar": "خدماتنا"
+        "ar": "خدماتنا",
+        "style": {}
       },
       {
         "key": "index.t005",
@@ -57,7 +61,8 @@
         "section": "header",
         "label": "About",
         "en": "About",
-        "ar": "من نحن"
+        "ar": "من نحن",
+        "style": {}
       },
       {
         "key": "index.t006",
@@ -65,7 +70,8 @@
         "section": "header",
         "label": "Collaborate",
         "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "ar": "تعاون معنا",
+        "style": {}
       },
       {
         "key": "index.t007",
@@ -73,7 +79,8 @@
         "section": "header",
         "label": "Contact",
         "en": "Contact",
-        "ar": "تواصل معنا"
+        "ar": "تواصل معنا",
+        "style": {}
       },
       {
         "key": "index.t008",
@@ -81,7 +88,8 @@
         "section": "header",
         "label": "العربية",
         "en": "العربية",
-        "ar": "العربية"
+        "ar": "العربية",
+        "style": {}
       },
       {
         "key": "index.t009",
@@ -89,7 +97,8 @@
         "section": "header",
         "label": "Start a project",
         "en": "Start a project",
-        "ar": "ابدأ مشروعك"
+        "ar": "ابدأ مشروعك",
+        "style": {}
       },
       {
         "key": "index.t010",
@@ -97,7 +106,8 @@
         "section": "header",
         "label": "Work",
         "en": "Work",
-        "ar": "أعمالنا"
+        "ar": "أعمالنا",
+        "style": {}
       },
       {
         "key": "index.t011",
@@ -105,7 +115,8 @@
         "section": "header",
         "label": "Services",
         "en": "Services",
-        "ar": "خدماتنا"
+        "ar": "خدماتنا",
+        "style": {}
       },
       {
         "key": "index.t012",
@@ -113,7 +124,8 @@
         "section": "header",
         "label": "About",
         "en": "About",
-        "ar": "من نحن"
+        "ar": "من نحن",
+        "style": {}
       },
       {
         "key": "index.t013",
@@ -121,7 +133,8 @@
         "section": "header",
         "label": "Collaborate",
         "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "ar": "تعاون معنا",
+        "style": {}
       },
       {
         "key": "index.t014",
@@ -129,7 +142,8 @@
         "section": "header",
         "label": "Contact",
         "en": "Contact",
-        "ar": "تواصل معنا"
+        "ar": "تواصل معنا",
+        "style": {}
       },
       {
         "key": "index.t015",
@@ -137,7 +151,8 @@
         "section": "header",
         "label": "العربية",
         "en": "العربية",
-        "ar": "العربية"
+        "ar": "العربية",
+        "style": {}
       },
       {
         "key": "index.t016",
@@ -145,7 +160,8 @@
         "section": "header",
         "label": "Start a project",
         "en": "Start a project",
-        "ar": "ابدأ مشروعك"
+        "ar": "ابدأ مشروعك",
+        "style": {}
       },
       {
         "key": "index.t017",
@@ -153,7 +169,8 @@
         "section": "header",
         "label": "New projects:",
         "en": "New projects:",
-        "ar": "للمشاريع الجديدة:"
+        "ar": "للمشاريع الجديدة:",
+        "style": {}
       },
       {
         "key": "index.t018",
@@ -161,7 +178,8 @@
         "section": "header",
         "label": "2see.mediaa@gmail.com",
         "en": "2see.mediaa@gmail.com",
-        "ar": "2see.mediaa@gmail.com"
+        "ar": "2see.mediaa@gmail.com",
+        "style": {}
       },
       {
         "key": "index.t019",
@@ -169,7 +187,8 @@
         "section": "index.section1",
         "label": "Independent creative media studio",
         "en": "Creative media studio",
-        "ar": "استيديو للإنتاج وصناعة المحتوى"
+        "ar": "استيديو للإنتاج وصناعة المحتوى",
+        "style": {}
       },
       {
         "key": "index.t020",
@@ -177,7 +196,8 @@
         "section": "index.section1",
         "label": "Damascus · Syria",
         "en": "Damascus · Syria",
-        "ar": "دمشق · سوريا"
+        "ar": "دمشق · سوريا",
+        "style": {}
       },
       {
         "key": "index.t021",
@@ -185,7 +205,8 @@
         "section": "index.section1",
         "label": "We Make You Seen",
         "en": "We Make You Seen",
-        "ar": "We Make You Seen"
+        "ar": "We Make You Seen",
+        "style": {}
       },
       {
         "key": "index.t022",
@@ -193,7 +214,8 @@
         "section": "index.section1",
         "label": "We make brands",
         "en": "We make brands",
-        "ar": "نصنع حضوراً"
+        "ar": "نصنع حضوراً",
+        "style": {}
       },
       {
         "key": "index.t023",
@@ -201,7 +223,8 @@
         "section": "index.section1",
         "label": "stand out and get",
         "en": "stand out and get",
-        "ar": "يليق بعلامتك"
+        "ar": "يليق بعلامتك",
+        "style": {}
       },
       {
         "key": "index.t024",
@@ -209,7 +232,8 @@
         "section": "index.section1",
         "label": "seen.",
         "en": "seen.",
-        "ar": "التجارية"
+        "ar": "التجارية",
+        "style": {}
       },
       {
         "key": "index.t025",
@@ -217,7 +241,8 @@
         "section": "index.section1",
         "label": "2SEE Media is a creative production and social media studio based in Damascus. We turn ide",
         "en": "We film, edit and create brand content, and manage social media.",
-        "ar": "نقدّم خدمات التصوير والمونتاج وصناعة المحتوى وإدارة حسابات التواصل الاجتماعي"
+        "ar": "نقدّم خدمات التصوير والمونتاج وصناعة المحتوى وإدارة حسابات التواصل الاجتماعي",
+        "style": {}
       },
       {
         "key": "index.t026",
@@ -225,7 +250,8 @@
         "section": "index.section1",
         "label": "Creative partner for",
         "en": "We work on",
-        "ar": "تشمل خدماتنا"
+        "ar": "تشمل خدماتنا",
+        "style": {}
       },
       {
         "key": "index.t027",
@@ -233,7 +259,8 @@
         "section": "index.section1",
         "label": "growing brands.",
         "en": "filming and production.",
-        "ar": "التصوير والإنتاج"
+        "ar": "التصوير والإنتاج",
+        "style": {}
       },
       {
         "key": "index.t028",
@@ -241,7 +268,8 @@
         "section": "index.section1",
         "label": "bold ideas.",
         "en": "editing and motion.",
-        "ar": "المونتاج والرسوم المتحركة"
+        "ar": "المونتاج والرسوم المتحركة",
+        "style": {}
       },
       {
         "key": "index.t029",
@@ -249,7 +277,8 @@
         "section": "index.section1",
         "label": "stories worth telling.",
         "en": "content and social media.",
-        "ar": "المحتوى ووسائل التواصل الاجتماعي"
+        "ar": "المحتوى ووسائل التواصل الاجتماعي",
+        "style": {}
       },
       {
         "key": "index.t030",
@@ -257,7 +286,8 @@
         "section": "index.section1",
         "label": "growing brands, bold ideas and stories worth telling.",
         "en": "filming and production, editing and motion, content and social media.",
-        "ar": "التصوير والإنتاج، المونتاج والرسوم المتحركة، صناعة المحتوى وإدارة وسائل التواصل الاجتماعي"
+        "ar": "التصوير والإنتاج، المونتاج والرسوم المتحركة، صناعة المحتوى وإدارة وسائل التواصل الاجتماعي",
+        "style": {}
       },
       {
         "key": "index.t031",
@@ -265,7 +295,8 @@
         "section": "index.section1",
         "label": "See our work",
         "en": "See our work",
-        "ar": "استعرض أعمالنا"
+        "ar": "استعرض أعمالنا",
+        "style": {}
       },
       {
         "key": "index.t032",
@@ -273,7 +304,8 @@
         "section": "index.section1",
         "label": "Start a project",
         "en": "Start a project",
-        "ar": "ابدأ مشروعك"
+        "ar": "ابدأ مشروعك",
+        "style": {}
       },
       {
         "key": "index.t033",
@@ -281,7 +313,8 @@
         "section": "index.section2",
         "label": "Featured: 2SEE Media",
         "en": "Featured: 2See Media",
-        "ar": "من أعمال 2See Media"
+        "ar": "من أعمال 2See Media",
+        "style": {}
       },
       {
         "key": "index.t051",
@@ -289,7 +322,8 @@
         "section": "index.section4",
         "label": "Creative disciplines",
         "en": "Creative disciplines",
-        "ar": "مجالاتنا الإبداعية"
+        "ar": "مجالاتنا الإبداعية",
+        "style": {}
       },
       {
         "key": "index.t052",
@@ -297,7 +331,8 @@
         "section": "index.section4",
         "label": "What we create best.",
         "en": "What we do.",
-        "ar": "ماذا نقدّم؟"
+        "ar": "ماذا نقدّم؟",
+        "style": {}
       },
       {
         "key": "index.t053",
@@ -9194,6 +9229,19 @@
     }
   },
   "works": [
+    {
+      "id": "new-1793202993180",
+      "type": "reel",
+      "title": "2SEE staging publication test",
+      "titleAr": "",
+      "client": "",
+      "year": "2026",
+      "description": "",
+      "url": "",
+      "image": "assets/uploads/2see-b8a1b18f-a841-4eb9-a690-a0eb601b1a49.png",
+      "featured": false,
+      "visible": false
+    },
     {
       "id": "reel-02",
       "type": "reel",
