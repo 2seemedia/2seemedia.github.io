@@ -1,0 +1,21 @@
+# Staging only. Production deployment requires a separate reviewed configuration.
+name = "2see-admin-staging"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+preview_urls = false
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+html_handling = "none"
+not_found_handling = "none"
+[vars]
+GITHUB_REPO = "2seemedia/2seemedia.github.io"
+GITHUB_BRANCH = "admin/content-staging"
+PRODUCTION_BRANCH = "main"
+PUBLISH_ENABLED = "false"
+PRODUCTION_APPROVED = "false"
+ACCESS_TEAM_DOMAIN = "REPLACE.cloudflareaccess.com"
+ACCESS_AUD = "REPLACE_WITH_ACCESS_APPLICATION_AUD"
+ALLOWED_EMAILS = ""
