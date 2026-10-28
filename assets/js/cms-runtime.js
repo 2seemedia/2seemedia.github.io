@@ -173,7 +173,7 @@
           // Transparent PNG image: drop-shadow uses the alpha silhouette, never a rectangular image frame.
           var art=document.createElement('img');art.className='see-collabs-logo';
           art.src=logo.image;art.alt=logo.name||'شعار التعاون';
-          art.loading='eager';art.decoding='async';art.width=200;art.height=116;
+          art.loading='lazy';art.decoding='async';art.width=200;art.height=116;
           box.appendChild(art);
         }
         group.appendChild(box);
