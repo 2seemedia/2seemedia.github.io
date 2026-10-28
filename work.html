@@ -33,7 +33,7 @@
 </script>
 <link href="assets/css/2see-overrides.css" rel="stylesheet"/></head>
 <body class="antialiased">
-<div class="see-intro" id="see-intro" aria-label="2See Media">
+<div class="see-intro" id="see-intro" aria-label="2See Media" aria-hidden="true">
  <div class="see-intro-content">
   <img class="see-intro-logo" src="assets/img/2see-logo.png" width="226" height="270" alt="" fetchpriority="high"/>
   <span class="see-intro-rule" aria-hidden="true"></span>
@@ -67,10 +67,8 @@
 <main id="main">
 <section class="container-x pt-36 pb-16 sm:pt-44 md:pb-24" data-cms-section="work.section1">
 <p class="eyebrow reveal text-muted"><!--cms:work.t019-->Work</p>
-<h1 class="display-xl mt-6 max-w-[16ch] text-[clamp(3rem,9vw,8.5rem)]">
-<span class="line-mask"><span style="--d:0ms"><!--cms:work.t020-->Work made</span></span>
-<span class="line-mask"><span style="--d:110ms"><!--cms:work.t021-->to be</span></span>
-<span class="line-mask"><span style="--d:220ms"><!--cms:work.t022-->seen.</span></span>
+<h1 class="display-xl mt-6 see-hero-one-line see-hero-work">
+<span class="line-mask"><span style="--d:0ms"><!--cms:work.t020-->Work made</span> <span style="--d:80ms"><!--cms:work.t021-->to be</span> <span style="--d:160ms"><!--cms:work.t022-->seen.</span></span>
 </h1>
 <div class="mt-10 grid gap-8 border-t border-line pt-8 md:grid-cols-12">
 <p class="reveal text-lg leading-relaxed text-muted md:col-span-6 md:text-xl"><!--cms:work.t023-->A selection of our published reels and graphic designs. Explore the work and open the original project.</p>
@@ -85,13 +83,18 @@
 <div class="see-more-wrap"><button class="btn btn-outline" id="see-load-more" type="button"><!--cms:work.t070-->Show more projects</button></div>
 <p class="py-16 text-center text-lg text-muted" data-filter-empty="category" hidden=""><!--cms:work.t027-->No projects in this industry yet. <a class="text-ink underline" data-cms-link="work.a071" href="contact.html"><!--cms:work.t028-->Want to be the first?</a></p>
 </section>
+<section class="see-collabs" aria-labelledby="see-collabs-title" data-cms-section="work.section3">
+  <div class="container-x see-collabs-heading"><span class="see-collabs-rule" aria-hidden="true"></span><h2 id="see-collabs-title" class="see-collabs-title">من تعاونّا معهم</h2><span class="see-collabs-rule" aria-hidden="true"></span></div>
+  <div class="see-collabs-window" aria-label="شعارات جهات وأشخاص تعاونّا معهم"><div class="see-collabs-track" data-collabs-track></div></div>
+  <p class="see-collabs-demo-note" hidden>شعارات توضيحية للمعاينة فقط — أضيفي الشعارات الحقيقية من لوحة التحكم</p>
+</section>
 </main>
 <footer class="on-dark bg-ink text-white">
 <div class="container-x pt-24 pb-10">
 <div class="grid gap-12 border-b border-white/15 pb-16 lg:grid-cols-[1.4fr_1fr] lg:items-end">
 <div>
 <p class="eyebrow text-lime"><!--cms:work.t029-->Have a project in mind?</p>
-<p class="display-lg mt-5 text-[clamp(2.6rem,7vw,6rem)]"><!--cms:work.t030-->Let’s make your brand seen.</p>
+<p class="display-lg mt-5 text-[clamp(2.6rem,7vw,6rem)]"><!--cms:work.t030-->Make your brand seen.</p>
 </div>
 <div class="flex flex-col items-start gap-5 lg:items-end">
 <a class="link-u font-display text-2xl font-semibold sm:text-3xl" data-cms-link="work.a072" href="mailto:2see.mediaa@gmail.com"><!--cms:work.t031-->2see.mediaa@gmail.com</a>
@@ -114,8 +117,8 @@
 </ul>
 </div>
 <div>
-<h2 class="eyebrow text-white/50"><!--cms:work.t041-->Studio</h2>
-<ul class="mt-4 grid gap-4 text-sm"><li><p class="font-medium text-white"><!--cms:work.t042-->Damascus <span class="ml-1 font-mono text-xs text-white/50" data-tz="Asia/Damascus"><!--cms:work.t043-->--:--</span></p><p class="text-white/60"><!--cms:work.t044-->Syria</p></li></ul>
+<h2 class="eyebrow text-white/50"><!--cms:work.t041-->Location</h2>
+<ul class="mt-4 grid gap-4 text-sm"><li><p class="font-medium text-white"><!--cms:work.t042-->Damascus</p><p class="text-white/60"><!--cms:work.t044-->Syria</p></li></ul>
 </div>
 <div>
 <h2 class="eyebrow text-white/50"><!--cms:work.t045-->Follow</h2>

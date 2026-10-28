@@ -6,7 +6,7 @@
   var params=new URLSearchParams(location.search);
   var preview=params.get('cms-preview')==='1';
   var draft=null;
-  if(preview){try{draft=JSON.parse(localStorage.getItem('2see-agency-draft-v7')||'null')}catch(e){}}
+  if(preview){try{draft=JSON.parse(localStorage.getItem('2see-agency-draft-v12')||'null')}catch(e){}}
   var data=draft&&draft.pages&&draft.brand?draft:base;
   var storedLanguage='';try{storedLanguage=sessionStorage.getItem('2see-language')||''}catch(e){}
   var forcedLang=window.SEE_PREVIEW_LANG;
@@ -103,10 +103,55 @@
       var u=new URL(location.href);u.searchParams.set('lang',next);location.href=u.href;
     });
   });
-  if(lang==='ar'){document.querySelectorAll('select option').forEach(function(opt){var dict={'Choose a timeframe':'اختار الوقت','As soon as possible':'بأقرب وقت','In 1–3 months':'خلال 1–3 أشهر','In 3–6 months':'خلال 3–6 أشهر','Just exploring':'عم استفسر','Choose one':'اختار','Recommendation':'توصية','Saw your work':'شفت أعمالكم','Search':'بحث','Social media':'السوشال ميديا','Event or talk':'فعالية'};if(dict[opt.textContent.trim()])opt.textContent=dict[opt.textContent.trim()]});}
+  if(lang==='ar'){document.querySelectorAll('select option').forEach(function(opt){var dict={'Choose a timeframe':'اختر الموعد','As soon as possible':'في أقرب وقت','In 1–3 months':'خلال 1–3 أشهر','In 3–6 months':'خلال 3–6 أشهر','Just exploring':'أستفسر فقط','Choose one':'اختر','Recommendation':'توصية','Saw your work':'اطّلعت على أعمالكم','Search':'بحث','Social media':'السوشال ميديا','Event or talk':'فعالية'};if(dict[opt.textContent.trim()])opt.textContent=dict[opt.textContent.trim()]});}
   document.querySelectorAll('[data-social-facebook]').forEach(function(a){a.href=safeLink(data.brand.facebook||'#')});
-  if(lang==='ar'){document.querySelectorAll('a').forEach(function(a){if(a.textContent.trim()==='About 2SEE ↗')a.textContent='عن 2SEE ↗';if(a.textContent.trim()==='See our work ↗')a.textContent='شوف أعمالنا ↗'});document.querySelectorAll('h3').forEach(function(h){if(h.textContent.trim()==='What you get')h.textContent='شو منقدّم'})}
+  if(lang==='ar'){document.querySelectorAll('a').forEach(function(a){if(a.textContent.trim()==='About 2SEE ↗')a.textContent='عن 2SEE ↗';if(a.textContent.trim()==='See our work ↗')a.textContent='استعرض أعمالنا ↗'});document.querySelectorAll('h3').forEach(function(h){if(h.textContent.trim()==='What you get')h.textContent='ما الذي نقدّمه؟'})}
   document.querySelectorAll('[data-year]').forEach(function(x){x.textContent=new Date().getFullYear()});
+
+  // Collaborations are not presented as long-term clients; one-off work also counts.
+  // Empty published list stays hidden. Preview uses numbered, explicitly fictional placeholders.
+  (function renderCollaborations(){
+    var config=data.collaborations||{};
+    var logos=Array.isArray(config.logos)?config.logos.filter(function(x){return x&&x.image&&x.visible!==false}):[];
+    var demo=logos.length===0&&(preview||!!window.SEE_PREVIEW_PAGE);
+    document.querySelectorAll('.see-collabs').forEach(function(section){
+      if(!logos.length&&!demo){section.hidden=true;section.style.display='none';return;}
+      var heading=section.querySelector('.see-collabs-title');
+      if(heading)heading.textContent=lang==='ar'?(config.headingAr||'من تعاونّا معهم'):(config.headingEn||'Who we have worked with');
+      var win=section.querySelector('.see-collabs-window');
+      if(win)win.setAttribute('aria-label',lang==='ar'?'شعارات جهات وأشخاص تعاونّا معهم':'Logos of people and organizations we have collaborated with');
+      var note=section.querySelector('.see-collabs-demo-note');
+      if(note){note.hidden=!demo;note.textContent=lang==='ar'?'شعارات توضيحية للمعاينة فقط — أضيفي الشعارات الحقيقية من لوحة التحكم':'Preview placeholders only — add real logos in the dashboard';}
+      var track=section.querySelector('[data-collabs-track]');if(!track)return;
+      track.replaceChildren();
+      var list=demo?Array.from({length:8},function(_,i){return {name:lang==='ar'?'شعار '+String(i+1).padStart(2,'0'):'LOGO '+String(i+1).padStart(2,'0'),placeholder:true}}):logos;
+      var copies=Math.max(1,Math.ceil(10/list.length));
+      var group=document.createElement('div');group.className='see-collabs-group';
+      for(var c=0;c<copies;c++)list.forEach(function(logo){
+        var box=document.createElement(logo.url?'a':'div');box.className='see-collabs-item'+(logo.tone==='dark'?' see-collabs-item--dark':' see-collabs-item--light');
+        if(logo.url){box.href=safeLink(logo.url);box.target='_blank';box.rel='noopener noreferrer';}
+        if(logo.placeholder){
+          var icon=document.createElement('span');icon.className='see-collabs-placeholder';
+          var svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.5');
+          var path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M4 18l4-8 4 5 4-10 4 13H4Z');svg.appendChild(path);
+          icon.append(svg,document.createTextNode(logo.name));box.appendChild(icon);
+        }else{
+          // Transparent PNG image: drop-shadow uses the alpha silhouette, never a rectangular image frame.
+          var art=document.createElement('img');art.className='see-collabs-logo';
+          art.src=logo.image;art.alt=logo.name||'شعار التعاون';
+          art.loading='eager';art.decoding='async';art.width=200;art.height=116;
+          box.appendChild(art);
+        }
+        group.appendChild(box);
+      });
+      var clone=group.cloneNode(true);clone.setAttribute('aria-hidden','true');
+      // Duplicate groups are identical: -50% translation produces a seamless loop.
+      track.append(group,clone);
+      var speed=Math.max(15,Math.min(100,Number(config.speedSeconds)||34));
+      track.style.setProperty('--see-collabs-speed',speed+'s');
+    });
+  })();
+
   // Projects use exactly the original template's case-card layout and reveal/filter JS.
   var works=Array.isArray(data.works)?data.works.filter(function(w){return w.visible!==false}):[];
   function elt(tag,cls,content){var e=document.createElement(tag);if(cls)e.className=cls;if(content!==undefined)e.textContent=content;return e}
@@ -150,6 +195,34 @@
     modal.addEventListener('click',function(e){if(e.target===modal)modal.close()});
   }
 
+// Career application: browser-side CV chooser. GitHub Pages has no upload backend.
+(function(){
+ var form=document.querySelector('form[data-send-choice] #a-cv')?.closest('form');
+ if(!form)return;
+ var fileInput=form.querySelector('#a-cv'),state=form.querySelector('[data-cv-state]'),error=form.querySelector('[data-cv-error]');
+ var role=form.querySelector('#apply-role'),otherWrap=form.querySelector('[data-other-role]'),otherInput=form.querySelector('#a-other-role');
+ var accepted=/\.(pdf|doc|docx)$/i,limit=10*1024*1024;
+ function setError(msg){error.textContent=msg;error.hidden=!msg;fileInput.setCustomValidity(msg||'');fileInput.setAttribute('aria-invalid',msg?'true':'false')}
+ function update(){
+  var file=fileInput.files&&fileInput.files[0];
+  state.textContent=file?file.name:(lang==='ar'?'لم يتم اختيار ملف':'No file selected');
+  state.classList.toggle('see-cv-selected',!!file);
+  if(!file){setError('');return}
+  if(!accepted.test(file.name)){setError(lang==='ar'?'اختر ملفاً بصيغة PDF أو Word فقط.':'Please choose a PDF or Word file.');return}
+  if(file.size>limit){setError(lang==='ar'?'يجب ألا يتجاوز حجم الملف 10 ميغابايت.':'The file must be 10 MB or smaller.');return}
+  if(file.size===0){setError(lang==='ar'?'الملف فارغ؛ يُرجى اختيار ملف آخر.':'This file is empty. Choose another.');return}
+  setError('');
+ }
+ function updateOther(){
+  var show=role.value==='other';otherWrap.hidden=!show;otherInput.required=show;
+  if(!show){otherInput.value='';otherInput.setCustomValidity('')}
+ }
+ fileInput.addEventListener('change',update);
+ role.addEventListener('change',updateOther);
+ updateOther();
+ window.SEE_VALIDATE_CV=function(){update();return !fileInput.validationMessage&&!!fileInput.files?.[0]};
+})();
+
 // Static hosting: prepare a message for the visitor's chosen app.
 // Never claim that 2SEE received the message: the visitor must press Send there.
 document.addEventListener('submit',function(e){
@@ -160,20 +233,21 @@ document.addEventListener('submit',function(e){
   var notice=form.querySelector('#see-form-notice');
   if(!notice){notice=elt('div','see-form-notice');notice.id='see-form-notice';notice.setAttribute('role','status');notice.setAttribute('aria-live','polite');form.appendChild(notice)}
   notice.replaceChildren();notice.dataset.error='false';
+  if(isCareer&&window.SEE_VALIDATE_CV&&!window.SEE_VALIDATE_CV()){form.querySelector('#a-cv')?.focus();return;}
   if(!form.reportValidity())return;
   var group=form.querySelector('[data-required-group]');
   if(group&&!group.querySelector('input[type="checkbox"]:checked')){
     notice.dataset.error='true';
-    notice.textContent=lang==='ar'?'اختار خدمة واحدة على الأقل حتى نجهّز طلبك.':'Please select at least one service.';
+    notice.textContent=lang==='ar'?'اختر خدمة واحدة على الأقل لإعداد طلبك.':'Please select at least one service.';
     group.scrollIntoView({behavior:'smooth',block:'center'});return;
   }
   var texts={
-    ar:{name:'الاسم',email:'البريد الإلكتروني',company:'الشركة',services:'الخدمات',message:'تفاصيل المشروع',source:'كيف عرف عنا',role:'المجال',portfolio:'رابط الأعمال',location:'مكان الإقامة',note:'نبذة عن العمل',consent:'الموافقة'},
-    en:{name:'Name',email:'Email',company:'Company',services:'Services',message:'Project details',source:'How you heard about us',role:'Role',portfolio:'Portfolio',location:'Location',note:'About your work',consent:'Consent'}
+    ar:{name:'الاسم',email:'البريد الإلكتروني',company:'الشركة',services:'الخدمات',message:'تفاصيل المشروع',source:'كيف تعرّفت إلينا',role:'الاختصاص',other_role:'اختصاص آخر',portfolio:'رابط الأعمال',location:'مكان الإقامة',note:'نبذة عن العمل',cv:'ملف الـCV',consent:'الموافقة'},
+    en:{name:'Name',email:'Email',company:'Company',services:'Services',message:'Project details',source:'How you heard about us',role:'Specialty',other_role:'Other specialty',portfolio:'Portfolio',location:'Location',note:'About your work',cv:'CV file',consent:'Consent'}
   }[lang];
   var pairs=[];
   var fd=new FormData(form);
-  ['name','email','company','role','portfolio','location','message','note','source'].forEach(function(k){
+  ['name','email','company','role','other_role','portfolio','location','message','note','source'].forEach(function(k){
     var val=String(fd.get(k)||'').trim();
     if(!val)return;
     if(k==='role'||k==='source'){
@@ -182,23 +256,28 @@ document.addEventListener('submit',function(e){
     }
     pairs.push(texts[k]+': '+val);
   });
+  var cv=isCareer?form.querySelector('input[name="cv"]')?.files?.[0]:null;
+  if(cv)pairs.push(texts.cv+': '+cv.name);
   var checked=Array.from(form.querySelectorAll('input[name="services"]:checked'));
   if(checked.length){pairs.push(texts.services+': '+checked.map(function(x){return x.closest('label').querySelector('span').textContent.trim()}).join(lang==='ar'?'، ':', '))}
-  var body=(isCareer?(lang==='ar'?'طلب تعاون جديد إلى 2SEE Media':'New collaboration application — 2SEE Media'):(lang==='ar'?'طلب مشروع جديد إلى 2SEE Media':'New project enquiry — 2SEE Media'))+'\n\n'+pairs.join('\n');
+  var body=(isCareer?(lang==='ar'?'طلب تعاون جديد إلى 2See Media':'New collaboration application — 2SEE Media'):(lang==='ar'?'طلب مشروع جديد إلى 2See Media':'New project enquiry — 2SEE Media'))+'\n\n'+pairs.join('\n');
+  if(cv)body+='\n\n'+(lang==='ar'?'تنبيه: يجب إرفاق السيرة الذاتية يدوياً قبل إرسال الرسالة.':'Reminder: attach the CV file manually before sending.');
   var subject=isCareer?'2SEE Media | Collaboration application':'2SEE Media | Project enquiry';
   var url='';
   if(method==='whatsapp'){
     var phone=String(data.brand.whatsapp||'963964603742').replace(/\D/g,'');
-    if(!phone){notice.textContent=lang==='ar'?'رقم واتساب غير متاح حالياً. اختار الإيميل.':'WhatsApp is unavailable. Please use email.';notice.dataset.error='true';return}
+    if(!phone){notice.textContent=lang==='ar'?'رقم واتساب غير متاح حالياً؛ يُرجى استخدام البريد الإلكتروني.':'WhatsApp is unavailable. Please use email.';notice.dataset.error='true';return}
     url='https://wa.me/'+phone+'?text='+encodeURIComponent(body);
   }else{
     var address=String(data.brand.email||'2see.mediaa@gmail.com').trim();
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)){notice.textContent=lang==='ar'?'عنوان البريد غير صالح حالياً. اختار واتساب.':'Email is unavailable. Please use WhatsApp.';notice.dataset.error='true';return}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)){notice.textContent=lang==='ar'?'عنوان البريد الإلكتروني غير صالح حالياً؛ يُرجى استخدام واتساب.':'Email is unavailable. Please use WhatsApp.';notice.dataset.error='true';return}
     url='mailto:'+address+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   }
-  var a=elt('a');a.href=url;a.textContent=method==='whatsapp'?(lang==='ar'?'فتح واتساب':'Open WhatsApp'):(lang==='ar'?'فتح الإيميل':'Open email');
+  var a=elt('a');a.href=url;a.textContent=method==='whatsapp'?(lang==='ar'?'فتح واتساب':'Open WhatsApp'):(lang==='ar'?'فتح البريد الإلكتروني':'Open email');
   if(method==='whatsapp'){a.target='_blank';a.rel='noopener noreferrer'}
-  var info=elt('span','',method==='whatsapp'?(lang==='ar'?'رح يفتح واتساب مع رسالة جاهزة. اضغط إرسال من هناك.':'WhatsApp opens with your message. Press Send there.'):(lang==='ar'?'رح يفتح تطبيق البريد مع رسالة جاهزة. اضغط إرسال من هناك.':'Your email app opens with your message. Press Send there.'));
+  var handoff=cv?(lang==='ar'?' **مهم:** يُرجى إرفاق ملف السيرة الذاتية ( '+cv.name+' ) يدوياً قبل الضغط على «إرسال».':' **Important:** Attach your CV ('+cv.name+') before you press Send.'):'';
+  var info=elt('span','',method==='whatsapp'?(lang==='ar'?'سيُفتح واتساب مع رسالة جاهزة؛ اضغط «إرسال» لإتمام الطلب.':'WhatsApp opens with your message. Press Send there.'):(lang==='ar'?'سيُفتح تطبيق البريد الإلكتروني مع رسالة جاهزة؛ اضغط «إرسال» لإتمام الطلب.':'Your email app opens with your message. Press Send there.'));
+  info.textContent+=handoff;
   notice.append(info,document.createTextNode(' '),a);
   if(method==='whatsapp')window.open(url,'_blank','noopener,noreferrer');
   else window.location.href=url;

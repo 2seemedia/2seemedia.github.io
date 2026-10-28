@@ -1,3 +1,28 @@
+## V12 — Actual collaboration logos (preview only)
+- Added 14 supplied transparent brand logos after cropping whitespace, retaining original designs.
+- Enabled marquee on index and work by populating real logo data.
+- Silver gradient section, balanced light/dark uniform cards, shadow and continuous animation.
+- Maintains local dashboard controls. Not deployed to GitHub Pages.
+
+# V11 — شريط التعاون
+
+- استبدال شريط الخدمات الأسود في الصفحة الرئيسية بشريط شعارات الجهات والأشخاص الذين تعاونّا معهم، أسفل قسم الأعمال.
+- عرض الشريط كذلك أسفل معرض الأعمال في صفحة «أعمالنا».
+- عنوان محايد «من تعاونّا معهم» لا يفترض استمرار العلاقة أو وجود عقد.
+- شعارات متساوية المساحة، محافظة على النسب الأصلية، مع ظل خفيف وحركة أفقية مستمرة.
+- إضافة إدارة الشعارات إلى لوحة التحكم: رفع PNG/JPG/WebP، إضافة/حذف/ترتيب، الاسم والرابط، سرعة الحركة، عنوان عربي/إنجليزي.
+- لا تظهر أي شعارات افتراضية على الموقع العام: المعاينة وحدها تعرض خانات توضيحية مرقمة حتى تضاف الشعارات الحقيقية.
+- لم تُنشر النسخة V11 على الموقع الرسمي.
+
+## V9 — مراجعة لغوية وتنسيق العناوين
+
+- عنوان أعمالنا «شغلنا بيحكي عنّا» بسطر واحد
+- عنوان خدماتنا «تصوير، مونتاج ومحتوى» بسطر واحد
+- تصحيح «إي، منشتغل» ومراجعة النصوص العربية في جميع الصفحات
+- توحيد العناوين القصيرة وإزالة النقاط الزائدة منها
+- تصحيح إرشادات النشر في لوحة التحكم
+- نسخة معاينة فقط، من دون نشر على الموقع الرسمي
+
 # Changelog
 
 All notable changes to the Agency template are documented in this file.
@@ -80,3 +105,20 @@ and this template follows [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 - Full-screen accessible mobile menu, skip link and scroll-reveal animations
 - Original SVG case-study artwork and illustrated team portraits
 - SEO and Open Graph tags, SVG favicon and social image on every page
+
+## V10 — Arabic copy review
+- Standard written Arabic throughout all public pages and editable CMS entries.
+- Founder section uses «المؤسسون», studio label uses «استيديو», and the about title uses «نحن».
+- All application, CV, FAQ and form handoff messages revised; approved brand slogan retained.
+- New draft key prevents older V9 copy from replacing corrected text.
+- No live deployment.
+
+## V13 — Clear PNG logo ticker
+- Removed all cards, frames, tile borders and tile shadows from collaboration logos.
+- Preserved PNG transparency, applied silhouette-only drop-shadow, equal logo slots, silver backdrop, continuous animation and dashboard.
+- Preview only; do not deploy to the live website before approval.
+
+## V14 — Transparent partner PNGs and founder heading
+- Replaced graphic background spans with actual PNG image elements for silhouette-only shadow; no logo borders, cards or panels.
+- Changed founder section headings on Home and About in both Arabic and English to clearly identify 2See Media founders.
+- Preserved silver animated logo strip, original site and dashboard. Preview only, not deployed.

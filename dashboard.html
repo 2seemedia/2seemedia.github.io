@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><title>2SEE Media | Content Dashboard</title>
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>2SEE Media | Content Dashboard</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;600;700;800&display=swap');
 :root{color-scheme:dark;--bg:#101013;--surface:#1a1a1e;--surface2:#222227;--line:#36363b;--text:#f4f4f4;--muted:#a5a5ad;--accent:#c91524}
@@ -15,26 +15,33 @@ main{min-width:0}.top{padding:25px 32px;border-bottom:1px solid var(--line);disp
 <body>
 <div class="layout">
 <aside class="sidebar">
- <div class="brand"><img src="assets/img/2see-logo.png" alt="2SEE"><div><strong>2SEE MEDIA</strong><small>Website Dashboard</small></div></div>
+ <div class="brand"><img src="assets/img/2see-logo.png" alt="2SEE"><div><strong>2SEE MEDIA</strong><small>لوحة تحكم الموقع</small></div></div>
  <nav class="nav" id="main-nav" aria-label="لوحة التحكم">
-  <button data-tab="content" class="active">النصوص والعبارات</button><button data-tab="sections">الأقسام والظهور</button><button data-tab="works">الأعمال والريلز</button><button data-tab="brand">الهوية والروابط</button><button data-tab="preview">معاينة الموقع</button><button data-tab="publish">النشر والنسخ الاحتياطي</button>
+  <button data-tab="content" class="active">النصوص والعبارات</button><button data-tab="sections">الأقسام والظهور</button><button data-tab="works">الأعمال ومقاطع الفيديو</button><button data-tab="collaborations">الشعارات المتحركة</button><button data-tab="brand">الهوية والروابط</button><button data-tab="preview">معاينة الموقع</button><button data-tab="publish">النشر والنسخ الاحتياطي</button>
  </nav>
- <div class="sidebar-bottom">قالب Agency الأصلي + نظام تعديل 2SEE.<br>كل تعديل بيضل مسودة على جهازك لحد ما تنشريه بنفسك.</div>
+ <div class="sidebar-bottom">قالب Agency الأصلي + لوحة تحكم 2See Media<br>تُحفظ التعديلات كمسودة على جهازك، ولا تظهر للزوار حتى تنشريها.</div>
 </aside>
 <main>
- <header class="top"><div><h1 id="page-title">النصوص والعبارات</h1><p id="page-description">عدّلي كل عبارة، بكل صفحة، وبكل لغة.</p></div><span class="pill" id="draft-badge">مسودة محلية</span></header>
+ <header class="top"><div><h1 id="page-title">النصوص والعبارات</h1><p id="page-description">عدّلي عبارات كل صفحة بالعربية والإنجليزية</p></div><span class="pill" id="draft-badge">مسودة محلية</span></header>
  <div class="content">
+  <section class="panel" id="cms-getting-started" style="background:linear-gradient(125deg,#202025,#17171b);border-color:#53535a">
+   <h2>إدارة موقع 2See Media</h2>
+   <p style="margin:8px 0 15px">يمكنك تعديل النصوص والصور وأغلفة الأعمال، إضافة الأعمال والشعارات أو حذفها، ثم معاينة التغييرات قبل نشرها على الموقع الرسمي.</p>
+   <div class="actions" style="margin-bottom:14px"><a class="btn" href="index.html" target="_blank" rel="noopener">عرض الموقع الرسمي ↗</a><button class="btn" id="refresh-live-content" type="button">تحميل أحدث محتوى منشور</button><button class="btn primary" id="go-publish" type="button">الانتقال إلى النشر</button></div>
+   <p class="small" id="live-content-status" role="status" aria-live="polite">الخطوات: 1. اختاري القسم وعدّلي المحتوى  2. احفظي مسودة وراجعي المعاينة  3. انشري باستخدام صلاحية GitHub</p>
+  </section>
   <section id="tab-content">
    <div class="toolbar"><select class="select" id="page-select" aria-label="الصفحة"></select><select class="select" id="section-select" aria-label="القسم"></select><select class="select" id="kind-select" aria-label="نوع الحقل"><option value="all">كل العناصر</option><option value="text">النصوص</option><option value="image">الصور</option><option value="link">الروابط</option><option value="meta">وصف الموقع</option><option value="other">حقول أخرى</option></select><input class="input" id="search" placeholder="ابحثي عن أي عبارة أو عنصر…" aria-label="بحث"></div>
    <p class="small" id="entry-count"></p><div id="entries"></div><div id="load-more-wrap" class="hidden"><button class="btn" id="load-more">عرض المزيد من الحقول</button></div>
   </section>
   <section id="tab-sections" class="hidden"><div class="panel"><h2>إظهار وإخفاء الأقسام</h2><p>كل قسم من قالب Agency الأصلي فيك تخفيه أو ترجعي تظهريه. الأقسام فيها معلومات 2SEE الحالية وقابلة للتعديل.</p><select class="select" id="section-page" aria-label="اختيار الصفحة"></select><div id="section-list" style="margin-top:18px"></div></div></section>
   <section id="tab-works" class="hidden"><div class="panel"><h2>إدارة معرض الأعمال</h2><p>إضافة، تعديل، حذف، ترتيب، إخفاء وإظهار الأعمال. اختاري «مميز» ليظهر العمل على الصفحة الرئيسية.</p><button class="btn primary" id="add-work">+ إضافة عمل جديد</button></div><div id="works-list"></div><div id="work-editor" class="panel hidden"></div></section>
+  <section id="tab-collaborations" class="hidden"><div class="panel"><h2>شعارات الجهات والأشخاص الذين تعاونّا معهم</h2><p>تظهر الشعارات بحجم موحّد وبحركة مستمرة أسفل الأعمال في الرئيسية وصفحة الأعمال. يمكن إضافة تعاون واحد أو أكثر، ولو كان العمل ريلًا واحدًا فقط. لن تظهر شعارات افتراضية للزوار.</p><div id="collabs-settings"></div><button class="btn primary" id="add-collab">+ إضافة شعار</button></div><div id="collabs-list"></div></section>
   <section id="tab-brand" class="hidden"><div class="panel"><h2>الهوية والإعدادات العامة</h2><div id="brand-fields"></div></div></section>
   <section id="tab-preview" class="hidden"><div class="toolbar"><select class="select" id="preview-page"></select><select class="select" id="preview-lang"><option value="en">English</option><option value="ar">العربية</option></select><button class="btn" id="reload-preview">تحديث المعاينة</button><a class="btn" id="open-preview" href="index.html?cms-preview=1" target="_blank" rel="noopener">فتح بصفحة جديدة</a></div><div class="preview-wrap"><iframe id="preview-frame" title="معاينة 2SEE Media"></iframe></div><p class="small">المعاينة تعرض المسودة من هالجهاز فقط. الموقع الرسمي ما بيتغير إلا بعد النشر.</p></section>
   <section id="tab-publish" class="hidden">
-   <div class="panel"><h2>النسخ الاحتياطي والتصدير</h2><p>فيك تحمّلي ملف المحتوى، أو نسخة JavaScript جاهزة للرفع. كل التعديلات محفوظة محلياً ضمن المتصفح اللي عم تشتغلي منه.</p><div class="actions"><button class="btn" id="export-json">تنزيل نسخة JSON</button><button class="btn" id="export-js">تنزيل site-data.js</button><button class="btn" id="import-json">استيراد نسخة JSON</button><input type="file" id="import-file" accept=".json,application/json" class="hidden"></div></div>
-   <div class="panel"><h2>نشر التعديلات على GitHub Pages</h2><p>هالخيار بيشتغل بعد تركيب نسخة Agency على المستودع. ما بيخزّن رمز GitHub ضمن الموقع أو الملفات، وبيستخدمه فقط وقت الضغط على نشر.</p><div class="note">مهم: الموقع الحالي ما رح يتغير من هالنسخة التجريبية. وقت الاعتماد منركّب ملفات Agency أولاً، وبعدها بتصير التعديلات من هون مباشرة.</div><div class="field" style="margin-top:16px"><label for="github-repo">المستودع (owner/repo)</label><input class="input" id="github-repo" placeholder="2seemedia/2seemedia.github.io" autocomplete="off"></div><div class="field"><label for="github-token">GitHub Fine-grained Token — صلاحية Contents: Read & write فقط</label><input class="input" id="github-token" type="password" autocomplete="off" placeholder="أدخلي الرمز وقت النشر فقط"></div><button class="btn primary" id="publish-github">نشر التعديلات</button><p id="publish-status" class="small" role="status" aria-live="polite"></p></div>
+   <div class="panel"><h2>النسخ الاحتياطي والتصدير</h2><p>فيك تحمّلي ملف المحتوى، أو نسخة JavaScript جاهزة للرفع. تُحفظ مسودتك على المتصفح الحالي، ويمكنك تنزيل نسخة احتياطية لنقلها إلى جهاز آخر.</p><div class="actions"><button class="btn" id="export-json">تنزيل نسخة JSON</button><button class="btn" id="export-js">تنزيل site-data.js</button><button class="btn" id="import-json">استيراد نسخة JSON</button><input type="file" id="import-file" accept=".json,application/json" class="hidden"></div></div>
+   <div class="panel"><h2>نشر التعديلات على GitHub Pages</h2><p>الموقع منشور عبر GitHub Pages. لا يمكن للزوار النشر؛ يلزم استخدام رمز وصول خاص من حساب GitHub المخوّل. لا يُحفظ الرمز في ملفات الموقع أو المسودات.</p><div class="note"><strong>كيف تنشرين للمرة الأولى؟</strong> سجّلي الدخول إلى حساب GitHub الذي يملك مستودع <span dir="ltr">2seemedia/2seemedia.github.io</span>، ثم أنشئي <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Fine-grained Personal Access Token ↗</a> مع تقييد الوصول لهذا المستودع فقط، وصلاحية <b>Contents: Read and write</b>. ألصقيه هنا وقت النشر، ثم اضغطي «نشر التعديلات». لا ترسلي الرمز إلى أي شخص.</div><div class="field" style="margin-top:16px"><label for="github-repo">المستودع (owner/repo)</label><input class="input" id="github-repo" placeholder="2seemedia/2seemedia.github.io" autocomplete="off"></div><div class="field"><label for="github-token">GitHub Fine-grained Token — صلاحية Contents: Read & write فقط</label><input class="input" id="github-token" type="password" autocomplete="off" placeholder="أدخلي الرمز وقت النشر فقط"></div><button class="btn primary" id="publish-github">نشر التعديلات على الموقع الرسمي</button><p id="publish-status" class="small" role="status" aria-live="polite"></p></div>
   </section>
  </div>
  <div class="sticky-actions"><div class="actions"><button class="btn primary" id="save-draft">حفظ المسودة</button><button class="btn" id="quick-preview">معاينة التغييرات</button><button class="btn danger" id="reset-draft">إلغاء كل تعديلاتي المحلية</button></div><span class="status" id="save-status">جاهز للتعديل</span></div>

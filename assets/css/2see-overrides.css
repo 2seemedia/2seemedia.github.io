@@ -322,3 +322,181 @@ html.see-intro-playing .see-intro{display:flex}
 @keyframes see-intro-appear{to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes see-intro-rule{to{transform:scaleX(1)}}
 @media(prefers-reduced-motion:reduce){.see-intro{display:none!important}.see-intro-logo,.see-intro-rule,.see-intro-slogan{animation:none!important}}
+
+/* V8 — job application: clear specialty picker and CV handoff. */
+.see-other-role[hidden],.see-cv-error[hidden]{display:none!important}
+.see-role-select{cursor:pointer}
+.see-cv-field{min-width:0;position:relative}
+.see-cv-drop{display:flex;align-items:center;gap:17px;flex-wrap:wrap;min-height:118px;padding:20px 22px;border:1.5px dashed #bcbab5;border-radius:16px;background:#f6f5f2;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.see-cv-drop:hover,.see-cv-field:focus-within .see-cv-drop{border-color:var(--color-cobalt);background:#faf8f7;box-shadow:0 0 0 3px #c9152410}
+.see-cv-symbol{display:grid;place-items:center;flex:0 0 auto;width:54px;height:54px;border-radius:14px;background:#101010;color:#fff}
+.see-cv-copy{display:flex;flex-direction:column;gap:5px;min-width:160px;flex:1 1 160px;line-height:1.4}
+.see-cv-copy strong{font-size:1.02rem;font-weight:800}
+.see-cv-copy small{font-size:.8rem;color:#75736f}
+.see-cv-pill{display:block;max-width:100%;overflow-wrap:anywhere;flex:1 1 150px;font-size:.8rem;color:#666;border-radius:8px;background:#e9e7e2;padding:9px 11px}
+.see-cv-pill.see-cv-selected{color:#202020;background:#e7e3dc;font-weight:700}
+.see-cv-input{display:block;width:1px;height:1px;opacity:0;position:absolute;top:0;inset-inline-start:0;overflow:hidden;clip-path:inset(50%);pointer-events:none}
+.see-cv-helper{font-size:.82rem;line-height:1.65;margin-top:9px}
+.see-cv-error{font-size:.84rem;color:#a70e1e;margin-top:6px;font-weight:700}
+html[dir="rtl"] .see-cv-drop,html[dir="rtl"] .see-cv-copy,html[dir="rtl"] .see-cv-pill{font-family:var(--font-sans)}
+@media(max-width:640px){.see-cv-drop{padding:16px;gap:12px}.see-cv-symbol{width:45px;height:45px}.see-cv-pill{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.see-cv-drop{transition:none}}
+
+
+/* V9 — concise single-line headings (Arabic and English) without breaking the original reveal. */
+main h1.see-hero-one-line{
+  width:100%!important;max-width:none!important;white-space:nowrap!important;
+  line-height:1.18!important;letter-spacing:-.025em!important;
+  font-size:clamp(1.9rem,7.2vw,7.5rem)!important;
+  text-wrap:nowrap!important;
+}
+main h1.see-hero-one-line .line-mask{display:block!important;overflow:visible!important;padding-block:.12em!important;margin-block:-.12em!important;white-space:nowrap!important}
+main h1.see-hero-one-line .line-mask>span{display:inline-block!important;white-space:nowrap!important;vertical-align:baseline!important}
+main h1.see-hero-services{font-size:clamp(1.55rem,6.2vw,6.7rem)!important}
+main h1.see-hero-case-study{font-size:clamp(1.7rem,7vw,7.1rem)!important}
+html[dir="ltr"] main h1.see-hero-work{font-size:clamp(1.6rem,6.4vw,6.6rem)!important}
+html[dir="ltr"] main h1.see-hero-services{font-size:clamp(1.35rem,5.1vw,5.4rem)!important}
+@media(max-width:640px){
+  main h1.see-hero-one-line{font-size:clamp(1.4rem,7.2vw,2.75rem)!important;line-height:1.28!important}
+  main h1.see-hero-services{font-size:clamp(1.15rem,6.05vw,2.5rem)!important}
+  main h1.see-hero-case-study{font-size:clamp(1.3rem,6.5vw,2.5rem)!important}
+  html[dir="ltr"] main h1.see-hero-work{font-size:clamp(1.1rem,5.1vw,2.2rem)!important}
+  html[dir="ltr"] main h1.see-hero-services{font-size:clamp(1.05rem,4.3vw,2rem)!important}
+}
+
+/* V10: keep the two About heading phrases on two clean lines in Arabic. */
+html[dir="rtl"] main h1.see-hero-about{max-width:none!important;width:100%;font-size:clamp(2.1rem,6vw,6rem)!important;line-height:1.27!important;}
+html[dir="rtl"] main h1.see-hero-about .line-mask{display:block!important;overflow:visible!important;white-space:nowrap!important;padding-block:.09em!important;}
+@media(max-width:640px){html[dir="rtl"] main h1.see-hero-about{font-size:clamp(1.42rem,6.1vw,2.5rem)!important;}}
+
+/* V11: looping collaborations strip replaces the old black services marquee. */
+.see-collabs{padding:26px 0 66px;background:var(--color-paper,#f7f7f7);overflow:hidden;}
+.see-collabs[hidden]{display:none!important;}
+.see-collabs-heading{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:28px;}
+.see-collabs-rule{flex:1;height:1px;background:#dcdcdc;max-width:210px;}
+.see-collabs-title{font-family:var(--font-display);font-size:clamp(1.05rem,2.15vw,1.5rem);font-weight:800;line-height:1.5;text-align:center;white-space:nowrap;color:#151515;}
+.see-collabs-window{overflow:hidden;position:relative;direction:ltr;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);}
+.see-collabs-track{display:flex;width:max-content;direction:ltr;animation:see-collabs-slide var(--see-collabs-speed,34s) linear infinite;will-change:transform;}
+.see-collabs-group{display:flex;align-items:stretch;gap:20px;flex:none;padding-inline-end:20px;}
+.see-collabs-item{box-sizing:border-box;display:flex;align-items:center;justify-content:center;flex:0 0 174px;width:174px;height:108px;padding:16px 19px;border-radius:15px;background:#fff;border:1px solid #ededed;box-shadow:0 6px 20px rgba(18,18,18,.09),0 1px 3px rgba(18,18,18,.045);text-decoration:none;transition:box-shadow .25s ease,transform .25s ease;}
+.see-collabs-item img{display:block;max-width:100%;width:100%;height:72px;object-fit:contain;filter:drop-shadow(0 3px 4px rgba(0,0,0,.16));}
+.see-collabs-item:hover{box-shadow:0 10px 24px rgba(18,18,18,.15);transform:translateY(-2px);}
+.see-collabs-placeholder{display:grid;place-items:center;gap:4px;color:#555;font-size:.82rem;font-weight:700;text-align:center;line-height:1.4;}
+.see-collabs-placeholder svg{width:24px;height:24px;color:#aaa;}
+.see-collabs-demo-note{font-size:.78rem;color:#777;text-align:center;margin:14px 15px 0;}
+@keyframes see-collabs-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:640px){.see-collabs{padding:16px 0 45px}.see-collabs-heading{gap:10px;margin-bottom:18px}.see-collabs-rule{max-width:38px}.see-collabs-title{font-size:1.05rem}.see-collabs-group{gap:12px;padding-inline-end:12px}.see-collabs-item{flex-basis:136px;width:136px;height:86px;padding:12px}.see-collabs-item img{height:56px}}
+@media(prefers-reduced-motion:reduce){.see-collabs-track{animation:none!important}.see-collabs-window{overflow-x:auto;scrollbar-width:thin}}
+
+/* V12 — real partner marks: neutral silver, equal-sized cards, high contrast and soft shadows. */
+.see-collabs{
+  background:linear-gradient(115deg,#b9bec4 0%,#e4e6e9 47%,#b6bac1 100%);
+  border-block:1px solid rgba(34,39,46,.17);
+  padding:38px 0 58px;
+}
+.see-collabs-heading{margin-bottom:26px;gap:20px;}
+.see-collabs-title{color:#181b21;font-size:clamp(1.3rem,2.1vw,1.65rem);font-weight:800;white-space:normal;}
+.see-collabs-rule{background:rgba(35,38,45,.22)}
+.see-collabs-window{padding:11px 0 25px;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+.see-collabs-track{animation-duration:var(--see-collabs-speed,48s);}
+.see-collabs-group{gap:17px;padding-inline-end:17px;}
+.see-collabs-item{
+  flex:0 0 214px;width:214px;height:132px;padding:17px 19px;
+  border-radius:18px;border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 8px 13px rgba(23,28,35,.13),0 18px 29px rgba(23,28,35,.09), inset 0 1px 0 rgba(255,255,255,.36);
+  transition:box-shadow .25s ease,transform .25s ease;
+  overflow:hidden;
+}
+.see-collabs-item--light{background:linear-gradient(145deg,#f1f2f5,#e4e6ea);}
+.see-collabs-item--dark{background:linear-gradient(145deg,#42474f,#2c313a);border-color:rgba(255,255,255,.2);}
+.see-collabs-item img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 3px 3px rgba(0,0,0,.18));}
+.see-collabs-item--dark img{filter:drop-shadow(0 3px 5px rgba(0,0,0,.38));}
+.see-collabs-item:hover{box-shadow:0 10px 20px rgba(23,28,35,.20),0 22px 36px rgba(23,28,35,.14);transform:translateY(-3px);}
+.see-collabs-window:hover .see-collabs-track{animation-play-state:paused;}
+@media(max-width:640px){
+  .see-collabs{padding:26px 0 38px;}
+  .see-collabs-heading{margin-bottom:18px;gap:12px;}
+  .see-collabs-window{padding:9px 0 16px;}
+  .see-collabs-group{gap:12px;padding-inline-end:12px;}
+  .see-collabs-item{flex-basis:156px;width:156px;height:101px;padding:13px 15px;border-radius:14px;}
+  .see-collabs-item img{height:100%;}
+}
+@media(prefers-reduced-motion:reduce){.see-collabs-window:hover .see-collabs-track{animation-play-state:initial;}}
+
+/* V12: background-painted artwork prevents blanks inside scrolling layers. */
+.see-collabs-graphic{display:block;flex:none;width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat;}
+
+
+/* V13 — transparent PNG logos, NO logo cards or frames. Shadow follows each mark's alpha. */
+.see-collabs{
+  background:linear-gradient(115deg,#a0a6ae 0%,#bdc1c7 47%,#a1a7b0 100%);
+  border:0;
+  padding:38px 0 53px;
+}
+.see-collabs-window{padding:13px 0 25px;overflow:hidden;}
+.see-collabs-group{gap:22px;padding-inline-end:22px;align-items:center;}
+.see-collabs .see-collabs-item,
+.see-collabs .see-collabs-item--light,
+.see-collabs .see-collabs-item--dark{
+  flex:0 0 214px;width:214px;height:130px;
+  display:flex;align-items:center;justify-content:center;
+  padding:8px 12px;
+  background:none!important;border:0!important;
+  border-radius:0!important;box-shadow:none!important;
+  overflow:visible;
+  transform:none;
+  transition:none;
+}
+.see-collabs .see-collabs-item:hover{background:none!important;box-shadow:none!important;transform:none!important;}
+.see-collabs .see-collabs-graphic{
+  display:block;width:100%;height:100%;
+  background-color:transparent;
+  background-position:center;background-size:contain;background-repeat:no-repeat;
+  /* Drop-shadow on the transparent logo silhouette, not on a rectangle. */
+  filter:drop-shadow(0px 3px 2px rgba(19,25,35,.58)) drop-shadow(0px 9px 7px rgba(19,25,35,.24));
+  transition:filter .25s ease,transform .25s ease;
+  transform:translateZ(0);
+}
+.see-collabs .see-collabs-item:hover .see-collabs-graphic{
+  transform:scale(1.06);
+  filter:drop-shadow(0px 4px 3px rgba(19,25,35,.64)) drop-shadow(0px 13px 10px rgba(19,25,35,.3));
+}
+@media(max-width:640px){
+  .see-collabs{padding:25px 0 36px;}
+  .see-collabs-group{gap:14px;padding-inline-end:14px;}
+  .see-collabs .see-collabs-item,.see-collabs .see-collabs-item--light,.see-collabs .see-collabs-item--dark{
+    flex-basis:151px;width:151px;height:100px;padding:5px 8px;
+  }
+}
+
+
+/* V14 — true transparent PNG artwork, no cards, shadows follow visible logo pixels */
+.see-collabs .see-collabs-item,
+.see-collabs .see-collabs-item--light,
+.see-collabs .see-collabs-item--dark,
+.see-collabs .see-collabs-item:hover {
+  background:transparent!important;
+  border:none!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  outline:none;
+  transform:none!important;
+}
+.see-collabs .see-collabs-logo {
+  display:block;
+  flex-shrink:0;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  background:transparent;
+  filter:drop-shadow(0 3px 2px rgba(15,19,28,.43)) drop-shadow(0 8px 7px rgba(15,19,28,.2));
+  transform:translateZ(0);
+  transition:filter .25s ease,transform .25s ease;
+}
+.see-collabs .see-collabs-item:hover .see-collabs-logo {
+  transform:scale(1.06);
+  filter:drop-shadow(0 4px 3px rgba(15,19,28,.55)) drop-shadow(0 10px 9px rgba(15,19,28,.25));
+}
+@media(prefers-reduced-motion:reduce){.see-collabs .see-collabs-logo{transition:none}}
