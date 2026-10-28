@@ -76,3 +76,6 @@ html[dir="rtl"] .see-scroll-story .v2-intro h2{line-height:1.3!important}
 @media(prefers-reduced-motion:reduce){.v3-stack-pictures img{transition:none}}
 
 .v3-footer-floor{display:flex;flex-wrap:wrap;align-content:end;gap:14px;padding:14px 20px}.v3-footer-floor.has-layout .v3-badge{position:absolute}.v3-gallery-controls button:disabled{opacity:.35;cursor:default}
+
+/* Keep the reference opening free from inherited page padding. */
+.see-scroll-story main .v3-opening{padding:0!important;margin:0!important}.v3-brand{direction:ltr}.v3-nav-2{background:#f2f0eb;color:#171b17}.v3-nav-3{background:#8f0f1c;color:#fff}.v2-scroll-progress{display:none!important}.v3-scroll-hint{bottom:20%}
