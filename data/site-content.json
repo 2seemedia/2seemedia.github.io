@@ -1625,6 +1625,350 @@
         "label": "Home link (mobile)",
         "en": "index.html",
         "ar": "index.html"
+      },
+      {
+        "key": "index.v2.kicker",
+        "kind": "text",
+        "section": "v2",
+        "label": "استيديو للإنتاج وصناعة المحتوى",
+        "en": "CREATIVE MEDIA STUDIO",
+        "ar": "استيديو للإنتاج وصناعة المحتوى"
+      },
+      {
+        "key": "index.v2.hero1",
+        "kind": "text",
+        "section": "v2",
+        "label": "نصنع حضوراً.",
+        "en": "WE MAKE",
+        "ar": "نصنع حضوراً."
+      },
+      {
+        "key": "index.v2.hero2",
+        "kind": "text",
+        "section": "v2",
+        "label": "ونترك بصمة.",
+        "en": "YOU SEEN.",
+        "ar": "ونترك بصمة."
+      },
+      {
+        "key": "index.v2.lead",
+        "kind": "text",
+        "section": "v2",
+        "label": "من الفكرة للصورة والكلمة، نصنع محتوى يعبّر عن علامتك ويخلّيها تنشاف.",
+        "en": "Ideas, films and content that give your brand a voice — and a presence.",
+        "ar": "من الفكرة للصورة والكلمة، نصنع محتوى يعبّر عن علامتك ويخلّيها تنشاف."
+      },
+      {
+        "key": "index.v2.explore",
+        "kind": "text",
+        "section": "v2",
+        "label": "اكتشف أعمالنا",
+        "en": "EXPLORE OUR WORK",
+        "ar": "اكتشف أعمالنا"
+      },
+      {
+        "key": "index.v2.location",
+        "kind": "text",
+        "section": "v2",
+        "label": "دمشق، سوريا",
+        "en": "DAMASCUS, SYRIA",
+        "ar": "دمشق، سوريا"
+      },
+      {
+        "key": "index.v2.introLabel",
+        "kind": "text",
+        "section": "v2",
+        "label": "هذه 2SEE",
+        "en": "THIS IS 2SEE",
+        "ar": "هذه 2SEE"
+      },
+      {
+        "key": "index.v2.intro",
+        "kind": "text",
+        "section": "v2",
+        "label": "أكثر من محتوى. بصمة تشبهك.",
+        "en": "More than content. A signature that is yours.",
+        "ar": "أكثر من محتوى. بصمة تشبهك."
+      },
+      {
+        "key": "index.v2.introBody",
+        "kind": "text",
+        "section": "v2",
+        "label": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل.",
+        "en": "We bring photography, production, editing, design and social media together. One team, one creative direction, from the first idea to the final frame.",
+        "ar": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل."
+      },
+      {
+        "key": "index.v2.about",
+        "kind": "text",
+        "section": "v2",
+        "label": "تعرّف علينا",
+        "en": "GET TO KNOW US",
+        "ar": "تعرّف علينا"
+      },
+      {
+        "key": "index.v2.workTag",
+        "kind": "text",
+        "section": "v2",
+        "label": "مختارات من أعمالنا",
+        "en": "SELECTED WORK",
+        "ar": "مختارات من أعمالنا"
+      },
+      {
+        "key": "index.v2.workTitle",
+        "kind": "text",
+        "section": "v2",
+        "label": "شغل بيحكي عنّا.",
+        "en": "Made to be seen.",
+        "ar": "شغل بيحكي عنّا."
+      },
+      {
+        "key": "index.v2.workBody",
+        "kind": "text",
+        "section": "v2",
+        "label": "مشاريع مختلفة، قصص حقيقية، وبصمة إبداعية واحدة.",
+        "en": "Real projects. Different stories. One creative point of view.",
+        "ar": "مشاريع مختلفة، قصص حقيقية، وبصمة إبداعية واحدة."
+      },
+      {
+        "key": "index.v2.allWork",
+        "kind": "text",
+        "section": "v2",
+        "label": "كل الأعمال",
+        "en": "ALL PROJECTS",
+        "ar": "كل الأعمال"
+      },
+      {
+        "key": "index.v2.serviceTag",
+        "kind": "text",
+        "section": "v2",
+        "label": "ماذا نفعل؟",
+        "en": "WHAT WE DO",
+        "ar": "ماذا نفعل؟"
+      },
+      {
+        "key": "index.v2.serviceTitle",
+        "kind": "text",
+        "section": "v2",
+        "label": "خطوتك الجاية، برؤيتنا الإبداعية.",
+        "en": "Your next move. Our creative lens.",
+        "ar": "خطوتك الجاية، برؤيتنا الإبداعية."
+      },
+      {
+        "key": "index.v2.serviceBody",
+        "kind": "text",
+        "section": "v2",
+        "label": "من جلسة تصوير لحضور علامتك اليومي، نختار معك الأسلوب الإبداعي المناسب.",
+        "en": "From a single production to your brand’s everyday presence, we shape the right creative approach.",
+        "ar": "من جلسة تصوير لحضور علامتك اليومي، نختار معك الأسلوب الإبداعي المناسب."
+      },
+      {
+        "key": "index.v2.teamTag",
+        "kind": "text",
+        "section": "v2",
+        "label": "وراء 2SEE",
+        "en": "THE PEOPLE BEHIND 2SEE",
+        "ar": "وراء 2SEE"
+      },
+      {
+        "key": "index.v2.teamTitle",
+        "kind": "text",
+        "section": "v2",
+        "label": "مؤسسان. ورؤية واحدة.",
+        "en": "Two founders. One creative vision.",
+        "ar": "مؤسسان. ورؤية واحدة."
+      },
+      {
+        "key": "index.v2.processTag",
+        "kind": "text",
+        "section": "v2",
+        "label": "كيف بتصير الفكرة حقيقة؟",
+        "en": "HOW IT COMES TO LIFE",
+        "ar": "كيف بتصير الفكرة حقيقة؟"
+      },
+      {
+        "key": "index.v2.processTitle",
+        "kind": "text",
+        "section": "v2",
+        "label": "خطوات واضحة. ونتيجة مدروسة.",
+        "en": "A clear path. A considered result.",
+        "ar": "خطوات واضحة. ونتيجة مدروسة."
+      },
+      {
+        "key": "index.v2.serviceLink",
+        "kind": "text",
+        "section": "v2",
+        "label": "نحكي عن مشروعك",
+        "en": "LET’S TALK",
+        "ar": "نحكي عن مشروعك"
+      },
+      {
+        "key": "index.v2.service0",
+        "kind": "text",
+        "section": "services",
+        "label": "التصوير والإنتاج",
+        "en": "Photography & production",
+        "ar": "التصوير والإنتاج"
+      },
+      {
+        "key": "index.v2.serviceDesc0",
+        "kind": "text",
+        "section": "services",
+        "label": "تصوير منتجات وإعلانات ومقابلات، بعناية بالفكرة والكادر والإضاءة.",
+        "en": "Products, brands and stories, captured with intention.",
+        "ar": "تصوير منتجات وإعلانات ومقابلات، بعناية بالفكرة والكادر والإضاءة."
+      },
+      {
+        "key": "index.v2.service1",
+        "kind": "text",
+        "section": "services",
+        "label": "المونتاج والموشن",
+        "en": "Editing & motion",
+        "ar": "المونتاج والموشن"
+      },
+      {
+        "key": "index.v2.serviceDesc1",
+        "kind": "text",
+        "section": "services",
+        "label": "إيقاع بصري وتفاصيل ومؤثرات تخدم القصة وتوصل الرسالة.",
+        "en": "Rhythm, detail and movement that serve your story.",
+        "ar": "إيقاع بصري وتفاصيل ومؤثرات تخدم القصة وتوصل الرسالة."
+      },
+      {
+        "key": "index.v2.service2",
+        "kind": "text",
+        "section": "services",
+        "label": "صناعة المحتوى والحملات",
+        "en": "Content & campaigns",
+        "ar": "صناعة المحتوى والحملات"
+      },
+      {
+        "key": "index.v2.serviceDesc2",
+        "kind": "text",
+        "section": "services",
+        "label": "أفكار ونصوص ومحتوى ينطلق من هوية علامتك والجمهور الذي تخاطبه.",
+        "en": "Concepts, scripts and content with a clear message.",
+        "ar": "أفكار ونصوص ومحتوى ينطلق من هوية علامتك والجمهور الذي تخاطبه."
+      },
+      {
+        "key": "index.v2.service3",
+        "kind": "text",
+        "section": "services",
+        "label": "إدارة التواصل الاجتماعي",
+        "en": "Social media",
+        "ar": "إدارة التواصل الاجتماعي"
+      },
+      {
+        "key": "index.v2.serviceDesc3",
+        "kind": "text",
+        "section": "services",
+        "label": "تخطيط وتنظيم وإدارة محتوى الحسابات، لحضور متناسق ومستمر.",
+        "en": "A consistent presence, from planning to publishing.",
+        "ar": "تخطيط وتنظيم وإدارة محتوى الحسابات، لحضور متناسق ومستمر."
+      },
+      {
+        "key": "index.v2.service4",
+        "kind": "text",
+        "section": "services",
+        "label": "التصميم الغرافيكي",
+        "en": "Graphic design",
+        "ar": "التصميم الغرافيكي"
+      },
+      {
+        "key": "index.v2.serviceDesc4",
+        "kind": "text",
+        "section": "services",
+        "label": "تصاميم بصرية تتكامل مع هويتك وتمنح محتواك شخصية واضحة.",
+        "en": "Visual language that keeps your brand recognizable.",
+        "ar": "تصاميم بصرية تتكامل مع هويتك وتمنح محتواك شخصية واضحة."
+      },
+      {
+        "key": "index.v2.service5",
+        "kind": "text",
+        "section": "services",
+        "label": "الاستيديو والبودكاست",
+        "en": "Studio & podcasts",
+        "ar": "الاستيديو والبودكاست"
+      },
+      {
+        "key": "index.v2.serviceDesc5",
+        "kind": "text",
+        "section": "services",
+        "label": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك.",
+        "en": "A space for conversations, ideas and your next production.",
+        "ar": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك."
+      },
+      {
+        "key": "index.v2.step0",
+        "kind": "text",
+        "section": "process",
+        "label": "نسمع",
+        "en": "Listen",
+        "ar": "نسمع"
+      },
+      {
+        "key": "index.v2.stepDesc0",
+        "kind": "text",
+        "section": "process",
+        "label": "نبدأ بهدفك وجمهورك والرسالة التي تريد إيصالها.",
+        "en": "We start with your goal, audience and the message you want to share.",
+        "ar": "نبدأ بهدفك وجمهورك والرسالة التي تريد إيصالها."
+      },
+      {
+        "key": "index.v2.step1",
+        "kind": "text",
+        "section": "process",
+        "label": "نخطّط",
+        "en": "Shape",
+        "ar": "نخطّط"
+      },
+      {
+        "key": "index.v2.stepDesc1",
+        "kind": "text",
+        "section": "process",
+        "label": "نرسم الفكرة ونضع خطة التنفيذ المناسبة.",
+        "en": "We define the idea and plan the production.",
+        "ar": "نرسم الفكرة ونضع خطة التنفيذ المناسبة."
+      },
+      {
+        "key": "index.v2.step2",
+        "kind": "text",
+        "section": "process",
+        "label": "ننفّذ",
+        "en": "Create",
+        "ar": "ننفّذ"
+      },
+      {
+        "key": "index.v2.stepDesc2",
+        "kind": "text",
+        "section": "process",
+        "label": "نصوّر ونمنتج ونصمّم ضمن رؤية واحدة.",
+        "en": "We film, edit and design with one creative direction.",
+        "ar": "نصوّر ونمنتج ونصمّم ضمن رؤية واحدة."
+      },
+      {
+        "key": "index.v2.step3",
+        "kind": "text",
+        "section": "process",
+        "label": "نسلّم",
+        "en": "Deliver",
+        "ar": "نسلّم"
+      },
+      {
+        "key": "index.v2.stepDesc3",
+        "kind": "text",
+        "section": "process",
+        "label": "نراجع التفاصيل ونسلّم العمل وفق الاتفاق.",
+        "en": "We review the details and deliver the agreed work.",
+        "ar": "نراجع التفاصيل ونسلّم العمل وفق الاتفاق."
+      },
+      {
+        "key": "index.v2.skip",
+        "kind": "text",
+        "section": "v2",
+        "label": "انتقل إلى المحتوى",
+        "en": "Skip to content",
+        "ar": "انتقل إلى المحتوى"
       }
     ],
     "services.html": [
