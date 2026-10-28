@@ -53,3 +53,7 @@ npx wrangler deploy --dry-run
 - https://developers.cloudflare.com/workers/static-assets/binding/
 - https://developers.cloudflare.com/workers/static-assets/routing/advanced/html-handling/
 - https://docs.github.com/en/rest/git/refs
+
+## ربط البناء التجريبي
+
+خدمة الاختبار `2see-admin-staging` مرتبطة بفرع `admin/secure-control-panel`، ومجلد البناء هو جذر المستودع. يبقى النشر الرسمي مقفلاً؛ نجاح البناء لا يعني اكتمال إعداد Cloudflare Access أو حسابات المؤسسين.
