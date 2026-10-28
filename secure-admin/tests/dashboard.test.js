@@ -39,3 +39,9 @@ test('reopening a stale draft preserves stale revision on publish',async()=>{
  const call=calls.find(c=>c.url==='/api/publish');assert.equal(JSON.parse(call.options.body).baseRevision,'old-revision');assert.equal(call.options.headers['X-2SEE-Admin'],'1');assert.match(doc.querySelector('#publish-status').textContent,/conflict fixture/);dom.window.close();
 });
 test('adding a work creates an unpublished draft entry',async()=>{const {dom,w,doc,errors}=await open();doc.querySelector('[data-tab="works"]').click();doc.querySelector('#add-work').click();const saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));assert.equal(saved.works.length,baseline().works.length+1);assert.equal(saved.works[0].visible,false);assert.deepEqual(errors,[]);dom.window.close();});
+
+test('opening text and visual controls does not mutate untouched content',async()=>{
+ const {dom,w,doc}=await open();doc.querySelector('[data-tab="visual"]').click();doc.querySelector('[data-tab="content"]').click();doc.querySelector('#save-draft').click();
+ const saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));delete saved.__adminRevision;
+ assert.deepEqual(saved,baseline());dom.window.close();
+});

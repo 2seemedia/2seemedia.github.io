@@ -36,15 +36,15 @@ function setTab(t){tab=t;$$('[data-tab]').forEach(b=>b.classList.toggle('active'
 $$('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
 function styleControls(entry){
  const details=el('details','style-editor');details.append(el('summary','','تصميم النص · الحجم واللون والإظهار'));
- const st=entry.style||(entry.style={});const grid=el('div','style-controls');
+ const st=entry.style||{};const saveStyle=()=>{entry.style=st;save()};const grid=el('div','style-controls');
  const sizeBox=el('div','field');sizeBox.append(el('label','','حجم الخط بالبكسل (اتركيه فارغاً للحجم الأصلي)'));
  const size=el('input','input');size.type='number';size.min=9;size.max=150;size.step=1;size.placeholder='تلقائي';size.value=st.fontSize??'';
- size.addEventListener('change',()=>{st.fontSize=size.value===''?null:Math.min(150,Math.max(9,Number(size.value)||16));save()});sizeBox.append(size);grid.append(sizeBox);
+ size.addEventListener('change',()=>{st.fontSize=size.value===''?null:Math.min(150,Math.max(9,Number(size.value)||16));saveStyle()});sizeBox.append(size);grid.append(sizeBox);
  const colorBox=el('div','field');colorBox.append(el('label','','لون الخط'));
- const color=el('input','input');color.type='color';color.value=/^#[0-9a-f]{6}$/i.test(st.color||'')?st.color:'#101010';color.addEventListener('input',()=>{st.color=color.value;save()});colorBox.append(color);grid.append(colorBox);
+ const color=el('input','input');color.type='color';color.value=/^#[0-9a-f]{6}$/i.test(st.color||'')?st.color:'#101010';color.addEventListener('input',()=>{st.color=color.value;saveStyle()});colorBox.append(color);grid.append(colorBox);
  const weightBox=el('div','field');weightBox.append(el('label','','سماكة الخط'));
- const weight=el('select','select');[['','حسب التصميم الأصلي'],['normal','عادي'],['500','متوسط'],['600','شبه عريض'],['700','عريض'],['800','عريض جداً'],['900','ثقيل']].forEach(([v,t])=>{let o=el('option','',t);o.value=v;weight.append(o)});weight.value=String(st.fontWeight||'');weight.addEventListener('change',()=>{st.fontWeight=weight.value;save()});weightBox.append(weight);grid.append(weightBox);
- const toggleOption=(key,label)=>{let hold=el('label','toggle');let cb=el('input');cb.type='checkbox';cb.checked=st[key]===true;cb.addEventListener('change',()=>{st[key]=cb.checked;save()});hold.append(cb,el('strong','',label));return hold};
+ const weight=el('select','select');[['','حسب التصميم الأصلي'],['normal','عادي'],['500','متوسط'],['600','شبه عريض'],['700','عريض'],['800','عريض جداً'],['900','ثقيل']].forEach(([v,t])=>{let o=el('option','',t);o.value=v;weight.append(o)});weight.value=String(st.fontWeight||'');weight.addEventListener('change',()=>{st.fontWeight=weight.value;saveStyle()});weightBox.append(weight);grid.append(weightBox);
+ const toggleOption=(key,label)=>{let hold=el('label','toggle');let cb=el('input');cb.type='checkbox';cb.checked=st[key]===true;cb.addEventListener('change',()=>{st[key]=cb.checked;saveStyle()});hold.append(cb,el('strong','',label));return hold};
  grid.append(toggleOption('italic','خط مائل'),toggleOption('underline','خط تحته خط'),toggleOption('hidden','إخفاء العنصر من الموقع'));
  details.append(grid);
  const actions=el('div','style-actions');actions.append(button('استعادة التنسيق الأصلي',()=>{delete entry.style;save();const parent=details.parentNode;const newEditor=styleControls(entry);parent.replaceChild(newEditor,details)}));
