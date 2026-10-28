@@ -1,3 +1,4 @@
+import {passwordRoute,verifyPasswordSession,LoginError} from './password-auth.js';
 import {createRemoteJWKSet, jwtVerify} from 'jose';
 const jwksCache = new Map();
 const PAGES = new Set(['index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html']);
@@ -6,6 +7,7 @@ export class HttpError extends Error { constructor(status,message){super(message
 const fail=(status,message)=>{throw new HttpError(status,message);};
 const json=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json; charset=utf-8'}});
 export async function authenticate(req,env){
+ if(env.AUTH_MODE==='password')return verifyPasswordSession(req,env);
  const domain=env.ACCESS_TEAM_DOMAIN;
  if(!/^[a-z0-9-]+\.cloudflareaccess\.com$/.test(domain||'')||!env.ACCESS_AUD||env.ACCESS_AUD.startsWith('REPLACE'))fail(503,'إعداد تسجيل الدخول غير مكتمل');
  const token=req.headers.get('Cf-Access-Jwt-Assertion');
@@ -23,6 +25,7 @@ function secured(response,path){
  const r=new Response(response.body,response);
  for(const [k,v] of Object.entries({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','X-Robots-Tag':'noindex, nofollow','Permissions-Policy':'camera=(), microphone=(), geolocation=()'}))r.headers.set(k,v);
  r.headers.set('Content-Security-Policy',`frame-ancestors ${path==='/'||path==='/dashboard.html'?"'none'":"'self'"}; object-src 'none'; base-uri 'self'`);
+ if(['/login','/login.html','/assets/js/login.js'].includes(path))r.headers.set('Content-Security-Policy',"default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'");
  return r;
 }
 export function parseContent(source){
@@ -54,7 +57,7 @@ export function validateContent(data,baseline){
 }
 export function createHandler({verify=authenticate,request=fetch}={}){
  async function gh(env,path,method='GET',body){
-  const r=await request(`https://api.github.com/repos/${env.GITHUB_REPO}/${path}`,{method,headers:{Authorization:`Bearer ${env.GITHUB_TOKEN}`,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'2SEE-secure-admin','Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
+  const r=await request(`https://api.github.com/repos/${env.GITHUB_REPO}/${path}`,{method,headers:{...(env.GITHUB_TOKEN?{Authorization:`Bearer ${env.GITHUB_TOKEN}`} : {}),Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'2SEE-secure-admin','Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
   const out=await r.json();if(!r.ok)fail(r.status===409||r.status===422?409:502,r.status===409||r.status===422?'المحتوى تغيّر؛ أعيدي تحميل النسخة المنشورة قبل النشر':'تعذّر الاتصال بـ GitHub');return out;
  }
  async function read(env){
@@ -67,6 +70,7 @@ export function createHandler({verify=authenticate,request=fetch}={}){
   if(env.PUBLISH_ENABLED!=='true')fail(423,'النشر مقفل حتى اكتمال الاختبار والموافقة');
   if(env.GITHUB_BRANCH===(env.PRODUCTION_BRANCH||'main')&&env.PRODUCTION_APPROVED!=='true')fail(423,'النشر الرسمي يحتاج موافقة التفعيل');
   if(!/^[\w.-]+\/[\w.-]+$/.test(env.GITHUB_REPO||'')||!env.GITHUB_BRANCH)fail(503,'إعداد المستودع غير مكتمل');
+  if(!env.GITHUB_TOKEN)fail(503,'بقي ربط صلاحية النشر بـGitHub');
   const head=await gh(env,`git/ref/heads/${env.GITHUB_BRANCH}`);
   const current=await read({...env,GITHUB_BRANCH:head.object.sha});
   if(input.baseRevision!==current.revision)fail(409,'توجد تعديلات أحدث؛ احفظي مسودتك ثم حمّلي النسخة المنشورة وراجعي الفرق');
@@ -107,10 +111,11 @@ export function createHandler({verify=authenticate,request=fetch}={}){
  return {async fetch(req,env){
   const u=new URL(req.url);
   try{
+   if(env.AUTH_MODE==='password'){const result=await passwordRoute(req,env);if(result)return secured(result,u.pathname);}
    const user=await verify(req,env);
    if(u.pathname.startsWith('/api/')){
     if(u.pathname==='/api/content'&&req.method==='GET')return secured(json(await read(env)),u.pathname);
-    if(u.pathname==='/api/session'&&req.method==='GET')return secured(json({email:user.email,branch:env.GITHUB_BRANCH,publishEnabled:env.PUBLISH_ENABLED==='true'&&(env.GITHUB_BRANCH!==(env.PRODUCTION_BRANCH||'main')||env.PRODUCTION_APPROVED==='true'),production:env.GITHUB_BRANCH===(env.PRODUCTION_BRANCH||'main')}),u.pathname);
+    if(u.pathname==='/api/session'&&req.method==='GET')return secured(json({name:user.name||user.email,email:user.email,branch:env.GITHUB_BRANCH,publishEnabled:env.PUBLISH_ENABLED==='true'&&(env.GITHUB_BRANCH!==(env.PRODUCTION_BRANCH||'main')||env.PRODUCTION_APPROVED==='true'),production:env.GITHUB_BRANCH===(env.PRODUCTION_BRANCH||'main')}),u.pathname);
     if(u.pathname==='/api/publish'){
      if(req.method!=='POST')fail(405,'POST required');
      if(req.headers.get('origin')!==u.origin||req.headers.get('x-2see-admin')!=='1')fail(403,'طلب من مصدر غير مسموح');
@@ -140,7 +145,10 @@ export function createHandler({verify=authenticate,request=fetch}={}){
     return secured(new Response(req.method==='HEAD'?null:bytes,{headers:{'Content-Type':type}}),path);
    }
    return secured(asset,path);
-  }catch(e){return secured(json({error:e instanceof HttpError?e.message:'حدث خطأ في الخدمة؛ لم يتم تأكيد النشر'},e.status||500),u.pathname);}
+  }catch(e){
+   if(env.AUTH_MODE==='password'&&[401,503].includes(e.status)&&req.method==='GET'&&['/','/dashboard.html'].includes(u.pathname))return secured(new Response(null,{status:303,headers:{Location:'/login'}}),u.pathname);
+   return secured(json({error:e instanceof HttpError||e instanceof LoginError?e.message:'حدث خطأ في الخدمة؛ لم يتم تأكيد النشر'},e.status||500),u.pathname);
+  }
  }};
 }
 export default createHandler();

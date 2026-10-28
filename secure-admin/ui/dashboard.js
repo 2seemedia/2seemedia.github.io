@@ -12,7 +12,8 @@ try{
 }catch(error){document.body.textContent='تعذّر فتح لوحة الإدارة: '+error.message;return;}
 const original=loaded.content;
 let baseRevision=loaded.revision;
-$('#session-status').textContent='الحساب: '+session.email+' · الفرع: '+session.branch;
+$('#session-status').textContent='الحساب: '+(session.name||session.email)+' · '+(session.production?'الموقع الرسمي':'نسخة الاختبار');
+$('#logout').addEventListener('click',async()=>{const r=await fetch('/api/logout',{method:'POST',headers:{'X-2SEE-Admin':'1'}});if(r.ok)location.replace('/login');});
 $('#publish-github').disabled=!session.publishEnabled;
 $('#publish-github').textContent=session.publishEnabled?(session.production?'نشر على الموقع الرسمي':'نشر تجريبي على فرع الاختبار'):'النشر مقفل';
 if(!original){alert('تعذر قراءة بيانات الموقع');return}
