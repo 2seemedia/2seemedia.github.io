@@ -35,7 +35,7 @@ main{min-width:0}.top{padding:25px 32px;border-bottom:1px solid var(--line);disp
  <nav class="nav" id="main-nav" aria-label="لوحة التحكم">
   <button data-tab="content" class="active">النصوص والتصميم</button><button data-tab="visual">المحرر المرئي ✦</button><button data-tab="sections">الأقسام والظهور</button><button data-tab="works">الأعمال ومقاطع الفيديو</button><button data-tab="collaborations">الشعارات المتحركة</button><button data-tab="brand">الهوية والروابط</button><button data-tab="preview">معاينة الموقع</button><button data-tab="publish">النشر والنسخ الاحتياطي</button>
  </nav>
- <div class="sidebar-bottom">قالب Agency الأصلي + لوحة تحكم 2See Media<br>تُحفظ التعديلات كمسودة على جهازك، ولا تظهر للزوار حتى تنشريها.</div>
+ <div class="sidebar-bottom">لوحة إدارة 2SEE Media<br>تُحفظ التعديلات كمسودة على جهازك، ولا تظهر للزوار حتى تنشريها.</div>
 </aside>
 <main>
  <header class="top"><div><h1 id="page-title">النصوص والعبارات</h1><p id="page-description">عدّلي عبارات كل صفحة بالعربية والإنجليزية</p></div><span class="pill" id="draft-badge">مسودة محلية</span></header>
@@ -43,7 +43,7 @@ main{min-width:0}.top{padding:25px 32px;border-bottom:1px solid var(--line);disp
   <section class="panel" id="cms-getting-started" style="background:linear-gradient(125deg,#202025,#17171b);border-color:#53535a">
    <h2>إدارة موقع 2See Media</h2>
    <p style="margin:8px 0 15px">يمكنك تعديل النصوص والصور وأغلفة الأعمال، إضافة الأعمال والشعارات أو حذفها، ثم معاينة التغييرات قبل نشرها على الموقع الرسمي.</p>
-   <div class="actions" style="margin-bottom:14px"><a class="btn" href="index.html" target="_blank" rel="noopener">عرض الموقع الرسمي ↗</a><button class="btn" id="refresh-live-content" type="button">تحميل أحدث محتوى منشور</button><button class="btn primary" id="go-publish" type="button">الانتقال إلى النشر</button></div>
+   <div class="actions" style="margin-bottom:14px"><a class="btn" href="https://2seemedia.github.io/" target="_blank" rel="noopener noreferrer">عرض الموقع الرسمي ↗</a><button class="btn" id="refresh-live-content" type="button">تحميل أحدث محتوى منشور</button><button class="btn primary" id="go-publish" type="button">الانتقال إلى النشر</button></div>
    <p class="small" id="live-content-status" role="status" aria-live="polite">الخطوات: 1. اختاري القسم وعدّلي المحتوى  2. احفظي مسودة وراجعي المعاينة  3. انشري باستخدام صلاحية GitHub</p>
   </section>
   <section id="tab-content">
@@ -57,7 +57,7 @@ main{min-width:0}.top{padding:25px 32px;border-bottom:1px solid var(--line);disp
       <div class="preview-wrap visual-frame"><iframe id="visual-frame" title="المحرر المرئي للموقع" loading="lazy"></iframe></div>
     </div>
   </section>
-  <section id="tab-sections" class="hidden"><div class="panel"><h2>إظهار وإخفاء الأقسام</h2><p>كل قسم من قالب Agency الأصلي فيك تخفيه أو ترجعي تظهريه. الأقسام فيها معلومات 2SEE الحالية وقابلة للتعديل.</p><select class="select" id="section-page" aria-label="اختيار الصفحة"></select><div id="section-list" style="margin-top:18px"></div></div></section>
+  <section id="tab-sections" class="hidden"><div class="panel"><h2>إظهار وإخفاء الأقسام</h2><p>فيك تخفي أي قسم بالموقع أو ترجعي تظهريه. الأقسام فيها معلومات 2SEE الحالية وقابلة للتعديل.</p><select class="select" id="section-page" aria-label="اختيار الصفحة"></select><div id="section-list" style="margin-top:18px"></div></div></section>
   <section id="tab-works" class="hidden"><div class="panel"><h2>إدارة معرض الأعمال</h2><p>إضافة، تعديل، حذف، ترتيب، إخفاء وإظهار الأعمال. اختاري «مميز» ليظهر العمل على الصفحة الرئيسية.</p><button class="btn primary" id="add-work">+ إضافة عمل جديد</button></div><div id="works-list"></div><div id="work-editor" class="panel hidden"></div></section>
   <section id="tab-collaborations" class="hidden"><div class="panel"><h2>شعارات الجهات والأشخاص الذين تعاونّا معهم</h2><p>تظهر الشعارات بحجم موحّد وبحركة مستمرة أسفل الأعمال في الرئيسية وصفحة الأعمال. يمكن إضافة تعاون واحد أو أكثر، ولو كان العمل ريلًا واحدًا فقط. لن تظهر شعارات افتراضية للزوار.</p><div id="collabs-settings"></div><button class="btn primary" id="add-collab">+ إضافة شعار</button></div><div id="collabs-list"></div></section>
   <section id="tab-brand" class="hidden"><div class="panel"><h2>الهوية والإعدادات العامة</h2><div id="brand-fields"></div></div></section>
@@ -67,7 +67,7 @@ main{min-width:0}.top{padding:25px 32px;border-bottom:1px solid var(--line);disp
    <div class="panel"><h2>النشر الآمن</h2><p id="session-status" role="status">جارٍ التحقق من الجلسة…</p><div class="note">المعاينة والمسودة لا تغيّران الموقع الرسمي. النشر التجريبي يذهب لفرع اختبار منفصل. النشر الرسمي مقفل حتى اكتمال الاختبار والموافقة.</div><button class="btn primary" id="publish-github" disabled>النشر مقفل</button><p id="publish-status" class="small" role="status" aria-live="polite"></p><button class="btn" id="logout" type="button">تسجيل الخروج</button></div>
   </section>
  </div>
- <div class="sticky-actions"><div class="actions"><button class="btn primary" id="save-draft">حفظ المسودة</button><button class="btn btn-publish-quick" id="quick-publish" type="button">نشر الآن ↗</button><button class="btn" id="quick-preview">معاينة التغييرات</button><button class="btn danger" id="reset-draft">إلغاء كل تعديلاتي المحلية</button></div><span class="status" id="save-status">جاهز للتعديل</span></div>
+ <div class="sticky-actions"><div class="actions"><button class="btn primary" id="save-draft">حفظ المسودة</button><button class="btn btn-publish-quick" id="quick-publish" type="button">إعدادات النشر ↗</button><button class="btn" id="quick-preview">معاينة التغييرات</button><button class="btn danger" id="reset-draft">إلغاء كل تعديلاتي المحلية</button></div><span class="status" id="save-status">جاهز للتعديل</span></div>
 </main>
 </div>
 <script src="assets/js/dashboard.js"></script>
