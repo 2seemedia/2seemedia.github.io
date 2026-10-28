@@ -5,6 +5,7 @@
   if(!base)return;
   var params=new URLSearchParams(location.search);
   var preview=params.get('cms-preview')==='1';
+  var visualEdit=preview&&params.get('cms-edit')==='1';
   var draft=null;
   if(preview){try{draft=JSON.parse(localStorage.getItem('2see-agency-draft-v12')||'null')}catch(e){}}
   var data=draft&&draft.pages&&draft.brand?draft:base;
@@ -34,7 +35,23 @@
   if(!data.pages[page])page='index.html';
   var entries=data.pages[page]||[];
   var byKey={};entries.forEach(function(e){byKey[e.key]=e});
-  function value(entry){return String((lang==='ar'?entry.ar:entry.en)||entry.en||'')}
+  function value(entry){var v=lang==='ar'?entry.ar:entry.en;return String(v===undefined||v===null?(entry.en??''):v)}
+  function applyEntryStyle(element,entry){
+    var st=entry.style||{};
+    if(st.hidden===true){element.hidden=true;element.style.setProperty('display','none','important');}
+    if(st.fontSize!==undefined&&st.fontSize!==null&&st.fontSize!==''){
+      var size=Number(st.fontSize);if(Number.isFinite(size))element.style.fontSize=Math.min(150,Math.max(9,size))+'px';
+    }
+    if(typeof st.color==='string'&&/^#[0-9a-f]{6}$/i.test(st.color))element.style.color=st.color;
+    if(['normal','500','600','700','800','900'].includes(String(st.fontWeight)))element.style.fontWeight=String(st.fontWeight);
+    if(st.italic===true)element.style.fontStyle='italic';
+    if(st.underline===true)element.style.textDecoration='underline';
+    if(visualEdit){
+      element.dataset.seeEditKey=entry.key;
+      element.title=(lang==='ar'?'انقري لتعديل: ':'Click to edit: ')+(entry.label||entry.key);
+      element.style.cursor='pointer';
+    }
+  }
   var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_COMMENT);
   var comments=[];while(walker.nextNode())comments.push(walker.currentNode);
   comments.forEach(function(node){
@@ -42,7 +59,16 @@
     var item=byKey[node.nodeValue.slice(4)],next=node.nextSibling;
     if(!item||!next||next.nodeType!==Node.TEXT_NODE)return;
     var old=next.nodeValue||'',left=old.match(/^\s*/)[0],right=old.match(/\s*$/)[0];
-    next.nodeValue=left+value(item)+right;
+    // Keep whitespace separate, but wrap the actual CMS text in an inline span.
+    // This enables precise per-text styling without affecting icons or neighbouring links.
+    var parent=next.parentNode;
+    var span=document.createElement('span');span.setAttribute('data-see-text-key',item.key);
+    span.textContent=value(item);
+    parent.insertBefore(document.createTextNode(left),next);
+    parent.insertBefore(span,next);
+    if(right)parent.insertBefore(document.createTextNode(right),next);
+    parent.removeChild(next);
+    applyEntryStyle(span,item);
   });
   function safeLink(u){
     try{
@@ -63,7 +89,15 @@
     else if(e.kind==='placeholder')el.setAttribute('placeholder',v);
     else if(e.kind==='label')el.setAttribute('aria-label',v);
     else if(e.kind==='option')el.textContent=v;
+    if(e.kind!=='title'&&e.kind!=='meta')applyEntryStyle(el,e);
   });
+  // Select CMS text on the actual website preview, without navigating links/forms.
+  if(visualEdit){
+    var editCss=document.createElement('style');editCss.textContent='[data-see-edit-key]:hover{outline:2px dashed #c91524!important;outline-offset:4px;box-shadow:0 0 0 4px rgba(201,21,36,.12)}[data-see-edit-key]{position:relative}';document.head.appendChild(editCss);
+    document.addEventListener('click',function(evt){var hit=evt.target.closest('[data-see-edit-key]');if(!hit)return;evt.preventDefault();evt.stopImmediatePropagation();
+      if(window.parent&&window.parent!==window)window.parent.postMessage({type:'2see:edit-element',page:page,key:hit.dataset.seeEditKey},location.origin);
+    },true);
+  }
   // Brand image and verified contact info can be changed from one place.
   document.querySelectorAll('header a[href="index.html"] img,footer a[href="index.html"] img,.see-marquee-logo,.see-intro-logo').forEach(function(img){
     if(data.brand.logo)img.src=data.brand.logo;

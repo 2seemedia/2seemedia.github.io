@@ -10,9 +10,10 @@ let data=clone(original);try{
  if(saved&&saved.version===original.version&&saved.pages)data=saved;
 
 }catch(e){}
-let tab='content',page='index.html',section='index.section1',kind='all',search='',limit=35,editWork=-1;
+let tab='content',page='index.html',section='all',kind='all',search='',limit=35,editWork=-1;
+let selectedCmsKey='',sessionGitHubToken='';
 const labels={'index.html':'الرئيسية','services.html':'الخدمات','work.html':'الأعمال','about.html':'من نحن','careers.html':'التعاون','contact.html':'التواصل','case-study.html':'تفاصيل مشروع','404.html':'صفحة غير موجودة'};
-const tabTitles={content:['النصوص والعبارات','يمكن تعديل النصوص والروابط والصور باللغتين.'],sections:['الأقسام والظهور','التحكم في الأقسام الظاهرة بكل صفحة.'],works:['الأعمال ومقاطع الفيديو','إدارة جميع الأعمال من واجهة واحدة.'],collaborations:['الشعارات المتحركة','إضافة شعارات التعاون وتعديل حركتها.'],brand:['الهوية والروابط','الشعار والألوان ومعلومات التواصل واللغة.'],preview:['معاينة الموقع','معاينة التعديلات على تصميم Agency الأصلي.'],publish:['النشر والنسخ الاحتياطي','تصدير نسخة احتياطية أو نشر التعديلات بعد اعتمادها.']};
+const tabTitles={visual:['المحرر المرئي','انقري على النص داخل المعاينة لتعديل حجمه ولونه أو إخفائه.'],content:['النصوص والتصميم','تعديل العبارات وأحجام الخطوط والألوان وظهور كل عنصر.'],sections:['الأقسام والظهور','التحكم في الأقسام الظاهرة بكل صفحة.'],works:['الأعمال ومقاطع الفيديو','إدارة جميع الأعمال من واجهة واحدة.'],collaborations:['الشعارات المتحركة','إضافة شعارات التعاون وتعديل حركتها.'],brand:['الهوية والروابط','الشعار والألوان ومعلومات التواصل واللغة.'],preview:['معاينة الموقع','معاينة التعديلات على تصميم Agency الأصلي.'],publish:['النشر والنسخ الاحتياطي','تصدير نسخة احتياطية أو نشر التعديلات بعد اعتمادها.']};
 function save(){try{localStorage.setItem(KEY,JSON.stringify(data));$('#save-status').textContent='تم حفظ المسودة على هذا الجهاز ✓';$('#draft-badge').textContent='مسودة محفوظة';return true}catch(e){$('#save-status').textContent='فشل الحفظ: حجم الصور كبير، استخدمي رابط صورة أو صورة أصغر.';return false}}
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
 function updateShared(entry,fieldName,newValue){const old=entry[fieldName];entry[fieldName]=newValue;if(['header','footer'].includes(entry.section)&&old!==newValue){Object.values(data.pages).flat().forEach(e=>{if(e!==entry&&e.section===entry.section&&e.kind===entry.kind&&e[fieldName]===old)e[fieldName]=newValue})}}
@@ -21,6 +22,39 @@ function button(text,click,cls='btn'){const b=el('button',cls,text);b.type='butt
 function selectPages(selector){const e=$(selector);e.replaceChildren();Object.keys(data.pages).forEach(p=>{const o=el('option','',labels[p]||p);o.value=p;e.append(o)});e.value=page;e.addEventListener('change',()=>{page=e.value;section='all';limit=35;render()})}
 function setTab(t){tab=t;$$('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));$$('[id^="tab-"]').forEach(x=>x.classList.add('hidden'));$('#tab-'+t).classList.remove('hidden');$('#page-title').textContent=tabTitles[t][0];$('#page-description').textContent=tabTitles[t][1];render()}
 $$('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+function styleControls(entry){
+ const details=el('details','style-editor');details.append(el('summary','','تصميم النص · الحجم واللون والإظهار'));
+ const st=entry.style||(entry.style={});const grid=el('div','style-controls');
+ const sizeBox=el('div','field');sizeBox.append(el('label','','حجم الخط بالبكسل (اتركيه فارغاً للحجم الأصلي)'));
+ const size=el('input','input');size.type='number';size.min=9;size.max=150;size.step=1;size.placeholder='تلقائي';size.value=st.fontSize??'';
+ size.addEventListener('change',()=>{st.fontSize=size.value===''?null:Math.min(150,Math.max(9,Number(size.value)||16));save()});sizeBox.append(size);grid.append(sizeBox);
+ const colorBox=el('div','field');colorBox.append(el('label','','لون الخط'));
+ const color=el('input','input');color.type='color';color.value=/^#[0-9a-f]{6}$/i.test(st.color||'')?st.color:'#101010';color.addEventListener('input',()=>{st.color=color.value;save()});colorBox.append(color);grid.append(colorBox);
+ const weightBox=el('div','field');weightBox.append(el('label','','سماكة الخط'));
+ const weight=el('select','select');[['','حسب التصميم الأصلي'],['normal','عادي'],['500','متوسط'],['600','شبه عريض'],['700','عريض'],['800','عريض جداً'],['900','ثقيل']].forEach(([v,t])=>{let o=el('option','',t);o.value=v;weight.append(o)});weight.value=String(st.fontWeight||'');weight.addEventListener('change',()=>{st.fontWeight=weight.value;save()});weightBox.append(weight);grid.append(weightBox);
+ const toggleOption=(key,label)=>{let hold=el('label','toggle');let cb=el('input');cb.type='checkbox';cb.checked=st[key]===true;cb.addEventListener('change',()=>{st[key]=cb.checked;save()});hold.append(cb,el('strong','',label));return hold};
+ grid.append(toggleOption('italic','خط مائل'),toggleOption('underline','خط تحته خط'),toggleOption('hidden','إخفاء العنصر من الموقع'));
+ details.append(grid);
+ const actions=el('div','style-actions');actions.append(button('استعادة التنسيق الأصلي',()=>{delete entry.style;save();const parent=details.parentNode;const newEditor=styleControls(entry);parent.replaceChild(newEditor,details)}));
+ if(entry.kind==='text')actions.append(button('حذف نص هذه العبارة',()=>{if(!confirm('هل تريدين حذف نص العبارة في اللغتين؟ يمكن إعادته لاحقاً.'))return;updateShared(entry,'en','');updateShared(entry,'ar','');save();render()},'btn danger'));
+ details.append(actions);return details;
+}
+function renderEntryEditor(e){
+ const wrap=el('div','entry');wrap.dataset.entryKey=e.key;if(selectedCmsKey===e.key)wrap.classList.add('is-selected');
+ const head=el('div','entry-header');head.append(el('strong','',e.label||e.key),el('span','tag',e.kind));wrap.append(head);
+ const grid=el('div','grid2');const isText=e.kind==='text';
+ grid.append(field(isText?'English':'القيمة / الرابط',e.en,v=>{updateShared(e,'en',v);if(!isText)updateShared(e,'ar',v)},isText&&String(e.en||'').length>65));
+ if(isText)grid.append(field('العربية',e.ar,v=>updateShared(e,'ar',v),true));
+ else if(e.kind==='image'){
+  const extra=el('div','field');const lbl=el('label','','رفع صورة من جهازك (PNG / JPG / WebP — أقل من 1.2MB)');const upload=el('input','fileinput');upload.type='file';upload.accept='image/png,image/jpeg,image/webp';upload.addEventListener('change',async()=>{
+   const file=upload.files?.[0];if(!file)return;if(file.size>1.2*1024*1024){alert('يُرجى اختيار صورة أصغر من 1.2MB');return}
+   const reader=new FileReader();reader.onload=()=>{e.en=reader.result;e.ar=reader.result;if(save())render()};reader.readAsDataURL(file)
+  });extra.append(lbl,upload);grid.append(extra);
+ }
+ wrap.append(grid);
+ if(['text','label','option','image'].includes(e.kind))wrap.append(styleControls(e));
+ return wrap;
+}
 function renderContent(){
  const sections=$('#section-select');sections.replaceChildren();let o=el('option','','كل الأقسام');o.value='all';sections.append(o);
  const all=Object.entries(data.sections).filter(([k,v])=>v.page===page);
@@ -31,17 +65,7 @@ function renderContent(){
  $('#entry-count').textContent=entries.length+' عنصر قابل للتعديل — المعروض '+Math.min(limit,entries.length);
  const list=$('#entries');list.replaceChildren();
  entries.slice(0,limit).forEach(e=>{
-  const wrap=el('div','entry');const head=el('div','entry-header');head.append(el('strong','',e.label||e.key),el('span','tag',e.kind));wrap.append(head);
-  const grid=el('div','grid2');const isText=e.kind==='text';
-  grid.append(field(isText?'English':'القيمة / الرابط',e.en,v=>{updateShared(e,'en',v);if(!isText)updateShared(e,'ar',v)},isText&&e.en.length>65));
-  if(isText)grid.append(field('العربية',e.ar,v=>updateShared(e,'ar',v),true));
-  else if(e.kind==='image'){
-   const extra=el('div','field');const lbl=el('label','','رفع صورة من جهازك (PNG / JPG / WebP — أقل من 1.2MB)');const upload=el('input','fileinput');upload.type='file';upload.accept='image/png,image/jpeg,image/webp';upload.addEventListener('change',async()=>{
-    const file=upload.files?.[0];if(!file)return;if(file.size>1.2*1024*1024){alert('يُرجى اختيار صورة أصغر من 1.2MB');return}
-    const reader=new FileReader();reader.onload=()=>{e.en=reader.result;e.ar=reader.result;if(save())renderContent()};reader.readAsDataURL(file)
-   });extra.append(lbl,upload);grid.append(extra);
-  }
-  wrap.append(grid);list.append(wrap)
+  list.append(renderEntryEditor(e));
  });
  $('#load-more-wrap').classList.toggle('hidden',limit>=entries.length)
 }
@@ -96,8 +120,24 @@ function renderBrand(){const root=$('#brand-fields');root.replaceChildren();cons
 function previewUrl(){return page+'?cms-preview=1&lang='+$('#preview-lang').value}
 function renderPreview(){const frame=$('#preview-frame');$('#preview-page').value=page;frame.src=previewUrl();$('#open-preview').href=previewUrl()}
 $('#preview-page').addEventListener('change',e=>{page=e.target.value;renderPreview()});$('#preview-lang').addEventListener('change',renderPreview);$('#reload-preview').addEventListener('click',renderPreview);
-function render(){if(tab==='content')renderContent();if(tab==='sections')renderSections();if(tab==='works')renderWorks();if(tab==='collaborations')renderCollaborations();if(tab==='brand')renderBrand();if(tab==='preview')renderPreview();if(tab==='publish')$('#github-repo').value=data.settings.githubRepo||'2seemedia/2seemedia.github.io';}
+function render(){if(tab==='content')renderContent();if(tab==='sections')renderSections();if(tab==='works')renderWorks();if(tab==='collaborations')renderCollaborations();if(tab==='brand')renderBrand();if(tab==='preview')renderPreview();if(tab==='visual')renderVisual();if(tab==='publish')$('#github-repo').value=data.settings.githubRepo||'2seemedia/2seemedia.github.io';}
 function download(name,content,type){const blob=new Blob([content],{type:type||'application/octet-stream'});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+function renderVisual(){
+ $('#visual-page').value=page;$('#visual-frame').src=page+'?cms-preview=1&cms-edit=1&lang='+$('#visual-lang').value;
+}
+$('#visual-page').addEventListener('change',e=>{page=e.target.value;selectedCmsKey='';$('#visual-selected').textContent='انقري على أي نص في المعاينة لاختياره';renderVisual()});
+$('#visual-lang').addEventListener('change',renderVisual);
+$('#visual-reload').addEventListener('click',renderVisual);
+window.addEventListener('message',e=>{
+ if(e.origin!==location.origin||e.source!==$('#visual-frame').contentWindow||e.data?.type!=='2see:edit-element')return;
+ const key=String(e.data.key||'');const found=(data.pages[e.data.page]||[]).find(x=>x.key===key);if(!found)return;
+ selectedCmsKey=key;page=e.data.page;const slot=$('#visual-selected');slot.replaceChildren();slot.append(renderEntryEditor(found));
+ slot.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+$('#quick-publish').addEventListener('click',()=>{
+ save();setTab('publish');$('#github-token').focus();
+ $('#publish-status').textContent=sessionGitHubToken?'جلسة GitHub متصلة. اضغطي نشر الآن على الموقع الرسمي لتطبيق التغييرات.':'أدخلي رمز GitHub لأول مرة، ثم اضغطي نشر الآن؛ الرمز سيبقى لهذه الجلسة فقط.';
+});
 $('#go-publish').addEventListener('click',()=>setTab('publish'));
 $('#refresh-live-content').addEventListener('click',async()=>{
  const status=$('#live-content-status'),btn=$('#refresh-live-content');
@@ -125,7 +165,7 @@ function encodeUTF8(s){const bytes=new TextEncoder().encode(s);let binary='';for
 async function gh(url,token,method='GET',body){const r=await fetch('https://api.github.com'+url,{method,headers:{'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});const t=await r.text();let o={};try{o=JSON.parse(t)}catch{}if(!r.ok)throw Error((o.message||'GitHub error')+' (HTTP '+r.status+')');return o}
 function bytesToBase64(dataURL){return dataURL.split(',')[1]}
 $('#publish-github').addEventListener('click',async()=>{
- const token=$('#github-token').value.trim(),repo=$('#github-repo').value.trim();const status=$('#publish-status');
+ const token=$('#github-token').value.trim()||sessionGitHubToken,repo=$('#github-repo').value.trim();const status=$('#publish-status');
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo)){status.textContent='صيغة المستودع غير صحيحة';return}if(!token){status.textContent='أدخلي GitHub Token وقت النشر';return}
  if(!confirm('سيتم نشر جميع تعديلات المسودة على GitHub. هل تريد المتابعة؟'))return;
  const b=$('#publish-github');b.disabled=true;
@@ -162,8 +202,8 @@ $('#publish-github').addEventListener('click',async()=>{
   status.textContent='جارٍ نشر النصوص والأعمال والإعدادات…';
   const js='window.SEE_CMS_DATA = '+JSON.stringify(copy)+';\n';
   await gh('/repos/'+repo+'/contents/'+target,token,'PUT',{message:'Update 2SEE Agency dashboard content',content:encodeUTF8(js),sha:current.sha,branch:'main'});
-  data=copy;save();status.textContent='تم إرسال التعديلات إلى GitHub ✓ قد يستغرق ظهورها على الموقع بضع دقائق.';
+  data=copy;save();sessionGitHubToken=token;status.textContent='تم نشر التعديلات على GitHub ✓ ستظهر على الموقع الرسمي بعد اكتمال تحديث GitHub Pages (عادةً خلال دقائق).';
  }catch(e){status.textContent='لم يكتمل النشر: '+e.message+' — لم يتغيّر ملف المحتوى إذا حدث الفشل قبل خطوة النشر الأخيرة.'}finally{b.disabled=false;$('#github-token').value=''}
 });
-selectPages('#page-select');selectPages('#section-page');selectPages('#preview-page');$('#page-select').value=page;$('#section-page').value=page;$('#preview-page').value=page;render();
+selectPages('#page-select');selectPages('#section-page');selectPages('#preview-page');selectPages('#visual-page');$('#page-select').value=page;$('#section-page').value=page;$('#preview-page').value=page;$('#visual-page').value=page;render();
 })();
