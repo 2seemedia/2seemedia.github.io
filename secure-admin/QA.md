@@ -15,7 +15,7 @@ Validated on the deployed `2see-admin-staging` Worker:
 - Final cleanup restores the exact original Git tree `0f7c5a6ad10d8b217aa91b326737b63b66b918c4`, including removal of the test image.
 - The public `main` branch stays at `aaa376f901e8a6296f70f8c89670972a8e0ebad4` throughout.
 
-33 automated tests pass, including signed session verification, expiry and password rotation, mandatory login throttling, CSRF checks, atomic media publishing, stale-draft conflicts and preventing editor controls from modifying untouched content. Wrangler deployment dry-run passed for the password-login implementation.
+34 automated tests pass, including signed session verification, expiry and password rotation, mandatory login throttling, CSRF checks, atomic media publishing, stale-draft conflicts and preventing editor controls from modifying untouched content. Wrangler deployment dry-run passed for the password-login implementation.
 
 Production remains unapproved. The staged Worker targets only `admin/content-staging`; its source is `admin/secure-control-panel`. No production publish, PR merge or public-site source change was performed. Browser checks were performed at desktop size; a real mobile-device review is still recommended before public approval.
 

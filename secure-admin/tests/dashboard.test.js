@@ -45,3 +45,10 @@ test('opening text and visual controls does not mutate untouched content',async(
  const saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));delete saved.__adminRevision;
  assert.deepEqual(saved,baseline());dom.window.close();
 });
+
+test('font size is saved while typing and reset removes only the edited style',async()=>{
+ const {dom,w,doc}=await open();const entry=doc.querySelector('#entries .entry'),key=entry.dataset.entryKey,input=entry.querySelector('input[type="number"]');
+ input.value='21';input.dispatchEvent(new w.Event('input'));
+ let saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));assert.equal(saved.pages['index.html'].find(e=>e.key===key).style.fontSize,21);assert.equal(saved.pages['index.html'][1].style,undefined);
+ [...entry.querySelectorAll('button')].find(b=>b.textContent==='استعادة التنسيق الأصلي').click();saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));delete saved.__adminRevision;assert.deepEqual(saved,baseline());dom.window.close();
+});

@@ -39,7 +39,7 @@ function styleControls(entry){
  const st=entry.style||{};const saveStyle=()=>{entry.style=st;save()};const grid=el('div','style-controls');
  const sizeBox=el('div','field');sizeBox.append(el('label','','حجم الخط بالبكسل (اتركيه فارغاً للحجم الأصلي)'));
  const size=el('input','input');size.type='number';size.min=9;size.max=150;size.step=1;size.placeholder='تلقائي';size.value=st.fontSize??'';
- size.addEventListener('change',()=>{st.fontSize=size.value===''?null:Math.min(150,Math.max(9,Number(size.value)||16));saveStyle()});sizeBox.append(size);grid.append(sizeBox);
+ size.addEventListener('input',()=>{st.fontSize=size.value===''?null:Math.min(150,Math.max(9,Number(size.value)||16));saveStyle()});sizeBox.append(size);grid.append(sizeBox);
  const colorBox=el('div','field');colorBox.append(el('label','','لون الخط'));
  const color=el('input','input');color.type='color';color.value=/^#[0-9a-f]{6}$/i.test(st.color||'')?st.color:'#101010';color.addEventListener('input',()=>{st.color=color.value;saveStyle()});colorBox.append(color);grid.append(colorBox);
  const weightBox=el('div','field');weightBox.append(el('label','','سماكة الخط'));
