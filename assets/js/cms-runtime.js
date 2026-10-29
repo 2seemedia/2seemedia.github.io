@@ -264,6 +264,21 @@
  window.SEE_VALIDATE_CV=function(){update();return !fileInput.validationMessage&&!!fileInput.files?.[0]};
 })();
 
+// File sharing uses the device share sheet; no applicant file is uploaded here.
+if(page==='careers.html'){
+ var careerForm=document.querySelector('form[data-send-choice]');
+ if(careerForm){
+  var actions=careerForm.querySelector('.see-send-actions');
+  var shareButton=elt('button','btn btn-primary',lang==='ar'?'مشاركة الطلب مع ملف الـCV':'Share application with CV');
+  shareButton.type='submit';shareButton.dataset.sendMethod='share';
+  if(navigator.share&&navigator.canShare)actions.prepend(shareButton);
+  var helper=careerForm.querySelector('#cv-help');
+  if(helper)helper.textContent=lang==='ar'?'اختر الملف، ثم «مشاركة الطلب مع ملف الـCV» واختر WhatsApp أو Gmail والمستلم. دعم المرفقات يعتمد على جهازك والتطبيق؛ يُفضّل PDF.':'Choose a file, then Share application with CV and select WhatsApp or Gmail and the recipient. Attachment support depends on your device and app; PDF is recommended.';
+  var hint=careerForm.querySelector('.see-send-hint');
+  if(hint)hint.textContent=lang==='ar'?'المشاركة تنقل الملف للتطبيق الداعم؛ راجع المرفق والمستلم واضغط إرسال هناك. زرا واتساب والبريد بديلان للنص فقط ويتطلبان إرفاق الملف يدوياً.':'File sharing passes the CV to a supported app. Check the attachment and recipient, then send there. The WhatsApp and email buttons are text-only alternatives and require manual attachment.';
+ }
+}
+
 // Static hosting: prepare a message for the visitor's chosen app.
 // Never claim that 2SEE received the message: the visitor must press Send there.
 document.addEventListener('submit',function(e){
@@ -303,8 +318,31 @@ document.addEventListener('submit',function(e){
   var checked=Array.from(form.querySelectorAll('input[name="services"]:checked'));
   if(checked.length){pairs.push(texts.services+': '+checked.map(function(x){return x.closest('label').querySelector('span').textContent.trim()}).join(lang==='ar'?'، ':', '))}
   var body=(isCareer?(lang==='ar'?'طلب تعاون جديد إلى 2See Media':'New collaboration application — 2SEE Media'):(lang==='ar'?'طلب مشروع جديد إلى 2See Media':'New project enquiry — 2SEE Media'))+'\n\n'+pairs.join('\n');
-  if(cv)body+='\n\n'+(lang==='ar'?'تنبيه: يجب إرفاق السيرة الذاتية يدوياً قبل إرسال الرسالة.':'Reminder: attach the CV file manually before sending.');
+  if(cv&&method!=='share')body+='\n\n'+(lang==='ar'?'تنبيه: يجب إرفاق السيرة الذاتية يدوياً قبل إرسال الرسالة.':'Reminder: attach the CV file manually before sending.');
   var subject=isCareer?'2SEE Media | Collaboration application':'2SEE Media | Project enquiry';
+  if(method==='share'&&cv){
+    var payload={title:subject,text:body+'\n\n'+(lang==='ar'?'بريد 2SEE: ':'2SEE email: ')+String(data.brand.email||'2see.mediaa@gmail.com'),files:[cv]};
+    var supported=false;
+    try{supported=!!(navigator.share&&navigator.canShare&&navigator.canShare(payload))}catch(ignore){}
+    if(!supported){
+      notice.dataset.error='true';
+      notice.textContent=lang==='ar'?'هذا المتصفح لا يدعم مشاركة هذا الملف. جرّب PDF على متصفح الجوال، أو افتح واتساب/البريد بالزر أدناه وأرفق الملف يدوياً. لم يُرسل الطلب.':'This browser cannot share this file. Try a PDF on mobile, or use the WhatsApp/email buttons and attach it manually. The application has not been sent.';
+      return;
+    }
+    var buttons=Array.from(form.querySelectorAll('button[type="submit"]'));
+    buttons.forEach(function(b){b.disabled=true});
+    notice.textContent=lang==='ar'?'اختر التطبيق والمستلم، وتأكد من وجود ملف الـCV قبل الإرسال.':'Choose the app and recipient, and check the CV attachment before sending.';
+    function shareFailed(err){
+      notice.dataset.error=err&&err.name==='AbortError'?'false':'true';
+      notice.textContent=err&&err.name==='AbortError'?(lang==='ar'?'أُغلقت المشاركة؛ بياناتك والملف ما زالا هنا لإعادة المحاولة.':'Sharing closed. Your form and file are still here to try again.'):(lang==='ar'?'تعذّرت مشاركة الملف. لم يُرسل الطلب؛ أعد المحاولة أو أرفقه يدوياً عبر واتساب أو البريد.':'Could not share the file. The application was not sent; retry or attach it manually in WhatsApp or email.');
+    }
+    try{
+      navigator.share(payload).then(function(){
+        notice.textContent=lang==='ar'?'أُغلقت نافذة المشاركة. تأكد من إتمام الإرسال ووجود المرفق داخل التطبيق؛ الموقع لا يستطيع تأكيد وصول الطلب.':'The share sheet closed. Check that you sent the application with its attachment in the app; this website cannot confirm delivery.';
+      },shareFailed).finally(function(){buttons.forEach(function(b){b.disabled=false})});
+    }catch(err){shareFailed(err);buttons.forEach(function(b){b.disabled=false})}
+    return;
+  }
   var url='';
   if(method==='whatsapp'){
     var phone=String(data.brand.whatsapp||'963964603742').replace(/\D/g,'');
