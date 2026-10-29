@@ -145,6 +145,7 @@ function renderBrand(){const root=$('#brand-fields');root.replaceChildren();cons
  root.append(more)
 }
 function previewUrl(){return page+'?cms-preview=1&lang='+$('#preview-lang').value}
+$('#preview-size').addEventListener('change',function(){const frame=$('#preview-frame');frame.style.width=this.value==='auto'?'100%':this.value+'px';frame.style.maxWidth='none'});
 function renderPreview(){const frame=$('#preview-frame');$('#preview-page').value=page;frame.src=previewUrl();$('#open-preview').href=previewUrl()}
 $('#preview-page').addEventListener('change',e=>{page=e.target.value;renderPreview()});$('#preview-lang').addEventListener('change',renderPreview);$('#reload-preview').addEventListener('click',renderPreview);
 function render(){if(tab==='packages')renderPackages();if(tab==='content')renderContent();if(tab==='sections')renderSections();if(tab==='works')renderWorks();if(tab==='collaborations')renderCollaborations();if(tab==='brand')renderBrand();if(tab==='preview')renderPreview();if(tab==='visual')renderVisual();}
