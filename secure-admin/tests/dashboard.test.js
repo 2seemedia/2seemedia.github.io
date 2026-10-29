@@ -52,3 +52,14 @@ test('font size is saved while typing and reset removes only the edited style',a
  let saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));assert.equal(saved.pages['index.html'].find(e=>e.key===key).style.fontSize,21);assert.equal(saved.pages['index.html'][1].style,undefined);
  [...entry.querySelectorAll('button')].find(b=>b.textContent==='استعادة التنسيق الأصلي').click();saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));delete saved.__adminRevision;assert.deepEqual(saved,baseline());dom.window.close();
 });
+
+test('package editor saves tier price and section ordering without publishing',async()=>{
+ const {dom,w,doc,calls,errors}=await open();
+ doc.querySelector('[data-tab="packages"]').click();
+ const price=Array.from(doc.querySelectorAll('#package-fields .field')).find(e=>e.textContent.includes('السعر الشهري')).querySelector('input');
+ price.value='325';price.dispatchEvent(new w.Event('input'));
+ let saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));assert.equal(saved.packages.prices.basic[0],325);
+ doc.querySelector('[data-tab="sections"]').click();doc.querySelector('#section-list .buttons button:last-child').click();
+ saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));assert(Object.values(saved.sections).some(e=>e.page==='index.html'&&e.order===1));
+ assert(!calls.some(x=>x.url==='/api/publish'));assert.deepEqual(errors,[]);dom.window.close();
+});

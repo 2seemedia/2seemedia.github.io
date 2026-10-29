@@ -12,10 +12,10 @@ html_handling = "none"
 not_found_handling = "none"
 [vars]
 GITHUB_REPO = "2seemedia/2seemedia.github.io"
-GITHUB_BRANCH = "main"
+GITHUB_BRANCH = "perf/cloudflare-preview"
 PRODUCTION_BRANCH = "main"
 PUBLISH_ENABLED = "true"
-PRODUCTION_APPROVED = "true"
+PRODUCTION_APPROVED = "false"
 AUTH_MODE = "password"
 # ADMIN_PASSWORD is a Worker Secret set by the owner; never add it here.
 [[ratelimits]]

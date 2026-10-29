@@ -43,6 +43,12 @@ export function validateContent(data,baseline){
   for(const e of entries){if(!e||known.get(e.key)!==e.kind||!known.delete(e.key))fail(422,'معرّف عنصر غير صالح');}
  }
  if(data.works.length>1000||!Array.isArray(data.collaborations?.logos)||data.collaborations.logos.length>200)fail(422,'عدد العناصر يتجاوز الحد');
+ if(baseline.packages){
+  const p=data.packages;
+  if(!p||!Array.isArray(p.names)||p.names.length!==3||p.names.some(x=>typeof x!=='string'||x.length>80))fail(422,'أسماء الباقات غير صالحة');
+  for(const values of [p.quantities,p.sessions,p.prices?.basic,p.prices?.premium])if(!Array.isArray(values)||values.length!==3||values.some(x=>!Number.isFinite(x)||x<0||x>100000))fail(422,'قيم الباقات غير صالحة');
+  for(const tier of ['basic','premium'])if(!/^https:\/\/[^\s<>"']+$/i.test(p.examples?.[tier]||''))fail(422,'رابط مثال الباقة غير صالح');
+ }
  function walk(value,depth=0,key=''){
   if(depth>15)fail(422,'المحتوى معقّد أكثر من المسموح');
   if(typeof value==='string'){

@@ -63,3 +63,8 @@ test('new published images are available without redeploying the Worker bundle',
  const r=await handler.fetch(new Request('https://admin.example.test/assets/uploads/2see-test.png'),{...env,ASSETS:{fetch:async()=>new Response('Not found',{status:404})}});
  assert.equal(r.status,200);assert.equal(r.headers.get('Content-Type'),'image/png');assert.equal((await r.arrayBuffer()).byteLength,8);
 });
+
+test('package prices and example links reject invalid or unsafe content',()=>{
+ const baseline=sample();const invalid=sample();invalid.packages.prices.basic[0]=-1;assert.throws(()=>validateContent(invalid,baseline));
+ const unsafe=sample();unsafe.packages.examples.basic='javascript:alert(1)';assert.throws(()=>validateContent(unsafe,baseline));
+});
