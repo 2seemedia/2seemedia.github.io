@@ -1638,17 +1638,17 @@
         "key": "index.v2.hero1",
         "kind": "text",
         "section": "v2",
-        "label": "نصنع حضوراً.",
-        "en": "WE MAKE",
-        "ar": "نصنع حضوراً."
+        "label": "Creative Media",
+        "en": "Creative Media",
+        "ar": "Creative Media"
       },
       {
         "key": "index.v2.hero2",
         "kind": "text",
         "section": "v2",
-        "label": "ونترك بصمة.",
-        "en": "YOU SEEN.",
-        "ar": "ونترك بصمة."
+        "label": "Agency",
+        "en": "Agency",
+        "ar": "Agency"
       },
       {
         "key": "index.v2.lead",

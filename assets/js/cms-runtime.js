@@ -173,7 +173,7 @@
         }else{
           // Transparent PNG image: drop-shadow uses the alpha silhouette, never a rectangular image frame.
           var art=document.createElement('img');art.className='see-collabs-logo';
-          art.src=logo.image;art.alt=logo.name||'شعار التعاون';
+          art.src=logo.image;art.alt=logo.name||'شعار التعاون';art.addEventListener('load',function(){if(art.naturalWidth&&art.naturalHeight){var ratio=art.naturalWidth/art.naturalHeight;art.style.width=ratio<.8?'auto':'100%';art.style.maxWidth='100%';art.style.height=ratio>2.5?'auto':'100%';}});
           art.loading='lazy';art.decoding='async';art.width=200;art.height=116;
           box.appendChild(art);
         }
@@ -191,42 +191,48 @@
   var works=Array.isArray(data.works)?data.works.filter(function(w){return w.visible!==false}):[];
   function elt(tag,cls,content){var e=document.createElement(tag);if(cls)e.className=cls;if(content!==undefined)e.textContent=content;return e}
   function openWork(w){
-    if(w.type==='design'){
-      window.open(safeLink(w.url||w.image),'_blank','noopener,noreferrer');return;
-    }
+
     var modal=document.getElementById('see-work-modal');
     if(!modal)return;
     var iframe=modal.querySelector('iframe'),link=modal.querySelector('[data-original]'),title=modal.querySelector('[data-modal-title]');
-    title.textContent='2SEE Media';
+    var name=(lang==='ar'?(w.titleAr||w.title):w.title)||'';if(/^(reel|design|published video|ريل|تصميم|فيديو منشور)(\s|$)/i.test(name))name='';
+    title.textContent=w.client||name||(w.type==='design'?(lang==='ar'?'تصميم غرافيكي':'Graphic design'):(lang==='ar'?'إنتاج وصناعة محتوى':'Production & content'));
+    var description=modal.querySelector('[data-modal-description]');description.textContent=(lang==='ar'?(w.descriptionAr||w.description):w.description)||'';description.hidden=!description.textContent;
+    var picture=modal.querySelector('[data-modal-image]');picture.hidden=w.type!=='design';if(w.type==='design')picture.src=safeLink(w.image);else picture.removeAttribute('src');picture.alt=title.textContent;modal.querySelector('.see-modal-bottom span').hidden=w.type==='design';link.textContent=lang==='ar'?'فتح العمل الأصلي ↗':'Open original ↗';
     link.href=safeLink(w.url||'#');
     var url='';
     try{var u=new URL(w.url);if(['www.instagram.com','instagram.com'].includes(u.hostname)&&/^\/(reel|p)\/[\w-]+\/?$/.test(u.pathname))url=u.origin+u.pathname.replace(/\/$/,'')+'/embed/';
       else if(['youtube.com','www.youtube.com','youtu.be'].includes(u.hostname)){var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.match(/\/shorts\/([\w-]+)/)?.[1]);if(/^[\w-]{11}$/.test(id||''))url='https://www.youtube-nocookie.com/embed/'+id}
     }catch(e){}
-    iframe.src=url||'about:blank';iframe.hidden=!url;
+    iframe.src=w.type==='design'?'about:blank':(url||'about:blank');iframe.hidden=w.type==='design'||!url;
     if(!modal.open)modal.showModal();
   }
   function card(w,i){
     var art=elt('article','case-card reveal');art.dataset.category=w.type==='design'?'design':'reel';art.style.setProperty('--d',String((i%4)*75)+'ms');
     var a=elt('a','group block see-work-cover');a.href=w.url||w.image||'#';
     a.setAttribute('aria-label',w.type==='reel'?(lang==='ar'?'شاهد الفيديو':'Watch video'):(lang==='ar'?'عرض التصميم':'View design'));
-    if(w.type!=='design'){a.addEventListener('click',function(e){e.preventDefault();openWork(w)})}
-    else{a.target='_blank';a.rel='noopener noreferrer'}
+    a.addEventListener('click',function(e){e.preventDefault();openWork(w)});
     var media=elt('div','case-media');
     var img=elt('img');img.src=w.image||'assets/img/2see-placeholder.svg';img.alt='';img.loading='lazy';img.decoding='async';img.width=500;img.height=625;
     img.onerror=function(){if(!img.src.includes('2see-placeholder.svg')){img.onerror=null;img.src='assets/img/2see-placeholder.svg'}};
     media.appendChild(img);
     if(w.type==='reel'){var play=elt('span','see-work-play','▶');play.setAttribute('aria-hidden','true');media.appendChild(play)}
-    a.appendChild(media);art.appendChild(a);return art;
+    a.appendChild(media);art.appendChild(a);
+    var copy=elt('div','studio-work-copy'),name=(lang==='ar'?(w.titleAr||w.title):w.title)||'';if(/^(reel|design|published video|ريل|تصميم|فيديو منشور)(\s|$)/i.test(name))name='';
+    var heading=w.client||name||(w.type==='design'?(lang==='ar'?'تصميم غرافيكي':'Graphic design'):(lang==='ar'?'إنتاج وصناعة محتوى':'Production & content'));
+    var h=elt('h2','studio-work-title',heading);copy.appendChild(h);
+    var line=elt('p','studio-work-type',w.type==='design'?(lang==='ar'?'تصاميم · عرض التصميم ↗':'Design · View project ↗'):(lang==='ar'?'ريلز · تشغيل الفيديو ↗':'Reel · Play video ↗'));copy.appendChild(line);
+    var desc=(lang==='ar'?(w.descriptionAr||w.description):w.description)||'';if(desc)copy.appendChild(elt('p','studio-work-description',desc));art.appendChild(copy);a.setAttribute('aria-label',heading+' — '+line.textContent);return art;
   }
   var home=document.getElementById('cms-home-work');if(home)works.filter(function(w){return w.featured}).slice(0,4).forEach(function(w,i){home.appendChild(card(w,i))});
   var grid=document.getElementById('cms-work-grid');if(grid){grid.dataset.pageSize=String(Math.max(4,Math.min(40,Number(data.settings.workPageSize)||12)));works.forEach(function(w,i){grid.appendChild(card(w,i))})}
-  if(home||grid){
-    var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.innerHTML='<div class="see-modal-header"><strong data-modal-title>2SEE Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><iframe title="Video player" loading="lazy" allow="autoplay; fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
+  window.SEE_OPEN_WORK=openWork;
+  if(home||grid||document.getElementById('v3-opening-track')){
+    var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.setAttribute('aria-labelledby','studio-modal-title');modal.innerHTML='<div class="see-modal-header"><strong id="studio-modal-title" data-modal-title>2SEE Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><p class="studio-modal-description" data-modal-description hidden></p><img data-modal-image hidden alt=""><iframe title="Video player" loading="lazy" allow="autoplay; fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
     document.body.appendChild(modal);
-    if(lang==='ar'){modal.querySelector('[data-modal-close]').setAttribute('aria-label','إغلاق الفيديو');modal.querySelector('.see-modal-bottom span').textContent='قد يمنع إنستغرام تشغيل الفيديو داخل الموقع.';modal.querySelector('[data-original]').textContent='فتح الفيديو الأصلي ↗'}
+    if(lang==='ar'){modal.querySelector('[data-modal-close]').setAttribute('aria-label','إغلاق المعاينة');modal.querySelector('.see-modal-bottom span').textContent='قد يمنع إنستغرام تشغيل الفيديو داخل الموقع.';modal.querySelector('[data-original]').textContent='فتح الفيديو الأصلي ↗'}
     modal.querySelector('[data-modal-close]').addEventListener('click',function(){modal.close()});
-    modal.addEventListener('close',function(){modal.querySelector('iframe').src='about:blank'});
+    modal.addEventListener('close',function(){modal.querySelector('iframe').src='about:blank';modal.querySelector('[data-modal-image]').removeAttribute('src')});
     modal.addEventListener('click',function(e){if(e.target===modal)modal.close()});
   }
 
