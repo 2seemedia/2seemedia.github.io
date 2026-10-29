@@ -144,7 +144,7 @@
   if((moving&&frames<520)||held)raf=requestAnimationFrame(tick);
  }
  function run(){if(!raf){last=0;frames=0;raf=requestAnimationFrame(tick)}}
- function start(){if(motion.matches||!fine.matches){placeStatic();return}if(!started){started=measure();if(!started)return}run()}
+ function start(){if(motion.matches){placeStatic();return}if(!started){started=measure();if(!started)return}run()}
  if('IntersectionObserver'in window){new IntersectionObserver(function(items){visible=items[0].isIntersecting;if(visible)start();else{if(raf)cancelAnimationFrame(raf);raf=0;started=false}},{threshold:.1}).observe(floor)}else{placeStatic()}
  badges.forEach(function(el){el.draggable=false;
   el.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||motion.matches||!fine.matches)return;var b=bodies.find(function(x){return x.el===el});if(!b)return;held=b;moved=false;var rect=floor.getBoundingClientRect();b.grabX=e.clientX-rect.left-b.x;b.grabY=e.clientY-rect.top-b.y;b.startX=e.clientX;b.startY=e.clientY;run()});
