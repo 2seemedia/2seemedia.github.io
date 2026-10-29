@@ -250,3 +250,9 @@ body.see-scroll-story:before{content:'';position:fixed;inset:0;z-index:-1;pointe
 .is-preview-playing .studio-reel-preview{opacity:1}
 body.studio-motion-paused.story-ready .v3-opening{height:auto}
 @media(prefers-reduced-motion:reduce){.studio-reel-preview{transition:none}}
+
+/* Gallery headings and actions align with the reading column, clear of the dock. */
+@media(min-width:641px){
+ .see-scroll-story .v3-gallery-label{inset-inline-start:max(170px,calc((100vw - 1240px)/2));inset-inline-end:170px}
+ .see-scroll-story .v3-gallery-controls{width:min(calc(100% - 340px),1240px);margin:16px auto 0}
+}
