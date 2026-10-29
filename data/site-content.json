@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "brand": {
     "name": "2See Media",
     "accent": "#C91524",
@@ -1969,6 +1969,142 @@
         "label": "انتقل إلى المحتوى",
         "en": "Skip to content",
         "ar": "انتقل إلى المحتوى"
+      },
+      {
+        "key": "index.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "index.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "index.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "index.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "index.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "index.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "index.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "انزل واكتشف",
+        "en": "SCROLL TO EXPLORE",
+        "ar": "انزل واكتشف"
+      },
+      {
+        "key": "index.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "قصص من أعمالنا",
+        "en": "A FEW OF OUR STORIES",
+        "ar": "قصص من أعمالنا"
+      },
+      {
+        "key": "index.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "كل الأعمال",
+        "en": "ALL WORK",
+        "ar": "كل الأعمال"
+      },
+      {
+        "key": "index.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "index.managed.11",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "index.managed.12",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "index.managed.13",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "index.managed.14",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "index.managed.15",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "index.managed.16",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "index.managed.17",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
       }
     ],
     "services.html": [
@@ -3645,6 +3781,334 @@
         "label": "Digital marketing",
         "en": "Digital marketing",
         "ar": "التسويق الرقمي"
+      },
+      {
+        "key": "services.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "services.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "services.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "services.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "services.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "services.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "services.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "services.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "services.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "services.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "services.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "services.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "services.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "services.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
+      },
+      {
+        "key": "services.packagecopy.0",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "باقات السوشال ميديا",
+        "en": "SOCIAL MEDIA PACKAGES",
+        "ar": "باقات السوشال ميديا",
+        "componentSource": "SOCIAL MEDIA PACKAGES"
+      },
+      {
+        "key": "services.packagecopy.1",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "اختار حجم حضورك.",
+        "en": "Choose your presence.",
+        "ar": "اختار حجم حضورك.",
+        "componentSource": "Choose your presence."
+      },
+      {
+        "key": "services.packagecopy.2",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "إدارة السوشال ميديا وإنتاج المحتوى معاً، ضمن مستويين من الإنتاج.",
+        "en": "Social media management and content production, in two production tiers.",
+        "ar": "إدارة السوشال ميديا وإنتاج المحتوى معاً، ضمن مستويين من الإنتاج.",
+        "componentSource": "Social media management and content production, in two production tiers."
+      },
+      {
+        "key": "services.packagecopy.3",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "مستوى الإنتاج",
+        "en": "Production tier",
+        "ar": "مستوى الإنتاج",
+        "componentSource": "Production tier"
+      },
+      {
+        "key": "services.packagecopy.4",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "الأسعار بالدولار الأمريكي، شهرية ومبدئية. يتحدّد نطاق العمل ومواعيد التنفيذ وآلية الدفع ضمن الاتفاق النهائي.",
+        "en": "Prices are in USD, monthly and indicative. Final scope, schedule and payment terms are agreed separately.",
+        "ar": "الأسعار بالدولار الأمريكي، شهرية ومبدئية. يتحدّد نطاق العمل ومواعيد التنفيذ وآلية الدفع ضمن الاتفاق النهائي.",
+        "componentSource": "Prices are in USD, monthly and indicative. Final scope, schedule and payment terms are agreed separately."
+      },
+      {
+        "key": "services.packagecopy.5",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "تفاصيل التنفيذ وما لا يشمله السعر",
+        "en": "Production details and exclusions",
+        "ar": "تفاصيل التنفيذ وما لا يشمله السعر",
+        "componentSource": "Production details and exclusions"
+      },
+      {
+        "key": "services.packagecopy.6",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "جلسة التصوير حتى 3 ساعات، بموقع واحد متفق عليه ضمن دمشق، مع مصوّر أساسي ومساعد مصوّر.",
+        "en": "Each shoot is up to 3 hours at one agreed location in Damascus, with a photographer and assistant.",
+        "ar": "جلسة التصوير حتى 3 ساعات، بموقع واحد متفق عليه ضمن دمشق، مع مصوّر أساسي ومساعد مصوّر.",
+        "componentSource": "Each shoot is up to 3 hours at one agreed location in Damascus, with a photographer and assistant."
+      },
+      {
+        "key": "services.packagecopy.7",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "مدة الريل النهائي حتى 60 ثانية.",
+        "en": "Each finished reel is up to 60 seconds.",
+        "ar": "مدة الريل النهائي حتى 60 ثانية.",
+        "componentSource": "Each finished reel is up to 60 seconds."
+      },
+      {
+        "key": "services.packagecopy.8",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "الجلسة الإضافية: Basic بقيمة 75$، وPremium بقيمة 150$، حتى 3 ساعات. لا تزيد عدد المواد تلقائياً.",
+        "en": "Extra shoots: Basic $75 or Premium $150, up to 3 hours. Extra sessions do not automatically add deliverables.",
+        "ar": "الجلسة الإضافية: Basic بقيمة 75$، وPremium بقيمة 150$، حتى 3 ساعات. لا تزيد عدد المواد تلقائياً.",
+        "componentSource": "Extra shoots: Basic $75 or Premium $150, up to 3 hours. Extra sessions do not automatically add deliverables."
+      },
+      {
+        "key": "services.packagecopy.9",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "لا يشمل السعر ميزانية الإعلانات المموّلة، التنقّلات البعيدة، استئجار المواقع أو أجور الممثلين.",
+        "en": "Ad spend, long-distance transport, location rental and talent fees are excluded.",
+        "ar": "لا يشمل السعر ميزانية الإعلانات المموّلة، التنقّلات البعيدة، استئجار المواقع أو أجور الممثلين.",
+        "componentSource": "Ad spend, long-distance transport, location rental and talent fees are excluded."
+      },
+      {
+        "key": "services.packagecopy.10",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "التسليم بصيغة جاهزة للنشر. الملفات المفتوحة والمواد الخام باتفاق مستقل.",
+        "en": "Delivery is in publish-ready formats. Source files and raw footage require a separate agreement.",
+        "ar": "التسليم بصيغة جاهزة للنشر. الملفات المفتوحة والمواد الخام باتفاق مستقل.",
+        "componentSource": "Delivery is in publish-ready formats. Source files and raw footage require a separate agreement."
+      },
+      {
+        "key": "services.packagecopy.11",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "محتوى للسوشال ميديا",
+        "en": "Social media content",
+        "ar": "محتوى للسوشال ميديا",
+        "componentSource": "Social media content"
+      },
+      {
+        "key": "services.packagecopy.12",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "إنتاج إعلاني متقدّم",
+        "en": "Advanced ad production",
+        "ar": "إنتاج إعلاني متقدّم",
+        "componentSource": "Advanced ad production"
+      },
+      {
+        "key": "services.packagecopy.13",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "يفتح الريل على إنستغرام",
+        "en": "Opens the reel on Instagram",
+        "ar": "يفتح الريل على إنستغرام",
+        "componentSource": "Opens the reel on Instagram"
+      },
+      {
+        "key": "services.packagecopy.14",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "شهرياً",
+        "en": "per month",
+        "ar": "شهرياً",
+        "componentSource": "per month"
+      },
+      {
+        "key": "services.packagecopy.15",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "ريلز",
+        "en": "reels",
+        "ar": "ريلز",
+        "componentSource": "reels"
+      },
+      {
+        "key": "services.packagecopy.16",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "تصاميم بوست",
+        "en": "post designs",
+        "ar": "تصاميم بوست",
+        "componentSource": "post designs"
+      },
+      {
+        "key": "services.packagecopy.17",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "تصاميم ستوري",
+        "en": "story designs",
+        "ar": "تصاميم ستوري",
+        "componentSource": "story designs"
+      },
+      {
+        "key": "services.packagecopy.18",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "جلسات تصوير",
+        "en": "shooting sessions",
+        "ar": "جلسات تصوير",
+        "componentSource": "shooting sessions"
+      },
+      {
+        "key": "services.packagecopy.19",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "تعديلان لكل ريل أو بوست",
+        "en": "2 revisions per reel or post",
+        "ar": "تعديلان لكل ريل أو بوست",
+        "componentSource": "2 revisions per reel or post"
+      },
+      {
+        "key": "services.packagecopy.20",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "3 تعديلات لكل ريل أو بوست",
+        "en": "3 revisions per reel or post",
+        "ar": "3 تعديلات لكل ريل أو بوست",
+        "componentSource": "3 revisions per reel or post"
+      },
+      {
+        "key": "services.packagecopy.21",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "استفسر عن الباقة",
+        "en": "Enquire about this package",
+        "ar": "استفسر عن الباقة",
+        "componentSource": "Enquire about this package"
+      },
+      {
+        "key": "services.packagecopy.22",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "الخدمات المشمولة بكل باقات هذا المسار",
+        "en": "Included in every package in this tier",
+        "ar": "الخدمات المشمولة بكل باقات هذا المسار",
+        "componentSource": "Included in every package in this tier"
+      },
+      {
+        "key": "services.packagecopy.23",
+        "kind": "text",
+        "section": "services.section6",
+        "label": "تخطيط بصري للقطّات وإخراج إعلاني وتلوين متقدّم.",
+        "en": "Visual shot planning, advertising direction and advanced grading.",
+        "ar": "تخطيط بصري للقطّات وإخراج إعلاني وتلوين متقدّم.",
+        "componentSource": "Visual shot planning, advertising direction and advanced grading."
       }
     ],
     "work.html": [
@@ -4465,6 +4929,118 @@
         "label": "Home link (mobile)",
         "en": "index.html",
         "ar": "index.html"
+      },
+      {
+        "key": "work.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "work.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "work.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "work.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "work.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "work.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "work.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "work.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "work.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "work.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "work.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "work.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "work.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "work.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
       }
     ],
     "about.html": [
@@ -5430,6 +6006,118 @@
         "label": "Home link (mobile)",
         "en": "index.html",
         "ar": "index.html"
+      },
+      {
+        "key": "about.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "about.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "about.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "about.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "about.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "about.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "about.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "about.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
       }
     ],
     "careers.html": [
@@ -6691,6 +7379,126 @@
         "label": "Home link (mobile)",
         "en": "index.html",
         "ar": "index.html"
+      },
+      {
+        "key": "careers.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "careers.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "careers.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "careers.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "careers.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "careers.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "careers.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "كيف بتحب تشتغل معنا؟",
+        "en": "How would you like to work with us?",
+        "ar": "كيف بتحب تشتغل معنا؟"
+      },
+      {
+        "key": "careers.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "careers.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "careers.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "careers.managed.11",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "careers.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "careers.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "careers.managed.14",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "careers.managed.15",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
       }
     ],
     "contact.html": [
@@ -7784,6 +8592,118 @@
         "label": "Home link (mobile)",
         "en": "index.html",
         "ar": "index.html"
+      },
+      {
+        "key": "contact.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "contact.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "contact.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "contact.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "contact.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "contact.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "contact.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "contact.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "contact.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "contact.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "contact.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "contact.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "contact.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "contact.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
       }
     ],
     "case-study.html": [
@@ -8572,6 +9492,118 @@
         "label": "Home link (mobile)",
         "en": "index.html",
         "ar": "index.html"
+      },
+      {
+        "key": "case-study.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "case-study.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "case-study.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "case-study.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "case-study.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "case-study.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "case-study.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "case-study.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "case-study.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "case-study.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "case-study.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "case-study.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "case-study.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "case-study.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
       }
     ],
     "404.html": [
@@ -9352,6 +10384,110 @@
         "label": "Home link (mobile)",
         "en": "index.html",
         "ar": "index.html"
+      },
+      {
+        "key": "404.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "404.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "404.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "404.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "404.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "404.managed.6",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+      },
+      {
+        "key": "404.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "خلّي علامتك تنشاف."
+      },
+      {
+        "key": "404.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "نحكي على واتساب ↗"
+      },
+      {
+        "key": "404.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "404.managed.10",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "404.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "404.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "404.managed.13",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
       }
     ]
   },
@@ -10272,12 +11408,12 @@
     "arabicEnabled": true,
     "formMode": "email",
     "githubRepo": "2seemedia/2seemedia.github.io",
-    "galleryColumns": 4,
+    "galleryColumns": 3,
     "workPageSize": 12,
     "headlineScale": 1,
     "marqueeScale": 1,
     "introEnabled": true,
-    "introDurationMs": 1600
+    "introDurationMs": 3000
   },
   "services": [
     {
@@ -10427,5 +11563,42 @@
         "visible": true
       }
     ]
+  },
+  "packages": {
+    "names": [
+      "SPARK",
+      "IMPACT",
+      "ICON"
+    ],
+    "quantities": [
+      4,
+      8,
+      12
+    ],
+    "sessions": [
+      1,
+      2,
+      3
+    ],
+    "prices": {
+      "basic": [
+        300,
+        500,
+        750
+      ],
+      "premium": [
+        550,
+        950,
+        1400
+      ]
+    },
+    "revisions": {
+      "basic": 2,
+      "premium": 3
+    },
+    "examples": {
+      "basic": "https://www.instagram.com/reel/Dc_ksmaDVP4/",
+      "premium": "https://www.instagram.com/reel/DeHhmlyOJrG/"
+    }
   }
 }

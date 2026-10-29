@@ -8,7 +8,7 @@
   var visualEdit=preview&&params.get('cms-edit')==='1';
   var draft=null;
   if(preview){try{draft=JSON.parse(localStorage.getItem('2see-agency-draft-v12')||'null')}catch(e){}}
-  var data=draft&&draft.pages&&draft.brand?draft:base;
+  var data=draft&&draft.version===base.version&&draft.pages&&draft.brand?draft:base;
   var storedLanguage='';try{storedLanguage=sessionStorage.getItem('2see-language')||''}catch(e){}
   var forcedLang=window.SEE_PREVIEW_LANG;
   var lang=params.get('lang')==='ar'?'ar':(params.get('lang')==='en'?'en':((forcedLang==='ar'||forcedLang==='en'?forcedLang:null)||storedLanguage||data.settings.defaultLanguage||'en'));
@@ -18,6 +18,12 @@
   document.documentElement.style.setProperty('--color-cobalt',data.brand.accent||'#C91524');
   document.documentElement.style.setProperty('--color-cobalt-600',data.brand.accentHover||'#A70E1E');
   document.documentElement.style.setProperty('--color-lime',data.brand.highlight||'#C4C4C4');
+  var accentColor=data.brand.accent||'#C91524';
+  if(/^#[0-9a-f]{6}$/i.test(accentColor)&&!['#c91524','#b51222'].includes(accentColor.toLowerCase())){
+    var channel=[1,3,5].map(function(i){return parseInt(accentColor.slice(i,i+2),16)});
+    function tint(f){return 'rgb('+channel.map(function(n){return Math.round(n*f)}).join(',')+')'}
+    document.documentElement.style.setProperty('--studio-burgundy-glow','radial-gradient(ellipse at -12% 20%,'+tint(1)+' 0%,'+tint(.7)+' 18%,'+tint(.32)+' 43%,transparent 70%),linear-gradient(112deg,'+tint(.35)+' 0%,'+tint(.16)+' 50%,'+tint(.06)+' 100%)');
+  }
   // Font families mirror the former 2SEE website and can be adjusted from the dashboard.
   function safeFont(v,fallback){return /^[\w -]{2,45}$/.test(v||'')?v:fallback}
   document.documentElement.style.setProperty('--font-display','"'+safeFont(data.brand.headingFont,'Manrope')+'",system-ui,sans-serif');
@@ -99,8 +105,11 @@
       if(window.parent&&window.parent!==window)window.parent.postMessage({type:'2see:edit-element',page:page,key:hit.dataset.seeEditKey},location.origin);
     },true);
   }
+  // Reorder sibling sections only; nested sections and pinned opening remain intact.
+  var sectionParents=new Set();document.querySelectorAll('[data-cms-section]').forEach(function(s){sectionParents.add(s.parentElement)});
+  sectionParents.forEach(function(parent){var slots=Array.from(parent.children).filter(function(s){return s.hasAttribute('data-cms-section')});if(slots.length<2)return;var markers=slots.map(function(s){var marker=document.createComment('section-slot');parent.insertBefore(marker,s);return marker});slots.sort(function(a,b){return Number((data.sections[a.dataset.cmsSection]||{}).order||0)-Number((data.sections[b.dataset.cmsSection]||{}).order||0)});slots.forEach(function(s,i){markers[i].replaceWith(s)})});
   // Brand image and verified contact info can be changed from one place.
-  document.querySelectorAll('header a[href="index.html"] img,footer a[href="index.html"] img,.see-marquee-logo,.see-intro-logo').forEach(function(img){
+  document.querySelectorAll('header a[href="index.html"] img,footer a[href="index.html"] img,.see-marquee-logo,.see-intro-logo,.v3-brand img').forEach(function(img){
     if(data.brand.logo)img.src=data.brand.logo;
   });
   // Global contact details override repeated header/footer copies in every page.
