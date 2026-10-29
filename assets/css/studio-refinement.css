@@ -79,9 +79,9 @@ html[dir=rtl] .concierge-page .concierge-hero>.eyebrow{letter-spacing:0;font-siz
 .studio-file-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px;color:#696169;margin-top:12px}
 .studio-file-tools button{border:1px solid #c4bacb;border-radius:99px;padding:7px 13px;background:#fff;color:#49404f;cursor:pointer;min-height:36px}
 .studio-file-tools[hidden],.studio-field-feedback[hidden]{display:none!important}
-.concierge-page .v3-footer .v3-footer-cta,.concierge-page .v3-footer .studio-contact-actions{display:none}
-.concierge-page .v3-footer{min-height:650px;padding-top:90px}
-.concierge-page .v3-footer-name{margin-top:60px}
+
+
+
 @media(max-width:1000px){.concierge-disciplines ul{grid-template-columns:repeat(2,minmax(0,1fr))}.concierge-page .concierge-hero>div>p{grid-column:1/-1}.concierge-page .concierge-hero>div>div{grid-column:1/-1}}
 @media(max-width:640px){
  html{scroll-padding-top:84px}.concierge-page .concierge-hero{padding-top:140px!important;padding-bottom:36px!important}
@@ -90,15 +90,15 @@ html[dir=rtl] .concierge-page .concierge-hero>.eyebrow{letter-spacing:0;font-siz
  .concierge-page [data-form-wrap]{padding:25px 19px;border-radius:16px}.concierge-form .field{font-size:16px}
  .concierge-page .concierge-form{gap:26px!important}.concierge-form .see-contact-send{flex:1 1 180px;width:100%;justify-content:center}
  .concierge-disciplines li{padding:14px!important}.concierge-disciplines h3{font-size:13px}.concierge-disciplines p{font-size:11px}
- .concierge-aside{padding-top:16px}.concierge-page .v3-footer{min-height:590px}.concierge-page main{padding-bottom:50px}
+ .concierge-aside{padding-top:16px}.concierge-page main{padding-bottom:50px}
  .see-scroll-story .v2-intro h2{font-size:40px!important}.see-scroll-story .v2-space{padding-block:58px!important}
 }
 @media(prefers-reduced-motion:reduce){.btn,.v2-pill,.studio-hero-actions a,.studio-contact-primary,.studio-contact-secondary,.concierge-form .field,.concierge-form .check-tile{transition:none!important}.btn:hover,.v2-pill:hover,.studio-hero-actions a:hover,.studio-contact-primary:hover,.studio-contact-secondary:hover{transform:none}}
 /* Service choices use one border and one selected state. */
 .concierge-form .check-tile span{border:0;border-radius:0;background:transparent!important;color:inherit!important;padding:0;gap:8px;transition:none}
 .concierge-form .field{border-color:#8c8089}
-.concierge-page .v3-footer .studio-contact-actions{display:flex;margin-top:22px}
-.concierge-page .v3-footer .studio-contact-actions>a{display:none}
+
+
 
 /* Interior-page audit: natural wrapping, readable copy and a quieter rhythm. */
 .studio-inner main>section:first-child{padding-top:156px!important;padding-bottom:52px!important}
@@ -370,3 +370,13 @@ body.studio-footer-blend .v3-footer-top,body.studio-footer-blend .v3-footer-top 
 .pkg-example strong,.pkg-example small{display:block}.pkg-example strong{font-size:16px;line-height:1.7}.pkg-example small{font-size:12px;color:#716264;margin-top:4px;line-height:1.6}.pkg-example>span:last-child{font-size:26px}
 .pkg-example:hover{background:#ecdce0;border-color:#9b3248}.pkg-example:focus-visible{outline:3px solid #c91524;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){.pkg-example{transition:none}}
+
+/* All page endings share the homepage footer and one continuous canvas. */
+body.studio-footer-blend .see-collabs{background:transparent!important}
+body.studio-footer-blend.concierge-page main{background:transparent;padding-bottom:clamp(100px,14vw,180px)}
+body.studio-footer-blend.concierge-page main:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--concierge-background);-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 220px),transparent 100%);mask-image:linear-gradient(to bottom,#000 calc(100% - 220px),transparent 100%)}
+body .v3-footer .v3-footer-cta{display:flex}
+body .v3-footer .studio-contact-actions{display:flex}
+body .v3-footer .studio-contact-actions>a{display:inline-flex}
+body .v3-footer{min-height:100svh}
+@media(max-width:640px){body .v3-footer{min-height:95svh}}
