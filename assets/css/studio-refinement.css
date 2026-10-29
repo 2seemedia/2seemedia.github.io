@@ -401,9 +401,9 @@ body.studio-inner main,body.concierge-page main{text-align:start}
 body.studio-inner main h1,body.studio-inner main h2,body.studio-inner main p,body.concierge-page .concierge-hero{text-align:start}
 @media(min-width:641px){
  body .v3-footer{--footer-dock-space:140px}
- .v3-header .v3-nav .v3-nav-item:not(.v9-language) span{box-sizing:border-box;width:100%;text-align:start;padding-inline:18px}
- html[dir=ltr] .v3-header .v3-nav .v3-nav-item:not(.v9-language) span{direction:ltr}
- html[dir=rtl] .v3-header .v3-nav .v3-nav-item:not(.v9-language) span{direction:rtl}
+ .v3-header .v3-nav .v3-nav-item:not(.v9-language)>span{box-sizing:border-box;width:100%;text-align:start;padding-inline:18px}
+ html[dir=ltr] .v3-header .v3-nav .v3-nav-item:not(.v9-language)>span{direction:ltr}
+ html[dir=rtl] .v3-header .v3-nav .v3-nav-item:not(.v9-language)>span{direction:rtl}
 }
 @media(max-width:640px){
  body .v3-footer .v3-footer-top,body .v3-footer .v3-footer-cta,body .v3-footer .studio-contact-actions{width:100%;margin-inline:0}
