@@ -154,3 +154,13 @@ html[dir=rtl] .studio-inner main .eyebrow{font-size:13px;letter-spacing:0}
  .studio-services main dl{grid-template-columns:1fr;gap:18px}
  .studio-services main dl>div+div{border-top:1px solid #d4cfc6;padding-top:16px}
 }
+
+/* Burgundy opening, transparent mark and a matching compact wordmark. */
+:root{--studio-burgundy-glow:radial-gradient(ellipse at -12% 20%,#bf2444 0%,#8c102b 18%,#420008 43%,transparent 70%),linear-gradient(112deg,#490007 0%,#250000 50%,#100000 100%)}
+.see-scroll-story .v3-opening{background:transparent;isolation:isolate}
+.see-scroll-story .v3-opening:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--studio-burgundy-glow);opacity:var(--studio-glow-opacity,1)}
+.v9-intro-veil{background:var(--studio-burgundy-glow)}
+.v3-brand,.v9-intro-circle{background:transparent!important;box-shadow:none!important;border:0!important}
+.v3-is-scrolled .v3-brand{background:var(--studio-burgundy-glow)!important;color:#f4f2ed;box-shadow:0 5px 18px #24000624!important}
+/* Work covers remain clickable and named for assistive technology. */
+.studio-work-copy,.v3-project-caption{display:none!important}

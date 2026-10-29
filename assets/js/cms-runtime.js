@@ -222,7 +222,7 @@
     var heading=w.client||name||(w.type==='design'?(lang==='ar'?'تصميم غرافيكي':'Graphic design'):(lang==='ar'?'إنتاج وصناعة محتوى':'Production & content'));
     var h=elt('h2','studio-work-title',heading);copy.appendChild(h);
     var line=elt('p','studio-work-type',w.type==='design'?(lang==='ar'?'تصاميم · عرض التصميم ↗':'Design · View project ↗'):(lang==='ar'?'ريلز · تشغيل الفيديو ↗':'Reel · Play video ↗'));copy.appendChild(line);
-    var desc=(lang==='ar'?(w.descriptionAr||w.description):w.description)||'';if(desc)copy.appendChild(elt('p','studio-work-description',desc));art.appendChild(copy);a.setAttribute('aria-label',heading+' — '+line.textContent);return art;
+    var desc=(lang==='ar'?(w.descriptionAr||w.description):w.description)||'';if(desc)copy.appendChild(elt('p','studio-work-description',desc));a.setAttribute('aria-label',heading+' — '+line.textContent);return art;
   }
   var home=document.getElementById('cms-home-work');if(home)works.filter(function(w){return w.featured}).slice(0,4).forEach(function(w,i){home.appendChild(card(w,i))});
   var grid=document.getElementById('cms-work-grid');if(grid){grid.dataset.pageSize=String(Math.max(4,Math.min(40,Number(data.settings.workPageSize)||12)));works.forEach(function(w,i){grid.appendChild(card(w,i))})}

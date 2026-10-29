@@ -44,7 +44,7 @@
    image.onerror=function(){image.onerror=null;image.src='assets/img/2see-placeholder.svg'};
    var label=document.createElement('span');label.className='v3-project-open';label.textContent=ar?'عرض المشروع ↗':'View project ↗';
    link.append(image,label);card.append(link);
-   var caption=document.createElement('p');caption.className='v3-project-caption';caption.textContent=workName(work);card.append(caption);track.append(card);
+   track.append(card);
   });
   var galleryVisible=false,galleryPaused=false,galleryUserPaused=false,galleryTimer=0;var pauseButton=document.querySelector('[data-gallery-pause]');
   function pauseLabel(){if(pauseButton){pauseButton.textContent=galleryUserPaused?(ar?'تشغيل السحب':'Play slides'):(ar?'إيقاف السحب':'Pause slides');pauseButton.setAttribute('aria-pressed',String(galleryUserPaused))}}
@@ -66,7 +66,7 @@
  }
  var intro=document.querySelector('.v2-intro'),services=document.querySelector('.v2-services'),team=document.querySelector('.v2-team'),process=document.querySelector('.v2-process');
  if(opening)document.body.classList.add('story-ready');
- var accent=rgb(getComputedStyle(document.documentElement).getPropertyValue('--color-cobalt')||'#c91524');
+ var accent=[48,0,5];
  var themes=[{el:opening,color:accent},{el:intro,color:[244,242,235]},{el:services,color:[207,207,201]},{el:team,color:[244,242,235]},{el:process,color:[224,223,217]}].filter(function(x){return x.el});
  var pending=false,menuPreviousY=scrollY,menuDirectionTravel=0,menuDirection=0;
  function update(){
@@ -80,6 +80,8 @@
    document.body.style.setProperty('--story-hint-opacity',1-clamp(p/.2,0,1));
    document.body.style.setProperty('--story-label-opacity',clamp((p-.18)/.42,0,1));
    var color=accent.slice(),previousColor=accent.slice();
+   var glowFade=intro?clamp((innerHeight*.82-intro.getBoundingClientRect().top)/(innerHeight*.82),0,1):0;
+   opening.style.setProperty('--studio-glow-opacity',String(1-glowFade));
    themes.slice(1).forEach(function(theme){var top=theme.el.getBoundingClientRect().top,t=clamp((innerHeight*.82-top)/(innerHeight*.82),0,1);if(t>0)color=mix(previousColor,theme.color,still()?1:t);previousColor=theme.color});
    document.body.style.setProperty('--story-bg','rgb('+color.join(',')+')');
   }
