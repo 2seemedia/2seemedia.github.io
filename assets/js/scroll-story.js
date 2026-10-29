@@ -113,13 +113,13 @@
   if(still()||settings.introEnabled===false){root.classList.remove('see-intro-playing');return;}
   try{sessionStorage.setItem('2see-intro-seen-v7','1')}catch(e){}
   var veil=document.createElement('div');veil.className='v9-intro-veil';veil.setAttribute('aria-hidden','true');
-  var circle=document.createElement('div');circle.className='v9-intro-circle';var mark=document.createElement('img');mark.src='assets/img/2see-logo.png';mark.alt='';circle.append(mark);
+  var circle=document.createElement('div');circle.className='v9-intro-circle';var mark=document.createElement('img');mark.src=safeUrl((data.brand||{}).logo||'assets/img/2see-logo.png');mark.alt='';circle.append(mark);
   var slogan=document.createElement('p');slogan.textContent='WE MAKE YOU SEEN.';veil.append(slogan);document.body.append(veil,circle);
-  var size=Math.min(300,innerWidth*.62),oldOverflow=document.body.style.overflow;
+  var size=Math.min(300,innerWidth*.62),oldOverflow=document.body.style.overflow,introDone=false,introTimer=0,introNodes=Array.from(document.querySelectorAll('.v3-header,main,footer'));introNodes.forEach(function(el){el.inert=true});var skip=document.createElement('button');skip.type='button';skip.className='studio-intro-skip';skip.textContent=ar?'تخطي المقدمة ↗':'Skip intro ↗';veil.removeAttribute('aria-hidden');veil.append(skip);skip.addEventListener('click',finish);skip.focus({preventScroll:true});
   circle.style.cssText='width:'+size+'px;height:'+size+'px;left:'+(innerWidth-size)/2+'px;top:'+(innerHeight-size)/2+'px';
   document.body.style.overflow='hidden';brand.style.opacity='0';
-  function finish(){document.body.style.overflow=oldOverflow;brand.style.opacity='';root.classList.remove('see-intro-playing');veil.remove();circle.remove();}
-  setTimeout(function(){var target=brand.getBoundingClientRect();veil.animate([{opacity:1},{opacity:0}],{duration:650,fill:'forwards'});slogan.style.opacity='0';
+  function finish(){if(introDone)return;introDone=true;clearTimeout(introTimer);var restoreFocus=document.activeElement===skip;introNodes.forEach(function(el){el.inert=false});document.body.style.overflow=oldOverflow;brand.style.opacity='';root.classList.remove('see-intro-playing');veil.remove();circle.remove();if(restoreFocus)brand.focus({preventScroll:true});}
+  introTimer=setTimeout(function(){if(introDone)return;var target=brand.getBoundingClientRect();veil.animate([{opacity:1},{opacity:0}],{duration:650,fill:'forwards'});slogan.style.opacity='0';
    circle.animate([{left:circle.style.left,top:circle.style.top,width:size+'px',height:size+'px'},{left:target.left+'px',top:target.top+'px',width:target.width+'px',height:target.height+'px'}],{duration:850,easing:'cubic-bezier(.65,0,.25,1)',fill:'forwards'}).finished.then(finish,finish);
   },3000);
  }

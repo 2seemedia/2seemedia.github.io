@@ -199,7 +199,7 @@
     title.textContent=w.client||name||(w.type==='design'?(lang==='ar'?'تصميم غرافيكي':'Graphic design'):(lang==='ar'?'إنتاج وصناعة محتوى':'Production & content'));
     var description=modal.querySelector('[data-modal-description]');description.textContent=(lang==='ar'?(w.descriptionAr||w.description):w.description)||'';description.hidden=!description.textContent;
     var picture=modal.querySelector('[data-modal-image]');picture.hidden=w.type!=='design';if(w.type==='design')picture.src=safeLink(w.image);else picture.removeAttribute('src');picture.alt=title.textContent;modal.querySelector('.see-modal-bottom span').hidden=w.type==='design';link.textContent=lang==='ar'?'فتح العمل الأصلي ↗':'Open original ↗';
-    link.href=safeLink(w.url||'#');
+    link.href=safeLink(w.url||w.image||'#');
     var url='';
     try{var u=new URL(w.url);if(['www.instagram.com','instagram.com'].includes(u.hostname)&&/^\/(reel|p)\/[\w-]+\/?$/.test(u.pathname))url=u.origin+u.pathname.replace(/\/$/,'')+'/embed/';
       else if(['youtube.com','www.youtube.com','youtu.be'].includes(u.hostname)){var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.match(/\/shorts\/([\w-]+)/)?.[1]);if(/^[\w-]{11}$/.test(id||''))url='https://www.youtube-nocookie.com/embed/'+id}
