@@ -203,3 +203,15 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
 }
 @media(max-width:380px){.v3-header .v3-nav{width:360px;height:360px;right:-76px;top:-32px}.v3-header .v3-nav .v3-nav-item{left:35%;top:calc(100px + var(--v12-order)*34px)}}
 @media(prefers-reduced-motion:reduce){.v12-menu-backdrop,.v8-menu-toggle{transition:none!important}}
+
+/* Fixed menu options with a considered typographic treatment. */
+@media(max-width:640px){
+ .v3-header .v3-nav .v3-nav-item{left:35%;width:164px;min-height:31px;padding:7px 12px;justify-content:space-between;gap:12px;font-weight:800;font-size:14px;line-height:1.2;border-bottom:1px solid #171b1718!important;border-radius:0;direction:rtl;letter-spacing:0}
+ html[dir="ltr"] .v3-header .v3-nav .v3-nav-item{direction:ltr}
+ .v3-header .v3-nav .v3-nav-item:after{display:block;content:'↗';font:18px/1 Arial,sans-serif;color:#c91524}
+ .v3-header .v3-nav .v3-nav-item:hover,.v3-header .v3-nav .v3-nav-item:focus-visible{border-radius:8px}
+ .v3-header .v3-nav .v3-nav-item:hover:after,.v3-header .v3-nav .v3-nav-item:focus-visible:after{color:#fff}
+ .v3-header .v3-nav .v9-language{font-size:12px;letter-spacing:.03em;color:#c91524!important;border-bottom:0!important}
+ .v3-header .v3-nav .v9-language:after{content:'⇄'}
+}
+@media(max-width:380px){.v3-header .v3-nav .v3-nav-item{width:154px;font-size:13px}}
