@@ -215,3 +215,10 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
  .v3-header .v3-nav .v9-language:after{content:'⇄'}
 }
 @media(max-width:380px){.v3-header .v3-nav .v3-nav-item{width:154px;font-size:13px}}
+
+/* Intro artwork reveals before the circle travels into the header. */
+.v9-intro-circle img{animation:v14-logo-reveal 1.1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center;will-change:transform,opacity}
+.v9-intro-veil p{animation:v14-slogan-reveal .7s ease .55s both}
+@keyframes v14-logo-reveal{0%{opacity:0;transform:scale(.68) translateY(18px);filter:blur(9px)}65%{opacity:1;transform:scale(1.035) translateY(0);filter:blur(0)}100%{opacity:1;transform:scale(1);filter:blur(0)}}
+@keyframes v14-slogan-reveal{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.v9-intro-circle img,.v9-intro-veil p{animation:none!important}}
