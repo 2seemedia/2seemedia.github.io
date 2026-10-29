@@ -53,6 +53,10 @@
     if(['normal','500','600','700','800','900'].includes(String(st.fontWeight)))element.style.fontWeight=String(st.fontWeight);
     if(st.italic===true)element.style.fontStyle='italic';
     if(st.underline===true)element.style.textDecoration='underline';
+    if(['start','center','end'].includes(st.textAlign)){var block=element.closest('h1,h2,h3,h4,p,li,summary')||element;block.style.setProperty('text-align',st.textAlign,'important')}
+    if(Number.isFinite(st.lineHeight)&&st.lineHeight>=1&&st.lineHeight<=3)element.style.lineHeight=String(st.lineHeight);
+    ['marginTop','marginBottom','borderRadius'].forEach(function(key){if(Number.isFinite(st[key])&&st[key]>=0&&st[key]<=200){element.style[key]=st[key]+'px';if(key!=='borderRadius'&&element.tagName==='SPAN')element.style.display='inline-block'}});
+
     if(visualEdit){
       element.dataset.seeEditKey=entry.key;
       element.title=(lang==='ar'?'انقري لتعديل: ':'Click to edit: ')+(entry.label||entry.key);
