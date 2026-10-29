@@ -10,11 +10,12 @@
  var mobileHeader=document.querySelector('.v3-header'),mobileNav=document.querySelector('.v3-nav');
  if(mobileHeader&&mobileNav){
   mobileNav.id='v8-site-navigation';
+  var menuBackdrop=document.createElement('button');menuBackdrop.type='button';menuBackdrop.className='v12-menu-backdrop';menuBackdrop.tabIndex=-1;menuBackdrop.setAttribute('aria-label',ar?'إغلاق القائمة':'Close menu');menuBackdrop.setAttribute('aria-hidden','true');document.body.append(menuBackdrop);menuBackdrop.addEventListener('click',function(){menuState(false)});
   var languageLink=document.querySelector('.v3-language');if(languageLink){languageLink.classList.remove('v3-language');languageLink.classList.add('v3-nav-item','v9-language');var languageText=languageLink.textContent;languageLink.textContent='';var languageSpan=document.createElement('span');languageSpan.textContent=languageText;languageLink.append(languageSpan);mobileNav.append(languageLink);}
   var wheelItems=Array.from(mobileNav.querySelectorAll('a'));
   wheelItems.forEach(function(item,i){var angle=-90+i*360/wheelItems.length;item.style.setProperty('--wheel-x',Math.cos(angle*Math.PI/180)*112+'px');item.style.setProperty('--wheel-y',Math.sin(angle*Math.PI/180)*112+'px');});
   var menuButton=document.createElement('button');menuButton.type='button';menuButton.className='v8-menu-toggle';menuButton.setAttribute('aria-controls',mobileNav.id);menuButton.setAttribute('aria-expanded','false');
-  function menuState(open){mobileHeader.classList.toggle('is-menu-open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?(ar?'إغلاق ×':'Close ×'):(ar?'القائمة ☰':'Menu ☰');}
+  function menuState(open){document.body.classList.toggle('v12-menu-open',open);if(menuBackdrop)menuBackdrop.setAttribute('aria-hidden',String(!open));mobileHeader.classList.toggle('is-menu-open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?(ar?'إغلاق ×':'Close ×'):(ar?'القائمة ☰':'Menu ☰');}
   menuState(false);mobileHeader.append(menuButton);menuButton.addEventListener('click',function(){menuState(menuButton.getAttribute('aria-expanded')!=='true')});
   mobileNav.addEventListener('click',function(e){if(e.target.closest('a'))menuState(false)});
   document.addEventListener('click',function(e){if(!mobileHeader.contains(e.target))menuState(false)});
@@ -64,7 +65,7 @@
  var themes=[{el:opening,color:accent},{el:intro,color:[244,242,235]},{el:services,color:[207,207,201]},{el:team,color:[244,242,235]},{el:process,color:[224,223,217]}].filter(function(x){return x.el});
  var pending=false;
  function update(){
-  pending=false;document.body.classList.toggle('v3-is-scrolled',scrollY>40);
+  pending=false;document.body.classList.toggle('v3-is-scrolled',scrollY>40);document.body.classList.toggle('v12-menu-away',scrollY>160);if(scrollY>160&&innerWidth<=640&&mobileHeader&&mobileHeader.classList.contains('is-menu-open'))menuState(false);
   if(opening){
    var rect=opening.getBoundingClientRect(),p=clamp(-rect.top/Math.max(1,rect.height-innerHeight),0,1);
    document.body.style.setProperty('--story-title-opacity',motion.matches?1:1-clamp((p-.7)/.3,0,1));
