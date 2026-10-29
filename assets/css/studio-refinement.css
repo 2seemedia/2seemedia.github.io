@@ -442,3 +442,8 @@ body.studio-inner main h1,body.studio-inner main h2,body.studio-inner main p,bod
 .studio-about-stack .v3-founder-bio{min-width:0}
 .studio-about-stack .v3-founder-bio h3{font-size:clamp(24px,2.6vw,38px)!important}
 @media(max-width:640px){.studio-about-stack .studio-founder-selector{gap:10px;grid-template-columns:minmax(0,1fr) 40px}.studio-about-stack .see-founder-instagram{width:40px;height:40px}}
+
+/* The intro logo has no circular surface or outline at any animation frame. */
+.v9-intro-circle{border-radius:0!important;outline:0!important;border:0!important;background:transparent!important;box-shadow:none!important;overflow:visible}
+.v9-intro-circle:before,.v9-intro-circle:after{content:none!important;display:none!important}
+html.see-intro-playing .v3-brand{background:transparent!important;border-radius:0!important;box-shadow:none!important;outline:0!important}

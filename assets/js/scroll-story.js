@@ -100,7 +100,7 @@
  if(opening)document.body.classList.add('story-ready');
  var accent=[48,0,5],contactFooter=document.querySelector('.v3-footer');if(contactFooter)document.body.classList.add('studio-footer-blend');
  var themes=[{el:opening,color:accent},{el:intro,color:[244,242,235]},{el:services,color:[207,207,201]},{el:team,color:[244,242,235]},{el:process,color:[224,223,217]},{el:contactFooter,color:accent}].filter(function(x){return x.el});
- var pending=false,menuPreviousY=scrollY,menuDirectionTravel=0,menuDirection=0;
+ var openingFinished=false,pending=false,menuPreviousY=scrollY,menuDirectionTravel=0,menuDirection=0;
  function update(){
   pending=false;document.body.classList.toggle('v3-is-scrolled',scrollY>40);var menuDelta=scrollY-menuPreviousY;menuPreviousY=scrollY;
   if(scrollY<12){document.body.classList.remove('v12-menu-away');menuDirectionTravel=0;}
@@ -114,10 +114,11 @@
    if(track&&!still()){opening.style.setProperty('--reel-section-height',(innerHeight*1.85+travel)+'px');track.scrollLeft=clamp(distance-innerHeight*.7,0,travel);}
    else opening.style.removeProperty('--reel-section-height');
    document.body.style.setProperty('--story-title-opacity',still()?1:1-clamp((p-.12)/.35,0,1));
-   if(track){
+   if(track&&(rect.bottom>=0||!openingFinished)){
+    openingFinished=rect.bottom<0;
     var unfold=still()?1:clamp((p-.03)/.62,0,1),ease=1-Math.pow(1-unfold,3),reveal=still()?1:clamp((p-.16)/.3,0,1);
     revealReady=unfold>=.98;var shell=track.closest('.v3-gallery-shell');shell.inert=!revealReady;
-    opening.style.setProperty('--reel-backdrop-blur',(still()?0:6*Math.sin(Math.PI*unfold))+'px');opening.style.setProperty('--reel-backdrop-opacity',String(still()?0:Math.sin(Math.PI*unfold)));opening.style.setProperty('--reel-reveal',String(reveal));opening.style.setProperty('--reel-controls',String(clamp((unfold-.8)/.2,0,1)));
+    opening.style.setProperty('--reel-backdrop-blur',(still()?0:(innerWidth<=640?2:4)*Math.sin(Math.PI*unfold))+'px');opening.style.setProperty('--reel-backdrop-opacity',String(still()?0:Math.sin(Math.PI*unfold)));opening.style.setProperty('--reel-reveal',String(reveal));opening.style.setProperty('--reel-controls',String(clamp((unfold-.8)/.2,0,1)));
     var trackBox=track.getBoundingClientRect();opening.style.setProperty('--reel-stage-visible',still()||p>.03?'1':'0');
     Array.from(track.children).forEach(function(card,i){var rise=still()?1:clamp((p-.035-(i%5)*.045)/.38,0,1),riseEase=1-Math.pow(1-rise,3),y=Math.max(innerHeight*.65,innerHeight-trackBox.top+40);card.style.setProperty('--reel-x','0px');card.style.setProperty('--reel-y',(y*(1-riseEase))+'px');card.style.setProperty('--reel-scale-y','1');card.style.setProperty('--reel-card-opacity',String(clamp(rise/.18,0,1)));card.style.setProperty('--reel-curtain','0');card.style.visibility=(i>=5&&!revealReady)||(!still()&&rise===0)?'hidden':'';card.style.zIndex=String(20-i);});
    }
@@ -161,7 +162,7 @@
   try{sessionStorage.setItem('2see-intro-seen-v7','1')}catch(e){}
   var veil=document.createElement('div');veil.className='v9-intro-veil';veil.setAttribute('aria-hidden','true');
   var circle=document.createElement('div');circle.className='v9-intro-circle';var mark=document.createElement('img');mark.src=safeUrl((data.brand||{}).logo||'assets/img/2see-logo.png');mark.alt='';circle.append(mark);
-  var slogan=document.createElement('p');slogan.textContent='WE MAKE YOU SEEN.';veil.append(slogan);document.body.append(veil,circle);
+  var slogan=document.createElement('p');slogan.textContent='WE MAKE YOU SEEN';veil.append(slogan);document.body.append(veil,circle);
   var size=Math.min(300,innerWidth*.62),oldOverflow=document.body.style.overflow,introDone=false,introTimer=0,introNodes=Array.from(document.querySelectorAll('.v3-header,main,footer'));introNodes.forEach(function(el){el.inert=true});var skip=document.createElement('button');skip.type='button';skip.className='studio-intro-skip';skip.textContent=ar?'تخطي المقدمة ↗':'Skip intro ↗';veil.removeAttribute('aria-hidden');veil.append(skip);skip.addEventListener('click',finish);skip.focus({preventScroll:true});
   circle.style.cssText='width:'+size+'px;height:'+size+'px;left:'+(innerWidth-size)/2+'px;top:'+(innerHeight-size)/2+'px';
   document.body.style.overflow='hidden';brand.style.opacity='0';
