@@ -11,7 +11,7 @@
 
   /* ---------- Header: solid background once the page scrolls ---------- */
   var header = $('.site-header');
-  function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 12); }
+  function onScroll() { if (header) header.classList.toggle('is-scrolled', window.scrollY > 12); }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 

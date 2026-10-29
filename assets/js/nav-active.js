@@ -1,19 +1,18 @@
-/* 2See Media — stable navigation state: active PAGE only, no scrolling tracker. */
+/* Keep the current page selected, independently of scroll direction. */
 (function(){
  'use strict';
- var header=document.querySelector('.site-header');
- if(!header)return;
- var page=window.SEE_PREVIEW_PAGE||(location.pathname.split('/').pop()||'index.html');
- if(page==='case-study.html')page='work.html';
- var pages=['index.html','work.html','services.html','about.html','careers.html','contact.html'];
- if(!pages.includes(page))return;
- header.querySelectorAll('nav ul a[href]').forEach(function(a){
-  if(a.hasAttribute('data-language-toggle'))return;
-  var href=a.getAttribute('href')||'';
-  var target=href.replace(/^\.\//,'').split(/[?#]/)[0];
-  var active=target===page;
-  a.toggleAttribute('data-see-active',active && target!=='index.html');
-  if(active)a.setAttribute('aria-current','page');
-  else a.removeAttribute('aria-current');
+ function pageName(value){
+  var path=new URL(value,location.href).pathname.replace(/\/+$/,'');
+  var name=(path.split('/').pop()||'index').replace(/\.html$/,'');
+  return name==='case-study'?'work':name;
+ }
+ var page=pageName(window.SEE_PREVIEW_PAGE||location.href);
+ document.querySelectorAll('.site-header nav a[href],.v3-header .v3-nav a[href]').forEach(function(a){
+  if(a.hasAttribute('data-language-toggle')||a.matches('.v3-language,.v9-language'))return;
+  var url=new URL(a.getAttribute('href'),location.href);
+  if(url.origin!==location.origin||!['index','work','services','about','careers','contact'].includes(pageName(url.href)))return;
+  var active=pageName(url.href)===page;
+  a.toggleAttribute('data-see-active',active);
+  if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
  });
 })();
