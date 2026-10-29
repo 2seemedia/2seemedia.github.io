@@ -433,3 +433,12 @@ body.studio-inner main h1,body.studio-inner main h2,body.studio-inner main p,bod
 }
 
 @media(min-width:641px){.v3-header .v3-nav .v3-nav-home{--nav-open-width:160px}}
+
+/* About uses the same stacked portraits and founder selection as Home. */
+.studio-about-stack .studio-founder-selector{display:grid;grid-template-columns:minmax(0,1fr) 44px;align-items:center;gap:14px}
+.studio-about-stack .see-founder-instagram{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#b51222;border:1px solid #b5122233;border-radius:50%;transition:background .2s,color .2s}
+.studio-about-stack .see-founder-instagram:hover{background:#b51222;color:#fff}
+.studio-about-stack .see-founder-instagram:focus-visible{outline:3px solid #b51222;outline-offset:4px}
+.studio-about-stack .v3-founder-bio{min-width:0}
+.studio-about-stack .v3-founder-bio h3{font-size:clamp(24px,2.6vw,38px)!important}
+@media(max-width:640px){.studio-about-stack .studio-founder-selector{gap:10px;grid-template-columns:minmax(0,1fr) 40px}.studio-about-stack .see-founder-instagram{width:40px;height:40px}}
