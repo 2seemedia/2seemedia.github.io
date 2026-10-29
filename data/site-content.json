@@ -5582,24 +5582,24 @@
         "kind": "text",
         "section": "careers.section1",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "PEOPLE WITH A POINT OF VIEW",
+        "ar": "مساحة للمبدعين"
       },
       {
         "key": "careers.t020",
         "kind": "text",
         "section": "careers.section1",
         "label": "Create something with us.",
-        "en": "Let’s work together.",
-        "ar": "لنعمل معاً"
+        "en": "A signature of your own? Show us.",
+        "ar": "إلك بصمة؟ خلّينا نشوفها."
       },
       {
         "key": "careers.t021",
         "kind": "text",
         "section": "careers.section1",
         "label": "We are always open to hearing from creative people, collaborators and production partners.",
-        "en": "Show us your work and tell us what you do. We welcome photographers, editors, designers, presenters and other creative talents.",
-        "ar": "أرسل نماذج من أعمالك، وعرّفنا باختصاصك. نرحّب بالمصوّرين والمونتيرين والمصمّمين ومقدّمي المحتوى وغيرهم"
+        "en": "Bring your craft, your ideas and your own point of view. Tell us how you would like to work with 2SEE.",
+        "ar": "شغلك، أفكارك وطريقتك الخاصة. عرّفنا عنك وعن الدور اللي بتحب تضيفه مع 2SEE."
       },
       {
         "key": "careers.t022",
@@ -5614,8 +5614,8 @@
         "kind": "text",
         "section": "careers.section2",
         "label": "Creative collaboration.",
-        "en": "Collaboration areas.",
-        "ar": "مجالات التعاون"
+        "en": "Where your craft fits.",
+        "ar": "وين ممكن تكون بصمتك؟"
       },
       {
         "key": "careers.t024",
@@ -5782,16 +5782,16 @@
         "kind": "text",
         "section": "careers.section4",
         "label": "Apply",
-        "en": "Apply",
-        "ar": "قدّم طلبك"
+        "en": "Introduce yourself.",
+        "ar": "خلّينا نتعرّف عليك."
       },
       {
         "key": "careers.t045",
         "kind": "text",
         "section": "careers.section4",
         "label": "Career form introduction",
-        "en": "Select your specialty and attach your CV when you send the message.",
-        "ar": "اختر اختصاصك وأدخل بياناتك، ثم أرفق سيرتك الذاتية قبل إرسال الطلب"
+        "en": "Choose employment interest or freelance collaboration, then share your specialty and work.",
+        "ar": "اختار طلب توظيف أو تعاون مستقل، وعرّفنا باختصاصك وشغلك."
       },
       {
         "key": "careers.t046",
@@ -6410,8 +6410,8 @@
         "attr": "href",
         "section": "careers.section1",
         "label": "link: #roles",
-        "en": "#roles",
-        "ar": "#roles"
+        "en": "#apply",
+        "ar": "#apply"
       },
       {
         "key": "careers.a103",
@@ -6843,32 +6843,32 @@
         "kind": "text",
         "section": "contact.section1",
         "label": "Contact",
-        "en": "Contact",
-        "ar": "تواصل معنا"
+        "en": "YOUR NEXT PROJECT",
+        "ar": "مشروعك الجاي"
       },
       {
         "key": "contact.t020",
         "kind": "text",
         "section": "contact.section1",
         "label": "Tell us about",
-        "en": "Tell us about",
-        "ar": "أخبرنا عن"
+        "en": "Your next project.",
+        "ar": "مشروعك الجاي،"
       },
       {
         "key": "contact.t021",
         "kind": "text",
         "section": "contact.section1",
         "label": "your project.",
-        "en": "your project.",
-        "ar": "مشروعك"
+        "en": "Starts here.",
+        "ar": "بيبدأ من هون."
       },
       {
         "key": "contact.t022",
         "kind": "text",
         "section": "contact.section1",
         "label": "Tell us what you have in mind. You can send the brief by email or reach us directly on Wha",
-        "en": "Tell us what you need, then choose WhatsApp or email.",
-        "ar": "أخبرنا بما تحتاج إليه، واختر واتساب أو البريد الإلكتروني لإرسال طلبك"
+        "en": "Tell us your idea and what you need. We will prepare a project enquiry for you to send by WhatsApp or email.",
+        "ar": "احكيلنا عن فكرتك والخدمات اللي بتحتاجها. منجهّز طلبك لتبعته على واتساب أو البريد الإلكتروني."
       },
       {
         "key": "contact.t023",
@@ -6899,8 +6899,8 @@
         "kind": "text",
         "section": "contact.section2",
         "label": "Company",
-        "en": "Company",
-        "ar": "الشركة"
+        "en": "Company / brand (optional)",
+        "ar": "الشركة أو العلامة التجارية (اختياري)"
       },
       {
         "key": "contact.t027",

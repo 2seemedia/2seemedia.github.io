@@ -31,12 +31,12 @@
  }catch(e){}
 })();
 </script>
-<link href="assets/css/2see-overrides.css" rel="stylesheet"/><link rel="stylesheet" href="assets/css/studio-v2.css"><link rel="stylesheet" href="assets/css/scroll-story.css"></head>
-<body class="antialiased">
+<link href="assets/css/2see-overrides.css" rel="stylesheet"/><link rel="stylesheet" href="assets/css/studio-v2.css"><link rel="stylesheet" href="assets/css/scroll-story.css"><link rel="stylesheet" href="assets/css/studio-refinement.css"></head>
+<body class="antialiased concierge-page concierge-contact">
 <a class="skip-link" data-cms-link="contact.a088" href="#main"><!--cms:contact.t001-->Skip to content</a>
 <header class="v3-header"><a class="v3-brand" href="index.html" aria-label="2SEE Media — Home"><img class="v4-brand-logo" src="assets/img/2see-logo.png" alt="2SEE Media"><span class="v4-brand-wordmark">2See Media</span></a><a class="v3-language" href="?lang=ar" data-language-toggle aria-label="Switch language">العربية</a><nav class="v3-nav" aria-label="Main"><a href="work.html" class="v3-nav-item v3-nav-0" aria-label="Work / أعمالنا"><span data-v3-en="Work" data-v3-ar="أعمالنا">Work</span></a><a href="about.html" class="v3-nav-item v3-nav-1" aria-label="About / من نحن"><span data-v3-en="About" data-v3-ar="من نحن">About</span></a><a href="services.html" class="v3-nav-item v3-nav-2" aria-label="Services / خدماتنا"><span data-v3-en="Services" data-v3-ar="خدماتنا">Services</span></a><a href="careers.html" class="v3-nav-item v3-nav-3" aria-label="Collaborate / تعاون معنا"><span data-v3-en="Collaborate" data-v3-ar="تعاون معنا">Collaborate</span></a><a href="contact.html" class="v3-nav-item v3-nav-4" aria-label="Contact / تواصل معنا"><span data-v3-en="Contact" data-v3-ar="تواصل معنا">Contact</span></a></nav></header>
 <main id="main">
-<section class="container-x pt-36 pb-16 sm:pt-44 md:pb-24" data-cms-section="contact.section1">
+<section class="concierge-hero container-x pt-36 pb-16 sm:pt-44 md:pb-24" data-cms-section="contact.section1">
 <p class="eyebrow reveal text-muted"><!--cms:contact.t019-->Contact</p>
 <h1 class="display-xl mt-6 max-w-[16ch] text-[clamp(3rem,9vw,8.5rem)]">
 <span class="line-mask"><span style="--d:0ms"><!--cms:contact.t020-->Tell us about</span></span>
@@ -46,17 +46,17 @@
 <p class="reveal text-lg leading-relaxed text-muted md:col-span-6 md:text-xl"><!--cms:contact.t022-->Tell us what you have in mind. You can send the brief by email or reach us directly on WhatsApp.</p>
 </div>
 </section>
-<section aria-label="Project enquiry" class="container-x pb-24 md:pb-32" data-cms-label="contact.a126" data-cms-section="contact.section2">
+<section aria-label="Project enquiry" class="concierge-form-section container-x pb-24 md:pb-32" data-cms-label="contact.a126" data-cms-section="contact.section2">
 <div class="grid gap-16 lg:grid-cols-12">
 <div class="lg:col-span-7" data-form-wrap="">
-<!-- Demo form: add action="https://formspree.io/f/your-id" and follow the comment in assets/js/main.js to receive enquiries. -->
-<form aria-label="Project enquiry — choose WhatsApp or email" class="grid gap-10" data-send-choice="" data-validate="" novalidate="">
+
+<form aria-label="Project enquiry — choose WhatsApp or email" class="concierge-form grid gap-10" data-send-choice="" novalidate="">
 <fieldset class="min-w-0">
 <legend class="eyebrow text-muted"><!--cms:contact.t023-->01 — About you</legend>
 <div class="mt-6 grid gap-8 sm:grid-cols-2">
 <div data-field=""><label class="label" for="c-name"><!--cms:contact.t024-->Name</label><input autocomplete="name" class="field" id="c-name" name="name" required=""/></div>
 <div data-field=""><label class="label" for="c-email"><!--cms:contact.t025-->Work email</label><input autocomplete="email" class="field" id="c-email" name="email" required="" type="email"/></div>
-<div class="sm:col-span-2" data-field=""><label class="label" for="c-company"><!--cms:contact.t026-->Company</label><input autocomplete="organization" class="field" id="c-company" name="company" required=""/></div>
+<div class="sm:col-span-2" data-field=""><label class="label" for="c-company"><!--cms:contact.t026-->Company</label><input autocomplete="organization" class="field" id="c-company" name="company"/></div>
 </div>
 </fieldset>
 <fieldset class="min-w-0" data-required-group="Please choose at least one service." id="services-group">
@@ -80,7 +80,7 @@
 <button class="btn btn-ghost-dark mt-8" data-reset-form="" type="button"><!--cms:contact.t050-->Send another enquiry</button>
 </div>
 </div>
-<aside class="min-w-0 lg:col-span-4 lg:col-start-9">
+<aside class="concierge-aside min-w-0 lg:col-span-4 lg:col-start-9">
 <div class="reveal rounded-[2rem] bg-paper-2 p-8">
 <h2 class="eyebrow text-muted"><!--cms:contact.t051-->Prefer email?</h2>
 <ul class="mt-5 grid gap-5">
@@ -111,5 +111,5 @@
 <a class="v3-badge" href="contact.html"><span data-v3-en="Let’s talk" data-v3-ar="نحكي عن مشروعك">Let’s talk</span></a></div><p class="v3-copyright">© 2026 2SEE Media</p></footer>
 <script src="assets/js/site-data.js"></script><script src="assets/js/cms-runtime.js"></script><script src="assets/js/main.js"></script><script src="assets/js/nav-active.js"></script>
 
-<script src="assets/js/scroll-story.js"></script></body>
+<script src="assets/js/scroll-story.js"></script><script src="assets/js/studio-forms.js"></script></body>
 </html>

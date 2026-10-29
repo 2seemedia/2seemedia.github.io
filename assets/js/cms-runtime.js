@@ -271,6 +271,7 @@ document.addEventListener('submit',function(e){
   e.preventDefault();e.stopImmediatePropagation();
   var method=(e.submitter&&e.submitter.dataset.sendMethod)||'email';
   var isCareer=page==='careers.html';
+  if(window.SEE_VALIDATE_FORM&&!window.SEE_VALIDATE_FORM(form))return;
   var notice=form.querySelector('#see-form-notice');
   if(!notice){notice=elt('div','see-form-notice');notice.id='see-form-notice';notice.setAttribute('role','status');notice.setAttribute('aria-live','polite');form.appendChild(notice)}
   notice.replaceChildren();notice.dataset.error='false';
@@ -283,15 +284,15 @@ document.addEventListener('submit',function(e){
     group.scrollIntoView({behavior:'smooth',block:'center'});return;
   }
   var texts={
-    ar:{name:'الاسم',email:'البريد الإلكتروني',company:'الشركة',services:'الخدمات',message:'تفاصيل المشروع',source:'كيف تعرّفت إلينا',role:'الاختصاص',other_role:'اختصاص آخر',portfolio:'رابط الأعمال',location:'مكان الإقامة',note:'نبذة عن العمل',cv:'ملف الـCV',consent:'الموافقة'},
-    en:{name:'Name',email:'Email',company:'Company',services:'Services',message:'Project details',source:'How you heard about us',role:'Specialty',other_role:'Other specialty',portfolio:'Portfolio',location:'Location',note:'About your work',cv:'CV file',consent:'Consent'}
+    ar:{application_type:'نوع الطلب',name:'الاسم',email:'البريد الإلكتروني',company:'الشركة',services:'الخدمات',message:'تفاصيل المشروع',source:'كيف تعرّفت إلينا',role:'الاختصاص',other_role:'اختصاص آخر',portfolio:'رابط الأعمال',location:'مكان الإقامة',note:'نبذة عن العمل',cv:'ملف الـCV',consent:'الموافقة'},
+    en:{application_type:'Application type',name:'Name',email:'Email',company:'Company',services:'Services',message:'Project details',source:'How you heard about us',role:'Specialty',other_role:'Other specialty',portfolio:'Portfolio',location:'Location',note:'About your work',cv:'CV file',consent:'Consent'}
   }[lang];
   var pairs=[];
   var fd=new FormData(form);
-  ['name','email','company','role','other_role','portfolio','location','message','note','source'].forEach(function(k){
+  ['application_type','name','email','company','role','other_role','portfolio','location','message','note','source'].forEach(function(k){
     var val=String(fd.get(k)||'').trim();
     if(!val)return;
-    if(k==='role'||k==='source'){
+    if(k==='role'||k==='source'||k==='application_type'){
       var s=form.querySelector('[name="'+k+'"]');
       if(s&&s.selectedOptions.length)val=s.selectedOptions[0].textContent.trim();
     }
@@ -316,7 +317,7 @@ document.addEventListener('submit',function(e){
   }
   var a=elt('a');a.href=url;a.textContent=method==='whatsapp'?(lang==='ar'?'فتح واتساب':'Open WhatsApp'):(lang==='ar'?'فتح البريد الإلكتروني':'Open email');
   if(method==='whatsapp'){a.target='_blank';a.rel='noopener noreferrer'}
-  var handoff=cv?(lang==='ar'?' **مهم:** يُرجى إرفاق ملف السيرة الذاتية ( '+cv.name+' ) يدوياً قبل الضغط على «إرسال».':' **Important:** Attach your CV ('+cv.name+') before you press Send.'):'';
+  var handoff=cv?(lang==='ar'?' مهم: يُرجى إرفاق ملف السيرة الذاتية ( '+cv.name+' ) يدوياً قبل الضغط على «إرسال».':' Important: Attach your CV ('+cv.name+') before you press Send.'):'';
   var info=elt('span','',method==='whatsapp'?(lang==='ar'?'سيُفتح واتساب مع رسالة جاهزة؛ اضغط «إرسال» لإتمام الطلب.':'WhatsApp opens with your message. Press Send there.'):(lang==='ar'?'سيُفتح تطبيق البريد الإلكتروني مع رسالة جاهزة؛ اضغط «إرسال» لإتمام الطلب.':'Your email app opens with your message. Press Send there.'));
   info.textContent+=handoff;
   notice.append(info,document.createTextNode(' '),a);

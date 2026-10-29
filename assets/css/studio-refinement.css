@@ -1,0 +1,96 @@
+/* Shared rhythm and two focused enquiry experiences. */
+:root{--studio-paper:#f4f2ed;--studio-ink:#171b17;--studio-accent:#c91524;--studio-radius:20px;--studio-space:clamp(56px,7vw,96px)}
+html{scroll-padding-top:96px}
+body:not(.see-scroll-story):not(.concierge-page) main h1{font-size:clamp(42px,6.4vw,88px)!important;line-height:1.18!important;white-space:normal!important;text-wrap:balance}
+body:not(.concierge-page) main h2:not(.studio-work-title){text-wrap:balance}
+.btn,.v2-pill,.studio-hero-actions a,.studio-contact-primary,.studio-contact-secondary{min-height:46px;border-radius:999px;font-weight:700;transition:background .2s,color .2s,transform .2s,box-shadow .2s}
+.btn:hover,.v2-pill:hover,.studio-hero-actions a:hover,.studio-contact-primary:hover,.studio-contact-secondary:hover{transform:translateY(-2px)}
+.btn:focus-visible,.v2-pill:focus-visible{outline:3px solid var(--studio-accent);outline-offset:4px}
+.see-scroll-story .v2-intro h2{font-size:clamp(42px,6.2vw,86px)!important}
+.see-scroll-story .v2-space{padding-block:var(--studio-space)!important}
+.see-scroll-story .v2-intro{padding-top:36px!important}
+.v3-footer-cta{font-size:clamp(32px,4.5vw,62px);text-wrap:balance}
+.v3-footer-top{line-height:1.7}.v3-footer-email{font-size:13px}
+/* Main content stays still behind the forms. */
+.concierge-page{background:#1c1b1e;color:#fff}
+.concierge-page main{position:relative;isolation:isolate;background:var(--concierge-background);padding-bottom:var(--studio-space);overflow:clip}
+.concierge-contact{--concierge-background:radial-gradient(ellipse at 7% 8%,#c33d503d,transparent 42%),radial-gradient(ellipse at 90% 35%,#d8a19018,transparent 48%),linear-gradient(145deg,#381017,#641a2b 55%,#280e15)}
+.concierge-careers{--concierge-background:radial-gradient(ellipse at 80% 4%,#c4c4c42b,transparent 40%),radial-gradient(ellipse at 8% 48%,#65506d26,transparent 40%),linear-gradient(145deg,#15161a,#28272c 60%,#17181b)}
+.concierge-page .concierge-hero{padding-top:160px!important;padding-bottom:54px!important;position:relative}
+.concierge-page .concierge-hero:before{content:'';display:block;width:42px;height:3px;background:#e5bbc3;margin-bottom:24px}
+.concierge-careers .concierge-hero:before{background:#c4c4c4}
+.concierge-page main .text-muted{color:#d7cbd0!important}
+.concierge-page .concierge-hero h1{font-size:clamp(44px,6.3vw,84px)!important;line-height:1.24!important;letter-spacing:-.035em!important;max-width:17ch;text-wrap:balance;color:#fff!important;margin-top:18px!important}
+html[dir=rtl] .concierge-page .concierge-hero h1{line-height:1.45!important;letter-spacing:-.025em!important;max-width:20ch}
+.concierge-page .concierge-hero>.eyebrow{font-size:11px;letter-spacing:.12em;color:#e9cbd2!important}
+html[dir=rtl] .concierge-page .concierge-hero>.eyebrow{letter-spacing:0;font-size:13px}
+.concierge-page .concierge-hero>div{border-color:#ffffff24!important;margin-top:28px!important;padding-top:24px!important;gap:24px}
+.concierge-page .concierge-hero>div>p{max-width:650px;grid-column:span 9;font-size:18px;line-height:1.9}
+.concierge-page .concierge-hero .btn{background:#f4f2ed;color:#171b17;border-color:#f4f2ed}
+.concierge-form-section{padding-block:24px!important}
+.concierge-page [data-form-wrap]{background:var(--studio-paper);color:var(--studio-ink);border:1px solid #ffffff66;border-radius:var(--studio-radius);padding:clamp(24px,3.4vw,48px);box-shadow:0 24px 70px #0003;min-width:0}
+.concierge-page .concierge-form{gap:32px!important}
+.concierge-page .concierge-form .text-muted,.concierge-page [data-form-wrap] .text-muted{color:#696169!important}
+.concierge-form .label{display:block;font-size:14px;font-weight:700;line-height:1.7;margin-bottom:9px;color:#29262b}
+.concierge-form .field{width:100%;min-height:50px;border:1px solid #cfc8ca;border-radius:10px;background:#fff;color:#211f24;padding:13px 15px;font-size:15px;line-height:1.6;box-shadow:none;transition:border-color .2s,box-shadow .2s}
+.concierge-form textarea.field{min-height:148px;resize:vertical}
+.concierge-form .field::placeholder{color:#8a838a;opacity:1}
+.concierge-form .field:focus{outline:none;border-color:#9b2439;box-shadow:0 0 0 3px #b5122217}
+.concierge-careers .concierge-form .field:focus{border-color:#5d5869;box-shadow:0 0 0 3px #5d58691c}
+.concierge-form .field[aria-invalid=true]{border-color:#a81d31;box-shadow:0 0 0 2px #a81d3112}
+.concierge-form legend{font:700 13px/1.6 var(--font-sans);letter-spacing:0;color:#6b313f!important;padding-inline:0}
+.concierge-form fieldset+fieldset{border-top:1px solid #d9d0d2;padding-top:28px}
+.concierge-form fieldset>div{gap:22px!important;margin-top:22px!important}
+.concierge-form .check-tile{position:relative;border:1px solid #d1c8cb;border-radius:10px;background:#fff;color:#383039;min-height:46px;padding:11px 14px;font-size:13px;line-height:1.5;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.concierge-form .check-tile:has(input:checked){background:#641a2b;color:#fff;border-color:#641a2b}
+.concierge-form .check-tile:has(input:focus-visible){outline:3px solid #b5122266;outline-offset:3px}
+.concierge-form .check-tile>span:after{display:none!important}
+.concierge-form .check-tile input{accent-color:#641a2b}
+.concierge-form .see-send-actions{gap:10px;display:flex;flex-wrap:wrap;width:100%}
+.concierge-form .see-contact-send{font-size:13px;line-height:1.5;gap:9px;padding:13px 20px;min-height:48px;border-radius:99px!important}
+.concierge-form .see-send-whatsapp{background:#641a2b!important;color:#fff!important;border:1px solid #641a2b!important;box-shadow:none}
+.concierge-careers .concierge-form .see-send-whatsapp{background:#28272c!important;border-color:#28272c!important}
+.concierge-form .see-send-email{background:transparent!important;color:#302730!important;border:1px solid #bdb2b7!important}
+.concierge-form .see-send-label{font-size:14px;font-weight:700;margin-bottom:12px;line-height:1.7}
+.concierge-form .see-send-hint{font-size:12px;line-height:1.9;max-width:600px}
+.concierge-form .see-form-notice{background:#fff;border:1px solid #d4ccd0;border-radius:12px;padding:18px;line-height:1.9;font-size:14px;color:#302730;grid-column:1/-1}
+.concierge-form .see-form-notice a{display:inline-block;font-weight:800;color:#9b2439;text-decoration:underline;text-underline-offset:4px}
+.concierge-form .see-form-notice[data-error=true]{border-color:#a81d31}
+.studio-field-feedback{margin-top:7px;color:#a81d31;font-size:12px;line-height:1.7}
+.concierge-aside{padding-block:12px}
+.concierge-aside>div{background:#ffffff0c!important;border:1px solid #ffffff26;border-radius:18px!important;padding:28px!important}
+.concierge-aside a{color:#fff}.concierge-aside h2{font-size:12px;line-height:1.6}
+.concierge-aside .border-line{border-color:#ffffff29!important}
+.concierge-aside h3{font-size:23px}.concierge-aside [data-tz]{font-variant-numeric:tabular-nums}
+.concierge-disciplines{padding-top:0!important;padding-bottom:50px!important}
+.concierge-disciplines h2{font-size:clamp(24px,2.8vw,36px)!important;line-height:1.5!important}
+.concierge-disciplines ul{gap:12px!important;margin-top:24px!important;grid-template-columns:repeat(4,minmax(0,1fr))}
+.concierge-disciplines li{border:1px solid #ffffff21!important;border-radius:12px;padding:18px!important;background:#ffffff04}
+.concierge-disciplines h3{font-size:15px;line-height:1.6;color:#fff}.concierge-disciplines p{font-size:12px;line-height:1.8;color:#c5c1cc!important}
+.concierge-careers #apply-title{font-size:clamp(28px,3.6vw,45px)!important;line-height:1.5!important;color:#fff}
+.concierge-careers #apply>div>div:first-child{padding-top:20px}
+.concierge-careers #apply>div>div:first-child>p{font-size:15px;line-height:1.9;max-width:350px}
+.concierge-opportunity-note{border-top:1px solid #ffffff24;padding-top:22px;margin-top:26px;color:#c4c4c4;font-size:13px!important}
+.concierge-form .see-cv-drop{border:1px dashed #aaa1b1!important;border-radius:12px!important;background:#e9e5eb!important;color:#302730!important;padding:20px!important;display:flex;flex-wrap:wrap;gap:14px;align-items:center;cursor:pointer}
+.concierge-form .see-cv-symbol{background:#fff!important;color:#49404f!important}
+.concierge-form .see-cv-copy strong{font-size:14px}.concierge-form .see-cv-copy small{font-size:11px;line-height:1.7;color:#696169}
+.concierge-form .see-cv-pill{background:#fff!important;border-color:#ccc3d2!important;color:#49404f!important;font-size:11px;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+.concierge-form .see-cv-helper,.concierge-form .see-cv-error{font-size:12px;line-height:1.8;margin-top:10px}
+.studio-file-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px;color:#696169;margin-top:12px}
+.studio-file-tools button{border:1px solid #c4bacb;border-radius:99px;padding:7px 13px;background:#fff;color:#49404f;cursor:pointer;min-height:36px}
+.studio-file-tools[hidden],.studio-field-feedback[hidden]{display:none!important}
+.concierge-page .v3-footer .v3-footer-cta,.concierge-page .v3-footer .studio-contact-actions{display:none}
+.concierge-page .v3-footer{min-height:650px;padding-top:90px}
+.concierge-page .v3-footer-name{margin-top:60px}
+@media(max-width:1000px){.concierge-disciplines ul{grid-template-columns:repeat(2,minmax(0,1fr))}.concierge-page .concierge-hero>div>p{grid-column:1/-1}.concierge-page .concierge-hero>div>div{grid-column:1/-1}}
+@media(max-width:640px){
+ html{scroll-padding-top:84px}.concierge-page .concierge-hero{padding-top:140px!important;padding-bottom:36px!important}
+ .concierge-page .concierge-hero h1{font-size:clamp(36px,9vw,49px)!important;line-height:1.25!important}html[dir=rtl] .concierge-page .concierge-hero h1{font-size:clamp(34px,8.7vw,48px)!important;line-height:1.5!important}
+ .concierge-page .concierge-hero>div>p{font-size:15px;line-height:1.9}.concierge-page .concierge-hero>div{margin-top:20px!important;padding-top:20px!important}
+ .concierge-page [data-form-wrap]{padding:25px 19px;border-radius:16px}.concierge-form .field{font-size:16px}
+ .concierge-page .concierge-form{gap:26px!important}.concierge-form .see-contact-send{flex:1 1 180px;width:100%;justify-content:center}
+ .concierge-disciplines li{padding:14px!important}.concierge-disciplines h3{font-size:13px}.concierge-disciplines p{font-size:11px}
+ .concierge-aside{padding-top:16px}.concierge-page .v3-footer{min-height:590px}.concierge-page main{padding-bottom:50px}
+ .see-scroll-story .v2-intro h2{font-size:40px!important}.see-scroll-story .v2-space{padding-block:58px!important}
+}
+@media(prefers-reduced-motion:reduce){.btn,.v2-pill,.studio-hero-actions a,.studio-contact-primary,.studio-contact-secondary,.concierge-form .field,.concierge-form .check-tile{transition:none!important}.btn:hover,.v2-pill:hover,.studio-hero-actions a:hover,.studio-contact-primary:hover,.studio-contact-secondary:hover{transform:none}}
