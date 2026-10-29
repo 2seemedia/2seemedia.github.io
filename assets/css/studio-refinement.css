@@ -94,3 +94,6 @@ html[dir=rtl] .concierge-page .concierge-hero>.eyebrow{letter-spacing:0;font-siz
  .see-scroll-story .v2-intro h2{font-size:40px!important}.see-scroll-story .v2-space{padding-block:58px!important}
 }
 @media(prefers-reduced-motion:reduce){.btn,.v2-pill,.studio-hero-actions a,.studio-contact-primary,.studio-contact-secondary,.concierge-form .field,.concierge-form .check-tile{transition:none!important}.btn:hover,.v2-pill:hover,.studio-hero-actions a:hover,.studio-contact-primary:hover,.studio-contact-secondary:hover{transform:none}}
+/* Service choices use one border and one selected state. */
+.concierge-form .check-tile>span{border:0;border-radius:0;background:transparent!important;color:inherit!important;padding:0;gap:8px;transition:none}
+.concierge-form .field{border-color:#8c8089}
