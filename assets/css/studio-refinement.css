@@ -336,3 +336,7 @@ body.studio-motion-paused .v3-stage:before{display:none!important}
  .see-scroll-story.story-ready .v3-project:after{display:none}
 }
 body.studio-motion-paused .v3-gallery-shell,body.studio-motion-paused .v3-project{opacity:1!important}
+
+/* The contact footer shares the opening's burgundy glow on every page. */
+body .v3-footer{background:var(--studio-burgundy-glow)!important}
+body .v3-footer:before{display:none;background:none}
