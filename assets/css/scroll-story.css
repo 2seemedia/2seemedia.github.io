@@ -151,3 +151,21 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
  .v3-header .v3-nav .v3-nav-item{flex:none;width:100%;min-height:48px;justify-content:space-between;padding:13px 18px;font-size:15px;border-radius:12px}
  .v3-header .v3-nav .v3-nav-item:after{content:'↗';font-size:20px}
 }
+
+/* Colorful client marks and a restrained moving portfolio. */
+.see-v2 .see-collabs-item .see-collabs-logo{filter:drop-shadow(0 3px 4px #0003)!important;opacity:1!important}
+.see-v2 .see-collabs-item{background:#ffffff66!important;border-radius:12px}
+.v9-intro-veil{position:fixed;inset:0;background:#080808;z-index:99998;display:flex;align-items:center;justify-content:center;pointer-events:all}
+.v9-intro-veil p{position:absolute;top:calc(50% + 175px);color:#eee;font:600 12px Manrope,Arial,sans-serif;letter-spacing:.2em;transition:opacity .3s}
+.v9-intro-circle{position:fixed;z-index:99999;background:#050505;border-radius:50%;padding:14px;display:grid;place-items:center;pointer-events:none;box-sizing:border-box}
+.v9-intro-circle img{height:90%;width:90%;object-fit:contain}
+@media(max-width:640px){
+ .v3-header .v3-nav{left:50%;right:auto;top:112px;width:350px;max-width:94vw;height:350px;max-height:none;transform:translateX(-50%);border-radius:50%;padding:0;overflow:visible;touch-action:none;direction:ltr;background:#171b17f5}
+ .v3-header.is-menu-open .v3-nav{display:block}
+ .v3-header .v3-nav:before{content:'2SEE';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:800 24px Manrope,Arial,sans-serif;color:#f4f2eb;pointer-events:none}
+ .v3-header .v3-nav:after{content:'↔';position:absolute;left:50%;top:59%;transform:translateX(-50%);color:#c4c4c4;pointer-events:none}
+ .v3-header .v3-nav .v3-nav-item{position:absolute;left:calc(50% + var(--wheel-x));top:calc(50% + var(--wheel-y));transform:translate(-50%,-50%);width:104px;min-height:48px;padding:10px 7px;border-radius:40px;justify-content:center;font-size:12px;text-align:center;user-select:none}
+ .v3-header .v3-nav .v3-nav-item:after{display:none}
+}
+@media(max-width:360px){.v3-header .v3-nav{transform:translateX(-50%) scale(.88);transform-origin:top center}}
+@media(prefers-reduced-motion:reduce){.v9-intro-veil,.v9-intro-circle{display:none}}
