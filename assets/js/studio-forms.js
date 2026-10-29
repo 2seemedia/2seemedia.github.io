@@ -3,6 +3,9 @@
  'use strict';
  var forms=Array.from(document.querySelectorAll('form[data-send-choice]'));if(!forms.length)return;
  var ar=document.documentElement.lang==='ar',reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var chosenPackage=new URLSearchParams(location.search).get('package')||'',brief=document.getElementById('c-message');
+ if(brief&&!brief.value&&/^(basic|premium)-(spark|impact|icon)$/.test(chosenPackage)){var packageName=chosenPackage.replace('-', ' ').toUpperCase();brief.value=ar?'أرغب بالاستفسار عن باقة '+packageName+'.':'I would like to enquire about the '+packageName+' package.';}
+
  function message(field){
   if(field.type==='file'){
    if(!field.files||!field.files.length)return ar?'اختر ملف سيرتك الذاتية.':'Choose your CV file.';
