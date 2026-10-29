@@ -44,7 +44,7 @@ html[dir=rtl] .concierge-page .concierge-hero>.eyebrow{letter-spacing:0;font-siz
 .concierge-form .check-tile{position:relative;border:1px solid #d1c8cb;border-radius:10px;background:#fff;color:#383039;min-height:46px;padding:11px 14px;font-size:13px;line-height:1.5;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .concierge-form .check-tile:has(input:checked){background:#641a2b;color:#fff;border-color:#641a2b}
 .concierge-form .check-tile:has(input:focus-visible){outline:3px solid #b5122266;outline-offset:3px}
-.concierge-form .check-tile>span:after{display:none!important}
+.concierge-form .check-tile span:after{display:none!important}
 .concierge-form .check-tile input{accent-color:#641a2b}
 .concierge-form .see-send-actions{gap:10px;display:flex;flex-wrap:wrap;width:100%}
 .concierge-form .see-contact-send{font-size:13px;line-height:1.5;gap:9px;padding:13px 20px;min-height:48px;border-radius:99px!important}
@@ -95,7 +95,7 @@ html[dir=rtl] .concierge-page .concierge-hero>.eyebrow{letter-spacing:0;font-siz
 }
 @media(prefers-reduced-motion:reduce){.btn,.v2-pill,.studio-hero-actions a,.studio-contact-primary,.studio-contact-secondary,.concierge-form .field,.concierge-form .check-tile{transition:none!important}.btn:hover,.v2-pill:hover,.studio-hero-actions a:hover,.studio-contact-primary:hover,.studio-contact-secondary:hover{transform:none}}
 /* Service choices use one border and one selected state. */
-.concierge-form .check-tile>span{border:0;border-radius:0;background:transparent!important;color:inherit!important;padding:0;gap:8px;transition:none}
+.concierge-form .check-tile span{border:0;border-radius:0;background:transparent!important;color:inherit!important;padding:0;gap:8px;transition:none}
 .concierge-form .field{border-color:#8c8089}
 .concierge-page .v3-footer .studio-contact-actions{display:flex;margin-top:22px}
 .concierge-page .v3-footer .studio-contact-actions>a{display:none}
