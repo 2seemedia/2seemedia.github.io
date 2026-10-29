@@ -380,3 +380,9 @@ body .v3-footer .studio-contact-actions{display:flex}
 body .v3-footer .studio-contact-actions>a{display:inline-flex}
 body .v3-footer{min-height:100svh}
 @media(max-width:640px){body .v3-footer{min-height:95svh}}
+
+/* Keep the current page pill open when the other navigation pills collapse. */
+@media(min-width:641px){
+ .v3-header .v3-nav .v3-nav-item[aria-current=page]:not(.v9-language){width:var(--nav-open-width,120px);min-width:38px;padding:0}
+ .v3-header .v3-nav .v3-nav-item[aria-current=page]:not(.v9-language) span{max-width:160px;opacity:1;transform:none;transition-delay:0s}
+}
