@@ -410,3 +410,18 @@ body.studio-inner main h1,body.studio-inner main h2,body.studio-inner main p,bod
  body .v3-footer .v3-footer-cta{font-size:clamp(30px,8vw,44px);line-height:1.4}
  body .v3-footer .studio-contact-actions>a{max-width:100%;white-space:normal;text-align:center}
 }
+
+/* Staggered portfolio with independent slide-up entrances. */
+.studio-work #cms-work-grid{align-items:start;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:46px}
+.studio-work #cms-work-grid>.case-card{margin-top:0}
+.studio-work #cms-work-grid>[data-work-step="1"]{margin-top:100px}
+.studio-work #cms-work-grid>[data-work-step="2"]{margin-top:42px}
+.studio-work #cms-work-grid.work-slide-ready>.case-card>.see-work-cover{opacity:0;transform:translateY(65px);transition:opacity .65s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
+.studio-work #cms-work-grid.work-slide-ready>.case-card.work-slide-in>.see-work-cover,.studio-work #cms-work-grid.work-slide-ready>.case-card:focus-within>.see-work-cover{opacity:1;transform:translateY(0)}
+@media(max-width:767px){
+ .studio-work #cms-work-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
+ .studio-work #cms-work-grid>[data-work-step]{margin-top:0}
+ .studio-work #cms-work-grid>.case-card:nth-child(even){margin-top:52px}
+}
+@media(max-width:380px){.studio-work #cms-work-grid{grid-template-columns:minmax(0,1fr)}.studio-work #cms-work-grid>.case-card:nth-child(even){margin-top:0}}
+@media(prefers-reduced-motion:reduce){.studio-work #cms-work-grid.work-slide-ready>.case-card>.see-work-cover{opacity:1;transform:none;transition:none}}

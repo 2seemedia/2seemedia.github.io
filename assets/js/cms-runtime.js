@@ -226,6 +226,29 @@
   }
   var home=document.getElementById('cms-home-work');if(home)works.filter(function(w){return w.featured}).slice(0,4).forEach(function(w,i){home.appendChild(card(w,i))});
   var grid=document.getElementById('cms-work-grid');if(grid){grid.dataset.pageSize=String(Math.max(4,Math.min(40,Number(data.settings.workPageSize)||12)));works.forEach(function(w,i){grid.appendChild(card(w,i))})}
+  if(grid){
+    var reducedWorkMotion=matchMedia('(prefers-reduced-motion: reduce)');
+    function staggerWorks(){
+      var visibleIndex=0;
+      Array.from(grid.children).forEach(function(item){
+        if(item.hidden)return;
+        item.dataset.workStep=String(visibleIndex++%3);
+      });
+    }
+    staggerWorks();
+    new MutationObserver(staggerWorks).observe(grid,{subtree:true,attributes:true,attributeFilter:['hidden']});
+    if('IntersectionObserver' in window&&!reducedWorkMotion.matches){
+      var workReveal=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting)entry.target.classList.add('work-slide-in');
+          else entry.target.classList.remove('work-slide-in');
+        });
+      },{threshold:0,rootMargin:'0px 0px -35px 0px'});
+      grid.classList.add('work-slide-ready');
+      Array.from(grid.children).forEach(function(item){workReveal.observe(item)});
+      grid.addEventListener('focusin',function(e){var item=e.target.closest('.case-card');if(item)item.classList.add('work-slide-in')});
+    }
+  }
   window.SEE_OPEN_WORK=openWork;
   if(home||grid||document.getElementById('v3-opening-track')){
     var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.setAttribute('aria-labelledby','studio-modal-title');modal.innerHTML='<div class="see-modal-header"><strong id="studio-modal-title" data-modal-title>2SEE Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><p class="studio-modal-description" data-modal-description hidden></p><img data-modal-image hidden alt=""><iframe title="Video player" loading="lazy" allow="autoplay; fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
