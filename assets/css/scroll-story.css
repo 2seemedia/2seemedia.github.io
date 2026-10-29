@@ -171,3 +171,6 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
 @media(prefers-reduced-motion:reduce){.v9-intro-veil,.v9-intro-circle{display:none}}
 
 .see-v2 .see-collabs-item.see-collabs-item--dark{background:#252525!important}
+
+/* Client logos keep only their transparent artwork and silhouette shadow. */
+.see-v2 .see-collabs-item,.see-v2 .see-collabs-item.see-collabs-item--dark,.see-v2 .see-collabs-item.see-collabs-item--light{background:transparent!important;border:0!important;box-shadow:none!important}
