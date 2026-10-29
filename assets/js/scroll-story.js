@@ -82,13 +82,13 @@
     revealReady=unfold>=.98;var shell=track.closest('.v3-gallery-shell');shell.inert=!revealReady;
     opening.style.setProperty('--reel-reveal',String(reveal));opening.style.setProperty('--reel-controls',String(clamp((unfold-.8)/.2,0,1)));
     var trackBox=track.getBoundingClientRect(),stackLeft=Math.max(24,innerWidth*.17),stackTop=innerHeight*.69;
-    Array.from(track.children).forEach(function(card,i){var initialScale=Math.min(.32,100/Math.max(1,card.offsetWidth));var x=stackLeft+i*7-(trackBox.left+card.offsetLeft-track.scrollLeft),y=stackTop-trackBox.top;card.style.setProperty('--reel-x',(x*(1-ease))+'px');card.style.setProperty('--reel-y',(y*(1-ease))+'px');card.style.setProperty('--reel-scale',String(initialScale+(1-initialScale)*ease));card.style.zIndex=String(20-i);});
+    Array.from(track.children).forEach(function(card,i){var x=stackLeft+i*9-(trackBox.left+card.offsetLeft-track.scrollLeft),y=stackTop-trackBox.top;card.style.setProperty('--reel-x',(x*(1-ease))+'px');card.style.setProperty('--reel-y',(y*(1-ease))+'px');card.style.setProperty('--reel-scale-y',String(.28+.72*ease));card.style.setProperty('--reel-curtain',String(still()?0:1-clamp((p-.14-i*.045)/.24,0,1)));card.style.visibility=i>=5&&!revealReady?'hidden':'';card.style.zIndex=String(20-i);});
    }
    document.body.style.setProperty('--story-hint-opacity',1-clamp(p/.2,0,1));
    document.body.style.setProperty('--story-label-opacity',clamp((p-.18)/.42,0,1));
    var color=accent.slice(),previousColor=accent.slice();
    var glowFade=intro?clamp((innerHeight*.82-intro.getBoundingClientRect().top)/(innerHeight*.82),0,1):0;
-   opening.style.setProperty('--studio-glow-opacity',String(1-glowFade));
+   document.body.style.setProperty('--studio-glow-opacity',String(1-glowFade));
    themes.slice(1).forEach(function(theme){var top=theme.el.getBoundingClientRect().top,t=clamp((innerHeight*.82-top)/(innerHeight*.82),0,1);if(t>0)color=mix(previousColor,theme.color,still()?1:t);previousColor=theme.color});
    document.body.style.setProperty('--story-bg','rgb('+color.join(',')+')');
   }

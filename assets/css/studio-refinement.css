@@ -225,3 +225,17 @@ body.studio-motion-paused .v3-nav .v3-nav-item,body.studio-motion-paused .v3-nav
  html[dir=ltr] body.studio-inner main>section:first-child{padding-left:155px!important;padding-right:32px!important}
  html[dir=ltr] body.concierge-page .concierge-hero{padding-left:155px!important;padding-right:32px!important}
 }
+
+/* One viewport-wide background prevents a seam between opening and white sections. */
+body.see-scroll-story{position:relative;isolation:isolate}
+body.see-scroll-story:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--studio-burgundy-glow);opacity:var(--studio-glow-opacity,1)}
+.see-scroll-story .v3-opening:before{display:none}
+/* Reference framing: five complete 9:16 covers across the desktop viewport. */
+@media(min-width:768px){
+ .see-scroll-story .v3-gallery{--reel-gutter:clamp(24px,3.6vw,70px);--reel-gap:clamp(12px,1vw,20px);gap:var(--reel-gap);padding-inline:var(--reel-gutter)}
+ .see-scroll-story .v3-project{flex-basis:calc((100vw - 2 * var(--reel-gutter) - 4 * var(--reel-gap))/5)}
+}
+@media(prefers-reduced-motion:no-preference){
+ .see-scroll-story.story-ready .v3-project{transform:translate(var(--reel-x,0px),var(--reel-y,0px)) scaleY(var(--reel-scale-y,1))}
+ .see-scroll-story.story-ready .v3-project:after{opacity:1;transform:scaleX(var(--reel-curtain,1));transform-origin:right center}
+}
