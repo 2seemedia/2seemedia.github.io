@@ -82,3 +82,38 @@ html[dir="rtl"] .see-scroll-story .v2-intro h2{line-height:1.3!important}
 
 .v3-footer{padding-top:100px;padding-inline:clamp(24px,5vw,80px)}.see-scroll-story .back-to-top{display:none!important}
 @media(max-width:640px){.v3-footer{padding-top:90px;padding-inline:20px}}
+
+/* V4: a full opening mark that gives way to a quiet wordmark. */
+.v3-brand{width:110px;height:110px;padding:15px;display:grid;place-items:center;border-radius:50%;background:#050505;align-items:center;transition:width .3s,height .3s,padding .3s,border-radius .3s}
+.v3-brand .v4-brand-logo{width:76px;height:84px;object-fit:contain;display:block;transition:opacity .2s,transform .3s}
+.v3-brand .v4-brand-wordmark{position:absolute;font:800 18px/1 Manrope,Arial,sans-serif;letter-spacing:-.04em;white-space:nowrap;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .3s}
+.v3-is-scrolled .v3-brand{width:145px;height:43px;padding:10px 14px;border-radius:40px}
+.v3-is-scrolled .v4-brand-logo{opacity:0;transform:scale(.6);pointer-events:none}
+.v3-is-scrolled .v3-brand .v4-brand-wordmark{opacity:1;transform:none}
+/* Services read as a numbered list until deliberately opened. */
+.v2-service{position:relative;transition:transform .25s,background .25s,box-shadow .25s;border-radius:2px}
+.v2-service summary{padding-inline:14px}
+.v2-service[open]{background:#f4f2eb;box-shadow:0 14px 35px #171b1714;z-index:2;transform:scale(1.018)}
+.v2-service[open] .v2-service-body{animation:v4-reveal .25s ease both}
+.v2-service summary:focus-visible{outline:2px solid #c91524;outline-offset:3px}
+@keyframes v4-reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+/* Founder names are the controls for the portrait box. */
+.v3-founder-bio{padding:20px 24px;margin-top:12px;border:1px solid #171b1733;border-radius:5px;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.v3-founder-bio h3{margin:0}.v3-founder-bio p{margin-top:6px}
+.v3-founder-bio.is-active{background:#171b17;color:#f4f2eb;transform:translateX(-6px)}
+html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
+.v3-founder-bio:focus-visible{outline:3px solid #c91524;outline-offset:4px}
+.v3-stack-pictures{border-radius:8px;overflow:hidden;border:1px solid #171b1722;background:#cfcdc6;box-shadow:0 12px 35px #0001}
+.v3-stack-pictures img{border-radius:0;box-shadow:none;transform:none!important;transition:opacity .3s ease}
+.v3-stack-counter[hidden]{display:none}
+/* Shared contact scene on every page. No automatic slideshow. */
+.v3-footer-photo{background:#141414}
+.v4-scene-image{width:100%;height:100%;object-fit:cover;display:block;opacity:.65;transition:opacity .2s}
+.v3-footer:before{background:linear-gradient(180deg,#000a,#0004 55%,#000b)}
+.v4-scene-picker{display:flex;gap:6px;flex-wrap:wrap;margin-top:35px;max-width:750px}
+.v4-scene-picker button{border:1px solid #ffffff66;border-radius:99px;color:white;background:#14141470;padding:9px 15px;font:600 12px/1.4 var(--font-sans);cursor:pointer;transition:background .2s,color .2s}
+.v4-scene-picker button[aria-pressed="true"],.v4-scene-picker button:hover{background:#f4f2eb;color:#171b17}
+.v4-photo-credit{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font:500 10px/1.5 var(--font-sans);opacity:.8}
+.v3-footer .v3-footer-name{margin-top:40px;direction:ltr}.v3-footer-email{direction:ltr}
+@media(max-width:640px){.v3-brand{width:88px;height:88px;padding:12px}.v3-brand .v4-brand-logo{width:60px;height:66px}.v3-is-scrolled .v3-brand{width:132px;height:40px}.v3-brand .v4-brand-wordmark{font-size:17px}.v2-service[open]{transform:none}.v3-founder-bio{padding:17px 20px}.v3-stack{display:flex;flex-direction:column-reverse}.v3-stack-copy{width:100%}.v3-stack-pictures{width:100%;max-width:330px;height:380px}.v4-scene-picker button{font-size:11px;padding:8px 11px}.v3-footer{padding-bottom:285px}}
+@media(prefers-reduced-motion:reduce){.v3-brand,.v4-brand-logo,.v4-brand-wordmark,.v2-service,.v3-founder-bio,.v4-scene-image{transition:none!important}.v2-service[open] .v2-service-body{animation:none}}
