@@ -169,3 +169,5 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
 }
 @media(max-width:360px){.v3-header .v3-nav{transform:translateX(-50%) scale(.88);transform-origin:top center}}
 @media(prefers-reduced-motion:reduce){.v9-intro-veil,.v9-intro-circle{display:none}}
+
+.see-v2 .see-collabs-item.see-collabs-item--dark{background:#252525!important}
