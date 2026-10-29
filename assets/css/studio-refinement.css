@@ -328,3 +328,11 @@ body.studio-motion-paused .studio-packages article.pkg-card{transition:none!impo
  .see-scroll-story.story-ready .v3-gallery-shell{z-index:1}
 }
 body.studio-motion-paused .v3-stage:before{display:none!important}
+
+/* Full-height reel covers rise into view after scrolling; no compressed stack. */
+@media(prefers-reduced-motion:no-preference){
+ .see-scroll-story.story-ready .v3-gallery-shell{opacity:var(--reel-stage-visible,0)}
+ .see-scroll-story.story-ready .v3-project{opacity:var(--reel-card-opacity,0)}
+ .see-scroll-story.story-ready .v3-project:after{display:none}
+}
+body.studio-motion-paused .v3-gallery-shell,body.studio-motion-paused .v3-project{opacity:1!important}
