@@ -24,6 +24,29 @@
   document.addEventListener('keydown',function(e){if(e.key!=='Tab'||innerWidth>640||menuButton.getAttribute('aria-expanded')!=='true')return;var stops=[menuButton].concat(Array.from(mobileNav.querySelectorAll('a'))),first=stops[0],last=stops[stops.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
   addEventListener('resize',function(){if(innerWidth>640)menuState(false)});
  }
+
+ // Simplify visible editorial punctuation without touching addresses, numbers or form data.
+ function tidyCopy(root){
+  if(!root)return;
+  var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],node;
+  while((node=walker.nextNode()))nodes.push(node);
+  nodes.forEach(function(n){
+   var p=n.parentElement;
+   if(!p||p.closest('script,style,textarea,input,select,option,code,pre,[contenteditable],.v3-footer-email,[data-cv-state],.see-form-notice'))return;
+   var value=n.nodeValue;
+   if(/https?:\/\/|www\.|[\w.+-]+@[\w.-]+/i.test(value))return;
+   var clean=value.replace(/[,،;؛·]/g,function(mark,index){return /[0-9٠-٩]/.test(value[index-1]||'')&&/[0-9٠-٩]/.test(value[index+1]||'')?mark:' '}).replace(/([^\d])\.(?=\s|$)/g,'$1').replace(/…/g,'').replace(/ {2,}/g,' ');
+   if(clean!==value)n.nodeValue=clean;
+  });
+ }
+ document.querySelectorAll('main,footer').forEach(function(root){
+  tidyCopy(root);
+  new MutationObserver(function(records){records.forEach(function(r){
+   if(r.type==='characterData')tidyCopy(r.target.parentElement);
+   else r.addedNodes.forEach(function(n){if(n.nodeType===1)tidyCopy(n);else if(n.nodeType===3)tidyCopy(n.parentElement)});
+  })}).observe(root,{subtree:true,childList:true,characterData:true});
+ });
+
  var track=document.getElementById('v3-opening-track'),opening=document.querySelector('.v3-opening'),stack=document.querySelector('.v3-stack-pictures'),stackImages=stack?Array.from(stack.querySelectorAll('img')):[],stackIndex=-1,founderScrollY=scrollY,founderTravel=0,founderDirection=0,founderLastSwap=0;
  function setStack(index){if(!stackImages.length)return;index=(index+stackImages.length)%stackImages.length;if(index===stackIndex)return;stackIndex=index;stackImages.forEach(function(image,i){var active=i===index;image.style.zIndex=active?'3':'1';image.style.transform='translateY('+(active?0:8)+'px) rotate('+(active?-2:(i%2?6:-6))+'deg)';image.style.opacity=active?'1':'.9'})}
  var founderBoxes=Array.from(document.querySelectorAll('.v3-founder-bio'));

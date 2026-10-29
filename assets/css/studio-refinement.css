@@ -386,3 +386,27 @@ body .v3-footer{min-height:100svh}
  .v3-header .v3-nav .v3-nav-item[aria-current=page]:not(.v9-language){width:var(--nav-open-width,120px);min-width:38px;padding:0}
  .v3-header .v3-nav .v3-nav-item[aria-current=page]:not(.v9-language) span{max-width:160px;opacity:1;transform:none;transition-delay:0s}
 }
+
+/* Shared logical alignment for both reading directions. */
+body .v3-footer{--footer-content-width:1240px;--footer-dock-space:0px}
+body .v3-footer .v3-footer-top,body .v3-footer .v3-footer-cta,body .v3-footer .studio-contact-actions{
+ box-sizing:border-box;width:calc(100% - var(--footer-dock-space));max-width:var(--footer-content-width);
+ margin-left:0;margin-right:0;margin-inline-start:var(--footer-dock-space);margin-inline-end:0;text-align:start;min-width:0
+}
+body .v3-footer .v3-footer-cta{justify-content:flex-start;white-space:normal;overflow-wrap:anywhere}
+body .v3-footer .v3-footer-cta>span{display:block;min-width:0;max-width:100%}
+body .v3-footer .studio-contact-actions{justify-content:flex-start}
+body .v3-footer .v3-footer-name{width:100%;max-width:100%;font-size:clamp(44px,11vw,210px);letter-spacing:-.065em;white-space:nowrap}
+body.studio-inner main,body.concierge-page main{text-align:start}
+body.studio-inner main h1,body.studio-inner main h2,body.studio-inner main p,body.concierge-page .concierge-hero{text-align:start}
+@media(min-width:641px){
+ body .v3-footer{--footer-dock-space:140px}
+ .v3-header .v3-nav .v3-nav-item:not(.v9-language) span{box-sizing:border-box;width:100%;text-align:start;padding-inline:18px}
+ html[dir=ltr] .v3-header .v3-nav .v3-nav-item:not(.v9-language) span{direction:ltr}
+ html[dir=rtl] .v3-header .v3-nav .v3-nav-item:not(.v9-language) span{direction:rtl}
+}
+@media(max-width:640px){
+ body .v3-footer .v3-footer-top,body .v3-footer .v3-footer-cta,body .v3-footer .studio-contact-actions{width:100%;margin-inline:0}
+ body .v3-footer .v3-footer-cta{font-size:clamp(30px,8vw,44px);line-height:1.4}
+ body .v3-footer .studio-contact-actions>a{max-width:100%;white-space:normal;text-align:center}
+}
