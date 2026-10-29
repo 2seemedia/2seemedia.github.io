@@ -340,3 +340,8 @@ body.studio-motion-paused .v3-gallery-shell,body.studio-motion-paused .v3-projec
 /* The contact footer shares the opening's burgundy glow on every page. */
 body .v3-footer{background:var(--studio-burgundy-glow)!important}
 body .v3-footer:before{display:none;background:none}
+
+/* Fade the preceding page colour into the shared burgundy contact footer. */
+body .v3-footer{--footer-fade-height:clamp(150px,18vw,260px);background:linear-gradient(180deg,var(--footer-blend-from,var(--story-bg,#f2f0eb))) 0px,transparent var(--footer-fade-height)),var(--studio-burgundy-glow)!important;padding-top:calc(var(--footer-fade-height) + 32px)!important}
+.concierge-contact .v3-footer{--footer-blend-from:#280e15}
+.concierge-careers .v3-footer{--footer-blend-from:#17181b}
