@@ -2800,8 +2800,8 @@
         "key": "services.t104",
         "kind": "text",
         "section": "services.section6",
-        "label": "Create system stewardship",
-        "en": "Create system stewardship",
+        "label": "Content production oversight",
+        "en": "Content production oversight",
         "ar": "متابعة تنفيذ المحتوى"
       },
       {
@@ -3289,27 +3289,27 @@
         "kind": "link",
         "attr": "href",
         "section": "services.section3",
-        "label": "link: work.html#fintech",
-        "en": "work.html#fintech",
-        "ar": "work.html#fintech"
+        "label": "link: work.html",
+        "en": "work.html",
+        "ar": "work.html"
       },
       {
         "key": "services.a164",
         "kind": "link",
         "attr": "href",
         "section": "services.section4",
-        "label": "link: work.html#food",
-        "en": "work.html#food",
-        "ar": "work.html#food"
+        "label": "link: work.html",
+        "en": "work.html",
+        "ar": "work.html"
       },
       {
         "key": "services.a165",
         "kind": "link",
         "attr": "href",
         "section": "services.section5",
-        "label": "link: work.html#retail",
-        "en": "work.html#retail",
-        "ar": "work.html#retail"
+        "label": "link: work.html",
+        "en": "work.html",
+        "ar": "work.html"
       },
       {
         "key": "services.a166",
