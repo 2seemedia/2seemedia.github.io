@@ -185,3 +185,21 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
 }
 @media(max-width:360px){.v3-header .v3-nav{width:330px;right:8px;max-width:calc(100vw - 16px);transform:none}.v3-header .v3-nav .v3-nav-item{width:92px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){.v3-header .v3-nav{transition:none!important}}
+
+/* A white corner circle with a blurred page behind it. */
+.v12-menu-backdrop{display:none}
+@media(max-width:640px){
+ .v12-menu-backdrop{display:block;position:fixed;inset:0;z-index:94;border:0;background:#10101018;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s,visibility 0s .3s}
+ .v12-menu-open .v12-menu-backdrop{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .3s}
+ .v3-header .v3-nav{width:min(88vw,410px);max-width:none;height:min(88vw,410px);top:-36px;right:-70px;background:#fff;border-radius:50%;box-shadow:0 12px 35px #0001;clip-path:circle(0 at calc(100% - 105px) 75px);transform:none!important}
+ .v3-header.is-menu-open .v3-nav{clip-path:circle(500px at calc(100% - 105px) 75px)}
+ .v3-header .v3-nav:before{display:none}
+ .v3-header .v3-nav .v3-nav-item{left:33%;top:calc(104px + var(--v12-order)*35px);width:154px;min-height:30px;padding:6px 10px;transform:translateX(-50%);background:transparent!important;color:#171b17!important;border-radius:20px;font-size:14px;outline:none}
+ .v3-header .v3-nav .v3-nav-item:nth-child(1){--v12-order:0}.v3-header .v3-nav .v3-nav-item:nth-child(2){--v12-order:1}.v3-header .v3-nav .v3-nav-item:nth-child(3){--v12-order:2}.v3-header .v3-nav .v3-nav-item:nth-child(4){--v12-order:3}.v3-header .v3-nav .v3-nav-item:nth-child(5){--v12-order:4}.v3-header .v3-nav .v3-nav-item:nth-child(6){--v12-order:5}
+ .v3-header .v3-nav .v3-nav-item:hover,.v3-header .v3-nav .v3-nav-item:focus-visible{background:#c91524!important;color:#fff!important}
+ .v8-menu-toggle{transition:opacity .25s,transform .25s}
+ .v12-menu-away .v8-menu-toggle{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-12px)}
+ .v12-menu-open .v3-brand{opacity:0;pointer-events:none}
+}
+@media(max-width:380px){.v3-header .v3-nav{width:360px;height:360px;right:-76px;top:-32px}.v3-header .v3-nav .v3-nav-item{left:35%;top:calc(100px + var(--v12-order)*34px)}}
+@media(prefers-reduced-motion:reduce){.v12-menu-backdrop,.v8-menu-toggle{transition:none!important}}
