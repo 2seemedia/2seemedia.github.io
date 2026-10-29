@@ -4,7 +4,7 @@ import path from 'node:path';
 const root=path.dirname(fileURLToPath(import.meta.url));
 await rm(path.join(root,'public'),{recursive:true,force:true});
 await mkdir(path.join(root,'public'),{recursive:true});
-for(const file of ['index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html','assets'])
+for(const file of ['social-media-damascus.html','video-production-damascus.html','index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html','assets'])
  await cp(path.join(root,'..',file),path.join(root,'public',file),{recursive:true});
 await copyFile(path.join(root,'ui/dashboard.html'),path.join(root,'public/dashboard.html'));
 await copyFile(path.join(root,'ui/dashboard.js'),path.join(root,'public/assets/js/dashboard.js'));

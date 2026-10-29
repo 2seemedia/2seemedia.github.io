@@ -1,7 +1,7 @@
 import {passwordRoute,verifyPasswordSession,LoginError} from './password-auth.js';
 import {createRemoteJWKSet, jwtVerify} from 'jose';
 const jwksCache = new Map();
-const PAGES = new Set(['index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html']);
+const PAGES = new Set(['social-media-damascus.html','video-production-damascus.html','index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html']);
 const TARGET = 'assets/js/site-data.js';
 export class HttpError extends Error { constructor(status,message){super(message);this.status=status;} }
 const fail=(status,message)=>{throw new HttpError(status,message);};

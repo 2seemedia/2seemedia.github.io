@@ -1680,7 +1680,7 @@
         "section": "v2",
         "label": "هذه 2SEE",
         "en": "THIS IS 2SEE",
-        "ar": "هذه 2SEE"
+        "ar": "لماذا 2See Media"
       },
       {
         "key": "index.v2.intro",
@@ -1688,7 +1688,7 @@
         "section": "v2",
         "label": "أكثر من محتوى. بصمة تشبهك.",
         "en": "More than content. A signature that is yours.",
-        "ar": "أكثر من محتوى. بصمة تشبهك."
+        "ar": "لأننا نصنع محتوى يعبّر عن هويتك"
       },
       {
         "key": "index.v2.introBody",
@@ -1696,7 +1696,10 @@
         "section": "v2",
         "label": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل.",
         "en": "We bring photography, production, editing, design and social media together. One team, one creative direction, from the first idea to the final frame.",
-        "ar": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل."
+        "ar": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل.",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.about",
@@ -1759,8 +1762,8 @@
         "kind": "text",
         "section": "v2",
         "label": "من جلسة تصوير لحضور علامتك اليومي، نختار معك الأسلوب الإبداعي المناسب.",
-        "en": "From a single production to your brand’s everyday presence, we shape the right creative approach.",
-        "ar": "من جلسة تصوير لحضور علامتك اليومي، نختار معك الأسلوب الإبداعي المناسب."
+        "en": "From concept to execution, we deliver creative solutions that reflect your brand’s identity.",
+        "ar": "من الفكرة إلى التنفيذ، نقدّم حلولاً إبداعية تعكس هوية علامتك"
       },
       {
         "key": "index.v2.teamTag",
@@ -1776,7 +1779,7 @@
         "section": "v2",
         "label": "مؤسسان. ورؤية واحدة.",
         "en": "Two founders. One creative vision.",
-        "ar": "مؤسسان. ورؤية واحدة."
+        "ar": "مؤسسين ، 2See Media"
       },
       {
         "key": "index.v2.processTag",
@@ -1800,7 +1803,10 @@
         "section": "v2",
         "label": "نحكي عن مشروعك",
         "en": "LET’S TALK",
-        "ar": "نحكي عن مشروعك"
+        "ar": "نحكي عن مشروعك",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.service0",
@@ -1808,7 +1814,7 @@
         "section": "services",
         "label": "التصوير والإنتاج",
         "en": "Photography & production",
-        "ar": "التصوير والإنتاج"
+        "ar": "التصوير"
       },
       {
         "key": "index.v2.serviceDesc0",
@@ -1824,7 +1830,7 @@
         "section": "services",
         "label": "المونتاج والموشن",
         "en": "Editing & motion",
-        "ar": "المونتاج والموشن"
+        "ar": "المونتاج والمؤثرات البصرية"
       },
       {
         "key": "index.v2.serviceDesc1",
@@ -1839,8 +1845,8 @@
         "kind": "text",
         "section": "services",
         "label": "صناعة المحتوى والحملات",
-        "en": "Content & campaigns",
-        "ar": "صناعة المحتوى والحملات"
+        "en": "Content",
+        "ar": "صناعة المحتوى"
       },
       {
         "key": "index.v2.serviceDesc2",
@@ -1856,7 +1862,7 @@
         "section": "services",
         "label": "إدارة التواصل الاجتماعي",
         "en": "Social media",
-        "ar": "إدارة التواصل الاجتماعي"
+        "ar": "إدارة منصات السوشال ميديا"
       },
       {
         "key": "index.v2.serviceDesc3",
@@ -1872,7 +1878,7 @@
         "section": "services",
         "label": "التصميم الغرافيكي",
         "en": "Graphic design",
-        "ar": "التصميم الغرافيكي"
+        "ar": "جرافيك ديزاين"
       },
       {
         "key": "index.v2.serviceDesc4",
@@ -1888,7 +1894,10 @@
         "section": "services",
         "label": "الاستيديو والبودكاست",
         "en": "Studio & podcasts",
-        "ar": "الاستيديو والبودكاست"
+        "ar": "الاستيديو والبودكاست",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.serviceDesc5",
@@ -1896,7 +1905,10 @@
         "section": "services",
         "label": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك.",
         "en": "A space for conversations, ideas and your next production.",
-        "ar": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك."
+        "ar": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك.",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.step0",
@@ -2024,7 +2036,10 @@
         "section": "footer",
         "label": "انزل واكتشف",
         "en": "SCROLL TO EXPLORE",
-        "ar": "انزل واكتشف"
+        "ar": "انزل واكتشف",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.managed.8",
@@ -2048,7 +2063,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "index.managed.11",
@@ -2056,7 +2071,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "index.managed.12",
@@ -2064,7 +2079,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "index.managed.13",
@@ -3836,7 +3851,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "services.managed.8",
@@ -3844,7 +3859,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "services.managed.9",
@@ -3852,7 +3867,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "services.managed.10",
@@ -4984,7 +4999,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "work.managed.8",
@@ -4992,7 +5007,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "work.managed.9",
@@ -5000,7 +5015,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "work.managed.10",
@@ -6061,7 +6076,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "about.managed.8",
@@ -6069,7 +6084,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "about.managed.9",
@@ -6077,7 +6092,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "about.managed.10",
@@ -7442,7 +7457,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "careers.managed.9",
@@ -7450,7 +7465,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "careers.managed.10",
@@ -7458,7 +7473,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "careers.managed.11",
@@ -8647,7 +8662,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "contact.managed.8",
@@ -8655,7 +8670,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "contact.managed.9",
@@ -8663,7 +8678,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "contact.managed.10",
@@ -9547,7 +9562,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "case-study.managed.8",
@@ -9555,7 +9570,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "case-study.managed.9",
@@ -9563,7 +9578,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "case-study.managed.10",
@@ -10431,7 +10446,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "404.managed.7",
@@ -10439,7 +10454,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "404.managed.8",
@@ -10447,7 +10462,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "404.managed.9",
@@ -10488,6 +10503,490 @@
         "label": "نحكي عن مشروعك",
         "en": "Let’s talk",
         "ar": "نحكي عن مشروعك"
+      }
+    ],
+    "social-media-damascus.html": [
+      {
+        "key": "about.t001",
+        "kind": "text",
+        "section": "general",
+        "label": "Skip to content",
+        "en": "Skip to content",
+        "ar": "انتقل إلى المحتوى"
+      },
+      {
+        "key": "about.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "about.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "about.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "about.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
+      },
+      {
+        "key": "about.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "حضور يليق بعلامتك"
+      },
+      {
+        "key": "about.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "تواصل معنا على واتساب ↗"
+      },
+      {
+        "key": "about.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "about.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
+      },
+      {
+        "key": "social-media-damascus.t0",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "إدارة السوشال ميديا وصناعة المحتوى في دمشق",
+        "ar": "إدارة السوشال ميديا وصناعة المحتوى في دمشق",
+        "en": "Social media management and content in Damascus"
+      },
+      {
+        "key": "social-media-damascus.t1",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "نساعد العلامات التجارية في دمشق وسوريا على التخطيط للمحتوى وإنتاجه وإدارة نشره ضمن رؤية متناسقة",
+        "ar": "نساعد العلامات التجارية في دمشق وسوريا على التخطيط للمحتوى وإنتاجه وإدارة نشره ضمن رؤية متناسقة",
+        "en": "Content planning, production and social media publishing for brands in Damascus and Syria."
+      },
+      {
+        "key": "social-media-damascus.t2",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "احكي لنا عن مشروعك",
+        "ar": "احكي لنا عن مشروعك",
+        "en": "Tell us about your project"
+      },
+      {
+        "key": "social-media-damascus.t3",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "شو بتشمل الخدمة",
+        "ar": "شو بتشمل الخدمة",
+        "en": "What the service includes"
+      },
+      {
+        "key": "social-media-damascus.t4",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "نبدأ بفهم نشاطك وجمهورك ونرتّب خطة محتوى وأفكار ريلز ونصوصاً تناسب رسالة علامتك ثم نتابع التصوير والتصميم والمونتاج والجدولة والنشر حسب نطاق الاتفاق",
+        "ar": "نبدأ بفهم نشاطك وجمهورك ونرتّب خطة محتوى وأفكار ريلز ونصوصاً تناسب رسالة علامتك ثم نتابع التصوير والتصميم والمونتاج والجدولة والنشر حسب نطاق الاتفاق",
+        "en": "We start with your business and audience, then plan content, reel ideas and scripts around your brand. Production, design, editing, scheduling and publishing follow the agreed scope."
+      },
+      {
+        "key": "social-media-damascus.t5",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "إنتاج المحتوى وإدارة الصفحات معاً",
+        "ar": "إنتاج المحتوى وإدارة الصفحات معاً",
+        "en": "Content production and page management together"
+      },
+      {
+        "key": "social-media-damascus.t6",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "بدل ما يكون التصوير منفصل عن خطة الصفحة نربط الأفكار بالمواد التي سننتجها وبطريقة نشرها على إنستغرام وفيسبوك ويمكن الاتفاق على خدمات محددة بحسب حاجتك",
+        "ar": "بدل ما يكون التصوير منفصل عن خطة الصفحة نربط الأفكار بالمواد التي سننتجها وبطريقة نشرها على إنستغرام وفيسبوك ويمكن الاتفاق على خدمات محددة بحسب حاجتك",
+        "en": "We connect the publishing plan with the content we produce for Instagram and Facebook. Individual services can also be agreed around your needs."
+      },
+      {
+        "key": "social-media-damascus.t7",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "كيف منبلّش",
+        "ar": "كيف منبلّش",
+        "en": "How we start"
+      },
+      {
+        "key": "social-media-damascus.t8",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "بتخبرنا عن نشاطك وروابط حساباتك والخدمات المطلوبة منراجع الاحتياج ومنحدد المواد ومواعيد التصوير والتسليم وآلية المراجعة ضمن اتفاق واضح",
+        "ar": "بتخبرنا عن نشاطك وروابط حساباتك والخدمات المطلوبة منراجع الاحتياج ومنحدد المواد ومواعيد التصوير والتسليم وآلية المراجعة ضمن اتفاق واضح",
+        "en": "Share your business, account links and required services. We agree deliverables, shoot dates, delivery and feedback before production."
+      },
+      {
+        "key": "social-media-damascus.t9",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "شو الفرق بين Basic وPremium",
+        "ar": "شو الفرق بين Basic وPremium",
+        "en": "Basic or Premium"
+      },
+      {
+        "key": "social-media-damascus.t10",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "المساران بيجمعوا إدارة المحتوى وإنتاجه والفرق الأساسي بمستوى الإنتاج البصري والتفاصيل الإخراجية فيك تراجعي الكميات والأسعار وأمثلة الريلز بصفحة الباقات",
+        "ar": "المساران بيجمعوا إدارة المحتوى وإنتاجه والفرق الأساسي بمستوى الإنتاج البصري والتفاصيل الإخراجية فيك تراجعي الكميات والأسعار وأمثلة الريلز بصفحة الباقات",
+        "en": "Both tiers combine content management and production, with different visual production levels. The packages page lists quantities, prices and real reel examples."
+      },
+      {
+        "key": "social-media-damascus.t11",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "شوفي الباقات وأمثلة الريلز",
+        "ar": "شوفي الباقات وأمثلة الريلز",
+        "en": "See packages and reel examples"
+      },
+      {
+        "key": "social-media-damascus.t12",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "استعرضي أعمالنا",
+        "ar": "استعرضي أعمالنا",
+        "en": "Explore our work"
+      },
+      {
+        "key": "social-media-damascus.title",
+        "kind": "title",
+        "section": "general",
+        "label": "عنوان صفحة الخدمة",
+        "ar": "إدارة السوشال ميديا وصناعة المحتوى في دمشق | 2SEE Media",
+        "en": "Social media management and content in Damascus | 2SEE Media"
+      },
+      {
+        "key": "social-media-damascus.description",
+        "kind": "meta",
+        "section": "general",
+        "label": "وصف صفحة الخدمة",
+        "ar": "نساعد العلامات التجارية في دمشق وسوريا على التخطيط للمحتوى وإنتاجه وإدارة نشره ضمن رؤية متناسقة",
+        "en": "Content planning, production and social media publishing for brands in Damascus and Syria."
+      }
+    ],
+    "video-production-damascus.html": [
+      {
+        "key": "about.t001",
+        "kind": "text",
+        "section": "general",
+        "label": "Skip to content",
+        "en": "Skip to content",
+        "ar": "انتقل إلى المحتوى"
+      },
+      {
+        "key": "about.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "about.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Collaborate",
+        "ar": "تعاون معنا"
+      },
+      {
+        "key": "about.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "about.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
+      },
+      {
+        "key": "about.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "حضور يليق بعلامتك"
+      },
+      {
+        "key": "about.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "تواصل معنا على واتساب ↗"
+      },
+      {
+        "key": "about.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "about.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
+      },
+      {
+        "key": "video-production-damascus.t0",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "استديو تصوير وإنتاج ريلز في دمشق",
+        "ar": "استديو تصوير وإنتاج ريلز في دمشق",
+        "en": "Photography studio and reel production in Damascus"
+      },
+      {
+        "key": "video-production-damascus.t1",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "تصوير ريلز ومنتجات وإعلانات ومونتاج فيديو للعلامات التجارية داخل الاستديو أو في موقع متفق عليه",
+        "ar": "تصوير ريلز ومنتجات وإعلانات ومونتاج فيديو للعلامات التجارية داخل الاستديو أو في موقع متفق عليه",
+        "en": "Reel, product and advertising production with video editing in the studio or at an agreed location in Damascus."
+      },
+      {
+        "key": "video-production-damascus.t2",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "احكي لنا عن مشروعك",
+        "ar": "احكي لنا عن مشروعك",
+        "en": "Tell us about your project"
+      },
+      {
+        "key": "video-production-damascus.t3",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "تصوير يناسب المشروع",
+        "ar": "تصوير يناسب المشروع",
+        "en": "Production that fits the project"
+      },
+      {
+        "key": "video-production-damascus.t4",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "منصوّر محتوى للعلامات التجارية والمنتجات والريلز وبنختار الكادر والإضاءة وطريقة التنفيذ حسب الفكرة ومكان التصوير المتفق عليه",
+        "ar": "منصوّر محتوى للعلامات التجارية والمنتجات والريلز وبنختار الكادر والإضاءة وطريقة التنفيذ حسب الفكرة ومكان التصوير المتفق عليه",
+        "en": "We produce brand, product and reel content, choosing framing, lighting and execution around the idea and agreed location."
+      },
+      {
+        "key": "video-production-damascus.t5",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "من التحضير للمونتاج",
+        "ar": "من التحضير للمونتاج",
+        "en": "From preparation to editing"
+      },
+      {
+        "key": "video-production-damascus.t6",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "منحدد الهدف والمراجع البصرية والمواد المطلوبة قبل الجلسة وبنكمل اختيار اللقطات والمونتاج ومعالجة الألوان والصوت حسب مستوى الإنتاج المتفق عليه",
+        "ar": "منحدد الهدف والمراجع البصرية والمواد المطلوبة قبل الجلسة وبنكمل اختيار اللقطات والمونتاج ومعالجة الألوان والصوت حسب مستوى الإنتاج المتفق عليه",
+        "en": "We agree the goal, visual references and deliverables before the shoot, then handle selection, editing, colour and sound to the agreed production level."
+      },
+      {
+        "key": "video-production-damascus.t7",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "داخل الاستديو أو خارجو",
+        "ar": "داخل الاستديو أو خارجو",
+        "en": "In the studio or on location"
+      },
+      {
+        "key": "video-production-damascus.t8",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "مكان التصوير بيتحدد حسب احتياج العمل وتوفر الموقع المطلوب تأجير المواقع والمواهب والتنقلات الإضافية بيتحددوا بشكل منفصل ضمن العرض",
+        "ar": "مكان التصوير بيتحدد حسب احتياج العمل وتوفر الموقع المطلوب تأجير المواقع والمواهب والتنقلات الإضافية بيتحددوا بشكل منفصل ضمن العرض",
+        "en": "The location depends on the project and availability. Location rental, talent and additional transport are agreed separately in the quote."
+      },
+      {
+        "key": "video-production-damascus.t9",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "شو لازم تبعتلنا لطلب عرض",
+        "ar": "شو لازم تبعتلنا لطلب عرض",
+        "en": "What to include in your enquiry"
+      },
+      {
+        "key": "video-production-damascus.t10",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "نوع النشاط وعدد الفيديوهات ومدتها التقريبية ومكان التصوير والموعد المطلوب وإذا عندك أفكار أو أمثلة ابعتي روابطها حتى نحدد نطاق التنفيذ بدقة",
+        "ar": "نوع النشاط وعدد الفيديوهات ومدتها التقريبية ومكان التصوير والموعد المطلوب وإذا عندك أفكار أو أمثلة ابعتي روابطها حتى نحدد نطاق التنفيذ بدقة",
+        "en": "Send your business type, video count and approximate duration, location and target date. Reference links help us define the scope accurately."
+      },
+      {
+        "key": "video-production-damascus.t11",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "شوفي الباقات وأمثلة الريلز",
+        "ar": "شوفي الباقات وأمثلة الريلز",
+        "en": "See packages and reel examples"
+      },
+      {
+        "key": "video-production-damascus.t12",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "استعرضي أعمالنا",
+        "ar": "استعرضي أعمالنا",
+        "en": "Explore our work"
+      },
+      {
+        "key": "video-production-damascus.title",
+        "kind": "title",
+        "section": "general",
+        "label": "عنوان صفحة الخدمة",
+        "ar": "استديو تصوير وإنتاج ريلز في دمشق | 2SEE Media",
+        "en": "Photography studio and reel production in Damascus | 2SEE Media"
+      },
+      {
+        "key": "video-production-damascus.description",
+        "kind": "meta",
+        "section": "general",
+        "label": "وصف صفحة الخدمة",
+        "ar": "تصوير ريلز ومنتجات وإعلانات ومونتاج فيديو للعلامات التجارية داخل الاستديو أو في موقع متفق عليه",
+        "en": "Reel, product and advertising production with video editing in the studio or at an agreed location in Damascus."
       }
     ]
   },
@@ -10670,6 +11169,16 @@
     "work.section3": {
       "page": "work.html",
       "label": "شعارات التعاون",
+      "visible": true
+    },
+    "social-media-damascus.main": {
+      "page": "social-media-damascus.html",
+      "label": "إدارة السوشال ميديا وصناعة المحتوى في دمشق",
+      "visible": true
+    },
+    "video-production-damascus.main": {
+      "page": "video-production-damascus.html",
+      "label": "استديو تصوير وإنتاج ريلز في دمشق",
       "visible": true
     }
   },
