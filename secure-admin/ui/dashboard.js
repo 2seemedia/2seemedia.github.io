@@ -44,6 +44,8 @@ function styleControls(entry){
  const color=el('input','input');color.type='color';color.value=/^#[0-9a-f]{6}$/i.test(st.color||'')?st.color:'#101010';color.addEventListener('input',()=>{st.color=color.value;saveStyle()});colorBox.append(color);grid.append(colorBox);
  const weightBox=el('div','field');weightBox.append(el('label','','سماكة الخط'));
  const weight=el('select','select');[['','حسب التصميم الأصلي'],['normal','عادي'],['500','متوسط'],['600','شبه عريض'],['700','عريض'],['800','عريض جداً'],['900','ثقيل']].forEach(([v,t])=>{let o=el('option','',t);o.value=v;weight.append(o)});weight.value=String(st.fontWeight||'');weight.addEventListener('change',()=>{st.fontWeight=weight.value;saveStyle()});weightBox.append(weight);grid.append(weightBox);
+ const alignBox=el('div','field');alignBox.append(el('label','','محاذاة النص'));const align=el('select','select');[['','حسب التصميم'],['start','بداية السطر حسب اللغة'],['center','المنتصف'],['end','نهاية السطر حسب اللغة']].forEach(([v,t])=>{const o=el('option','',t);o.value=v;align.append(o)});align.value=st.textAlign||'';align.addEventListener('change',()=>{st.textAlign=align.value;saveStyle()});alignBox.append(align);grid.append(alignBox);
+ [['تباعد الأسطر','lineHeight',1,3,.1],['المسافة أعلى العنصر','marginTop',0,160,1],['المسافة أسفل العنصر','marginBottom',0,160,1],['تدوير زوايا الصورة','borderRadius',0,200,1]].forEach(([label,key,min,max,step])=>{const box=el('div','field');box.append(el('label','',label));const input=el('input','input');input.type='number';input.min=min;input.max=max;input.step=step;input.placeholder='حسب التصميم';input.value=st[key]??'';input.addEventListener('input',()=>{st[key]=input.value===''?null:Math.max(min,Math.min(max,Number(input.value)||min));saveStyle()});box.append(input);grid.append(box)});
  const toggleOption=(key,label)=>{let hold=el('label','toggle');let cb=el('input');cb.type='checkbox';cb.checked=st[key]===true;cb.addEventListener('change',()=>{st[key]=cb.checked;saveStyle()});hold.append(cb,el('strong','',label));return hold};
  grid.append(toggleOption('italic','خط مائل'),toggleOption('underline','خط تحته خط'),toggleOption('hidden','إخفاء العنصر من الموقع'));
  details.append(grid);
@@ -159,12 +161,12 @@ window.addEventListener('message',e=>{
  selectedCmsKey=key;page=e.data.page;const slot=$('#visual-selected');slot.replaceChildren();slot.append(renderEntryEditor(found));
  slot.scrollIntoView({behavior:'smooth',block:'nearest'});
 });
-$('#quick-publish').addEventListener('click',()=>{save();setTab('publish');});
+$('#quick-publish').disabled=!session.publishEnabled;$('#quick-publish').textContent=session.publishEnabled?(session.production?'نشر الآن على الموقع':'نشر الآن على المعاينة'):'النشر مقفل';$('#quick-publish').addEventListener('click',()=>{$('#publish-github').click()});
 $('#go-publish').addEventListener('click',()=>setTab('publish'));
 $('#refresh-live-content').addEventListener('click',async()=>{
  const status=$('#live-content-status'),btn=$('#refresh-live-content');
  if(!confirm('سيؤدي تحميل المحتوى المنشور إلى استبدال المسودة الحالية على هذا الجهاز. هل تريدين المتابعة؟'))return;
- btn.disabled=true;status.textContent='جارٍ تحميل النسخة المنشورة...';
+ btn.disabled=true;$('#quick-publish').disabled=true;status.textContent='جارٍ تحميل النسخة المنشورة...';
  try{
   const response=await fetch('/api/content',{cache:'no-store'});
   const latest=await response.json();if(!response.ok)throw Error(latest.error||'تعذّر التحميل');
@@ -183,15 +185,16 @@ $('#import-file').addEventListener('change',async e=>{const f=e.target.files?.[0
 $('#publish-github').addEventListener('click',async()=>{
  const status=$('#publish-status'),btn=$('#publish-github');
  if(!session.publishEnabled){status.textContent='النشر مقفل حتى اكتمال الاختبار والموافقة';return;}
- if(!confirm(session.production?'نشر المسودة على الموقع الرسمي؟':'حفظ النسخة على فرع الاختبار؟ الموقع الرسمي لن يتغيّر.'))return;
- btn.disabled=true;status.textContent='جارٍ التحقق وحفظ نسخة موحّدة…';
+ if(!save()){status.textContent='تعذّر حفظ المسودة؛ راجعي حجم الصور قبل النشر';return;}
+ btn.disabled=true;$('#quick-publish').disabled=true;status.textContent='جارٍ التحقق وحفظ نسخة موحّدة…';
+ const submitted=JSON.stringify(data);
  try{
   const r=await fetch('/api/publish',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-2SEE-Admin':'1'},body:JSON.stringify({content:data,baseRevision})});
   const out=await r.json();if(!r.ok)throw Error(out.error||'تعذّر النشر');
-  data=out.content;baseRevision=out.revision;save();
+  const newerEdits=JSON.stringify(data)!==submitted;if(!newerEdits)data=out.content;baseRevision=out.revision;save();
   status.textContent=(out.production?'تم حفظ التعديلات وبدأ النشر التلقائي؛ انتظري اكتمال بناء الموقع قبل التحقق من النسخة العامة.':'تم النشر على فرع الاختبار فقط؛ الموقع الرسمي لم يتغيّر.')+' · '+out.commit.slice(0,8);
  }catch(error){status.textContent='لم يتم تأكيد النشر: '+error.message;}
- finally{btn.disabled=!session.publishEnabled;}
+ finally{btn.disabled=!session.publishEnabled;$('#quick-publish').disabled=!session.publishEnabled;}
 });
 selectPages('#page-select');selectPages('#section-page');selectPages('#preview-page');selectPages('#visual-page');$('#page-select').value=page;$('#section-page').value=page;$('#preview-page').value=page;$('#visual-page').value=page;render();
 })();

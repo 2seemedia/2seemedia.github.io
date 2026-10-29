@@ -63,3 +63,14 @@ test('package editor saves tier price and section ordering without publishing',a
  saved=JSON.parse(w.localStorage.getItem('2see-agency-draft-v12'));assert(Object.values(saved.sections).some(e=>e.page==='index.html'&&e.order===1));
  assert(!calls.some(x=>x.url==='/api/publish'));assert.deepEqual(errors,[]);dom.window.close();
 });
+
+test('sticky publish sends current draft directly without switching tabs',async()=>{
+ const {dom,doc,w,calls}=await open({publishEnabled:true});
+ let confirmations=0;w.confirm=()=>{confirmations++;return true};
+ doc.querySelector('#quick-publish').click();
+ await new Promise(resolve=>setTimeout(resolve,0));
+ assert.equal(calls.filter(c=>c.url==='/api/publish').length,1);
+ assert.equal(confirmations,0);assert.equal(doc.querySelector('#tab-content').classList.contains('hidden'),false);
+ assert(doc.querySelector('#publish-status').textContent.includes('conflict fixture'));
+ assert.equal(doc.querySelector('#quick-publish').disabled,false);dom.window.close();
+});
