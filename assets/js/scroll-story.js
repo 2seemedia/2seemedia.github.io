@@ -8,6 +8,7 @@
  function rgb(hex){var m=/^#([0-9a-f]{6})$/i.exec(hex.trim());return m?[0,2,4].map(function(i){return parseInt(m[1].slice(i,i+2),16)}):[201,21,36]}
  function mix(a,b,t){return a.map(function(v,i){return Math.round(v+(b[i]-v)*t)})}
  function localize(){document.querySelectorAll('[data-v3-en]').forEach(function(e){e.textContent=e.getAttribute(ar?'data-v3-ar':'data-v3-en')})}
+ document.querySelectorAll('.chip .count,[data-filter-count]').forEach(function(el){el.hidden=true;el.setAttribute('aria-hidden','true')});
  localize();document.querySelectorAll('.v3-nav').forEach(function(nav){nav.setAttribute('aria-label',ar?'القائمة الرئيسية':'Main navigation')});
  var mobileHeader=document.querySelector('.v3-header'),mobileNav=document.querySelector('.v3-nav');
  if(mobileHeader&&mobileNav){
