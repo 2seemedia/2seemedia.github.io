@@ -164,3 +164,25 @@ html[dir=rtl] .studio-inner main .eyebrow{font-size:13px;letter-spacing:0}
 .v3-is-scrolled .v3-brand{background:var(--studio-burgundy-glow)!important;color:#f4f2ed;box-shadow:0 5px 18px #24000624!important}
 /* Work covers remain clickable and named for assistive technology. */
 .studio-work-copy,.v3-project-caption{display:none!important}
+
+/* Scroll unfolds a brand-colour stack into an all-reel gallery. */
+@media(prefers-reduced-motion:no-preference){
+ .see-scroll-story.story-ready .v3-opening{height:210svh}
+ .see-scroll-story.story-ready .v3-title{height:100svh;position:sticky;top:0}
+ .see-scroll-story.story-ready .v3-stage{position:sticky;top:0;height:100svh;margin-top:-100svh;padding:0;pointer-events:none}
+ .see-scroll-story.story-ready .v3-gallery-shell{pointer-events:auto}
+ .see-scroll-story.story-ready .v3-gallery-shell[inert]{pointer-events:none}
+ .see-scroll-story.story-ready .v3-gallery{position:relative;overflow:visible;scroll-snap-type:none}
+ .see-scroll-story.story-ready .v3-gallery-shell:not([inert]) .v3-gallery{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity}
+ .see-scroll-story.story-ready .v3-project{position:relative;transform-origin:top left;transform:translate(var(--reel-x,0px),var(--reel-y,0px)) scale(var(--reel-scale,1));will-change:transform}
+ .see-scroll-story.story-ready .v3-project:after{content:'';position:absolute;inset:0;background:var(--reel-color,#b51222);opacity:calc(1 - var(--reel-reveal,0));border-radius:6px;pointer-events:none}
+ .see-scroll-story.story-ready .v3-gallery-controls{opacity:var(--reel-controls,0)}
+ .see-scroll-story.story-ready .v3-gallery-label{opacity:var(--reel-controls,0)}
+ .see-scroll-story.story-ready .v3-opening{overflow:clip}
+}
+body.studio-motion-paused .v3-project{transform:none!important;will-change:auto!important}
+body.studio-motion-paused .v3-project:after{display:none!important}
+body.studio-motion-paused.story-ready .v3-opening{height:auto}
+body.studio-motion-paused.story-ready .v3-title{position:relative}
+body.studio-motion-paused.story-ready .v3-stage{position:relative;height:auto;margin:0;padding:36px 0}
+@media(prefers-reduced-motion:no-preference){.see-scroll-story.story-ready .v3-gallery-shell[inert] .v3-project a{pointer-events:none}}
