@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /dashboard.html
+Disallow: /secure-admin/
+Disallow: /*cms-preview=
+Disallow: /*cms-edit=
 Sitemap: https://2seemedia.github.io/sitemap.xml

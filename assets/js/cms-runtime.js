@@ -15,6 +15,11 @@
   if(lang==='ar'&&!data.settings.arabicEnabled)lang='en';
   document.documentElement.lang=lang;
   document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  var seoPage=(window.SEE_PREVIEW_PAGE||location.pathname.split('/').pop()||'index.html').replace(/\.html$/,'');if(!seoPage)seoPage='index';
+  var seoBase='https://2seemedia.github.io/'+(seoPage==='index'?'':seoPage+'.html');
+  var seoCanonical=document.querySelector('link[rel="canonical"]');if(seoCanonical)seoCanonical.href=seoBase+'?lang='+lang;
+  var seoOgUrl=document.querySelector('meta[property="og:url"]');if(seoOgUrl)seoOgUrl.content=seoBase+'?lang='+lang;
+
   document.documentElement.style.setProperty('--color-cobalt',data.brand.accent||'#C91524');
   document.documentElement.style.setProperty('--color-cobalt-600',data.brand.accentHover||'#A70E1E');
   document.documentElement.style.setProperty('--color-lime',data.brand.highlight||'#C4C4C4');
@@ -102,6 +107,7 @@
     else if(e.kind==='option')el.textContent=v;
     if(e.kind!=='title'&&e.kind!=='meta')applyEntryStyle(el,e);
   });
+  var seoTitle=document.querySelector('meta[property="og:title"]');if(seoTitle)seoTitle.content=document.title;
   // Select CMS text on the actual website preview, without navigating links/forms.
   if(visualEdit){
     var editCss=document.createElement('style');editCss.textContent='[data-see-edit-key]:hover{outline:2px dashed #c91524!important;outline-offset:4px;box-shadow:0 0 0 4px rgba(201,21,36,.12)}[data-see-edit-key]{position:relative}';document.head.appendChild(editCss);
