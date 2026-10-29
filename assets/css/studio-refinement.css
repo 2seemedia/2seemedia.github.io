@@ -256,3 +256,14 @@ body.studio-motion-paused.story-ready .v3-opening{height:auto}
  .see-scroll-story .v3-gallery-label{inset-inline-start:max(170px,calc((100vw - 1240px)/2));inset-inline-end:170px}
  .see-scroll-story .v3-gallery-controls{width:min(calc(100% - 340px),1240px);margin:16px auto 0}
 }
+
+/* Larger client marks with tighter spacing and silhouette-only shadows. */
+.see-collabs .see-collabs-group{gap:10px;padding-inline-end:10px}
+.see-collabs .see-collabs-item{flex:0 0 176px!important;width:176px!important;height:128px!important;padding:5px!important;background:transparent!important;box-shadow:none!important}
+.see-collabs .see-collabs-item .see-collabs-logo{max-width:100%;max-height:100%;filter:drop-shadow(0 4px 3px #10101066) drop-shadow(0 9px 7px #10101030)!important;opacity:1!important}
+.see-collabs .see-collabs-item:hover .see-collabs-logo{filter:drop-shadow(0 5px 4px #10101070) drop-shadow(0 12px 9px #10101038)!important}
+.see-collabs-window{padding-block:20px 28px}
+@media(max-width:640px){
+ .see-collabs .see-collabs-group{gap:8px;padding-inline-end:8px}
+ .see-collabs .see-collabs-item{flex-basis:140px!important;width:140px!important;height:105px!important;padding:4px!important}
+}
