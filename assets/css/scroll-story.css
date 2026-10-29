@@ -119,3 +119,12 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
 @media(prefers-reduced-motion:reduce){.v3-brand,.v4-brand-logo,.v4-brand-wordmark,.v2-service,.v3-founder-bio,.v4-scene-image{transition:none!important}.v2-service[open] .v2-service-body{animation:none}}
 
 .v3-brand span.v4-brand-wordmark{font:800 18px/1 Manrope,Arial,sans-serif;letter-spacing:-.04em}@media(max-width:640px){.v3-brand span.v4-brand-wordmark{font-size:17px}}
+
+/* Stacked founder portraits; the name brings its portrait forward. */
+.v3-stack-pictures{overflow:visible;border:0;background:transparent;box-shadow:none;border-radius:0;width:85%;max-width:340px}
+.v3-stack-pictures img{border-radius:5px;box-shadow:0 8px 24px #0002;transition:transform .45s ease,opacity .45s ease;transform:translateY(var(--founder-offset,0px)) rotate(var(--founder-angle,-2deg))!important}
+.v4-scene-picker,.v4-photo-credit{display:none!important}
+.v3-footer-photo .v4-scene-image{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.v3-footer-photo .v4-scene-image.is-current{opacity:.65}
+@media(max-width:640px){.v3-stack{display:grid;grid-template-columns:1fr}.v3-stack-pictures{width:76%;height:350px;max-width:280px;margin-bottom:12px}}
+@media(prefers-reduced-motion:reduce){.v3-stack-pictures img,.v3-footer-photo .v4-scene-image{transition:none!important}}
