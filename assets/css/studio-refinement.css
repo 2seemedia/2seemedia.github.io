@@ -215,8 +215,8 @@ body.studio-motion-paused .v3-nav .v3-nav-item,body.studio-motion-paused .v3-nav
 
 /* Edge navigation follows reading direction; names are open at the top. */
 @media(min-width:641px){
- html[dir=rtl] .v3-header .v3-nav{right:0;left:auto;align-items:flex-end;padding:5px 0 12px 24px}
- html[dir=ltr] .v3-header .v3-nav{left:0;right:auto;align-items:flex-start;padding:5px 24px 12px 0}
+ html[dir=rtl] .v3-header .v3-nav{right:14px;left:auto;align-items:flex-end;padding:5px 0 12px 24px}
+ html[dir=ltr] .v3-header .v3-nav{left:14px;right:auto;align-items:flex-start;padding:5px 24px 12px 0}
  html[dir=rtl] .v3-header .v3-nav .v3-nav-item{border-radius:999px}
  html[dir=ltr] .v3-header .v3-nav .v3-nav-item{border-radius:999px}
  body:not(.v3-is-scrolled) .v3-header .v3-nav .v3-nav-item{width:var(--nav-open-width,120px);padding:0}
