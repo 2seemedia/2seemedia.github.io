@@ -425,3 +425,11 @@ body.studio-inner main h1,body.studio-inner main h2,body.studio-inner main p,bod
 }
 @media(max-width:380px){.studio-work #cms-work-grid{grid-template-columns:minmax(0,1fr)}.studio-work #cms-work-grid>.case-card:nth-child(even){margin-top:0}}
 @media(prefers-reduced-motion:reduce){.studio-work #cms-work-grid.work-slide-ready>.case-card>.see-work-cover{opacity:1;transform:none;transition:none}}
+
+/* Seven fixed mobile menu links, including Home and language. */
+@media(max-width:640px){
+ .v3-header .v3-nav .v3-nav-item:nth-child(7){--v12-order:6}
+ .v3-header .v3-nav .v3-nav-item{top:calc(90px + var(--v12-order)*30px);min-height:28px;height:28px}
+}
+
+@media(min-width:641px){.v3-header .v3-nav .v3-nav-home{--nav-open-width:160px}}
