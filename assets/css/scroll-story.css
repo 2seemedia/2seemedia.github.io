@@ -174,3 +174,14 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
 
 /* Client logos keep only their transparent artwork and silhouette shadow. */
 .see-v2 .see-collabs-item,.see-v2 .see-collabs-item.see-collabs-item--dark,.see-v2 .see-collabs-item.see-collabs-item--light{background:transparent!important;border:0!important;box-shadow:none!important}
+
+/* The mobile circle reveals from the menu button; links stay fixed. */
+@media(max-width:640px){
+ .v3-header .v3-nav{display:block!important;left:auto;right:12px;top:72px;width:350px;max-width:calc(100vw - 24px);height:350px;transform:none;transform-origin:calc(100% - 38px) 0;clip-path:circle(0px at calc(100% - 38px) 0);opacity:0;visibility:hidden;pointer-events:none;transition:clip-path .45s cubic-bezier(.2,.75,.2,1),opacity .2s,visibility 0s .45s;touch-action:pan-y}
+ .v3-header.is-menu-open .v3-nav{clip-path:circle(470px at calc(100% - 38px) 0);opacity:1;visibility:visible;pointer-events:auto;transition:clip-path .45s cubic-bezier(.2,.75,.2,1),opacity .2s}
+ .v3-header .v3-nav .v3-nav-item{transition:none!important;touch-action:manipulation}
+ .v3-header .v3-nav:after{display:none}
+ .v8-menu-toggle{z-index:2}
+}
+@media(max-width:360px){.v3-header .v3-nav{width:330px;right:8px;max-width:calc(100vw - 16px);transform:none}.v3-header .v3-nav .v3-nav-item{width:92px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.v3-header .v3-nav{transition:none!important}}
