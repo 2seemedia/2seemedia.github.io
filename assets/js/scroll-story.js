@@ -75,14 +75,17 @@
  }
  var intro=document.querySelector('.v2-intro'),services=document.querySelector('.v2-services'),team=document.querySelector('.v2-team'),process=document.querySelector('.v2-process');
  if(opening)document.body.classList.add('story-ready');
- var accent=[48,0,5];
- var themes=[{el:opening,color:accent},{el:intro,color:[244,242,235]},{el:services,color:[207,207,201]},{el:team,color:[244,242,235]},{el:process,color:[224,223,217]}].filter(function(x){return x.el});
+ var accent=[48,0,5],contactFooter=document.querySelector('.v3-footer');if(contactFooter)document.body.classList.add('studio-footer-blend');
+ var themes=[{el:opening,color:accent},{el:intro,color:[244,242,235]},{el:services,color:[207,207,201]},{el:team,color:[244,242,235]},{el:process,color:[224,223,217]},{el:contactFooter,color:accent}].filter(function(x){return x.el});
  var pending=false,menuPreviousY=scrollY,menuDirectionTravel=0,menuDirection=0;
  function update(){
   pending=false;document.body.classList.toggle('v3-is-scrolled',scrollY>40);var menuDelta=scrollY-menuPreviousY;menuPreviousY=scrollY;
   if(scrollY<12){document.body.classList.remove('v12-menu-away');menuDirectionTravel=0;}
   else if(Math.abs(menuDelta)>.5){var nextDirection=menuDelta>0?1:-1;if(nextDirection!==menuDirection){menuDirectionTravel=0;menuDirection=nextDirection;}menuDirectionTravel+=Math.abs(menuDelta);if(menuDirectionTravel>8){var hideMenu=menuDirection>0;document.body.classList.toggle('v12-menu-away',hideMenu);if(hideMenu&&innerWidth<=640&&mobileHeader&&mobileHeader.classList.contains('is-menu-open'))menuState(false);}}
 
+  var footerProgress=contactFooter?clamp((innerHeight*.82-contactFooter.getBoundingClientRect().top)/(innerHeight*.82),0,1):0;
+  if(contactFooter){var ink=mix([23,27,23],[244,242,237],footerProgress);contactFooter.style.setProperty('--studio-footer-ink','rgb('+ink.join(',')+')');}
+  if(!opening&&contactFooter){var base=document.body.classList.contains('concierge-contact')?[40,14,21]:document.body.classList.contains('concierge-careers')?[23,24,27]:[242,240,235];document.body.style.setProperty('--story-bg','rgb('+mix(base,accent,footerProgress).join(',')+')');document.body.style.setProperty('--studio-glow-opacity',String(footerProgress));if(document.body.classList.contains('concierge-page'))contactFooter.style.setProperty('--studio-footer-ink','#f4f2ed');}
   if(opening){
    var rect=opening.getBoundingClientRect(),travel=track?Math.max(0,track.scrollWidth-track.clientWidth):0,distance=Math.max(0,-rect.top),p=clamp(distance/(innerHeight*1.05),0,1);
    if(track&&!still()){opening.style.setProperty('--reel-section-height',(innerHeight*1.85+travel)+'px');track.scrollLeft=clamp(distance-innerHeight*.7,0,travel);}
@@ -99,7 +102,7 @@
    document.body.style.setProperty('--story-label-opacity',clamp((p-.18)/.42,0,1));
    var color=accent.slice(),previousColor=accent.slice();
    var glowFade=intro?clamp((innerHeight*.82-intro.getBoundingClientRect().top)/(innerHeight*.82),0,1):0;
-   document.body.style.setProperty('--studio-glow-opacity',String(1-glowFade));
+   document.body.style.setProperty('--studio-glow-opacity',String(Math.max(1-glowFade,footerProgress)));
    themes.slice(1).forEach(function(theme){var top=theme.el.getBoundingClientRect().top,t=clamp((innerHeight*.82-top)/(innerHeight*.82),0,1);if(t>0)color=mix(previousColor,theme.color,still()?1:t);previousColor=theme.color});
    document.body.style.setProperty('--story-bg','rgb('+color.join(',')+')');
   }

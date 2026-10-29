@@ -345,3 +345,10 @@ body .v3-footer:before{display:none;background:none}
 body .v3-footer{--footer-fade-height:clamp(150px,18vw,260px);background:linear-gradient(180deg,var(--footer-blend-from,var(--story-bg,#f2f0eb)) 0px,transparent var(--footer-fade-height)),var(--studio-burgundy-glow)!important;padding-top:calc(var(--footer-fade-height) + 32px)!important}
 .concierge-contact .v3-footer{--footer-blend-from:#280e15}
 .concierge-careers .v3-footer{--footer-blend-from:#17181b}
+
+/* Footer colour now changes with scroll, using the opening's shared canvas. */
+body.studio-footer-blend{background:var(--story-bg,#f2f0eb)}
+body.studio-footer-blend:not(.see-scroll-story){position:relative;isolation:isolate}
+body.studio-footer-blend:not(.see-scroll-story):before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--studio-burgundy-glow);opacity:var(--studio-glow-opacity,0)}
+body.studio-footer-blend .v3-footer{background:transparent!important;padding-top:90px!important;color:var(--studio-footer-ink,#f4f2ed)!important}
+body.studio-footer-blend .v3-footer-top,body.studio-footer-blend .v3-footer-top a,body.studio-footer-blend .v3-footer-cta{color:var(--studio-footer-ink,#f4f2ed)!important}
