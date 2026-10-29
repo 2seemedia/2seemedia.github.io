@@ -320,3 +320,11 @@ body.studio-motion-paused .studio-packages article.pkg-card{transition:none!impo
 
 /* Homepage uses the same logo artwork size as the internal pages. */
 .see-collabs .see-collabs-item .see-collabs-logo{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain}
+
+/* Reel artwork is visible from the stacked state, with a light brand tint. */
+@media(prefers-reduced-motion:no-preference){
+ .see-scroll-story.story-ready .v3-project:after{opacity:.16}
+ .see-scroll-story.story-ready .v3-stage:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;backdrop-filter:blur(var(--reel-backdrop-blur,0px));-webkit-backdrop-filter:blur(var(--reel-backdrop-blur,0px));background:#18000614;opacity:var(--reel-backdrop-opacity,0)}
+ .see-scroll-story.story-ready .v3-gallery-shell{z-index:1}
+}
+body.studio-motion-paused .v3-stage:before{display:none!important}

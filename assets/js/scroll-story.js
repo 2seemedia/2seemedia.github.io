@@ -91,7 +91,7 @@
    if(track){
     var unfold=still()?1:clamp((p-.03)/.62,0,1),ease=1-Math.pow(1-unfold,3),reveal=still()?1:clamp((p-.16)/.3,0,1);
     revealReady=unfold>=.98;var shell=track.closest('.v3-gallery-shell');shell.inert=!revealReady;
-    opening.style.setProperty('--reel-reveal',String(reveal));opening.style.setProperty('--reel-controls',String(clamp((unfold-.8)/.2,0,1)));
+    opening.style.setProperty('--reel-backdrop-blur',(still()?0:6*Math.sin(Math.PI*unfold))+'px');opening.style.setProperty('--reel-backdrop-opacity',String(still()?0:Math.sin(Math.PI*unfold)));opening.style.setProperty('--reel-reveal',String(reveal));opening.style.setProperty('--reel-controls',String(clamp((unfold-.8)/.2,0,1)));
     var trackBox=track.getBoundingClientRect(),stackLeft=Math.max(24,innerWidth*.17),stackTop=innerHeight*.69;
     Array.from(track.children).forEach(function(card,i){var x=stackLeft+i*9-(trackBox.left+card.offsetLeft-track.scrollLeft),y=stackTop-trackBox.top;card.style.setProperty('--reel-x',(x*(1-ease))+'px');card.style.setProperty('--reel-y',(y*(1-ease))+'px');card.style.setProperty('--reel-scale-y',String(.28+.72*ease));card.style.setProperty('--reel-curtain',String(still()?0:1-clamp((p-.14-i*.045)/.24,0,1)));card.style.visibility=i>=5&&!revealReady?'hidden':'';card.style.zIndex=String(20-i);});
    }
