@@ -11,15 +11,8 @@
  if(mobileHeader&&mobileNav){
   mobileNav.id='v8-site-navigation';
   var languageLink=document.querySelector('.v3-language');if(languageLink){languageLink.classList.remove('v3-language');languageLink.classList.add('v3-nav-item','v9-language');var languageText=languageLink.textContent;languageLink.textContent='';var languageSpan=document.createElement('span');languageSpan.textContent=languageText;languageLink.append(languageSpan);mobileNav.append(languageLink);}
-  var wheelAngle=0,wheelDrag=null,wheelMoved=false,wheelItems=Array.from(mobileNav.querySelectorAll('a'));
-  function wheelLayout(){wheelItems.forEach(function(item,i){var angle=wheelAngle+i*360/wheelItems.length;item.style.setProperty('--wheel-x',Math.cos(angle*Math.PI/180)*118+'px');item.style.setProperty('--wheel-y',Math.sin(angle*Math.PI/180)*118+'px');});}
-  wheelLayout();mobileNav.tabIndex=0;
-  mobileNav.addEventListener('pointerdown',function(e){if(innerWidth>640||e.button>0)return;wheelMoved=false;wheelDrag={x:e.clientX,y:e.clientY,angle:wheelAngle,id:e.pointerId};});
-  mobileNav.addEventListener('pointermove',function(e){if(!wheelDrag)return;var dx=e.clientX-wheelDrag.x,dy=e.clientY-wheelDrag.y;if(Math.hypot(dx,dy)>8){wheelMoved=true;mobileNav.setPointerCapture(e.pointerId);wheelAngle=wheelDrag.angle+dx*.65+dy*.3;wheelLayout();}});
-  mobileNav.addEventListener('pointerup',function(){wheelDrag=null});mobileNav.addEventListener('pointercancel',function(){wheelDrag=null});
-  mobileNav.addEventListener('click',function(e){if(wheelMoved){e.preventDefault();e.stopImmediatePropagation();wheelMoved=false}},true);
-  mobileNav.addEventListener('keydown',function(e){if(innerWidth<=640&&(e.key==='ArrowRight'||e.key==='ArrowLeft')){e.preventDefault();wheelAngle+=e.key==='ArrowRight'?30:-30;wheelLayout();}});
-
+  var wheelItems=Array.from(mobileNav.querySelectorAll('a'));
+  wheelItems.forEach(function(item,i){var angle=-90+i*360/wheelItems.length;item.style.setProperty('--wheel-x',Math.cos(angle*Math.PI/180)*112+'px');item.style.setProperty('--wheel-y',Math.sin(angle*Math.PI/180)*112+'px');});
   var menuButton=document.createElement('button');menuButton.type='button';menuButton.className='v8-menu-toggle';menuButton.setAttribute('aria-controls',mobileNav.id);menuButton.setAttribute('aria-expanded','false');
   function menuState(open){mobileHeader.classList.toggle('is-menu-open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?(ar?'إغلاق ×':'Close ×'):(ar?'القائمة ☰':'Menu ☰');}
   menuState(false);mobileHeader.append(menuButton);menuButton.addEventListener('click',function(){menuState(menuButton.getAttribute('aria-expanded')!=='true')});
