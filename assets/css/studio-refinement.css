@@ -317,3 +317,6 @@ body.studio-motion-paused .studio-packages article.pkg-card{transition:none!impo
  .v3-footer-top,.v3-footer-cta{margin-right:0;margin-inline-start:140px}
  body:not(.see-scroll-story) main>section.container-x,body:not(.see-scroll-story) main>div.container-x,body:not(.see-scroll-story) main>section>div.container-x{padding-inline-start:155px!important;padding-inline-end:32px!important}
 }
+
+/* Homepage uses the same logo artwork size as the internal pages. */
+.see-collabs .see-collabs-item .see-collabs-logo{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain}
