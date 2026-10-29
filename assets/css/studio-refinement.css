@@ -239,3 +239,14 @@ body.see-scroll-story:before{content:'';position:fixed;inset:0;z-index:-1;pointe
  .see-scroll-story.story-ready .v3-project{transform:translate(var(--reel-x,0px),var(--reel-y,0px)) scaleY(var(--reel-scale-y,1))}
  .see-scroll-story.story-ready .v3-project:after{opacity:1;transform:scaleX(var(--reel-curtain,1));transform-origin:right center}
 }
+
+/* Vertical scrolling finishes the reel row before the next section enters. */
+@media(prefers-reduced-motion:no-preference){
+ .see-scroll-story.story-ready .v3-opening{height:var(--reel-section-height,210svh)}
+ .see-scroll-story.story-ready .v3-gallery{scroll-behavior:auto!important;scroll-snap-type:none!important}
+ .see-scroll-story.story-ready [data-gallery-pause]{display:none}
+}
+.studio-reel-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;transition:opacity .18s}
+.is-preview-playing .studio-reel-preview{opacity:1}
+body.studio-motion-paused.story-ready .v3-opening{height:auto}
+@media(prefers-reduced-motion:reduce){.studio-reel-preview{transition:none}}
