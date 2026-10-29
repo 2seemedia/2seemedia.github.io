@@ -117,3 +117,5 @@ html[dir="ltr"] .v3-founder-bio.is-active{transform:translateX(6px)}
 .v3-footer .v3-footer-name{margin-top:40px;direction:ltr}.v3-footer-email{direction:ltr}
 @media(max-width:640px){.v3-brand{width:88px;height:88px;padding:12px}.v3-brand .v4-brand-logo{width:60px;height:66px}.v3-is-scrolled .v3-brand{width:132px;height:40px}.v3-brand .v4-brand-wordmark{font-size:17px}.v2-service[open]{transform:none}.v3-founder-bio{padding:17px 20px}.v3-stack{display:flex;flex-direction:column-reverse}.v3-stack-copy{width:100%}.v3-stack-pictures{width:100%;max-width:330px;height:380px}.v4-scene-picker button{font-size:11px;padding:8px 11px}.v3-footer{padding-bottom:285px}}
 @media(prefers-reduced-motion:reduce){.v3-brand,.v4-brand-logo,.v4-brand-wordmark,.v2-service,.v3-founder-bio,.v4-scene-image{transition:none!important}.v2-service[open] .v2-service-body{animation:none}}
+
+.v3-brand span.v4-brand-wordmark{font:800 18px/1 Manrope,Arial,sans-serif;letter-spacing:-.04em}@media(max-width:640px){.v3-brand span.v4-brand-wordmark{font-size:17px}}
