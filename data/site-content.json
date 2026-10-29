@@ -1680,7 +1680,7 @@
         "section": "v2",
         "label": "هذه 2SEE",
         "en": "THIS IS 2SEE",
-        "ar": "هذه 2SEE"
+        "ar": "لماذا 2See Media"
       },
       {
         "key": "index.v2.intro",
@@ -1688,7 +1688,7 @@
         "section": "v2",
         "label": "أكثر من محتوى. بصمة تشبهك.",
         "en": "More than content. A signature that is yours.",
-        "ar": "أكثر من محتوى. بصمة تشبهك."
+        "ar": "لأننا نصنع محتوى يعبّر عن هويتك"
       },
       {
         "key": "index.v2.introBody",
@@ -1696,7 +1696,10 @@
         "section": "v2",
         "label": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل.",
         "en": "We bring photography, production, editing, design and social media together. One team, one creative direction, from the first idea to the final frame.",
-        "ar": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل."
+        "ar": "نجمع التصوير والإنتاج والمونتاج والتصميم وإدارة التواصل الاجتماعي ضمن فريق واحد. رؤية إبداعية متكاملة، من أول فكرة لآخر تفصيل.",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.about",
@@ -1759,8 +1762,8 @@
         "kind": "text",
         "section": "v2",
         "label": "من جلسة تصوير لحضور علامتك اليومي، نختار معك الأسلوب الإبداعي المناسب.",
-        "en": "From a single production to your brand’s everyday presence, we shape the right creative approach.",
-        "ar": "من جلسة تصوير لحضور علامتك اليومي، نختار معك الأسلوب الإبداعي المناسب."
+        "en": "From concept to execution, we deliver creative solutions that reflect your brand’s identity.",
+        "ar": "من الفكرة إلى التنفيذ، نقدّم حلولاً إبداعية تعكس هوية علامتك"
       },
       {
         "key": "index.v2.teamTag",
@@ -1776,7 +1779,7 @@
         "section": "v2",
         "label": "مؤسسان. ورؤية واحدة.",
         "en": "Two founders. One creative vision.",
-        "ar": "مؤسسان. ورؤية واحدة."
+        "ar": "مؤسسين ، 2See Media"
       },
       {
         "key": "index.v2.processTag",
@@ -1800,7 +1803,10 @@
         "section": "v2",
         "label": "نحكي عن مشروعك",
         "en": "LET’S TALK",
-        "ar": "نحكي عن مشروعك"
+        "ar": "نحكي عن مشروعك",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.service0",
@@ -1808,7 +1814,7 @@
         "section": "services",
         "label": "التصوير والإنتاج",
         "en": "Photography & production",
-        "ar": "التصوير والإنتاج"
+        "ar": "التصوير"
       },
       {
         "key": "index.v2.serviceDesc0",
@@ -1824,7 +1830,7 @@
         "section": "services",
         "label": "المونتاج والموشن",
         "en": "Editing & motion",
-        "ar": "المونتاج والموشن"
+        "ar": "المونتاج والمؤثرات البصرية"
       },
       {
         "key": "index.v2.serviceDesc1",
@@ -1839,8 +1845,8 @@
         "kind": "text",
         "section": "services",
         "label": "صناعة المحتوى والحملات",
-        "en": "Content & campaigns",
-        "ar": "صناعة المحتوى والحملات"
+        "en": "Content",
+        "ar": "صناعة المحتوى"
       },
       {
         "key": "index.v2.serviceDesc2",
@@ -1856,7 +1862,7 @@
         "section": "services",
         "label": "إدارة التواصل الاجتماعي",
         "en": "Social media",
-        "ar": "إدارة التواصل الاجتماعي"
+        "ar": "إدارة منصات السوشال ميديا"
       },
       {
         "key": "index.v2.serviceDesc3",
@@ -1872,7 +1878,7 @@
         "section": "services",
         "label": "التصميم الغرافيكي",
         "en": "Graphic design",
-        "ar": "التصميم الغرافيكي"
+        "ar": "جرافيك ديزاين"
       },
       {
         "key": "index.v2.serviceDesc4",
@@ -1888,7 +1894,10 @@
         "section": "services",
         "label": "الاستيديو والبودكاست",
         "en": "Studio & podcasts",
-        "ar": "الاستيديو والبودكاست"
+        "ar": "الاستيديو والبودكاست",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.serviceDesc5",
@@ -1896,7 +1905,10 @@
         "section": "services",
         "label": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك.",
         "en": "A space for conversations, ideas and your next production.",
-        "ar": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك."
+        "ar": "مساحة لتصوير الحوارات والبودكاست والمحتوى، ضمن تجهيز يناسب مشروعك.",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.v2.step0",
@@ -2024,7 +2036,10 @@
         "section": "footer",
         "label": "انزل واكتشف",
         "en": "SCROLL TO EXPLORE",
-        "ar": "انزل واكتشف"
+        "ar": "انزل واكتشف",
+        "style": {
+          "hidden": true
+        }
       },
       {
         "key": "index.managed.8",
@@ -2048,7 +2063,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "index.managed.11",
@@ -2056,7 +2071,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "index.managed.12",
@@ -2064,7 +2079,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "index.managed.13",
@@ -3836,7 +3851,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "services.managed.8",
@@ -3844,7 +3859,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "services.managed.9",
@@ -3852,7 +3867,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "services.managed.10",
@@ -4984,7 +4999,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "work.managed.8",
@@ -4992,7 +5007,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "work.managed.9",
@@ -5000,7 +5015,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "work.managed.10",
@@ -6061,7 +6076,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "about.managed.8",
@@ -6069,7 +6084,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "about.managed.9",
@@ -6077,7 +6092,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "about.managed.10",
@@ -7442,7 +7457,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "careers.managed.9",
@@ -7450,7 +7465,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "careers.managed.10",
@@ -7458,7 +7473,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "careers.managed.11",
@@ -8647,7 +8662,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "contact.managed.8",
@@ -8655,7 +8670,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "contact.managed.9",
@@ -8663,7 +8678,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "contact.managed.10",
@@ -9547,7 +9562,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "case-study.managed.8",
@@ -9555,7 +9570,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "case-study.managed.9",
@@ -9563,7 +9578,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "case-study.managed.10",
@@ -10431,7 +10446,7 @@
         "section": "footer",
         "label": "من دمشق. لنخلّي علامتك تنشاف.",
         "en": "FROM DAMASCUS. MADE TO BE SEEN.",
-        "ar": "من دمشق. لنخلّي علامتك تنشاف."
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
       },
       {
         "key": "404.managed.7",
@@ -10439,7 +10454,7 @@
         "section": "footer",
         "label": "خلّي علامتك تنشاف.",
         "en": "Make your brand seen.",
-        "ar": "خلّي علامتك تنشاف."
+        "ar": "حضور يليق بعلامتك"
       },
       {
         "key": "404.managed.8",
@@ -10447,7 +10462,7 @@
         "section": "footer",
         "label": "نحكي على واتساب ↗",
         "en": "WhatsApp · Let’s talk ↗",
-        "ar": "نحكي على واتساب ↗"
+        "ar": "تواصل معنا على واتساب ↗"
       },
       {
         "key": "404.managed.9",
