@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = path.join(root, 'cloudflare-public/dist');
-const pages = ['index.html', 'about.html', 'services.html', 'work.html', 'portfolio.html', 'case-study.html', 'contact.html', 'careers.html', '404.html'];
+const pages = ['social-media-damascus.html', 'video-production-damascus.html', 'index.html', 'about.html', 'services.html', 'work.html', 'portfolio.html', 'case-study.html', 'contact.html', 'careers.html', '404.html'];
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 for (const page of pages) await cp(path.join(root, page), path.join(out, page));
