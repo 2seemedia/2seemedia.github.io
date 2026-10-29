@@ -217,8 +217,8 @@ body.studio-motion-paused .v3-nav .v3-nav-item,body.studio-motion-paused .v3-nav
 @media(min-width:641px){
  html[dir=rtl] .v3-header .v3-nav{right:0;left:auto;align-items:flex-end;padding:5px 0 12px 24px}
  html[dir=ltr] .v3-header .v3-nav{left:0;right:auto;align-items:flex-start;padding:5px 24px 12px 0}
- html[dir=rtl] .v3-header .v3-nav .v3-nav-item{border-radius:999px 0 0 999px}
- html[dir=ltr] .v3-header .v3-nav .v3-nav-item{border-radius:0 999px 999px 0}
+ html[dir=rtl] .v3-header .v3-nav .v3-nav-item{border-radius:999px}
+ html[dir=ltr] .v3-header .v3-nav .v3-nav-item{border-radius:999px}
  body:not(.v3-is-scrolled) .v3-header .v3-nav .v3-nav-item{width:var(--nav-open-width,120px);padding:0}
  body:not(.v3-is-scrolled) .v3-header .v3-nav .v3-nav-item span{max-width:160px;opacity:1;transform:none}
  /* Interior-page copy clears the dock on either language side. */
