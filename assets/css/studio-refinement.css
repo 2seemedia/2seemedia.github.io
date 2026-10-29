@@ -97,3 +97,5 @@ html[dir=rtl] .concierge-page .concierge-hero>.eyebrow{letter-spacing:0;font-siz
 /* Service choices use one border and one selected state. */
 .concierge-form .check-tile>span{border:0;border-radius:0;background:transparent!important;color:inherit!important;padding:0;gap:8px;transition:none}
 .concierge-form .field{border-color:#8c8089}
+.concierge-page .v3-footer .studio-contact-actions{display:flex;margin-top:22px}
+.concierge-page .v3-footer .studio-contact-actions>a{display:none}
