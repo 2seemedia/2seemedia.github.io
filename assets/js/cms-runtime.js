@@ -216,8 +216,8 @@
         function resumeLogos(){
           var width=logoWidth();
           if(!width||matchMedia('(prefers-reduced-motion: reduce)').matches||document.body.classList.contains('studio-motion-paused'))return;
-          track.style.animationDelay=(logoX/width*speed)+'s';
           track.style.removeProperty('transform');track.style.removeProperty('animation');
+          track.style.animationDelay=(logoX/width*speed)+'s';
         }
         win.addEventListener('dragstart',function(e){e.preventDefault()});
         win.addEventListener('pointerdown',function(e){
