@@ -542,3 +542,17 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
  }
  html[dir] body .v3-header .v3-nav .v3-nav-item[aria-current=page]>span{padding-inline:5px;text-align:center}
 }
+
+/* Reserve a reading gutter beside the fixed desktop navigation. */
+@media(min-width:641px){
+ body.see-scroll-story{--desktop-nav-clearance:max(210px,calc((100vw - 1240px)/2));--desktop-opposite-gutter:32px}
+ .see-scroll-story .v3-gallery-label{inset-inline-start:var(--desktop-nav-clearance)!important;inset-inline-end:var(--desktop-opposite-gutter)!important;max-width:none;text-align:start;overflow-wrap:anywhere}
+ .see-scroll-story .v3-gallery-controls,.see-scroll-story .v2-wrap{
+  box-sizing:border-box;width:calc(100% - var(--desktop-nav-clearance) - var(--desktop-opposite-gutter));max-width:1240px;
+  margin-inline-start:var(--desktop-nav-clearance);margin-inline-end:var(--desktop-opposite-gutter)
+ }
+ .see-scroll-story .v3-title{box-sizing:border-box;padding-inline-start:var(--desktop-nav-clearance);padding-inline-end:var(--desktop-opposite-gutter)}
+ .see-scroll-story .v3-title h1{max-width:min(900px,100%)}
+ .see-scroll-story .studio-hero-lead,.see-scroll-story .studio-hero-actions{max-width:100%;box-sizing:border-box}
+ body.see-scroll-story .v3-footer{--footer-dock-space:210px}
+}
