@@ -447,3 +447,34 @@ body.studio-inner main h1,body.studio-inner main h2,body.studio-inner main p,bod
 .v9-intro-circle{border-radius:0!important;outline:0!important;border:0!important;background:transparent!important;box-shadow:none!important;overflow:visible}
 .v9-intro-circle:before,.v9-intro-circle:after{content:none!important;display:none!important}
 html.see-intro-playing .v3-brand{background:transparent!important;border-radius:0!important;box-shadow:none!important;outline:0!important}
+
+/* Mobile navigation shares the desktop pill design and brand palette. */
+@media(max-width:640px){
+ html[dir] .v3-header .v3-nav{
+  display:flex!important;position:fixed;top:72px;bottom:auto;width:max-content;height:auto;max-width:calc(100vw - 28px);max-height:calc(100dvh - 90px);
+  flex-direction:column;gap:7px;padding:5px;overflow-y:auto;overflow-x:hidden;direction:ltr;
+  background:transparent!important;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+  clip-path:none!important;transform:none!important;transition:opacity .2s,visibility .2s!important
+ }
+ html[dir=rtl] .v3-header .v3-nav{right:14px;left:auto;align-items:flex-end}
+ html[dir=ltr] .v3-header .v3-nav{left:14px;right:auto;align-items:flex-start}
+ .v3-header .v3-nav:before,.v3-header .v3-nav:after,.v3-header .v3-nav .v3-nav-item:after{content:none!important;display:none!important}
+ .v3-header .v3-nav .v3-nav-item{
+  position:relative;left:auto;right:auto;top:auto;flex:none;transform:none!important;isolation:isolate;
+  display:flex;align-items:center;justify-content:center;box-sizing:border-box;overflow:hidden;
+  width:var(--nav-open-width,120px);min-width:44px;height:44px;min-height:44px;padding:0;
+  border:0!important;border-radius:999px!important;outline:1px solid #ffffff20;
+  background:var(--nav-colour,#171b17)!important;color:var(--nav-ink,#fff)!important;
+  font-size:13px;font-weight:700;line-height:1.4;text-align:center;letter-spacing:0
+ }
+ .v3-header .v3-nav .v3-nav-home{--nav-open-width:160px}
+ .v3-header .v3-nav .v3-nav-0,.v3-header .v3-nav .v3-nav-1{--nav-colour:#171b17;--nav-ink:#fff;--nav-open-width:105px}
+ .v3-header .v3-nav .v3-nav-2{--nav-colour:#f4f2ed;--nav-ink:#171b17;--nav-open-width:112px}
+ .v3-header .v3-nav .v3-nav-3{--nav-colour:#b51222;--nav-ink:#fff;--nav-open-width:132px}
+ .v3-header .v3-nav .v3-nav-4{--nav-colour:#c4c4c4;--nav-ink:#171b17;--nav-open-width:138px}
+ .v3-header .v3-nav .v9-language{--nav-colour:#171b17;--nav-ink:#fff;--nav-open-width:100px}
+ .v3-header .v3-nav .v3-nav-item span{display:block;max-width:100%!important;opacity:1!important;transform:none!important;white-space:nowrap}
+ html[dir=rtl] .v3-header .v3-nav .v3-nav-item{direction:rtl}
+ html[dir=ltr] .v3-header .v3-nav .v3-nav-item{direction:ltr}
+ .v3-header .v3-nav .v3-nav-item:focus-visible{outline:3px solid #b51222;outline-offset:3px}
+}
