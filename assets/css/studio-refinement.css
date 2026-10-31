@@ -566,3 +566,10 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
   max-width:1240px;margin-inline:auto
  }
 }
+
+/* Drag the existing logo loop without changing its artwork or layout. */
+.see-collabs-draggable{cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.see-collabs-draggable.is-logo-dragging,.see-collabs-draggable.is-logo-dragging *{cursor:grabbing!important}
+.see-collabs-draggable.is-logo-dragging .see-collabs-track{animation-play-state:paused}
+.see-collabs-draggable img{-webkit-user-drag:none;user-select:none}
+.see-collabs-draggable:focus-visible{outline:2px solid #b51222;outline-offset:-3px}
