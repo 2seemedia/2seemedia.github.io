@@ -527,3 +527,18 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
  html[dir=ltr] body:not(.v3-is-scrolled) .v3-header .v3-brand{left:calc(50% + 54px);right:auto;transform:translateX(-50%)}
  body:not(.v3-is-scrolled) .v3-header .v3-brand .v4-brand-logo{width:44px;height:44px;max-width:44px;max-height:44px;object-fit:contain}
 }
+
+/* The company brand remains centred; the compact mobile page control stays aside. */
+@media(max-width:640px){
+ html[dir] body .v3-header .v3-brand{
+  left:50%!important;right:auto!important;transform:translateX(-50%)!important;
+  top:calc(18px + env(safe-area-inset-top,0px))!important;width:132px!important;height:44px;box-sizing:border-box
+ }
+ html[dir] body .v3-header .v3-nav{top:calc(20px + env(safe-area-inset-top,0px))!important;padding:0}
+ html[dir=rtl] body .v3-header .v3-nav{right:8px!important;left:auto!important;align-items:flex-end}
+ html[dir=ltr] body .v3-header .v3-nav{left:8px!important;right:auto!important;align-items:flex-start}
+ html[dir] body .v3-header .v3-nav .v3-nav-item[aria-current=page]{
+  width:80px!important;min-width:80px;height:40px!important;min-height:40px!important;font-size:11px!important
+ }
+ html[dir] body .v3-header .v3-nav .v3-nav-item[aria-current=page]>span{padding-inline:5px;text-align:center}
+}
