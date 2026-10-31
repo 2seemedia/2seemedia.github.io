@@ -42,6 +42,7 @@
   nodes.forEach(function(n){
    var p=n.parentElement;
    if(!p||p.closest('script,style,textarea,input,select,option,code,pre,[contenteditable],.v3-footer-email,[data-cv-state],.see-form-notice'))return;
+   if(p.closest('[data-see-text-key="index.v2.lead"], [data-cms-text="index.v2.lead"]'))return;
    var value=n.nodeValue;
    if(/https?:\/\/|www\.|[\w.+-]+@[\w.-]+/i.test(value))return;
    var clean=value.replace(/[,،;؛·]/g,function(mark,index){return /[0-9٠-٩]/.test(value[index-1]||'')&&/[0-9٠-٩]/.test(value[index+1]||'')?mark:' '}).replace(/([^\d])\.(?=\s|$)/g,'$1').replace(/…/g,'').replace(/ {2,}/g,' ');
