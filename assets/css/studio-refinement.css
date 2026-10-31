@@ -514,3 +514,16 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
  body.v3-is-scrolled .v3-header .v3-nav .v3-nav-item[aria-current=page]>span{width:100%;padding-inline:10px;text-align:center;line-height:1.4}
  body.v3-is-scrolled .v3-header .v3-nav.is-touch-expanded .v3-nav-item{width:var(--nav-open-width,132px)}
 }
+
+/* Keep the opening headline clear on mobile, before the first scroll too. */
+@media(max-width:640px){
+ body:not(.v3-is-scrolled) .v3-header .v3-nav:not(.is-touch-expanded) .v3-nav-item:not([aria-current=page]){display:none!important}
+ html[dir] body:not(.v3-is-scrolled) .v3-header .v3-nav{top:21px;padding:0;max-height:calc(100dvh - 42px)}
+ html[dir=rtl] body:not(.v3-is-scrolled) .v3-header .v3-nav{right:calc(50% - 126.5px);left:auto}
+ html[dir=ltr] body:not(.v3-is-scrolled) .v3-header .v3-nav{left:calc(50% - 126.5px);right:auto}
+ body:not(.v3-is-scrolled) .v3-header .v3-nav .v3-nav-item[aria-current=page]{order:-1;width:100px!important;height:38px;min-height:38px;font-size:12px}
+ body:not(.v3-is-scrolled) .v3-header .v3-brand{top:18px;width:145px;height:44px;padding:0;box-sizing:border-box;background:transparent!important;box-shadow:none!important}
+ html[dir=rtl] body:not(.v3-is-scrolled) .v3-header .v3-brand{left:calc(50% - 54px);right:auto;transform:translateX(-50%)}
+ html[dir=ltr] body:not(.v3-is-scrolled) .v3-header .v3-brand{left:calc(50% + 54px);right:auto;transform:translateX(-50%)}
+ body:not(.v3-is-scrolled) .v3-header .v3-brand .v4-brand-logo{width:44px;height:44px;max-width:44px;max-height:44px;object-fit:contain}
+}
