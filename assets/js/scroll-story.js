@@ -18,6 +18,15 @@
   var menuButton=document.createElement('button');menuButton.type='button';menuButton.className='v8-menu-toggle';menuButton.setAttribute('aria-controls',mobileNav.id);menuButton.setAttribute('aria-expanded','false');
   function menuState(open){var modalOpen=open&&innerWidth<=640;document.querySelectorAll('main,footer').forEach(function(el){el.inert=modalOpen});if(modalOpen){mobileNav.setAttribute('role','dialog');mobileNav.setAttribute('aria-modal','true')}else{mobileNav.removeAttribute('role');mobileNav.removeAttribute('aria-modal')}document.body.classList.toggle('v12-menu-open',open);if(menuBackdrop)menuBackdrop.setAttribute('aria-hidden',String(!open));mobileHeader.classList.toggle('is-menu-open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?(ar?'إغلاق ×':'Close ×'):(ar?'القائمة ☰':'Menu ☰');if(modalOpen)requestAnimationFrame(function(){if(mobileHeader.classList.contains('is-menu-open'))mobileNav.querySelector('a')?.focus()});}
   menuState(false);mobileHeader.append(menuButton);menuButton.addEventListener('click',function(){menuState(menuButton.getAttribute('aria-expanded')!=='true')});
+  // Touch equivalent of hovering the desktop dock: first tap reveals labels.
+  mobileNav.addEventListener('click',function(e){
+   var link=e.target.closest('a');if(!link||innerWidth>640)return;
+   if(document.body.classList.contains('v3-is-scrolled')&&!mobileNav.classList.contains('is-touch-expanded')&&!link.hasAttribute('aria-current')&&!link.classList.contains('v9-language')){
+    e.preventDefault();e.stopImmediatePropagation();mobileNav.classList.add('is-touch-expanded');
+   }
+  },true);
+  document.addEventListener('pointerdown',function(e){if(!mobileNav.contains(e.target))mobileNav.classList.remove('is-touch-expanded')});
+  addEventListener('scroll',function(){mobileNav.classList.remove('is-touch-expanded')},{passive:true});
   mobileNav.addEventListener('click',function(e){if(e.target.closest('a'))menuState(false)});
   document.addEventListener('click',function(e){if(!mobileHeader.contains(e.target))menuState(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menuButton.getAttribute('aria-expanded')==='true'){menuState(false);menuButton.focus()}});

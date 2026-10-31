@@ -478,3 +478,25 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
  html[dir=ltr] .v3-header .v3-nav .v3-nav-item{direction:ltr}
  .v3-header .v3-nav .v3-nav-item:focus-visible{outline:3px solid #b51222;outline-offset:3px}
 }
+
+/* The same edge dock is used on touch screens; no separate circular menu. */
+@media(max-width:640px){
+ .v3-header .v8-menu-toggle,.v12-menu-backdrop{display:none!important}
+ html[dir] .v3-header .v3-nav{top:18px;opacity:1!important;visibility:visible!important;pointer-events:auto!important;clip-path:none!important}
+ .v3-header .v3-nav .v3-nav-item{width:44px;min-width:44px;transition:width .28s ease!important}
+ .v3-header .v3-nav .v3-nav-item span{max-width:0!important;opacity:0!important;transition:opacity .18s!important}
+ body:not(.v3-is-scrolled) .v3-header .v3-nav .v3-nav-item,
+ .v3-header .v3-nav.is-touch-expanded .v3-nav-item,
+ .v3-header .v3-nav:focus-within .v3-nav-item,
+ .v3-header .v3-nav .v3-nav-item[aria-current=page],
+ .v3-header .v3-nav .v9-language{width:var(--nav-open-width,120px)}
+ body:not(.v3-is-scrolled) .v3-header .v3-nav .v3-nav-item span,
+ .v3-header .v3-nav.is-touch-expanded .v3-nav-item span,
+ .v3-header .v3-nav:focus-within .v3-nav-item span,
+ .v3-header .v3-nav .v3-nav-item[aria-current=page] span,
+ .v3-header .v3-nav .v9-language span{max-width:160px!important;opacity:1!important}
+ body.v12-menu-open .v3-brand{opacity:1;pointer-events:auto}
+}
+@media(max-width:640px) and (prefers-reduced-motion:reduce){
+ .v3-header .v3-nav .v3-nav-item,.v3-header .v3-nav .v3-nav-item span{transition:none!important}
+}
