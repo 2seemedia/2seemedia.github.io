@@ -266,6 +266,7 @@
     try{var u=new URL(w.url);if(['www.instagram.com','instagram.com'].includes(u.hostname)&&/^\/(reel|p)\/[\w-]+\/?$/.test(u.pathname))url=u.origin+u.pathname.replace(/\/$/,'')+'/embed/';
       else if(['youtube.com','www.youtube.com','youtu.be'].includes(u.hostname)){var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.match(/\/shorts\/([\w-]+)/)?.[1]);if(/^[\w-]{11}$/.test(id||''))url='https://www.youtube-nocookie.com/embed/'+id}
     }catch(e){}
+    modal.dataset.workFormat=w.type==='design'?'design':(url.indexOf('youtube-nocookie.com')!==-1?'landscape':'reel');
     iframe.src=w.type==='design'?'about:blank':(url||'about:blank');iframe.hidden=w.type==='design'||!url;
     if(!modal.open)modal.showModal();
   }
