@@ -4284,24 +4284,24 @@
         "kind": "text",
         "section": "work.section1",
         "label": "Work made",
-        "en": "Our work",
-        "ar": "أعمالنا"
+        "en": "Our signature",
+        "ar": "بصمتنا"
       },
       {
         "key": "work.t021",
         "kind": "text",
         "section": "work.section1",
         "label": "to be",
-        "en": "speaks",
-        "ar": "تتحدث"
+        "en": "in every",
+        "ar": "في كل"
       },
       {
         "key": "work.t022",
         "kind": "text",
         "section": "work.section1",
         "label": "seen.",
-        "en": "for itself",
-        "ar": "عنّا"
+        "en": "project",
+        "ar": "مشروع"
       },
       {
         "key": "work.t023",
