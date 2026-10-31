@@ -500,3 +500,17 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
 @media(max-width:640px) and (prefers-reduced-motion:reduce){
  .v3-header .v3-nav .v3-nav-item,.v3-header .v3-nav .v3-nav-item span{transition:none!important}
 }
+
+/* A compact, centred brand/current-page pair replaces the mobile dot stack. */
+@media(max-width:640px){
+ body.v3-is-scrolled .v3-header .v3-brand{position:fixed;top:18px;width:145px;height:44px;box-sizing:border-box;padding:10px 12px}
+ html[dir=rtl] body.v3-is-scrolled .v3-header .v3-brand{left:calc(50% - 70px);right:auto;transform:translateX(-50%)}
+ html[dir=ltr] body.v3-is-scrolled .v3-header .v3-brand{left:calc(50% + 70px);right:auto;transform:translateX(-50%)}
+ html[dir] body.v3-is-scrolled .v3-header .v3-nav{top:18px;padding:0;gap:7px;max-height:calc(100dvh - 36px)}
+ html[dir=rtl] body.v3-is-scrolled .v3-header .v3-nav{right:calc(50% - 142.5px);left:auto}
+ html[dir=ltr] body.v3-is-scrolled .v3-header .v3-nav{left:calc(50% - 142.5px);right:auto}
+ body.v3-is-scrolled .v3-header .v3-nav:not(.is-touch-expanded) .v3-nav-item:not([aria-current=page]){display:none!important}
+ body.v3-is-scrolled .v3-header .v3-nav .v3-nav-item[aria-current=page]{order:-1;width:132px!important;height:44px;min-height:44px}
+ body.v3-is-scrolled .v3-header .v3-nav .v3-nav-item[aria-current=page]>span{width:100%;padding-inline:10px;text-align:center;line-height:1.4}
+ body.v3-is-scrolled .v3-header .v3-nav.is-touch-expanded .v3-nav-item{width:var(--nav-open-width,132px)}
+}

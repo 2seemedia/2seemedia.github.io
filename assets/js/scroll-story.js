@@ -21,7 +21,7 @@
   // Touch equivalent of hovering the desktop dock: first tap reveals labels.
   mobileNav.addEventListener('click',function(e){
    var link=e.target.closest('a');if(!link||innerWidth>640)return;
-   if(document.body.classList.contains('v3-is-scrolled')&&!mobileNav.classList.contains('is-touch-expanded')&&!link.hasAttribute('aria-current')&&!link.classList.contains('v9-language')){
+   if(document.body.classList.contains('v3-is-scrolled')&&!mobileNav.classList.contains('is-touch-expanded')){
     e.preventDefault();e.stopImmediatePropagation();mobileNav.classList.add('is-touch-expanded');
    }
   },true);
