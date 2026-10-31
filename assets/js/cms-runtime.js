@@ -203,6 +203,49 @@
       track.append(group,clone);
       var speed=Math.max(15,Math.min(100,Number(config.speedSeconds)||34));
       track.style.setProperty('--see-collabs-speed',speed+'s');
+      if(win){
+        win.classList.add('see-collabs-draggable');win.tabIndex=0;
+        win.setAttribute('aria-label',(lang==='ar'?'شعارات عملائنا — اسحب يميناً ويساراً أو استخدم مفاتيح الأسهم':'Client logos — drag sideways or use the arrow keys'));
+        track.querySelectorAll('img,a').forEach(function(el){el.draggable=false});
+        var logoDrag=null,logoMoved=false,logoX=0;
+        function logoWidth(){return group.getBoundingClientRect().width}
+        function wrapLogoX(x){var width=logoWidth();return width>0?((x%width)+width)%width-width:0}
+        function readLogoX(){try{return new DOMMatrixReadOnly(getComputedStyle(track).transform).m41}catch(e){return 0}}
+        function freezeLogos(){logoX=readLogoX();track.style.animation='none';track.style.transform='translate3d('+logoX+'px,0,0)'}
+        function placeLogos(x){logoX=wrapLogoX(x);track.style.transform='translate3d('+logoX+'px,0,0)'}
+        function resumeLogos(){
+          var width=logoWidth();
+          if(!width||matchMedia('(prefers-reduced-motion: reduce)').matches||document.body.classList.contains('studio-motion-paused'))return;
+          track.style.animationDelay=(logoX/width*speed)+'s';
+          track.style.removeProperty('transform');track.style.removeProperty('animation');
+        }
+        win.addEventListener('dragstart',function(e){e.preventDefault()});
+        win.addEventListener('pointerdown',function(e){
+          if(e.isPrimary===false||e.button!==0)return;
+          logoMoved=false;freezeLogos();logoDrag={id:e.pointerId,start:e.clientX,base:logoX};
+        });
+        win.addEventListener('pointermove',function(e){
+          if(!logoDrag||logoDrag.id!==e.pointerId)return;
+          var dx=e.clientX-logoDrag.start;
+          if(!logoMoved&&Math.abs(dx)<6)return;
+          logoMoved=true;win.classList.add('is-logo-dragging');
+          if(!win.hasPointerCapture(e.pointerId))win.setPointerCapture(e.pointerId);
+          placeLogos(logoDrag.base+dx);
+        });
+        function endLogoDrag(e){
+          if(!logoDrag||logoDrag.id!==e.pointerId)return;
+          var id=logoDrag.id;logoDrag=null;win.classList.remove('is-logo-dragging');
+          if(win.hasPointerCapture(id))win.releasePointerCapture(id);
+          resumeLogos();
+        }
+        win.addEventListener('pointerup',endLogoDrag);win.addEventListener('pointercancel',endLogoDrag);win.addEventListener('lostpointercapture',endLogoDrag);
+        win.addEventListener('click',function(e){if(logoMoved){e.preventDefault();e.stopImmediatePropagation();logoMoved=false}},true);
+        win.addEventListener('keydown',function(e){
+          if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+          e.preventDefault();freezeLogos();placeLogos(logoX+(e.key==='ArrowRight'?-160:160));resumeLogos();
+        });
+      }
+
     });
   })();
 
