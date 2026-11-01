@@ -589,3 +589,6 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
 .see-modal[data-work-format="reel"] .see-modal-bottom{padding:10px 12px;font-size:11px;line-height:1.5;gap:7px;flex-direction:column;align-items:flex-start}
 .see-modal[data-work-format="landscape"]{width:min(920px,calc(100vw - 24px),calc((100dvh - 170px) * 1.77778));max-height:calc(100dvh - 24px)}
 .see-modal[data-work-format="landscape"] iframe{width:100%;height:auto;aspect-ratio:16/9}
+
+/* Keep the longer team label readable in the compact mobile page pill. */
+@media(max-width:640px){html[dir] body .v3-header .v3-nav .v3-nav-3[aria-current=page]>span{white-space:normal!important;line-height:1.2!important}}
