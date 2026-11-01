@@ -40,6 +40,7 @@
 <link rel="alternate" hreflang="en" href="https://2seemedia.github.io/contact.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://2seemedia.github.io/contact.html">
 <meta property="og:url" content="https://2seemedia.github.io/contact.html">
+<link rel="stylesheet" href="assets/css/quote-wizard.css?v=1">
 </head>
 <body class="antialiased concierge-page concierge-contact">
 <a class="skip-link" data-cms-link="contact.a088" href="#main"><!--cms:contact.t001-->Skip to content</a>
@@ -59,35 +60,7 @@
 <div class="grid gap-16 lg:grid-cols-12">
 <div class="lg:col-span-7" data-form-wrap="">
 
-<form aria-label="Project enquiry — choose WhatsApp or email" class="concierge-form grid gap-10" data-send-choice="" novalidate="">
-<fieldset class="min-w-0">
-<legend class="eyebrow text-muted"><!--cms:contact.t023-->01 — About you</legend>
-<div class="mt-6 grid gap-8 sm:grid-cols-2">
-<div data-field=""><label class="label" for="c-name"><!--cms:contact.t024-->Name</label><input autocomplete="name" class="field" id="c-name" name="name" required=""/></div>
-<div data-field=""><label class="label" for="c-email"><!--cms:contact.t025-->Work email</label><input autocomplete="email" class="field" id="c-email" name="email" required="" type="email" inputmode="email" autocapitalize="none" spellcheck="false"/></div>
-<div class="sm:col-span-2" data-field=""><label class="label" for="c-company"><!--cms:contact.t026-->Company</label><input autocomplete="organization" class="field" id="c-company" name="company"/></div>
-</div>
-</fieldset>
-<fieldset class="min-w-0" data-required-group="Please choose at least one service." id="services-group">
-<legend class="eyebrow text-muted"><!--cms:contact.t027-->02 — What can we help with?</legend>
-<div class="mt-6 flex flex-wrap gap-2.5"><label class="check-tile"><input name="services" type="checkbox" value="Photography &amp; production"/><span><!--cms:contact.t028-->Photography &amp; production</span></label><label class="check-tile"><input name="services" type="checkbox" value="Video editing"/><span><!--cms:contact.t029-->Video editing</span></label><label class="check-tile"><input name="services" type="checkbox" value="Social media management"/><span><!--cms:contact.t030-->Social media</span></label><label class="check-tile"><input name="services" type="checkbox" value="Content creation"/><span><!--cms:contact.t031-->Content production</span></label><label class="check-tile"><input name="services" type="checkbox" value="Graphic design"/><span><!--cms:contact.t032-->Graphic design</span></label><label class="check-tile"><input name="services" type="checkbox" value="Not sure yet"/><span><!--cms:contact.t033-->Not sure yet</span></label></div>
-</fieldset>
-<fieldset class="min-w-0">
-<legend class="eyebrow text-muted"><!--cms:contact.t040-->04 — The details</legend>
-<div class="mt-6 grid gap-8">
-<div data-field=""><label class="label" for="c-message"><!--cms:contact.t041-->Tell us about the project</label><textarea class="field min-h-36" data-cms-placeholder="contact.a120" id="c-message" minlength="20" name="message" placeholder="What are you making, who is it for and what does success look like?" required=""></textarea></div>
-<div data-field=""><label class="label" for="c-source"><!--cms:contact.t042-->How did you hear about us? <span class="font-normal text-muted"><!--cms:contact.t043-->(optional)</span></label>
-<select class="field" id="c-source" name="source"><option data-cms-option="contact.o001" value="">Choose one</option><option data-cms-option="contact.o002">Recommendation</option><option data-cms-option="contact.o003">Saw your work</option><option data-cms-option="contact.o004">Search</option><option data-cms-option="contact.o005">Social media</option><option data-cms-option="contact.o006">Event or talk</option></select></div>
-</div>
-</fieldset>
-<div class="flex flex-wrap items-center gap-6"><p class="see-send-label"><!--cms:contact.t087-->Choose how to send your request</p><div class="see-send-actions"><button class="btn see-contact-send see-send-whatsapp btn-primary" data-send-method="whatsapp" type="submit"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5Z"></path><path d="M9 8.5c.5 2.5 2 4 4.5 5l1.4-1.2 2 1.1-.2 1.9c-.5 1.2-2 1.3-3 .9-3.6-1.4-6.2-4-7.2-7.6-.3-1 .1-2.5 1.3-2.9l1.7-.1 1 2.1L9 8.5Z"></path></svg><!--cms:contact.t086-->Send by WhatsApp</button><button class="btn see-contact-send see-send-email see-btn-outline" data-send-method="email" type="submit"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 7 9-7"></path></svg><!--cms:contact.t044-->Send by email</button></div><p class="see-send-hint text-muted"><!--cms:contact.t045-->We prepare your message; you send it from the app you choose.</p></div>
-</form>
-<div class="on-dark rounded-[2rem] bg-ink p-8 text-white sm:p-12" data-success="" hidden="" tabindex="-1">
-<p class="eyebrow text-lime"><!--cms:contact.t046-->Ready to send</p>
-<p class="display-lg mt-4 text-[clamp(2rem,4vw,3.4rem)]"><!--cms:contact.t047-->Your email application will open; send the message there.</p>
-<p class="mt-4 max-w-lg text-white/70"><!--cms:contact.t048-->Email prepared: <strong class="text-white" data-ref=""></strong><!--cms:contact.t049-->. Please send your message using your email app, or contact us on WhatsApp.</p>
-<button class="btn btn-ghost-dark mt-8" data-reset-form="" type="button"><!--cms:contact.t050-->Send another enquiry</button>
-</div>
+<div data-quote-wizard contenteditable="false"><h2>طلب عرض سعر / Request a quote</h2><p>يرجى تفعيل JavaScript لتجهيز طلبك / Enable JavaScript to prepare your request.</p></div>
 </div>
 <aside class="concierge-aside min-w-0 lg:col-span-4 lg:col-start-9">
 <div class="reveal rounded-[2rem] bg-paper-2 p-8">
@@ -120,5 +93,5 @@
 <a class="v3-badge" href="contact.html"><span><!--cms:contact.managed.14-->Let’s talk</span></a></div><p class="v3-copyright">© 2026 2SEE Media</p></footer>
 <script src="assets/js/site-data.js?v=brand-copy-5"></script><script src="assets/js/cms-runtime.js?v=reel-size-10"></script><script src="assets/js/main.js"></script><script src="assets/js/nav-active.js?v=mobile-align-3"></script>
 
-<script src="assets/js/scroll-story.js?v=brand-centre-5"></script><script src="assets/js/studio-forms.js"></script></body>
+<script src="assets/js/scroll-story.js?v=brand-centre-5"></script><script src="assets/js/studio-forms.js"></script><script src="assets/js/quote-wizard.js?v=1"></script></body>
 </html>
