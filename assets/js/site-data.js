@@ -2349,17 +2349,17 @@ window.SEE_CMS_DATA = {
         "key": "index.faq.help",
         "kind": "text",
         "section": "index.faq",
-        "label": "Didn’t find the answer you were looking for?",
-        "ar": "لم تجد الإجابة التي تبحث عنها؟",
-        "en": "Didn’t find the answer you were looking for?"
+        "label": "Are you ready to start your project?",
+        "ar": "هل أنت مستعد لبدء مشروعك؟",
+        "en": "Are you ready to start your project?"
       },
       {
         "key": "index.faq.helpBody",
         "kind": "text",
         "section": "index.faq",
-        "label": "Our team is ready to discuss your idea and help you choose the right service.",
-        "ar": "فريقنا جاهز لمناقشة فكرتك ومساعدتك في اختيار الخدمة المناسبة.",
-        "en": "Our team is ready to discuss your idea and help you choose the right service."
+        "label": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements.",
+        "ar": "أخبرنا عن مشروعك واحتياجاتك، وسنقدّم لك عرض سعر يناسب متطلباتك.",
+        "en": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements."
       },
       {
         "key": "index.faq.cta",
@@ -4601,17 +4601,17 @@ window.SEE_CMS_DATA = {
         "key": "services.faq.help",
         "kind": "text",
         "section": "services.section7",
-        "label": "Didn’t find the answer you were looking for?",
-        "ar": "لم تجد الإجابة التي تبحث عنها؟",
-        "en": "Didn’t find the answer you were looking for?"
+        "label": "Are you ready to start your project?",
+        "ar": "هل أنت مستعد لبدء مشروعك؟",
+        "en": "Are you ready to start your project?"
       },
       {
         "key": "services.faq.helpBody",
         "kind": "text",
         "section": "services.section7",
-        "label": "Our team is ready to discuss your idea and help you choose the right service.",
-        "ar": "فريقنا جاهز لمناقشة فكرتك ومساعدتك في اختيار الخدمة المناسبة.",
-        "en": "Our team is ready to discuss your idea and help you choose the right service."
+        "label": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements.",
+        "ar": "أخبرنا عن مشروعك واحتياجاتك، وسنقدّم لك عرض سعر يناسب متطلباتك.",
+        "en": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements."
       },
       {
         "key": "services.faq.cta",
