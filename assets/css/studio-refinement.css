@@ -592,3 +592,22 @@ html.see-intro-playing .v3-brand{background:transparent!important;border-radius:
 
 /* Keep the longer team label readable in the compact mobile page pill. */
 @media(max-width:640px){html[dir] body .v3-header .v3-nav .v3-nav-3[aria-current=page]>span{white-space:normal!important;line-height:1.2!important}}
+
+/* Brand polish: preserve the transparent artwork and existing navigation behavior. */
+body.studio-work:not(.v3-is-scrolled) .v3-brand .v4-brand-logo{filter:brightness(.3) contrast(1.15)}
+@media(min-width:641px){
+ body .v3-header .v3-nav{gap:6px}
+ body .v3-header .v3-nav .v3-nav-item{width:34px;min-width:34px;height:34px;min-height:34px;font-size:12px;font-weight:600}
+ body .v3-header .v3-nav .v3-nav-home{--nav-open-width:132px}
+ body .v3-header .v3-nav .v3-nav-0,body .v3-header .v3-nav .v3-nav-1{--nav-open-width:96px}
+ body .v3-header .v3-nav .v3-nav-2{--nav-open-width:100px}
+ body .v3-header .v3-nav .v3-nav-3{--nav-open-width:128px;--nav-colour:#8f2638}
+ body .v3-header .v3-nav .v3-nav-4{--nav-open-width:124px}
+ body .v3-header .v3-nav .v9-language{--nav-open-width:90px}
+ body .v3-header .v3-nav .v3-nav-item:not(.v9-language)>span{padding-inline:14px}
+ body:not(.v3-is-scrolled) .v3-header .v3-nav .v3-nav-item,
+ body .v3-header .v3-nav:hover .v3-nav-item,
+ body .v3-header .v3-nav:focus-within .v3-nav-item,
+ body .v3-header .v3-nav .v3-nav-item[aria-current=page]{width:var(--nav-open-width,112px)}
+}
+@media(min-width:641px) and (hover:none){body .v3-header .v3-nav .v3-nav-item{width:var(--nav-open-width,112px)}}
