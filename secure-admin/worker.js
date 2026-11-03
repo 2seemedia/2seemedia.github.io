@@ -1,5 +1,6 @@
 import {passwordRoute,verifyPasswordSession,LoginError} from './password-auth.js';
 import {runPublicationMonitoring} from './telegram-monitor.js';
+import {handlePublicationApi,handlePublicationStatus} from './publication-api.js';
 import {createRemoteJWKSet, jwtVerify} from 'jose';
 const jwksCache = new Map();
 const PAGES = new Set(['social-media-damascus.html','video-production-damascus.html','index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html']);
@@ -126,6 +127,8 @@ export function createHandler({verify=authenticate,request=fetch}={}){
    if(env.AUTH_MODE==='password'){const result=await passwordRoute(req,env);if(result)return secured(result,u.pathname);}
    const user=await verify(req,env);
    if(u.pathname.startsWith('/api/')){
+    if(u.pathname==='/api/operations/publications')return secured(await handlePublicationApi(req,env),u.pathname);
+    if(u.pathname==='/api/operations/publication-status')return secured(await handlePublicationStatus(req,env),u.pathname);
     if(u.pathname==='/api/content'&&req.method==='GET')return secured(json(await read(env)),u.pathname);
     if(u.pathname==='/api/session'&&req.method==='GET')return secured(json({name:user.name||user.email,email:user.email,branch:env.GITHUB_BRANCH,publishEnabled:env.PUBLISH_ENABLED==='true'&&(env.GITHUB_BRANCH!==(env.PRODUCTION_BRANCH||'main')||env.PRODUCTION_APPROVED==='true'),production:env.GITHUB_BRANCH===(env.PRODUCTION_BRANCH||'main')}),u.pathname);
     if(u.pathname==='/api/publish'){
