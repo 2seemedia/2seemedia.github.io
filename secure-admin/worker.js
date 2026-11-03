@@ -136,7 +136,7 @@ export function createHandler({verify=authenticate,request=fetch}={}){
    }
    if(req.method!=='GET'&&req.method!=='HEAD')fail(405,'Method not allowed');
    const path=u.pathname==='/'?'/dashboard.html':u.pathname;
-   if(!PAGES.has(path.slice(1))&&path!=='/dashboard.html'&&!/^\/assets\/[\w./-]+$/.test(path))fail(404,'المسار غير موجود');
+   if(!PAGES.has(path.slice(1))&&path!=='/dashboard.html'&&path!=='/operations.html'&&!/^\/assets\/[\w./-]+$/.test(path))fail(404,'المسار غير موجود');
    // Fetch current content, never a stale bundle, including for preview pages.
    if(path==='/assets/js/site-data.js'){
     const {content}=await read(env);return secured(new Response('window.SEE_CMS_DATA = '+JSON.stringify(content)+';',{headers:{'Content-Type':'text/javascript; charset=utf-8'}}),path);
