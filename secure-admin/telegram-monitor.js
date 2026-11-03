@@ -13,7 +13,7 @@ export function dueAlertTypes(item,now=Date.now()){
  const scheduled=Date.parse(item.scheduled_at);
  if(!Number.isFinite(scheduled))return [];
  const delta=minutesBetween(now,scheduled);
- return TYPES.filter(t=>delta>=t.offset).map(t=>t.name);
+ return TYPES.filter(t=>delta>=t.offset && delta<t.offset+3).map(t=>t.name);
 }
 export function formatTelegramAlert(item,type){
  const spec=TYPES.find(t=>t.name===type);
@@ -34,7 +34,7 @@ export async function sendTelegramMessage(token,chatId,message,request=fetch){
 export async function runPublicationMonitoring(env,{now=Date.now(),request=fetch}={}){
  if(!env.OPERATIONS_DB)throw Error('OPERATIONS_DB binding missing');
  if(!env.TELEGRAM_BOT_TOKEN||!env.TELEGRAM_ALERT_CHAT_ID)throw Error('Telegram secrets missing');
- const start=new Date(now-48*3600_000).toISOString();
+ const start=new Date(now-20*60_000).toISOString();
  const end=new Date(now+16*60_000).toISOString();
  const {results=[]}=await env.OPERATIONS_DB.prepare(
   "SELECT * FROM scheduled_publications WHERE status='scheduled' AND verification_status!='confirmed' AND scheduled_at BETWEEN ? AND ? LIMIT 250"
