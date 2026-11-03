@@ -1,0 +1,27 @@
+# Template only. Do NOT deploy without replacing placeholders and isolating from existing staging.
+name = "2see-monitoring-dev"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[vars]
+MONITORING_ENABLED = "false"
+AUTH_MODE = "password"
+GITHUB_REPO = "2seemedia/2seemedia.github.io"
+GITHUB_BRANCH = "feature/ai-social-manager-v1"
+PUBLISH_ENABLED = "false"
+PRODUCTION_APPROVED = "false"
+
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "OPERATIONS_DB"
+database_name = "2see-operations-dev"
+database_id = "REPLACE_WITH_ISOLATED_D1_DATABASE_ID"
+
+# Secrets (set via wrangler secret put, never commit):
+# TELEGRAM_BOT_TOKEN
+# TELEGRAM_ALERT_CHAT_ID
+# Password auth secrets must also be configured for this isolated worker.
+# Static assets binding omitted intentionally: this is NOT a deploy-ready config.
