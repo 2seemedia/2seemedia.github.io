@@ -1,4 +1,5 @@
 import {passwordRoute,verifyPasswordSession,LoginError} from './password-auth.js';
+import {runPublicationMonitoring} from './telegram-monitor.js';
 import {createRemoteJWKSet, jwtVerify} from 'jose';
 const jwksCache = new Map();
 const PAGES = new Set(['social-media-damascus.html','video-production-damascus.html','index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html']);
@@ -114,7 +115,12 @@ export function createHandler({verify=authenticate,request=fetch}={}){
   await gh(env,`git/refs/heads/${env.GITHUB_BRANCH}`,'PATCH',{sha:commit.sha,force:false});
   return {ok:true,content,revision:blob.sha,commit:commit.sha,branch:env.GITHUB_BRANCH,production:env.GITHUB_BRANCH===(env.PRODUCTION_BRANCH||'main')};
  }
- return {async fetch(req,env){
+ return {async scheduled(controller,env){
+  // Explicit opt-in prevents any accidental notifications from staging deployments.
+  if(env.MONITORING_ENABLED!=='true')return;
+  const outcome=await runPublicationMonitoring(env,{now:controller.scheduledTime});
+  console.log('2SEE monitoring completed',outcome);
+ },async fetch(req,env){
   const u=new URL(req.url);
   try{
    if(env.AUTH_MODE==='password'){const result=await passwordRoute(req,env);if(result)return secured(result,u.pathname);}
