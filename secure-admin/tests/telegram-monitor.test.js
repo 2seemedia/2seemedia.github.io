@@ -21,3 +21,14 @@ test('telegram delivery uses POST and requires successful API response',async()=
  assert.equal(calls[0].options.method,'POST');
  assert.equal(JSON.parse(calls[0].options.body).chat_id,'123');
 });
+
+test('no reminders are emitted for a stale schedule',()=>{
+ assert.deepEqual(dueAlertTypes(item,Date.parse('2026-11-04T14:00:00Z')),[]);
+});
+test('each reminder is limited to its own three-minute window',()=>{
+ assert.deepEqual(dueAlertTypes(item,Date.parse('2026-11-04T12:50:00Z')),[]);
+ assert.deepEqual(dueAlertTypes(item,Date.parse('2026-11-04T13:08:00Z')),[]);
+});
+test('a published item does not trigger reminders',()=>{
+ assert.deepEqual(dueAlertTypes({...item,status:'published'},now),[]);
+});
