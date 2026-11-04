@@ -1,4 +1,6 @@
 import {passwordRoute,verifyPasswordSession,LoginError} from './password-auth.js';
+import {runPublicationMonitoring} from './telegram-monitor.js';
+import {handlePublicationApi,handlePublicationStatus} from './publication-api.js';
 import {createRemoteJWKSet, jwtVerify} from 'jose';
 const jwksCache = new Map();
 const PAGES = new Set(['social-media-damascus.html','video-production-damascus.html','index.html','services.html','work.html','case-study.html','about.html','contact.html','careers.html','404.html']);
@@ -114,12 +116,19 @@ export function createHandler({verify=authenticate,request=fetch}={}){
   await gh(env,`git/refs/heads/${env.GITHUB_BRANCH}`,'PATCH',{sha:commit.sha,force:false});
   return {ok:true,content,revision:blob.sha,commit:commit.sha,branch:env.GITHUB_BRANCH,production:env.GITHUB_BRANCH===(env.PRODUCTION_BRANCH||'main')};
  }
- return {async fetch(req,env){
+ return {async scheduled(controller,env){
+  // Explicit opt-in prevents any accidental notifications from staging deployments.
+  if(env.MONITORING_ENABLED!=='true')return;
+  const outcome=await runPublicationMonitoring(env,{now:controller.scheduledTime});
+  console.log('2SEE monitoring completed',outcome);
+ },async fetch(req,env){
   const u=new URL(req.url);
   try{
    if(env.AUTH_MODE==='password'){const result=await passwordRoute(req,env);if(result)return secured(result,u.pathname);}
    const user=await verify(req,env);
    if(u.pathname.startsWith('/api/')){
+    if(u.pathname==='/api/operations/publications')return secured(await handlePublicationApi(req,env),u.pathname);
+    if(u.pathname==='/api/operations/publication-status')return secured(await handlePublicationStatus(req,env),u.pathname);
     if(u.pathname==='/api/content'&&req.method==='GET')return secured(json(await read(env)),u.pathname);
     if(u.pathname==='/api/session'&&req.method==='GET')return secured(json({name:user.name||user.email,email:user.email,branch:env.GITHUB_BRANCH,publishEnabled:env.PUBLISH_ENABLED==='true'&&(env.GITHUB_BRANCH!==(env.PRODUCTION_BRANCH||'main')||env.PRODUCTION_APPROVED==='true'),production:env.GITHUB_BRANCH===(env.PRODUCTION_BRANCH||'main')}),u.pathname);
     if(u.pathname==='/api/publish'){
@@ -136,7 +145,7 @@ export function createHandler({verify=authenticate,request=fetch}={}){
    }
    if(req.method!=='GET'&&req.method!=='HEAD')fail(405,'Method not allowed');
    const path=u.pathname==='/'?'/dashboard.html':u.pathname;
-   if(!PAGES.has(path.slice(1))&&path!=='/dashboard.html'&&!/^\/assets\/[\w./-]+$/.test(path))fail(404,'المسار غير موجود');
+   if(!PAGES.has(path.slice(1))&&path!=='/dashboard.html'&&path!=='/operations.html'&&!/^\/assets\/[\w./-]+$/.test(path))fail(404,'المسار غير موجود');
    // Fetch current content, never a stale bundle, including for preview pages.
    if(path==='/assets/js/site-data.js'){
     const {content}=await read(env);return secured(new Response('window.SEE_CMS_DATA = '+JSON.stringify(content)+';',{headers:{'Content-Type':'text/javascript; charset=utf-8'}}),path);
