@@ -15,6 +15,11 @@
   if(lang==='ar'&&!data.settings.arabicEnabled)lang='en';
   document.documentElement.lang=lang;
   document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  var seoPage=(window.SEE_PREVIEW_PAGE||location.pathname.split('/').pop()||'index.html').replace(/\.html$/,'');if(!seoPage)seoPage='index';
+  var seoBase='https://2seemedia.github.io/'+(seoPage==='index'?'':seoPage+'.html');
+  var seoCanonical=document.querySelector('link[rel="canonical"]');if(seoCanonical)seoCanonical.href=seoBase+'?lang='+lang;
+  var seoOgUrl=document.querySelector('meta[property="og:url"]');if(seoOgUrl)seoOgUrl.content=seoBase+'?lang='+lang;
+
   document.documentElement.style.setProperty('--color-cobalt',data.brand.accent||'#C91524');
   document.documentElement.style.setProperty('--color-cobalt-600',data.brand.accentHover||'#A70E1E');
   document.documentElement.style.setProperty('--color-lime',data.brand.highlight||'#C4C4C4');
@@ -102,6 +107,7 @@
     else if(e.kind==='option')el.textContent=v;
     if(e.kind!=='title'&&e.kind!=='meta')applyEntryStyle(el,e);
   });
+  var seoTitle=document.querySelector('meta[property="og:title"]');if(seoTitle)seoTitle.content=document.title;
   // Select CMS text on the actual website preview, without navigating links/forms.
   if(visualEdit){
     var editCss=document.createElement('style');editCss.textContent='[data-see-edit-key]:hover{outline:2px dashed #c91524!important;outline-offset:4px;box-shadow:0 0 0 4px rgba(201,21,36,.12)}[data-see-edit-key]{position:relative}';document.head.appendChild(editCss);
@@ -197,6 +203,49 @@
       track.append(group,clone);
       var speed=Math.max(15,Math.min(100,Number(config.speedSeconds)||34));
       track.style.setProperty('--see-collabs-speed',speed+'s');
+      if(win){
+        win.classList.add('see-collabs-draggable');win.tabIndex=0;
+        win.setAttribute('aria-label',(lang==='ar'?'شعارات عملائنا — اسحب يميناً ويساراً أو استخدم مفاتيح الأسهم':'Client logos — drag sideways or use the arrow keys'));
+        track.querySelectorAll('img,a').forEach(function(el){el.draggable=false});
+        var logoDrag=null,logoMoved=false,logoX=0;
+        function logoWidth(){return group.getBoundingClientRect().width}
+        function wrapLogoX(x){var width=logoWidth();return width>0?((x%width)+width)%width-width:0}
+        function readLogoX(){try{return new DOMMatrixReadOnly(getComputedStyle(track).transform).m41}catch(e){return 0}}
+        function freezeLogos(){logoX=readLogoX();track.style.animation='none';track.style.transform='translate3d('+logoX+'px,0,0)'}
+        function placeLogos(x){logoX=wrapLogoX(x);track.style.transform='translate3d('+logoX+'px,0,0)'}
+        function resumeLogos(){
+          var width=logoWidth();
+          if(!width||matchMedia('(prefers-reduced-motion: reduce)').matches||document.body.classList.contains('studio-motion-paused'))return;
+          track.style.removeProperty('transform');track.style.removeProperty('animation');
+          track.style.animationDelay=(logoX/width*speed)+'s';
+        }
+        win.addEventListener('dragstart',function(e){e.preventDefault()});
+        win.addEventListener('pointerdown',function(e){
+          if(e.isPrimary===false||e.button!==0)return;
+          logoMoved=false;freezeLogos();logoDrag={id:e.pointerId,start:e.clientX,base:logoX};
+        });
+        win.addEventListener('pointermove',function(e){
+          if(!logoDrag||logoDrag.id!==e.pointerId)return;
+          var dx=e.clientX-logoDrag.start;
+          if(!logoMoved&&Math.abs(dx)<6)return;
+          logoMoved=true;win.classList.add('is-logo-dragging');
+          if(!win.hasPointerCapture(e.pointerId))win.setPointerCapture(e.pointerId);
+          placeLogos(logoDrag.base+dx);
+        });
+        function endLogoDrag(e){
+          if(!logoDrag||logoDrag.id!==e.pointerId)return;
+          var id=logoDrag.id;logoDrag=null;win.classList.remove('is-logo-dragging');
+          if(win.hasPointerCapture(id))win.releasePointerCapture(id);
+          resumeLogos();
+        }
+        win.addEventListener('pointerup',endLogoDrag);win.addEventListener('pointercancel',endLogoDrag);win.addEventListener('lostpointercapture',endLogoDrag);
+        win.addEventListener('click',function(e){if(logoMoved){e.preventDefault();e.stopImmediatePropagation();logoMoved=false}},true);
+        win.addEventListener('keydown',function(e){
+          if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+          e.preventDefault();freezeLogos();placeLogos(logoX+(e.key==='ArrowRight'?-160:160));resumeLogos();
+        });
+      }
+
     });
   })();
 
@@ -217,6 +266,7 @@
     try{var u=new URL(w.url);if(['www.instagram.com','instagram.com'].includes(u.hostname)&&/^\/(reel|p)\/[\w-]+\/?$/.test(u.pathname))url=u.origin+u.pathname.replace(/\/$/,'')+'/embed/';
       else if(['youtube.com','www.youtube.com','youtu.be'].includes(u.hostname)){var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.match(/\/shorts\/([\w-]+)/)?.[1]);if(/^[\w-]{11}$/.test(id||''))url='https://www.youtube-nocookie.com/embed/'+id}
     }catch(e){}
+    modal.dataset.workFormat=w.type==='design'?'design':(url.indexOf('youtube-nocookie.com')!==-1?'landscape':'reel');
     iframe.src=w.type==='design'?'about:blank':(url||'about:blank');iframe.hidden=w.type==='design'||!url;
     if(!modal.open)modal.showModal();
   }

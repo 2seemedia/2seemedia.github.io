@@ -4,10 +4,14 @@ import path from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = path.join(root, 'cloudflare-public/dist');
-const pages = ['index.html', 'about.html', 'services.html', 'work.html', 'portfolio.html', 'case-study.html', 'contact.html', 'careers.html', '404.html'];
+const pages = ['social-media-damascus.html', 'video-production-damascus.html', 'index.html', 'about.html', 'services.html', 'work.html', 'portfolio.html', 'case-study.html', 'contact.html', 'careers.html', '404.html'];
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
+// With html_handling=none the root must explicitly resolve to the homepage.
+await writeFile(path.join(out, '_redirects'), '/ /index.html 200\n');
 for (const page of pages) await cp(path.join(root, page), path.join(out, page));
+for (const file of ['robots.txt', 'sitemap.xml']) await cp(path.join(root, file), path.join(out, file));
+await writeFile(path.join(out, '_headers'), '/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n');
 await cp(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true });
 await cp(path.join(root, 'media'), path.join(out, 'media'), { recursive: true });
 // Admin pages, data exports and credentials are never part of the public build.

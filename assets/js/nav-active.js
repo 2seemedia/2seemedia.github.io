@@ -4,7 +4,8 @@
  function pageName(value){
   var path=new URL(value,location.href).pathname.replace(/\/+$/,'');
   var name=(path.split('/').pop()||'index').replace(/\.html$/,'');
-  return name==='case-study'?'work':name;
+  if(['social-media-damascus','video-production-damascus'].includes(name))return 'services';
+  return ['case-study','portfolio'].includes(name)?'work':name;
  }
  var page=pageName(window.SEE_PREVIEW_PAGE||location.href);
  document.querySelectorAll('.site-header nav a[href],.v3-header .v3-nav a[href]').forEach(function(a){

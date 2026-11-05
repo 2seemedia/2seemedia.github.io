@@ -64,8 +64,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "index.t007",
@@ -120,8 +120,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "index.t014",
@@ -872,8 +872,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "index.t125",
@@ -1559,8 +1559,8 @@
         "kind": "text",
         "section": "index.section10",
         "label": "Co-Founder · Director, Photography & Editing",
-        "en": "Co-Founder · Director, Photography & Editing",
-        "ar": "شريك مؤسس · الإخراج والتصوير والمونتاج"
+        "en": "Co-Founder | Directing & Visual Production",
+        "ar": "شريك مؤسس | الإخراج والإنتاج البصري"
       },
       {
         "key": "index.t141",
@@ -1575,8 +1575,8 @@
         "kind": "text",
         "section": "index.section10",
         "label": "Co-Founder · Content Creation & Social Media",
-        "en": "Co-Founder · Content Creation & Social Media",
-        "ar": "شريكة مؤسسة · صناعة المحتوى وإدارة وسائل التواصل الاجتماعي"
+        "en": "Co-Founder | Content Creation & Digital Management",
+        "ar": "شريكة مؤسسة | صناعة المحتوى والإدارة الرقمية"
       },
       {
         "key": "index.a200",
@@ -1655,8 +1655,8 @@
         "kind": "text",
         "section": "v2",
         "label": "من الفكرة للصورة والكلمة، نصنع محتوى يعبّر عن علامتك ويخلّيها تنشاف.",
-        "en": "Content, production and social media. One creative team in Damascus.",
-        "ar": "صناعة محتوى، إنتاج وإدارة سوشال ميديا. فريق إبداعي واحد بدمشق."
+        "en": "Content creation, professional production, and digital management with one creative vision.",
+        "ar": "صناعة محتوى، إنتاج احترافي، وإدارة رقمية برؤية إبداعية واحدة."
       },
       {
         "key": "index.v2.explore",
@@ -1755,7 +1755,7 @@
         "section": "v2",
         "label": "خطوتك الجاية، برؤيتنا الإبداعية.",
         "en": "Your next move. Our creative lens.",
-        "ar": "خطوتك الجاية، برؤيتنا الإبداعية."
+        "ar": "خطوتك القادمة برؤيتنا الإبداعية"
       },
       {
         "key": "index.v2.serviceBody",
@@ -2019,8 +2019,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "index.managed.6",
@@ -2120,6 +2120,254 @@
         "label": "نحكي عن مشروعك",
         "en": "Let’s talk",
         "ar": "نحكي عن مشروعك"
+      },
+      {
+        "key": "index.faq.title",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Frequently asked questions",
+        "ar": "الأسئلة الشائعة",
+        "en": "Frequently asked questions"
+      },
+      {
+        "key": "index.faq.lead",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Everything you need to know about our services",
+        "ar": "كل ما تحتاج معرفته عن خدماتنا",
+        "en": "Everything you need to know about our services"
+      },
+      {
+        "key": "index.faq.q0",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "What services does 2SEE Media offer?",
+        "ar": "ما الخدمات التي تقدمها 2SEE Media؟",
+        "en": "What services does 2SEE Media offer?"
+      },
+      {
+        "key": "index.faq.a0",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "We offer visual production, photography, video filming and editing, content creation, social media management, graphic design and digital advertising campaigns.",
+        "ar": "نقدّم خدمات الإنتاج المرئي والتصوير الفوتوغرافي وتصوير الفيديوهات ومونتاجها وصناعة المحتوى وإدارة منصات التواصل الاجتماعي والتصميم الغرافيكي والحملات الإعلانية الرقمية.",
+        "en": "We offer visual production, photography, video filming and editing, content creation, social media management, graphic design and digital advertising campaigns."
+      },
+      {
+        "key": "index.faq.q1",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "How can I request a quote?",
+        "ar": "كيف يمكنني طلب عرض سعر لمشروعي؟",
+        "en": "How can I request a quote?"
+      },
+      {
+        "key": "index.faq.a1",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Complete the quote form with your services, goals, content quantities and estimated budget, then send it via WhatsApp or Gmail. We review the details and discuss the scope before preparing a quote.",
+        "ar": "املأ نموذج طلب عرض السعر وحدّد الخدمات والهدف وحجم المحتوى والميزانية التقريبية، ثم أرسل طلبك عبر واتساب أو Gmail. نراجع التفاصيل ونناقش معك نطاق العمل قبل إعداد العرض.",
+        "en": "Complete the quote form with your services, goals, content quantities and estimated budget, then send it via WhatsApp or Gmail. We review the details and discuss the scope before preparing a quote."
+      },
+      {
+        "key": "index.faq.q2",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Do you offer monthly social media packages?",
+        "ar": "هل تقدمون باقات شهرية لإدارة وسائل التواصل الاجتماعي؟",
+        "en": "Do you offer monthly social media packages?"
+      },
+      {
+        "key": "index.faq.a2",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Yes. Our Basic and Premium packages combine content management and production at different levels. See the packages section for quantities, prices and included services.",
+        "ar": "نعم، نقدّم باقات Basic وPremium تجمع إدارة المحتوى وإنتاجه بمستويات مختلفة. يمكنك الاطلاع على الكميات والأسعار والخدمات المشمولة في قسم الباقات.",
+        "en": "Yes. Our Basic and Premium packages combine content management and production at different levels. See the packages section for quantities, prices and included services."
+      },
+      {
+        "key": "index.faq.q3",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Can I book filming and editing without account management?",
+        "ar": "هل يمكنني طلب تصوير ومونتاج دون إدارة حساباتي؟",
+        "en": "Can I book filming and editing without account management?"
+      },
+      {
+        "key": "index.faq.a3",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Yes. Photography, filming and editing can be booked separately. The quote defines the scope, content quantities and deliverables.",
+        "ar": "نعم، يمكنك طلب خدمات التصوير أو المونتاج بشكل مستقل، ويُحدّد نطاق العمل وعدد المواد والتسليمات ضمن عرض السعر.",
+        "en": "Yes. Photography, filming and editing can be booked separately. The quote defines the scope, content quantities and deliverables."
+      },
+      {
+        "key": "index.faq.q4",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Do packages include ideas and scripts?",
+        "ar": "هل تشمل الباقات كتابة الأفكار والسكريبتات؟",
+        "en": "Do packages include ideas and scripts?"
+      },
+      {
+        "key": "index.faq.a4",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "The listed content management packages include ideas, scripts and a monthly content plan. For standalone filming or editing, scriptwriting is included only when agreed in the scope.",
+        "ar": "تشمل باقات إدارة المحتوى المعروضة أفكاراً وسكريبتات وخطة محتوى شهرية. أما خدمات التصوير والمونتاج المنفصلة، فيُحدّد تضمين كتابة النصوص ضمن الاتفاق.",
+        "en": "The listed content management packages include ideas, scripts and a monthly content plan. For standalone filming or editing, scriptwriting is included only when agreed in the scope."
+      },
+      {
+        "key": "index.faq.q5",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Do you have a photography studio?",
+        "ar": "هل توفرون استديو للتصوير؟",
+        "en": "Do you have a photography studio?"
+      },
+      {
+        "key": "index.faq.a5",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location.",
+        "ar": "نعم، يتوفر استديو 2SEE Media في دمشق. نحدّد ملاءمة المكان والتجهيزات المطلوبة حسب طبيعة المشروع، ويمكن الاتفاق على التصوير في موقع آخر.",
+        "en": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location."
+      },
+      {
+        "key": "index.faq.q6",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "How long does production and delivery take?",
+        "ar": "كم يستغرق تنفيذ المشروع وتسليم المحتوى؟",
+        "en": "How long does production and delivery take?"
+      },
+      {
+        "key": "index.faq.a6",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Timing depends on the scope, content quantities and production requirements. We agree shoot dates, review stages and delivery deadlines before starting.",
+        "ar": "تختلف المدة حسب حجم المشروع وعدد المواد ومتطلبات الإنتاج. نتفق على مواعيد التصوير والمراجعة والتسليم قبل البدء.",
+        "en": "Timing depends on the scope, content quantities and production requirements. We agree shoot dates, review stages and delivery deadlines before starting."
+      },
+      {
+        "key": "index.faq.q7",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Can videos or designs be revised after delivery?",
+        "ar": "هل يمكن تعديل الفيديوهات أو التصاميم بعد التسليم؟",
+        "en": "Can videos or designs be revised after delivery?"
+      },
+      {
+        "key": "index.faq.a7",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Yes, within the revision rounds specified in your package or agreement. Reshoots and changes outside the agreed scope are discussed and quoted separately.",
+        "ar": "نعم، ضمن عدد جولات التعديل المحدّد في الباقة أو الاتفاق. أما إعادة التصوير أو التغييرات خارج النطاق المتفق عليه، فتُناقش مدتها وتكلفتها بشكل منفصل.",
+        "en": "Yes, within the revision rounds specified in your package or agreement. Reshoots and changes outside the agreed scope are discussed and quoted separately."
+      },
+      {
+        "key": "index.faq.q8",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Does social media management include replies to messages and comments?",
+        "ar": "هل تشمل إدارة السوشال ميديا الرد على الرسائل والتعليقات؟",
+        "en": "Does social media management include replies to messages and comments?"
+      },
+      {
+        "key": "index.faq.a8",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "This depends on the package and agreed scope. We confirm who handles replies, which platforms are covered and the response hours before starting. Around-the-clock replies are not included unless explicitly agreed.",
+        "ar": "يعتمد ذلك على الباقة ونطاق الاتفاق. نحدّد مسؤولية الرد والمنصات وأوقات المتابعة قبل البدء، ولا تُعدّ خدمة الرد متاحة على مدار الساعة إلا إذا اتُّفق على ذلك صراحةً.",
+        "en": "This depends on the package and agreed scope. We confirm who handles replies, which platforms are covered and the response hours before starting. Around-the-clock replies are not included unless explicitly agreed."
+      },
+      {
+        "key": "index.faq.q9",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Do your prices include advertising spend?",
+        "ar": "هل تشمل أسعاركم ميزانية الإعلانات الممولة؟",
+        "en": "Do your prices include advertising spend?"
+      },
+      {
+        "key": "index.faq.a9",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "No. Advertising spend is separate from service and campaign management fees. We specify both the media budget and management fees in the quote before launching a campaign.",
+        "ar": "لا، ميزانية تمويل الإعلانات منفصلة عن أتعاب الخدمات وإدارة الحملات. نوضّح ميزانية التمويل وأتعاب الإدارة ضمن العرض قبل إطلاق الحملة.",
+        "en": "No. Advertising spend is separate from service and campaign management fees. We specify both the media budget and management fees in the quote before launching a campaign."
+      },
+      {
+        "key": "index.faq.q10",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Can you work with companies outside Syria?",
+        "ar": "هل يمكنكم العمل مع شركات خارج سوريا؟",
+        "en": "Can you work with companies outside Syria?"
+      },
+      {
+        "key": "index.faq.a10",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "We can discuss remote projects such as editing, design, content creation and digital management. Feasibility, file delivery and communication are confirmed for each project. Filming outside Syria requires a separate arrangement.",
+        "ar": "يمكننا مناقشة المشاريع عن بُعد، مثل المونتاج والتصميم وصناعة المحتوى والإدارة الرقمية. تُحدّد إمكانية التنفيذ وآلية تسليم المواد والتواصل حسب متطلبات كل مشروع، أما التصوير خارج سوريا فيحتاج إلى ترتيب واتفاق منفصل.",
+        "en": "We can discuss remote projects such as editing, design, content creation and digital management. Feasibility, file delivery and communication are confirmed for each project. Filming outside Syria requires a separate arrangement."
+      },
+      {
+        "key": "index.faq.q11",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "How can I join the 2SEE team?",
+        "ar": "كيف يمكنني الانضمام إلى فريق 2SEE؟",
+        "en": "How can I join the 2SEE team?"
+      },
+      {
+        "key": "index.faq.a11",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Visit Join our team, select your specialty, prepare your CV and work links, then send your application via WhatsApp or Gmail. We welcome future collaboration applications; listed specialties do not indicate current vacancies.",
+        "ar": "انتقل إلى صفحة «انضم إلى فريقنا»، واختر مجال اختصاصك وجهّز سيرتك الذاتية وروابط أعمالك، ثم أرسل طلبك عبر واتساب أو Gmail. نرحّب بالتقديم للتعاون المستقبلي، ولا تعني الاختصاصات المدرجة وجود شواغر حالياً.",
+        "en": "Visit Join our team, select your specialty, prepare your CV and work links, then send your application via WhatsApp or Gmail. We welcome future collaboration applications; listed specialties do not indicate current vacancies."
+      },
+      {
+        "key": "index.faq.more",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Show more questions",
+        "ar": "عرض المزيد من الأسئلة",
+        "en": "Show more questions"
+      },
+      {
+        "key": "index.faq.less",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Show fewer questions",
+        "ar": "عرض أسئلة أقل",
+        "en": "Show fewer questions"
+      },
+      {
+        "key": "index.faq.help",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Are you ready to start your project?",
+        "ar": "هل أنت مستعد لبدء مشروعك؟",
+        "en": "Are you ready to start your project?"
+      },
+      {
+        "key": "index.faq.helpBody",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements.",
+        "ar": "أخبرنا عن مشروعك واحتياجاتك، وسنقدّم لك عرض سعر يناسب متطلباتك.",
+        "en": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements."
+      },
+      {
+        "key": "index.faq.cta",
+        "kind": "text",
+        "section": "index.faq",
+        "label": "Request a quote",
+        "ar": "اطلب عرض سعر",
+        "en": "Request a quote"
       }
     ],
     "services.html": [
@@ -2168,8 +2416,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "services.t007",
@@ -2224,8 +2472,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "services.t014",
@@ -2432,8 +2680,8 @@
         "kind": "text",
         "section": "services.section2",
         "label": "Our projects",
-        "en": "Our projects",
-        "ar": "أعمالنا"
+        "en": "Explore our work",
+        "ar": "استعرض أعمالنا"
       },
       {
         "key": "services.t040",
@@ -2528,8 +2776,8 @@
         "kind": "text",
         "section": "services.section3",
         "label": "Our projects",
-        "en": "Our projects",
-        "ar": "أعمالنا"
+        "en": "Explore our work",
+        "ar": "استعرض أعمالنا"
       },
       {
         "key": "services.t052",
@@ -2624,8 +2872,8 @@
         "kind": "text",
         "section": "services.section4",
         "label": "Our projects",
-        "en": "Our projects",
-        "ar": "أعمالنا"
+        "en": "Explore our work",
+        "ar": "استعرض أعمالنا"
       },
       {
         "key": "services.t064",
@@ -2720,8 +2968,8 @@
         "kind": "text",
         "section": "services.section5",
         "label": "Our projects",
-        "en": "Our projects",
-        "ar": "أعمالنا"
+        "en": "Explore our work",
+        "ar": "استعرض أعمالنا"
       },
       {
         "key": "services.t076",
@@ -3128,8 +3376,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "services.t127",
@@ -3834,8 +4082,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "services.managed.6",
@@ -3924,7 +4172,7 @@
         "section": "services.section6",
         "label": "اختار حجم حضورك.",
         "en": "Choose your presence.",
-        "ar": "اختار حجم حضورك.",
+        "ar": "اختر حجم حضورك",
         "componentSource": "Choose your presence."
       },
       {
@@ -4124,6 +4372,254 @@
         "en": "Visual shot planning, advertising direction and advanced grading.",
         "ar": "تخطيط بصري للقطّات وإخراج إعلاني وتلوين متقدّم.",
         "componentSource": "Visual shot planning, advertising direction and advanced grading."
+      },
+      {
+        "key": "services.faq.title",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Frequently asked questions",
+        "ar": "الأسئلة الشائعة",
+        "en": "Frequently asked questions"
+      },
+      {
+        "key": "services.faq.lead",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Everything you need to know about our services",
+        "ar": "كل ما تحتاج معرفته عن خدماتنا",
+        "en": "Everything you need to know about our services"
+      },
+      {
+        "key": "services.faq.q0",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "What services does 2SEE Media offer?",
+        "ar": "ما الخدمات التي تقدمها 2SEE Media؟",
+        "en": "What services does 2SEE Media offer?"
+      },
+      {
+        "key": "services.faq.a0",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "We offer visual production, photography, video filming and editing, content creation, social media management, graphic design and digital advertising campaigns.",
+        "ar": "نقدّم خدمات الإنتاج المرئي والتصوير الفوتوغرافي وتصوير الفيديوهات ومونتاجها وصناعة المحتوى وإدارة منصات التواصل الاجتماعي والتصميم الغرافيكي والحملات الإعلانية الرقمية.",
+        "en": "We offer visual production, photography, video filming and editing, content creation, social media management, graphic design and digital advertising campaigns."
+      },
+      {
+        "key": "services.faq.q1",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "How can I request a quote?",
+        "ar": "كيف يمكنني طلب عرض سعر لمشروعي؟",
+        "en": "How can I request a quote?"
+      },
+      {
+        "key": "services.faq.a1",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Complete the quote form with your services, goals, content quantities and estimated budget, then send it via WhatsApp or Gmail. We review the details and discuss the scope before preparing a quote.",
+        "ar": "املأ نموذج طلب عرض السعر وحدّد الخدمات والهدف وحجم المحتوى والميزانية التقريبية، ثم أرسل طلبك عبر واتساب أو Gmail. نراجع التفاصيل ونناقش معك نطاق العمل قبل إعداد العرض.",
+        "en": "Complete the quote form with your services, goals, content quantities and estimated budget, then send it via WhatsApp or Gmail. We review the details and discuss the scope before preparing a quote."
+      },
+      {
+        "key": "services.faq.q2",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Do you offer monthly social media packages?",
+        "ar": "هل تقدمون باقات شهرية لإدارة وسائل التواصل الاجتماعي؟",
+        "en": "Do you offer monthly social media packages?"
+      },
+      {
+        "key": "services.faq.a2",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Yes. Our Basic and Premium packages combine content management and production at different levels. See the packages section for quantities, prices and included services.",
+        "ar": "نعم، نقدّم باقات Basic وPremium تجمع إدارة المحتوى وإنتاجه بمستويات مختلفة. يمكنك الاطلاع على الكميات والأسعار والخدمات المشمولة في قسم الباقات.",
+        "en": "Yes. Our Basic and Premium packages combine content management and production at different levels. See the packages section for quantities, prices and included services."
+      },
+      {
+        "key": "services.faq.q3",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Can I book filming and editing without account management?",
+        "ar": "هل يمكنني طلب تصوير ومونتاج دون إدارة حساباتي؟",
+        "en": "Can I book filming and editing without account management?"
+      },
+      {
+        "key": "services.faq.a3",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Yes. Photography, filming and editing can be booked separately. The quote defines the scope, content quantities and deliverables.",
+        "ar": "نعم، يمكنك طلب خدمات التصوير أو المونتاج بشكل مستقل، ويُحدّد نطاق العمل وعدد المواد والتسليمات ضمن عرض السعر.",
+        "en": "Yes. Photography, filming and editing can be booked separately. The quote defines the scope, content quantities and deliverables."
+      },
+      {
+        "key": "services.faq.q4",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Do packages include ideas and scripts?",
+        "ar": "هل تشمل الباقات كتابة الأفكار والسكريبتات؟",
+        "en": "Do packages include ideas and scripts?"
+      },
+      {
+        "key": "services.faq.a4",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "The listed content management packages include ideas, scripts and a monthly content plan. For standalone filming or editing, scriptwriting is included only when agreed in the scope.",
+        "ar": "تشمل باقات إدارة المحتوى المعروضة أفكاراً وسكريبتات وخطة محتوى شهرية. أما خدمات التصوير والمونتاج المنفصلة، فيُحدّد تضمين كتابة النصوص ضمن الاتفاق.",
+        "en": "The listed content management packages include ideas, scripts and a monthly content plan. For standalone filming or editing, scriptwriting is included only when agreed in the scope."
+      },
+      {
+        "key": "services.faq.q5",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Do you have a photography studio?",
+        "ar": "هل توفرون استديو للتصوير؟",
+        "en": "Do you have a photography studio?"
+      },
+      {
+        "key": "services.faq.a5",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location.",
+        "ar": "نعم، يتوفر استديو 2SEE Media في دمشق. نحدّد ملاءمة المكان والتجهيزات المطلوبة حسب طبيعة المشروع، ويمكن الاتفاق على التصوير في موقع آخر.",
+        "en": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location."
+      },
+      {
+        "key": "services.faq.q6",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "How long does production and delivery take?",
+        "ar": "كم يستغرق تنفيذ المشروع وتسليم المحتوى؟",
+        "en": "How long does production and delivery take?"
+      },
+      {
+        "key": "services.faq.a6",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Timing depends on the scope, content quantities and production requirements. We agree shoot dates, review stages and delivery deadlines before starting.",
+        "ar": "تختلف المدة حسب حجم المشروع وعدد المواد ومتطلبات الإنتاج. نتفق على مواعيد التصوير والمراجعة والتسليم قبل البدء.",
+        "en": "Timing depends on the scope, content quantities and production requirements. We agree shoot dates, review stages and delivery deadlines before starting."
+      },
+      {
+        "key": "services.faq.q7",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Can videos or designs be revised after delivery?",
+        "ar": "هل يمكن تعديل الفيديوهات أو التصاميم بعد التسليم؟",
+        "en": "Can videos or designs be revised after delivery?"
+      },
+      {
+        "key": "services.faq.a7",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Yes, within the revision rounds specified in your package or agreement. Reshoots and changes outside the agreed scope are discussed and quoted separately.",
+        "ar": "نعم، ضمن عدد جولات التعديل المحدّد في الباقة أو الاتفاق. أما إعادة التصوير أو التغييرات خارج النطاق المتفق عليه، فتُناقش مدتها وتكلفتها بشكل منفصل.",
+        "en": "Yes, within the revision rounds specified in your package or agreement. Reshoots and changes outside the agreed scope are discussed and quoted separately."
+      },
+      {
+        "key": "services.faq.q8",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Does social media management include replies to messages and comments?",
+        "ar": "هل تشمل إدارة السوشال ميديا الرد على الرسائل والتعليقات؟",
+        "en": "Does social media management include replies to messages and comments?"
+      },
+      {
+        "key": "services.faq.a8",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "This depends on the package and agreed scope. We confirm who handles replies, which platforms are covered and the response hours before starting. Around-the-clock replies are not included unless explicitly agreed.",
+        "ar": "يعتمد ذلك على الباقة ونطاق الاتفاق. نحدّد مسؤولية الرد والمنصات وأوقات المتابعة قبل البدء، ولا تُعدّ خدمة الرد متاحة على مدار الساعة إلا إذا اتُّفق على ذلك صراحةً.",
+        "en": "This depends on the package and agreed scope. We confirm who handles replies, which platforms are covered and the response hours before starting. Around-the-clock replies are not included unless explicitly agreed."
+      },
+      {
+        "key": "services.faq.q9",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Do your prices include advertising spend?",
+        "ar": "هل تشمل أسعاركم ميزانية الإعلانات الممولة؟",
+        "en": "Do your prices include advertising spend?"
+      },
+      {
+        "key": "services.faq.a9",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "No. Advertising spend is separate from service and campaign management fees. We specify both the media budget and management fees in the quote before launching a campaign.",
+        "ar": "لا، ميزانية تمويل الإعلانات منفصلة عن أتعاب الخدمات وإدارة الحملات. نوضّح ميزانية التمويل وأتعاب الإدارة ضمن العرض قبل إطلاق الحملة.",
+        "en": "No. Advertising spend is separate from service and campaign management fees. We specify both the media budget and management fees in the quote before launching a campaign."
+      },
+      {
+        "key": "services.faq.q10",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Can you work with companies outside Syria?",
+        "ar": "هل يمكنكم العمل مع شركات خارج سوريا؟",
+        "en": "Can you work with companies outside Syria?"
+      },
+      {
+        "key": "services.faq.a10",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "We can discuss remote projects such as editing, design, content creation and digital management. Feasibility, file delivery and communication are confirmed for each project. Filming outside Syria requires a separate arrangement.",
+        "ar": "يمكننا مناقشة المشاريع عن بُعد، مثل المونتاج والتصميم وصناعة المحتوى والإدارة الرقمية. تُحدّد إمكانية التنفيذ وآلية تسليم المواد والتواصل حسب متطلبات كل مشروع، أما التصوير خارج سوريا فيحتاج إلى ترتيب واتفاق منفصل.",
+        "en": "We can discuss remote projects such as editing, design, content creation and digital management. Feasibility, file delivery and communication are confirmed for each project. Filming outside Syria requires a separate arrangement."
+      },
+      {
+        "key": "services.faq.q11",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "How can I join the 2SEE team?",
+        "ar": "كيف يمكنني الانضمام إلى فريق 2SEE؟",
+        "en": "How can I join the 2SEE team?"
+      },
+      {
+        "key": "services.faq.a11",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Visit Join our team, select your specialty, prepare your CV and work links, then send your application via WhatsApp or Gmail. We welcome future collaboration applications; listed specialties do not indicate current vacancies.",
+        "ar": "انتقل إلى صفحة «انضم إلى فريقنا»، واختر مجال اختصاصك وجهّز سيرتك الذاتية وروابط أعمالك، ثم أرسل طلبك عبر واتساب أو Gmail. نرحّب بالتقديم للتعاون المستقبلي، ولا تعني الاختصاصات المدرجة وجود شواغر حالياً.",
+        "en": "Visit Join our team, select your specialty, prepare your CV and work links, then send your application via WhatsApp or Gmail. We welcome future collaboration applications; listed specialties do not indicate current vacancies."
+      },
+      {
+        "key": "services.faq.more",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Show more questions",
+        "ar": "عرض المزيد من الأسئلة",
+        "en": "Show more questions"
+      },
+      {
+        "key": "services.faq.less",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Show fewer questions",
+        "ar": "عرض أسئلة أقل",
+        "en": "Show fewer questions"
+      },
+      {
+        "key": "services.faq.help",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Are you ready to start your project?",
+        "ar": "هل أنت مستعد لبدء مشروعك؟",
+        "en": "Are you ready to start your project?"
+      },
+      {
+        "key": "services.faq.helpBody",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements.",
+        "ar": "أخبرنا عن مشروعك واحتياجاتك، وسنقدّم لك عرض سعر يناسب متطلباتك.",
+        "en": "Tell us about your project and needs, and we’ll prepare a quote tailored to your requirements."
+      },
+      {
+        "key": "services.faq.cta",
+        "kind": "text",
+        "section": "services.section7",
+        "label": "Request a quote",
+        "ar": "اطلب عرض سعر",
+        "en": "Request a quote"
       }
     ],
     "work.html": [
@@ -4172,8 +4668,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "work.t007",
@@ -4228,8 +4724,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "work.t014",
@@ -4284,24 +4780,24 @@
         "kind": "text",
         "section": "work.section1",
         "label": "Work made",
-        "en": "Our work",
-        "ar": "أعمالنا"
+        "en": "Our signature",
+        "ar": "بصمتنا"
       },
       {
         "key": "work.t021",
         "kind": "text",
         "section": "work.section1",
         "label": "to be",
-        "en": "speaks",
-        "ar": "تتحدث"
+        "en": "in every",
+        "ar": "في كل"
       },
       {
         "key": "work.t022",
         "kind": "text",
         "section": "work.section1",
         "label": "seen.",
-        "en": "for itself",
-        "ar": "عنّا"
+        "en": "project",
+        "ar": "مشروع"
       },
       {
         "key": "work.t023",
@@ -4436,8 +4932,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "work.t040",
@@ -4982,8 +5478,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "work.managed.6",
@@ -5104,8 +5600,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "about.t007",
@@ -5160,8 +5656,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "about.t014",
@@ -5368,8 +5864,8 @@
         "kind": "text",
         "section": "about.section4",
         "label": "Collaborate with us",
-        "en": "Collaborate with us",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "about.t040",
@@ -5384,8 +5880,8 @@
         "kind": "text",
         "section": "about.section4",
         "label": "Co-Founder · Director, Photography & Editing",
-        "en": "Co-Founder · Director, Photography & Editing",
-        "ar": "شريك مؤسس · الإخراج والتصوير والمونتاج"
+        "en": "Co-Founder | Directing & Visual Production",
+        "ar": "شريك مؤسس | الإخراج والإنتاج البصري"
       },
       {
         "key": "about.t042",
@@ -5400,8 +5896,8 @@
         "kind": "text",
         "section": "about.section4",
         "label": "Co-Founder · Content Creation & Social Media",
-        "en": "Co-Founder · Content Creation & Social Media",
-        "ar": "شريكة مؤسسة · صناعة المحتوى وإدارة وسائل التواصل الاجتماعي"
+        "en": "Co-Founder | Content Creation & Digital Management",
+        "ar": "شريكة مؤسسة | صناعة المحتوى والإدارة الرقمية"
       },
       {
         "key": "about.t044",
@@ -5424,8 +5920,8 @@
         "kind": "text",
         "section": "about.section5",
         "label": "Work with us",
-        "en": "Work with us",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "about.t047",
@@ -5512,8 +6008,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "about.t058",
@@ -6059,8 +6555,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "about.managed.6",
@@ -6181,8 +6677,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "careers.t007",
@@ -6237,8 +6733,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "careers.t014",
@@ -6845,8 +7341,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "careers.t071",
@@ -7432,8 +7928,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "careers.managed.6",
@@ -7562,8 +8058,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "contact.t007",
@@ -7618,8 +8114,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "contact.t014",
@@ -7667,7 +8163,7 @@
         "section": "contact.section1",
         "label": "Contact",
         "en": "YOUR NEXT PROJECT",
-        "ar": "مشروعك الجاي"
+        "ar": "طلب عرض سعر"
       },
       {
         "key": "contact.t020",
@@ -7675,7 +8171,7 @@
         "section": "contact.section1",
         "label": "Tell us about",
         "en": "Your next project.",
-        "ar": "مشروعك الجاي،"
+        "ar": "مشروعك"
       },
       {
         "key": "contact.t021",
@@ -7683,7 +8179,7 @@
         "section": "contact.section1",
         "label": "your project.",
         "en": "Starts here.",
-        "ar": "بيبدأ من هون."
+        "ar": "يبدأ من هنا"
       },
       {
         "key": "contact.t022",
@@ -7691,7 +8187,7 @@
         "section": "contact.section1",
         "label": "Tell us what you have in mind. You can send the brief by email or reach us directly on Wha",
         "en": "Tell us your idea and what you need. We will prepare a project enquiry for you to send by WhatsApp or email.",
-        "ar": "احكيلنا عن فكرتك والخدمات اللي بتحتاجها. منجهّز طلبك لتبعته على واتساب أو البريد الإلكتروني."
+        "ar": "أخبرنا عن فكرتك والخدمات التي تحتاجها"
       },
       {
         "key": "contact.t023",
@@ -7898,16 +8394,16 @@
         "kind": "text",
         "section": "contact.section2",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "contact.t057",
         "kind": "text",
         "section": "contact.section2",
         "label": "Work with us",
-        "en": "Work with us",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "contact.t058",
@@ -8034,8 +8530,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "contact.t074",
@@ -8645,8 +9141,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "contact.managed.6",
@@ -8767,8 +9263,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "case-study.t007",
@@ -8823,8 +9319,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "case-study.t014",
@@ -9007,8 +9503,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "case-study.t037",
@@ -9545,8 +10041,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "case-study.managed.6",
@@ -9667,8 +10163,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "404.t007",
@@ -9723,8 +10219,8 @@
         "kind": "text",
         "section": "header",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "404.t014",
@@ -9899,8 +10395,8 @@
         "kind": "text",
         "section": "footer",
         "label": "Collaborate",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "404.t036",
@@ -10429,8 +10925,8 @@
         "kind": "text",
         "section": "header",
         "label": "تعاون معنا",
-        "en": "Collaborate",
-        "ar": "تعاون معنا"
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
       },
       {
         "key": "404.managed.5",
@@ -10503,6 +10999,490 @@
         "label": "نحكي عن مشروعك",
         "en": "Let’s talk",
         "ar": "نحكي عن مشروعك"
+      }
+    ],
+    "social-media-damascus.html": [
+      {
+        "key": "about.t001",
+        "kind": "text",
+        "section": "general",
+        "label": "Skip to content",
+        "en": "Skip to content",
+        "ar": "انتقل إلى المحتوى"
+      },
+      {
+        "key": "about.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "about.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
+      },
+      {
+        "key": "about.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "about.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
+      },
+      {
+        "key": "about.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "حضور يليق بعلامتك"
+      },
+      {
+        "key": "about.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "تواصل معنا على واتساب ↗"
+      },
+      {
+        "key": "about.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "about.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
+      },
+      {
+        "key": "social-media-damascus.t0",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "إدارة السوشال ميديا وصناعة المحتوى في دمشق",
+        "ar": "إدارة السوشال ميديا وصناعة المحتوى في دمشق",
+        "en": "Social media management and content in Damascus"
+      },
+      {
+        "key": "social-media-damascus.t1",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "نساعد العلامات التجارية في دمشق وسوريا على التخطيط للمحتوى وإنتاجه وإدارة نشره ضمن رؤية متناسقة",
+        "ar": "نساعد العلامات التجارية في دمشق وسوريا على التخطيط للمحتوى وإنتاجه وإدارة نشره ضمن رؤية متناسقة",
+        "en": "Content planning, production and social media publishing for brands in Damascus and Syria."
+      },
+      {
+        "key": "social-media-damascus.t2",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "احكي لنا عن مشروعك",
+        "ar": "احكي لنا عن مشروعك",
+        "en": "Tell us about your project"
+      },
+      {
+        "key": "social-media-damascus.t3",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "شو بتشمل الخدمة",
+        "ar": "ماذا تشمل الخدمة؟",
+        "en": "What the service includes"
+      },
+      {
+        "key": "social-media-damascus.t4",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "نبدأ بفهم نشاطك وجمهورك ونرتّب خطة محتوى وأفكار ريلز ونصوصاً تناسب رسالة علامتك ثم نتابع التصوير والتصميم والمونتاج والجدولة والنشر حسب نطاق الاتفاق",
+        "ar": "نبدأ بفهم نشاطك وجمهورك ونرتّب خطة محتوى وأفكار ريلز ونصوصاً تناسب رسالة علامتك ثم نتابع التصوير والتصميم والمونتاج والجدولة والنشر حسب نطاق الاتفاق",
+        "en": "We start with your business and audience, then plan content, reel ideas and scripts around your brand. Production, design, editing, scheduling and publishing follow the agreed scope."
+      },
+      {
+        "key": "social-media-damascus.t5",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "إنتاج المحتوى وإدارة الصفحات معاً",
+        "ar": "إنتاج المحتوى وإدارة الصفحات معاً",
+        "en": "Content production and page management together"
+      },
+      {
+        "key": "social-media-damascus.t6",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "بدل ما يكون التصوير منفصل عن خطة الصفحة نربط الأفكار بالمواد التي سننتجها وبطريقة نشرها على إنستغرام وفيسبوك ويمكن الاتفاق على خدمات محددة بحسب حاجتك",
+        "ar": "بدل ما يكون التصوير منفصل عن خطة الصفحة نربط الأفكار بالمواد التي سننتجها وبطريقة نشرها على إنستغرام وفيسبوك ويمكن الاتفاق على خدمات محددة بحسب حاجتك",
+        "en": "We connect the publishing plan with the content we produce for Instagram and Facebook. Individual services can also be agreed around your needs."
+      },
+      {
+        "key": "social-media-damascus.t7",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "كيف منبلّش",
+        "ar": "كيف نبدأ؟",
+        "en": "How we start"
+      },
+      {
+        "key": "social-media-damascus.t8",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "بتخبرنا عن نشاطك وروابط حساباتك والخدمات المطلوبة منراجع الاحتياج ومنحدد المواد ومواعيد التصوير والتسليم وآلية المراجعة ضمن اتفاق واضح",
+        "ar": "بتخبرنا عن نشاطك وروابط حساباتك والخدمات المطلوبة منراجع الاحتياج ومنحدد المواد ومواعيد التصوير والتسليم وآلية المراجعة ضمن اتفاق واضح",
+        "en": "Share your business, account links and required services. We agree deliverables, shoot dates, delivery and feedback before production."
+      },
+      {
+        "key": "social-media-damascus.t9",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "شو الفرق بين Basic وPremium",
+        "ar": "شو الفرق بين Basic وPremium",
+        "en": "Basic or Premium"
+      },
+      {
+        "key": "social-media-damascus.t10",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "المساران بيجمعوا إدارة المحتوى وإنتاجه والفرق الأساسي بمستوى الإنتاج البصري والتفاصيل الإخراجية فيك تراجعي الكميات والأسعار وأمثلة الريلز بصفحة الباقات",
+        "ar": "المساران بيجمعوا إدارة المحتوى وإنتاجه والفرق الأساسي بمستوى الإنتاج البصري والتفاصيل الإخراجية فيك تراجعي الكميات والأسعار وأمثلة الريلز بصفحة الباقات",
+        "en": "Both tiers combine content management and production, with different visual production levels. The packages page lists quantities, prices and real reel examples."
+      },
+      {
+        "key": "social-media-damascus.t11",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "شوفي الباقات وأمثلة الريلز",
+        "ar": "شوفي الباقات وأمثلة الريلز",
+        "en": "See packages and reel examples"
+      },
+      {
+        "key": "social-media-damascus.t12",
+        "kind": "text",
+        "section": "social-media-damascus.main",
+        "label": "استعرضي أعمالنا",
+        "ar": "استعرضي أعمالنا",
+        "en": "Explore our work"
+      },
+      {
+        "key": "social-media-damascus.title",
+        "kind": "title",
+        "section": "general",
+        "label": "عنوان صفحة الخدمة",
+        "ar": "إدارة السوشال ميديا وصناعة المحتوى في دمشق | 2SEE Media",
+        "en": "Social media management and content in Damascus | 2SEE Media"
+      },
+      {
+        "key": "social-media-damascus.description",
+        "kind": "meta",
+        "section": "general",
+        "label": "وصف صفحة الخدمة",
+        "ar": "نساعد العلامات التجارية في دمشق وسوريا على التخطيط للمحتوى وإنتاجه وإدارة نشره ضمن رؤية متناسقة",
+        "en": "Content planning, production and social media publishing for brands in Damascus and Syria."
+      }
+    ],
+    "video-production-damascus.html": [
+      {
+        "key": "about.t001",
+        "kind": "text",
+        "section": "general",
+        "label": "Skip to content",
+        "en": "Skip to content",
+        "ar": "انتقل إلى المحتوى"
+      },
+      {
+        "key": "about.managed.1",
+        "kind": "text",
+        "section": "header",
+        "label": "الرئيسية",
+        "en": "Home",
+        "ar": "الرئيسية"
+      },
+      {
+        "key": "about.managed.2",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.3",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.4",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.5",
+        "kind": "text",
+        "section": "header",
+        "label": "تعاون معنا",
+        "en": "Join our team",
+        "ar": "انضم إلى فريقنا"
+      },
+      {
+        "key": "about.managed.6",
+        "kind": "text",
+        "section": "header",
+        "label": "تواصل معنا",
+        "en": "Contact",
+        "ar": "تواصل معنا"
+      },
+      {
+        "key": "about.managed.7",
+        "kind": "text",
+        "section": "footer",
+        "label": "من دمشق. لنخلّي علامتك تنشاف.",
+        "en": "FROM DAMASCUS. MADE TO BE SEEN.",
+        "ar": "نصنع لعلامتك حضوراً يليق بها"
+      },
+      {
+        "key": "about.managed.8",
+        "kind": "text",
+        "section": "footer",
+        "label": "خلّي علامتك تنشاف.",
+        "en": "Make your brand seen.",
+        "ar": "حضور يليق بعلامتك"
+      },
+      {
+        "key": "about.managed.9",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي على واتساب ↗",
+        "en": "WhatsApp · Let’s talk ↗",
+        "ar": "تواصل معنا على واتساب ↗"
+      },
+      {
+        "key": "about.managed.10",
+        "kind": "text",
+        "section": "footer",
+        "label": "أخبرنا عن مشروعك ↗",
+        "en": "Send a project brief ↗",
+        "ar": "أخبرنا عن مشروعك ↗"
+      },
+      {
+        "key": "about.managed.11",
+        "kind": "text",
+        "section": "header",
+        "label": "أعمالنا",
+        "en": "Work",
+        "ar": "أعمالنا"
+      },
+      {
+        "key": "about.managed.12",
+        "kind": "text",
+        "section": "header",
+        "label": "خدماتنا",
+        "en": "Services",
+        "ar": "خدماتنا"
+      },
+      {
+        "key": "about.managed.13",
+        "kind": "text",
+        "section": "header",
+        "label": "من نحن",
+        "en": "About",
+        "ar": "من نحن"
+      },
+      {
+        "key": "about.managed.14",
+        "kind": "text",
+        "section": "footer",
+        "label": "نحكي عن مشروعك",
+        "en": "Let’s talk",
+        "ar": "نحكي عن مشروعك"
+      },
+      {
+        "key": "video-production-damascus.t0",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "استديو تصوير وإنتاج ريلز في دمشق",
+        "ar": "استديو تصوير وإنتاج ريلز في دمشق",
+        "en": "Photography studio and reel production in Damascus"
+      },
+      {
+        "key": "video-production-damascus.t1",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "تصوير ريلز ومنتجات وإعلانات ومونتاج فيديو للعلامات التجارية داخل الاستديو أو في موقع متفق عليه",
+        "ar": "تصوير ريلز ومنتجات وإعلانات ومونتاج فيديو للعلامات التجارية داخل الاستديو أو في موقع متفق عليه",
+        "en": "Reel, product and advertising production with video editing in the studio or at an agreed location in Damascus."
+      },
+      {
+        "key": "video-production-damascus.t2",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "احكي لنا عن مشروعك",
+        "ar": "احكي لنا عن مشروعك",
+        "en": "Tell us about your project"
+      },
+      {
+        "key": "video-production-damascus.t3",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "تصوير يناسب المشروع",
+        "ar": "تصوير يناسب المشروع",
+        "en": "Production that fits the project"
+      },
+      {
+        "key": "video-production-damascus.t4",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "منصوّر محتوى للعلامات التجارية والمنتجات والريلز وبنختار الكادر والإضاءة وطريقة التنفيذ حسب الفكرة ومكان التصوير المتفق عليه",
+        "ar": "منصوّر محتوى للعلامات التجارية والمنتجات والريلز وبنختار الكادر والإضاءة وطريقة التنفيذ حسب الفكرة ومكان التصوير المتفق عليه",
+        "en": "We produce brand, product and reel content, choosing framing, lighting and execution around the idea and agreed location."
+      },
+      {
+        "key": "video-production-damascus.t5",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "من التحضير للمونتاج",
+        "ar": "من التحضير للمونتاج",
+        "en": "From preparation to editing"
+      },
+      {
+        "key": "video-production-damascus.t6",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "منحدد الهدف والمراجع البصرية والمواد المطلوبة قبل الجلسة وبنكمل اختيار اللقطات والمونتاج ومعالجة الألوان والصوت حسب مستوى الإنتاج المتفق عليه",
+        "ar": "منحدد الهدف والمراجع البصرية والمواد المطلوبة قبل الجلسة وبنكمل اختيار اللقطات والمونتاج ومعالجة الألوان والصوت حسب مستوى الإنتاج المتفق عليه",
+        "en": "We agree the goal, visual references and deliverables before the shoot, then handle selection, editing, colour and sound to the agreed production level."
+      },
+      {
+        "key": "video-production-damascus.t7",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "داخل الاستديو أو خارجو",
+        "ar": "داخل الاستديو أو خارجه",
+        "en": "In the studio or on location"
+      },
+      {
+        "key": "video-production-damascus.t8",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "مكان التصوير بيتحدد حسب احتياج العمل وتوفر الموقع المطلوب تأجير المواقع والمواهب والتنقلات الإضافية بيتحددوا بشكل منفصل ضمن العرض",
+        "ar": "مكان التصوير بيتحدد حسب احتياج العمل وتوفر الموقع المطلوب تأجير المواقع والمواهب والتنقلات الإضافية بيتحددوا بشكل منفصل ضمن العرض",
+        "en": "The location depends on the project and availability. Location rental, talent and additional transport are agreed separately in the quote."
+      },
+      {
+        "key": "video-production-damascus.t9",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "شو لازم تبعتلنا لطلب عرض",
+        "ar": "شو لازم تبعتلنا لطلب عرض",
+        "en": "What to include in your enquiry"
+      },
+      {
+        "key": "video-production-damascus.t10",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "نوع النشاط وعدد الفيديوهات ومدتها التقريبية ومكان التصوير والموعد المطلوب وإذا عندك أفكار أو أمثلة ابعتي روابطها حتى نحدد نطاق التنفيذ بدقة",
+        "ar": "نوع النشاط وعدد الفيديوهات ومدتها التقريبية ومكان التصوير والموعد المطلوب وإذا عندك أفكار أو أمثلة ابعتي روابطها حتى نحدد نطاق التنفيذ بدقة",
+        "en": "Send your business type, video count and approximate duration, location and target date. Reference links help us define the scope accurately."
+      },
+      {
+        "key": "video-production-damascus.t11",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "شوفي الباقات وأمثلة الريلز",
+        "ar": "شوفي الباقات وأمثلة الريلز",
+        "en": "See packages and reel examples"
+      },
+      {
+        "key": "video-production-damascus.t12",
+        "kind": "text",
+        "section": "video-production-damascus.main",
+        "label": "استعرضي أعمالنا",
+        "ar": "استعرضي أعمالنا",
+        "en": "Explore our work"
+      },
+      {
+        "key": "video-production-damascus.title",
+        "kind": "title",
+        "section": "general",
+        "label": "عنوان صفحة الخدمة",
+        "ar": "استديو تصوير وإنتاج ريلز في دمشق | 2SEE Media",
+        "en": "Photography studio and reel production in Damascus | 2SEE Media"
+      },
+      {
+        "key": "video-production-damascus.description",
+        "kind": "meta",
+        "section": "general",
+        "label": "وصف صفحة الخدمة",
+        "ar": "تصوير ريلز ومنتجات وإعلانات ومونتاج فيديو للعلامات التجارية داخل الاستديو أو في موقع متفق عليه",
+        "en": "Reel, product and advertising production with video editing in the studio or at an agreed location in Damascus."
       }
     ]
   },
@@ -10579,7 +11559,7 @@
     },
     "services.section7": {
       "page": "services.html",
-      "label": "Frequently asked questions.",
+      "label": "الأسئلة الشائعة / FAQ",
       "visible": true
     },
     "work.section1": {
@@ -10685,6 +11665,21 @@
     "work.section3": {
       "page": "work.html",
       "label": "شعارات التعاون",
+      "visible": true
+    },
+    "social-media-damascus.main": {
+      "page": "social-media-damascus.html",
+      "label": "إدارة السوشال ميديا وصناعة المحتوى في دمشق",
+      "visible": true
+    },
+    "video-production-damascus.main": {
+      "page": "video-production-damascus.html",
+      "label": "استديو تصوير وإنتاج ريلز في دمشق",
+      "visible": true
+    },
+    "index.faq": {
+      "page": "index.html",
+      "label": "الأسئلة الشائعة / FAQ",
       "visible": true
     }
   },

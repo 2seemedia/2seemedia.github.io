@@ -18,6 +18,15 @@
   var menuButton=document.createElement('button');menuButton.type='button';menuButton.className='v8-menu-toggle';menuButton.setAttribute('aria-controls',mobileNav.id);menuButton.setAttribute('aria-expanded','false');
   function menuState(open){var modalOpen=open&&innerWidth<=640;document.querySelectorAll('main,footer').forEach(function(el){el.inert=modalOpen});if(modalOpen){mobileNav.setAttribute('role','dialog');mobileNav.setAttribute('aria-modal','true')}else{mobileNav.removeAttribute('role');mobileNav.removeAttribute('aria-modal')}document.body.classList.toggle('v12-menu-open',open);if(menuBackdrop)menuBackdrop.setAttribute('aria-hidden',String(!open));mobileHeader.classList.toggle('is-menu-open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?(ar?'إغلاق ×':'Close ×'):(ar?'القائمة ☰':'Menu ☰');if(modalOpen)requestAnimationFrame(function(){if(mobileHeader.classList.contains('is-menu-open'))mobileNav.querySelector('a')?.focus()});}
   menuState(false);mobileHeader.append(menuButton);menuButton.addEventListener('click',function(){menuState(menuButton.getAttribute('aria-expanded')!=='true')});
+  // Touch equivalent of hovering the desktop dock: first tap reveals labels.
+  mobileNav.addEventListener('click',function(e){
+   var link=e.target.closest('a');if(!link||innerWidth>640)return;
+   if(!mobileNav.classList.contains('is-touch-expanded')){
+    e.preventDefault();e.stopImmediatePropagation();mobileNav.classList.add('is-touch-expanded');
+   }
+  },true);
+  document.addEventListener('pointerdown',function(e){if(!mobileNav.contains(e.target))mobileNav.classList.remove('is-touch-expanded')});
+  addEventListener('scroll',function(){mobileNav.classList.remove('is-touch-expanded')},{passive:true});
   mobileNav.addEventListener('click',function(e){if(e.target.closest('a'))menuState(false)});
   document.addEventListener('click',function(e){if(!mobileHeader.contains(e.target))menuState(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menuButton.getAttribute('aria-expanded')==='true'){menuState(false);menuButton.focus()}});
@@ -33,6 +42,7 @@
   nodes.forEach(function(n){
    var p=n.parentElement;
    if(!p||p.closest('script,style,textarea,input,select,option,code,pre,[contenteditable],.v3-footer-email,[data-cv-state],.see-form-notice'))return;
+   if(p.closest('[data-see-text-key="index.v2.lead"], [data-cms-text="index.v2.lead"]'))return;
    var value=n.nodeValue;
    if(/https?:\/\/|www\.|[\w.+-]+@[\w.-]+/i.test(value))return;
    var clean=value.replace(/[,،;؛·]/g,function(mark,index){return /[0-9٠-٩]/.test(value[index-1]||'')&&/[0-9٠-٩]/.test(value[index+1]||'')?mark:' '}).replace(/([^\d])\.(?=\s|$)/g,'$1').replace(/…/g,'').replace(/ {2,}/g,' ');
