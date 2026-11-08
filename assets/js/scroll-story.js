@@ -212,7 +212,8 @@
   el.addEventListener('pointerup',release);el.addEventListener('pointercancel',release);el.addEventListener('lostpointercapture',release);
   el.addEventListener('click',function(e){if(moved){e.preventDefault();moved=false}});
  });
- floor.addEventListener('focusin',function(){if(raf)cancelAnimationFrame(raf);raf=0;held=null;placeStatic()});
+ // Focusing a link must never move its hit target before the click completes.
+ floor.addEventListener('focusin',function(){if(held)return;if(raf)cancelAnimationFrame(raf);raf=0;if(bodies.length)render();else if(!floor.classList.contains('has-layout'))placeStatic()});
  var motionButton=document.querySelector('[data-motion-toggle]');
  function motionLabel(){if(!motionButton)return;motionButton.setAttribute('aria-pressed',String(userPaused));motionButton.textContent=userPaused?(ar?'تشغيل الحركات':'Play animations'):(ar?'إيقاف الحركات':'Pause animations');document.body.classList.toggle('studio-motion-paused',userPaused)}
  if(motionButton)motionButton.addEventListener('click',function(){userPaused=!userPaused;try{sessionStorage.setItem('2see-motion-paused',String(userPaused?1:0))}catch(e){}motionLabel();sceneSchedule();if(raf)cancelAnimationFrame(raf);raf=0;started=false;if(visible)start();else placeStatic();schedule()});motionLabel();
