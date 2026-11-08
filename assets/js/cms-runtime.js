@@ -252,13 +252,14 @@
   // Projects use exactly the original template's case-card layout and reveal/filter JS.
   var works=Array.isArray(data.works)?data.works.filter(function(w){return w.visible!==false}):[];
   function elt(tag,cls,content){var e=document.createElement(tag);if(cls)e.className=cls;if(content!==undefined)e.textContent=content;return e}
+  var viewerReturnFocus=null;
   function openWork(w){
 
     var modal=document.getElementById('see-work-modal');
     if(!modal)return;
     var iframe=modal.querySelector('iframe'),link=modal.querySelector('[data-original]'),title=modal.querySelector('[data-modal-title]');
     var name=(lang==='ar'?(w.titleAr||w.title):w.title)||'';if(/^(reel|design|published video|ريل|تصميم|فيديو منشور)(\s|$)/i.test(name))name='';
-    title.textContent=w.client||name||(w.type==='design'?(lang==='ar'?'تصميم غرافيكي':'Graphic design'):(lang==='ar'?'إنتاج وصناعة محتوى':'Production & content'));
+    title.textContent=name||w.publisher||w.client||(w.type==='design'?(lang==='ar'?'تصميم غرافيكي':'Graphic design'):(lang==='ar'?'إنتاج وصناعة محتوى':'Production & content'));
     var description=modal.querySelector('[data-modal-description]');description.textContent=(lang==='ar'?(w.descriptionAr||w.description):w.description)||'';description.hidden=!description.textContent;
     var picture=modal.querySelector('[data-modal-image]');picture.hidden=w.type!=='design';if(w.type==='design')picture.src=safeLink(w.image);else picture.removeAttribute('src');picture.alt=title.textContent;modal.querySelector('.see-modal-bottom span').hidden=w.type==='design';link.textContent=lang==='ar'?'فتح العمل الأصلي ↗':'Open original ↗';
     link.href=safeLink(w.url||w.image||'#');
@@ -267,8 +268,18 @@
       else if(['youtube.com','www.youtube.com','youtu.be'].includes(u.hostname)){var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.match(/\/shorts\/([\w-]+)/)?.[1]);if(/^[\w-]{11}$/.test(id||''))url='https://www.youtube-nocookie.com/embed/'+id}
     }catch(e){}
     modal.dataset.workFormat=w.type==='design'?'design':(url.indexOf('youtube-nocookie.com')!==-1?'landscape':'reel');
+    var stage=modal.querySelector('.see-modal-stage'),status=modal.querySelector('[data-viewer-status]');
+    stage.hidden=w.type==='design'||!url;
+    status.textContent=lang==='ar'?'جارٍ تحميل الريل…':'Loading video…';
+    modal.classList.toggle('is-loading',w.type!=='design'&&!!url);
+    iframe.title=(lang==='ar'?'مشاهدة: ':'Watch: ')+title.textContent;
     iframe.src=w.type==='design'?'about:blank':(url||'about:blank');iframe.hidden=w.type==='design'||!url;
-    if(!modal.open)modal.showModal();
+    if(!modal.open){
+      viewerReturnFocus=document.activeElement;
+      document.documentElement.classList.add('see-viewer-open');
+      modal.showModal();
+      modal.querySelector('[data-modal-close]').focus({preventScroll:true});
+    }
   }
   function card(w,i){
     var art=elt('article','case-card reveal');art.dataset.category=w.type==='design'?'design':'reel';art.style.setProperty('--d',String((i%4)*75)+'ms');
@@ -314,12 +325,23 @@
   }
   window.SEE_OPEN_WORK=openWork;
   if(home||grid||document.getElementById('v3-opening-track')){
-    var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.setAttribute('aria-labelledby','studio-modal-title');modal.innerHTML='<div class="see-modal-header"><strong id="studio-modal-title" data-modal-title>2SEE Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><p class="studio-modal-description" data-modal-description hidden></p><img data-modal-image hidden alt=""><iframe title="Video player" loading="lazy" allow="autoplay; fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
+    var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.setAttribute('aria-labelledby','studio-modal-title');modal.innerHTML='<div class="see-modal-header"><strong id="studio-modal-title" data-modal-title>2SEE Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><p class="studio-modal-description" data-modal-description hidden></p><img data-modal-image hidden alt=""><div class="see-modal-stage"><div class="see-viewer-loading" data-viewer-status role="status">Loading video…</div><iframe title="Video player" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
     document.body.appendChild(modal);
     if(lang==='ar'){modal.querySelector('[data-modal-close]').setAttribute('aria-label','إغلاق المعاينة');modal.querySelector('.see-modal-bottom span').textContent='قد يمنع إنستغرام تشغيل الفيديو داخل الموقع.';modal.querySelector('[data-original]').textContent='فتح الفيديو الأصلي ↗'}
     modal.querySelector('[data-modal-close]').addEventListener('click',function(){modal.close()});
-    modal.addEventListener('close',function(){modal.querySelector('iframe').src='about:blank';modal.querySelector('[data-modal-image]').removeAttribute('src')});
-    modal.addEventListener('click',function(e){if(e.target===modal)modal.close()});
+    modal.querySelector('iframe').addEventListener('load',function(){if(this.getAttribute('src')!=='about:blank')modal.classList.remove('is-loading')});
+    modal.addEventListener('close',function(){
+      modal.classList.remove('is-loading');modal.querySelector('iframe').src='about:blank';
+      modal.querySelector('[data-modal-image]').removeAttribute('src');
+      document.documentElement.classList.remove('see-viewer-open');
+      if(viewerReturnFocus&&viewerReturnFocus.isConnected)viewerReturnFocus.focus({preventScroll:true});
+      viewerReturnFocus=null;
+    });
+    modal.addEventListener('click',function(e){
+      if(e.target!==modal)return;
+      var r=modal.getBoundingClientRect();
+      if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close();
+    });
   }
 
 // Career application: browser-side CV chooser. GitHub Pages has no upload backend.
