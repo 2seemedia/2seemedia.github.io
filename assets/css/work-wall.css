@@ -1,0 +1,20 @@
+/* Isolated addition to the existing 2SEE homepage. */
+.see-work-wall{--see-wall-columns:4;position:relative;height:var(--see-wall-scroll,650svh);background:#21181e;color:#f4f2ed;isolation:isolate;margin:0;direction:ltr}
+.see-work-wall .see-wall-stage{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at center,#8e183340,transparent 70%)}
+.see-work-wall .see-wall-stage:after{content:'';position:absolute;inset:0;z-index:3;background:linear-gradient(#21181e,transparent 20%,transparent 80%,#21181e);pointer-events:none}
+.see-work-wall .see-wall-plane{position:absolute;left:50%;top:0;width:min(1100px,94vw);height:100%;display:grid;grid-template-columns:repeat(var(--see-wall-columns),minmax(0,1fr));gap:18px;transform-origin:center center;will-change:transform;opacity:.83}
+.see-work-wall .see-wall-column{display:flex;flex-direction:column;gap:18px;align-self:start;will-change:transform}
+.see-work-wall .see-wall-column a{display:block;flex:none;border-radius:10px;overflow:hidden;background:#30232c;aspect-ratio:2/3;box-shadow:0 10px 30px #0005}
+.see-work-wall .see-wall-column img{display:block;width:100%;height:100%;object-fit:cover;transition:filter .3s}
+.see-work-wall .see-wall-column a:hover img{filter:brightness(1.12)}
+.see-work-wall .see-wall-column a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.see-work-wall .see-wall-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:4;text-align:center;pointer-events:none;padding:30px;background:radial-gradient(ellipse,#21181eaa,transparent 70%);text-shadow:0 4px 40px #000}
+.see-work-wall .see-wall-kicker{color:#e6bac7;font:600 12px/1.8 Manrope,Tajawal,sans-serif;letter-spacing:.08em;margin:0 0 20px}
+.see-work-wall h2{font:700 clamp(55px,7vw,108px)/1.2 Manrope,Tajawal,sans-serif;letter-spacing:-.055em;max-width:850px;color:#f4f2ed;margin:0;text-wrap:balance}
+html[lang=ar] .see-work-wall h2{font-family:Tajawal,sans-serif;letter-spacing:-.025em;direction:rtl}
+.see-work-wall .see-wall-bottom{position:absolute;bottom:28px;inset-inline:6%;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #ffffff40;padding-top:20px;color:#fff}
+.see-work-wall .see-wall-bottom>span{font:10px/1.5 Manrope,sans-serif;letter-spacing:.12em}
+.see-work-wall .see-wall-more{border-radius:30px;background:#f4f2ed;color:#191c19;font-size:13px;padding:12px 20px;line-height:1.5;text-decoration:none}
+@media(max-width:600px){.see-work-wall .see-wall-plane{width:94vw;gap:10px}.see-work-wall .see-wall-column{gap:10px}.see-work-wall .see-wall-column a{border-radius:7px}.see-work-wall h2{font-size:52px}.see-work-wall .see-wall-kicker{font-size:10px}.see-work-wall .see-wall-bottom{inset-inline:20px;bottom:22px}.see-work-wall .see-wall-more{font-size:12px;padding:11px 14px}.see-work-wall .see-wall-bottom>span{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.see-work-wall{height:auto;padding:60px 20px}.see-work-wall .see-wall-stage{position:relative;height:auto;overflow:visible}.see-work-wall .see-wall-stage:after{display:none}.see-work-wall .see-wall-copy{position:relative;padding:0 0 35px;opacity:1!important;transform:none!important}.see-work-wall .see-wall-plane{position:relative;left:auto;top:auto;width:100%;height:auto;transform:none!important;will-change:auto;opacity:1}.see-work-wall .see-wall-column{transform:none!important;will-change:auto}.see-work-wall .see-wall-bottom{position:relative;inset:auto;margin-top:30px}}
+.see-work-wall.see-wall-keyboard{height:auto;padding:60px 20px}.see-work-wall.see-wall-keyboard .see-wall-stage{position:relative;height:auto;overflow:visible}.see-work-wall.see-wall-keyboard .see-wall-stage:after{display:none}.see-work-wall.see-wall-keyboard .see-wall-copy{display:none}.see-work-wall.see-wall-keyboard .see-wall-plane{position:relative;left:auto;width:100%;height:auto;transform:none!important;opacity:1}.see-work-wall.see-wall-keyboard .see-wall-column{transform:none!important}.see-work-wall.see-wall-keyboard .see-wall-bottom{position:relative;inset:auto;margin-top:30px}

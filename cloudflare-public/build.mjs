@@ -22,7 +22,7 @@ async function normalize(dir) {
     if (item.isDirectory()) await normalize(file);
     else if (/\.(html|css|js)$/.test(item.name)) {
       const text = await readFile(file, 'utf8');
-      await writeFile(file, text.replaceAll('https://2seemedia.github.io/assets/', '/assets/').replaceAll('https://2seemedia.github.io/media/', '/media/'));
+      await writeFile(file, text.replace(/<\/head>/i, '<meta name="robots" content="noindex,nofollow"></head>').replaceAll('https://2seemedia.github.io/assets/', '/assets/').replaceAll('https://2seemedia.github.io/media/', '/media/'));
     }
   }
 }

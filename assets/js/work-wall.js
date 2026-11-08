@@ -1,0 +1,17 @@
+(function(){'use strict';
+function start(){
+ var section=document.querySelector('[data-see-work-wall]');if(!section)return;
+ var data=window.SEE_CMS_DATA||{},works=(data.works||[]).filter(function(w){return w.visible!==false&&w.image;}),ar=document.documentElement.lang==='ar'||new URLSearchParams(location.search).get('lang')==='ar',reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var plane=section.querySelector('.see-wall-plane'),copy=section.querySelector('.see-wall-copy'),columns=[],size=0,scheduled=false;
+ function safe(s){try{var u=new URL(s,location.href);if(!['https:','http:'].includes(u.protocol))return '';if(u.hostname==='2seemedia.github.io')return u.pathname;return u.href;}catch(e){return '';}}
+ section.querySelector('h2').textContent=ar?'محتوى يوقف السكرول':'Made to stop the scroll';section.querySelector('.see-wall-kicker').textContent=ar?'بصمتنا في كل مشروع':'OUR SIGNATURE IN EVERY PROJECT';var more=section.querySelector('.see-wall-more');more.textContent=ar?'استعرض أعمالنا ↗':'Explore our work ↗';more.href='work.html?lang='+(ar?'ar':'en');
+ function render(){var count=innerWidth<=600?2:4;if(count===size)return;size=count;plane.replaceChildren();columns=[];for(var i=0;i<count;i++){var col=document.createElement('div');col.className='see-wall-column';plane.append(col);columns.push(col);}works.forEach(function(w,i){var a=document.createElement('a'),img=document.createElement('img');a.href=safe(w.url)||more.href;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',ar?(w.titleAr||w.title||'شاهد العمل'):(w.title||'View project'));img.src=safe(w.image);img.alt=ar?(w.titleAr||w.title||'من أعمال 2SEE'):(w.title||'2SEE work');img.width=360;img.height=540;img.loading='lazy';img.decoding='async';a.append(img);columns[i%count].append(a);});section.style.setProperty('--see-wall-columns',count);section.style.setProperty('--see-wall-scroll',Math.max(300,Math.ceil(works.length/count)*48)+'svh');section.dataset.workCount=String(works.length);}
+ function paint(){scheduled=false;var r=section.getBoundingClientRect(),vh=innerHeight,p=Math.max(0,Math.min(1,-r.top/Math.max(1,section.offsetHeight-vh)));if(reduced){plane.style.removeProperty('transform');copy.style.removeProperty('opacity');return;}var mobile=innerWidth<=600;plane.style.transform='translateX(-50%) perspective(1400px) rotateX('+(12-p*10)+'deg) rotateY('+(-14+p*12)+'deg) rotateZ('+(-13+p*11)+'deg) scale('+(.76+Math.min(p*3,1)*.24)+')';copy.style.opacity=String(Math.max(0,1-p*8));copy.style.transform='translateY('+(-p*150)+'px)';columns.forEach(function(col,i){var travel=Math.max(0,col.offsetHeight-vh*.75),offset=(i%2?40:-40)*Math.sin(p*Math.PI);col.style.transform='translateY('+(vh*.12-p*travel+offset)+'px)';});}
+ function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(paint);}}
+ render();paint();addEventListener('scroll',schedule,{passive:true});addEventListener('resize',function(){render();schedule();});plane.addEventListener('load',schedule,true);
+ // Stop the wall's movement while keyboard users explore its links.
+ section.addEventListener('focusin',function(e){if(!e.target.closest('.see-wall-plane'))return;section.classList.add('see-wall-keyboard');});
+ section.addEventListener('focusout',function(e){if(!section.contains(e.relatedTarget))section.classList.remove('see-wall-keyboard');});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
