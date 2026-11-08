@@ -22,7 +22,7 @@ async function normalize(dir) {
     if (item.isDirectory()) await normalize(file);
     else if (/\.(html|css|js)$/.test(item.name)) {
       const text = await readFile(file, 'utf8');
-      await writeFile(file, text.replace(/scroll-story\\.js\\?[^\"'\\s<>]*/g, 'scroll-story.js?v=badge-focus-1').replace(/<\/head>/i, '<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/assets/css/cursor-dot.css?v=2"></head>').replace(/<\/body>/i, '<script src="/assets/js/cursor-dot.js?v=2"></script></body>').replaceAll('https://2seemedia.github.io/assets/', '/assets/').replaceAll('https://2seemedia.github.io/media/', '/media/'));
+      await writeFile(file, text.replace(/scroll-story\.js\?[^"'\s<>]*/g, 'scroll-story.js?v=badge-focus-2').replace(/<\/head>/i, '<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/assets/css/cursor-dot.css?v=2"></head>').replace(/<\/body>/i, '<script src="/assets/js/cursor-dot.js?v=2"></script></body>').replaceAll('https://2seemedia.github.io/assets/', '/assets/').replaceAll('https://2seemedia.github.io/media/', '/media/'));
     }
   }
 }
