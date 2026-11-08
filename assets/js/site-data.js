@@ -11695,7 +11695,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DWO9c9AEfvN/",
       "image": "https://2seemedia.github.io/assets/reel-DWO9c9AEfvN.jpg",
       "featured": true,
-      "visible": true
+      "visible": true,
+      "publisher": "إسراء منصور × 2See Media"
     },
     {
       "id": "81b18044-5d0d-42c9-b029-285fee9c549e",
@@ -11708,7 +11709,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/p/Dema3qiS1TD/",
       "image": "https://2seemedia.github.io/media/1b7c5bda-7b94-4b77-8187-3a683ea0c87a.jpg",
       "featured": true,
-      "visible": true
+      "visible": true,
+      "publisher": "2See Media"
     },
     {
       "id": "reel-01",
@@ -11721,7 +11723,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DeHhmlyOJrG/",
       "image": "https://2seemedia.github.io/assets/reel-DeHhmlyOJrG.jpg",
       "featured": true,
-      "visible": true
+      "visible": true,
+      "publisher": "2See Media"
     },
     {
       "id": "reel-07",
@@ -11734,7 +11737,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DUOQ_0HDLw1/",
       "image": "https://2seemedia.github.io/assets/reel-DUOQ_0HDLw1.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@mirastore1.sy"
     },
     {
       "id": "reel-14",
@@ -11747,7 +11751,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/Dcf3ix9Or2n/",
       "image": "https://2seemedia.github.io/assets/reel-Dcf3ix9Or2n.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "IRAD Academy · @irad.academy"
     },
     {
       "id": "reel-03",
@@ -11760,7 +11765,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DbBWjecAK0Q/",
       "image": "https://2seemedia.github.io/assets/reel-DbBWjecAK0Q.jpg",
       "featured": true,
-      "visible": true
+      "visible": true,
+      "publisher": "TABIB · @tabib.sy"
     },
     {
       "id": "reel-04",
@@ -11773,7 +11779,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DRFNk8GCHAH/",
       "image": "https://2seemedia.github.io/assets/reel-DRFNk8GCHAH.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "2See Media"
     },
     {
       "id": "reel-08",
@@ -11786,7 +11793,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DTDhbdTghJR/",
       "image": "https://2seemedia.github.io/assets/reel-DTDhbdTghJR.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@mirastore1.sy"
     },
     {
       "id": "reel-05",
@@ -11799,7 +11807,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DaA1DYcM_kV/",
       "image": "https://2seemedia.github.io/assets/reel-DaA1DYcM_kV.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "إسراء منصور · @esraa_.mansour"
     },
     {
       "id": "reel-24",
@@ -11812,7 +11821,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DUixpqljHUs/",
       "image": "https://2seemedia.github.io/assets/reel-DUixpqljHUs.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@mirastore1.sy"
     },
     {
       "id": "reel-12",
@@ -11825,7 +11835,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/Dc_ksmaDVP4/",
       "image": "https://2seemedia.github.io/assets/reel-Dc_ksmaDVP4.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "TABIB · @tabib.sy"
     },
     {
       "id": "reel-06",
@@ -11838,7 +11849,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/Db5P5s3CVwn/",
       "image": "https://2seemedia.github.io/assets/reel-Db5P5s3CVwn.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@almouzayen.sy"
     },
     {
       "id": "reel-15",
@@ -11851,7 +11863,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DcVlbz0ORI5/",
       "image": "https://2seemedia.github.io/assets/reel-DcVlbz0ORI5.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "IRAD Academy · @irad.academy"
     },
     {
       "id": "reel-09",
@@ -11877,7 +11890,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DbGn9GvAmVJ/",
       "image": "https://2seemedia.github.io/assets/reel-DbGn9GvAmVJ.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "TABIB · @tabib.sy"
     },
     {
       "id": "reel-10",
@@ -11890,7 +11904,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DdbXusZOExX/",
       "image": "https://2seemedia.github.io/assets/reel-DdbXusZOExX.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "2See Media"
     },
     {
       "id": "reel-18",
@@ -11903,7 +11918,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DaLf1DGDiM-/",
       "image": "https://2seemedia.github.io/assets/reel-DaLf1DGDiM-.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@khalifeh.group"
     },
     {
       "id": "reel-11",
@@ -11916,7 +11932,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DdMaLeVtR5D/",
       "image": "https://2seemedia.github.io/assets/reel-DdMaLeVtR5D.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "DORBS Art · @dorbs.art"
     },
     {
       "id": "reel-19",
@@ -11929,7 +11946,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DaM8B4MOI0-/",
       "image": "https://2seemedia.github.io/assets/reel-DaM8B4MOI0-.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "IRAD Academy · @irad.academy"
     },
     {
       "id": "reel-13",
@@ -11942,7 +11960,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/Dcgtge-NYVx/",
       "image": "https://2seemedia.github.io/assets/reel-Dcgtge-NYVx.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "DORBS Design · @dorbs_design"
     },
     {
       "id": "reel-20",
@@ -11955,7 +11974,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DYH32R-Bga1/",
       "image": "https://2seemedia.github.io/assets/reel-DYH32R-Bga1.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@mirastore1.sy"
     },
     {
       "id": "reel-23",
@@ -11968,7 +11988,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DVofyB7IQmo/",
       "image": "https://2seemedia.github.io/assets/reel-DVofyB7IQmo.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@mirastore1.sy"
     },
     {
       "id": "reel-16",
@@ -11981,7 +12002,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DcEN9PMgk_S/",
       "image": "https://2seemedia.github.io/assets/reel-DcEN9PMgk_S.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "DORBS Design · @dorbs_design"
     },
     {
       "id": "reel-21",
@@ -11994,7 +12016,8 @@ window.SEE_CMS_DATA = {
       "url": "https://www.instagram.com/reel/DYWudWkOrnW/",
       "image": "https://2seemedia.github.io/assets/reel-DYWudWkOrnW.jpg",
       "featured": false,
-      "visible": true
+      "visible": true,
+      "publisher": "@mirastore1.sy"
     },
     {
       "id": "reel-22",
