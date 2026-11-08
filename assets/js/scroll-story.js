@@ -121,7 +121,7 @@
   if(!opening&&contactFooter){var base=document.body.classList.contains('concierge-contact')?[40,14,21]:document.body.classList.contains('concierge-careers')?[23,24,27]:[242,240,235];document.body.style.setProperty('--story-bg','rgb('+mix(base,accent,footerProgress).join(',')+')');document.body.style.setProperty('--studio-glow-opacity',String(footerProgress));if(document.body.classList.contains('concierge-page'))contactFooter.style.setProperty('--studio-footer-ink','#f4f2ed');}
   if(opening){
    var rect=opening.getBoundingClientRect(),travel=track?Math.max(0,track.scrollWidth-track.clientWidth):0,distance=Math.max(0,-rect.top),p=clamp(distance/(innerHeight*1.05),0,1);
-   if(track&&!still()){opening.style.setProperty('--reel-section-height',(innerHeight*1.85)+'px');}
+   if(track&&!still()){opening.style.setProperty('--reel-section-height',(innerHeight*2.7)+'px');}
    else opening.style.removeProperty('--reel-section-height');
    document.body.style.setProperty('--story-title-opacity',still()?1:1-clamp((p-.12)/.35,0,1));
    if(track&&(rect.bottom>=0||!openingFinished)){
