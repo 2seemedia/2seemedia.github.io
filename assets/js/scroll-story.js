@@ -76,7 +76,7 @@
    var image=document.createElement('img');image.src=safeUrl(work.image);image.alt=workName(work);image.width=360;image.height=640;image.decoding='async';image.loading=i<2?'eager':'lazy';image.draggable=false;
    image.onerror=function(){image.onerror=null;image.src='assets/img/2see-placeholder.svg'};
    var label=document.createElement('span');label.className='v3-project-open';label.textContent=ar?'عرض المشروع ↗':'View project ↗';
-   link.append(image,label);card.append(link);
+   var publisher=String(work.publisher||work.client||'').trim();var owner=document.createElement('span');owner.className='see-reel-publisher';var caption=document.createElement('small');caption.textContent=ar?'الصفحة الناشرة':'PUBLISHED ON';var name=document.createElement('strong');name.dir='auto';name.textContent=publisher||(ar?'اسم الصفحة غير مضاف':'Page name not added');owner.append(caption,name);link.append(image,label,owner);card.append(link);
    var videoSource=work.videoUrl||(/\.(mp4|webm)(?:[?#]|$)/i.test(work.url||'')?work.url:'');
    if(videoSource){
     var preview=document.createElement('video');preview.className='studio-reel-preview';preview.muted=true;preview.loop=true;preview.playsInline=true;preview.preload='none';preview.setAttribute('aria-hidden','true');link.append(preview);
