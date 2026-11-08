@@ -215,7 +215,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t025",
         "kind": "text",
         "section": "index.section1",
-        "label": "2SEE Media is a creative production and social media studio based in Damascus. We turn ide",
+        "label": "2See Media is a creative production and social media studio based in Damascus. We turn ide",
         "en": "We film, edit and create brand content, and manage social media.",
         "ar": "نقدّم خدمات التصوير والمونتاج وصناعة المحتوى وإدارة حسابات التواصل الاجتماعي"
       },
@@ -279,7 +279,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t033",
         "kind": "text",
         "section": "index.section2",
-        "label": "Featured: 2SEE Media",
+        "label": "Featured: 2See Media",
         "en": "Featured: 2See Media",
         "ar": "من أعمال 2See Media"
       },
@@ -727,7 +727,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t106",
         "kind": "text",
         "section": "index.section9",
-        "label": "2SEE Media",
+        "label": "2See Media",
         "en": "2See Media",
         "ar": "2See Media"
       },
@@ -735,7 +735,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t107",
         "kind": "text",
         "section": "index.section9",
-        "label": "2SEE Media",
+        "label": "2See Media",
         "en": "Photography & production",
         "ar": "التصوير والإنتاج"
       },
@@ -751,7 +751,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t109",
         "kind": "text",
         "section": "index.section9",
-        "label": "2SEE Media",
+        "label": "2See Media",
         "en": "2See Media",
         "ar": "2See Media"
       },
@@ -759,7 +759,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t110",
         "kind": "text",
         "section": "index.section9",
-        "label": "2SEE Media",
+        "label": "2See Media",
         "en": "Editing & visual production",
         "ar": "المونتاج والإنتاج البصري"
       },
@@ -775,7 +775,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t112",
         "kind": "text",
         "section": "index.section9",
-        "label": "2SEE Media",
+        "label": "2See Media",
         "en": "2See Media",
         "ar": "2See Media"
       },
@@ -783,7 +783,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t113",
         "kind": "text",
         "section": "index.section9",
-        "label": "2SEE Media",
+        "label": "2See Media",
         "en": "Content creation",
         "ar": "صناعة المحتوى"
       },
@@ -951,7 +951,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t135",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -1364,7 +1364,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -1508,7 +1508,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -1517,7 +1517,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -1526,7 +1526,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: 2SEE Media | We Make You Seen",
+        "label": "title: 2See Media | We Make You Seen",
         "en": "2See Media | We Make You Seen",
         "ar": "2See Media | We Make You Seen"
       },
@@ -1542,7 +1542,7 @@ window.SEE_CMS_DATA = {
         "key": "index.t138",
         "kind": "text",
         "section": "index.section10",
-        "label": "Behind 2SEE Media.",
+        "label": "Behind 2See Media.",
         "en": "Meet the founders of 2See Media",
         "ar": "تعرّف على مؤسسي 2See Media"
       },
@@ -2141,9 +2141,9 @@ window.SEE_CMS_DATA = {
         "key": "index.faq.q0",
         "kind": "text",
         "section": "index.faq",
-        "label": "What services does 2SEE Media offer?",
-        "ar": "ما الخدمات التي تقدمها 2SEE Media؟",
-        "en": "What services does 2SEE Media offer?"
+        "label": "What services does 2See Media offer?",
+        "ar": "ما الخدمات التي تقدمها 2See Media؟",
+        "en": "What services does 2See Media offer?"
       },
       {
         "key": "index.faq.a0",
@@ -2229,9 +2229,9 @@ window.SEE_CMS_DATA = {
         "key": "index.faq.a5",
         "kind": "text",
         "section": "index.faq",
-        "label": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location.",
-        "ar": "نعم، يتوفر استديو 2SEE Media في دمشق. نحدّد ملاءمة المكان والتجهيزات المطلوبة حسب طبيعة المشروع، ويمكن الاتفاق على التصوير في موقع آخر.",
-        "en": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location."
+        "label": "Yes. 2See Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location.",
+        "ar": "نعم، يتوفر استديو 2See Media في دمشق. نحدّد ملاءمة المكان والتجهيزات المطلوبة حسب طبيعة المشروع، ويمكن الاتفاق على التصوير في موقع آخر.",
+        "en": "Yes. 2See Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location."
       },
       {
         "key": "index.faq.q6",
@@ -3455,7 +3455,7 @@ window.SEE_CMS_DATA = {
         "key": "services.t137",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -3850,7 +3850,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -3895,7 +3895,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -3904,7 +3904,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -3913,7 +3913,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: Services | 2SEE Media",
+        "label": "title: Services | 2See Media",
         "en": "Services | 2See Media",
         "ar": "Services | 2See Media"
       },
@@ -4393,9 +4393,9 @@ window.SEE_CMS_DATA = {
         "key": "services.faq.q0",
         "kind": "text",
         "section": "services.section7",
-        "label": "What services does 2SEE Media offer?",
-        "ar": "ما الخدمات التي تقدمها 2SEE Media؟",
-        "en": "What services does 2SEE Media offer?"
+        "label": "What services does 2See Media offer?",
+        "ar": "ما الخدمات التي تقدمها 2See Media؟",
+        "en": "What services does 2See Media offer?"
       },
       {
         "key": "services.faq.a0",
@@ -4481,9 +4481,9 @@ window.SEE_CMS_DATA = {
         "key": "services.faq.a5",
         "kind": "text",
         "section": "services.section7",
-        "label": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location.",
-        "ar": "نعم، يتوفر استديو 2SEE Media في دمشق. نحدّد ملاءمة المكان والتجهيزات المطلوبة حسب طبيعة المشروع، ويمكن الاتفاق على التصوير في موقع آخر.",
-        "en": "Yes. 2SEE Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location."
+        "label": "Yes. 2See Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location.",
+        "ar": "نعم، يتوفر استديو 2See Media في دمشق. نحدّد ملاءمة المكان والتجهيزات المطلوبة حسب طبيعة المشروع، ويمكن الاتفاق على التصوير في موقع آخر.",
+        "en": "Yes. 2See Media has a studio in Damascus. We confirm its suitability and required setup for each project, and can discuss filming at another location."
       },
       {
         "key": "services.faq.q6",
@@ -5011,7 +5011,7 @@ window.SEE_CMS_DATA = {
         "key": "work.t050",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -5316,7 +5316,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -5379,7 +5379,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -5388,7 +5388,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -5397,7 +5397,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: Work | 2SEE Media",
+        "label": "title: Work | 2See Media",
         "en": "Work | 2See Media",
         "ar": "Work | 2See Media"
       },
@@ -5727,7 +5727,7 @@ window.SEE_CMS_DATA = {
         "key": "about.t022",
         "kind": "text",
         "section": "about.section1",
-        "label": "2SEE Media was founded by two creatives who share a passion for production, storytelling a",
+        "label": "2See Media was founded by two creatives who share a passion for production, storytelling a",
         "en": "We founded 2SEE to bring production, editing and content together.",
         "ar": "أسّسنا 2See Media لنجمع خدمات التصوير والمونتاج وصناعة المحتوى في مكان واحد"
       },
@@ -5759,7 +5759,7 @@ window.SEE_CMS_DATA = {
         "key": "about.t026",
         "kind": "text",
         "section": "about.section2",
-        "label": "Today, 2SEE Media works across production, content, design and social media.",
+        "label": "Today, 2See Media works across production, content, design and social media.",
         "en": "We expanded into content, design and social media.",
         "ar": "وسّعنا خدماتنا لتشمل صناعة المحتوى والتصميم وإدارة الحسابات"
       },
@@ -6087,7 +6087,7 @@ window.SEE_CMS_DATA = {
         "key": "about.t068",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -6419,7 +6419,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -6464,7 +6464,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -6473,7 +6473,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -6482,7 +6482,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: About | 2SEE Media",
+        "label": "title: About | 2See Media",
         "en": "About | 2See Media",
         "ar": "About | 2See Media"
       },
@@ -7420,7 +7420,7 @@ window.SEE_CMS_DATA = {
         "key": "careers.t081",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -7752,7 +7752,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -7797,7 +7797,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -7806,7 +7806,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -7815,7 +7815,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: Careers | 2SEE Media",
+        "label": "title: Careers | 2See Media",
         "en": "Careers | 2See Media",
         "ar": "Careers | 2See Media"
       },
@@ -8609,7 +8609,7 @@ window.SEE_CMS_DATA = {
         "key": "contact.t084",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -8932,7 +8932,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -8986,7 +8986,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -8995,7 +8995,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -9004,7 +9004,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: Contact | 2SEE Media",
+        "label": "title: Contact | 2See Media",
         "en": "Contact | 2See Media",
         "ar": "Contact | 2See Media"
       },
@@ -9366,7 +9366,7 @@ window.SEE_CMS_DATA = {
         "key": "case-study.t019",
         "kind": "text",
         "section": "case-study.section1",
-        "label": "Selected work / 2SEE Media",
+        "label": "Selected work / 2See Media",
         "en": "Selected work / 2See Media",
         "ar": "من أعمال 2See Media"
       },
@@ -9582,7 +9582,7 @@ window.SEE_CMS_DATA = {
         "key": "case-study.t047",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -9905,7 +9905,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -9950,7 +9950,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -9959,7 +9959,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -9968,7 +9968,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: Case-Study | 2SEE Media",
+        "label": "title: Case-Study | 2See Media",
         "en": "Case-Study | 2See Media",
         "ar": "Case-Study | 2See Media"
       },
@@ -10474,7 +10474,7 @@ window.SEE_CMS_DATA = {
         "key": "404.t046",
         "kind": "text",
         "section": "footer",
-        "label": "2SEE Media All rights reserved.",
+        "label": "2See Media All rights reserved.",
         "en": "2See Media All rights reserved.",
         "ar": "2See Media جميع الحقوق محفوظة."
       },
@@ -10797,7 +10797,7 @@ window.SEE_CMS_DATA = {
         "kind": "label",
         "attr": "aria-label",
         "section": "header",
-        "label": "label: 2SEE Media, home",
+        "label": "label: 2See Media, home",
         "en": "2See Media, home",
         "ar": "2See Media, home"
       },
@@ -10842,7 +10842,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -10851,7 +10851,7 @@ window.SEE_CMS_DATA = {
         "kind": "meta",
         "attr": "content",
         "section": "general",
-        "label": "meta: 2SEE Media — photography, video production, editing, content creation, graphic design and ",
+        "label": "meta: 2See Media — photography, video production, editing, content creation, graphic design and ",
         "en": "2See Media — photography, video production, editing, content creation, graphic design and social media management.",
         "ar": "2See Media — photography, video production, editing, content creation, graphic design and social media management."
       },
@@ -10860,7 +10860,7 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "attr": "text",
         "section": "general",
-        "label": "title: 404 | 2SEE Media",
+        "label": "title: 404 | 2See Media",
         "en": "404 | 2See Media",
         "ar": "404 | 2See Media"
       },
@@ -11231,8 +11231,8 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "section": "general",
         "label": "عنوان صفحة الخدمة",
-        "ar": "إدارة السوشال ميديا وصناعة المحتوى في دمشق | 2SEE Media",
-        "en": "Social media management and content in Damascus | 2SEE Media"
+        "ar": "إدارة السوشال ميديا وصناعة المحتوى في دمشق | 2See Media",
+        "en": "Social media management and content in Damascus | 2See Media"
       },
       {
         "key": "social-media-damascus.description",
@@ -11473,8 +11473,8 @@ window.SEE_CMS_DATA = {
         "kind": "title",
         "section": "general",
         "label": "عنوان صفحة الخدمة",
-        "ar": "استديو تصوير وإنتاج ريلز في دمشق | 2SEE Media",
-        "en": "Photography studio and reel production in Damascus | 2SEE Media"
+        "ar": "استديو تصوير وإنتاج ريلز في دمشق | 2See Media",
+        "en": "Photography studio and reel production in Damascus | 2See Media"
       },
       {
         "key": "video-production-damascus.description",

@@ -1,4 +1,4 @@
-/* 2SEE Media content layer. Original Agency animations remain in main.js. */
+/* 2See Media content layer. Original Agency animations remain in main.js. */
 (function(){
   'use strict';
   var base=window.SEE_CMS_DATA;
@@ -325,7 +325,7 @@
   }
   window.SEE_OPEN_WORK=openWork;
   if(home||grid||document.getElementById('v3-opening-track')){
-    var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.setAttribute('aria-labelledby','studio-modal-title');modal.innerHTML='<div class="see-modal-header"><strong id="studio-modal-title" data-modal-title>2SEE Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><p class="studio-modal-description" data-modal-description hidden></p><img data-modal-image hidden alt=""><div class="see-modal-stage"><div class="see-viewer-loading" data-viewer-status role="status">Loading video…</div><iframe title="Video player" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
+    var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.setAttribute('aria-labelledby','studio-modal-title');modal.innerHTML='<div class="see-modal-header"><strong id="studio-modal-title" data-modal-title>2See Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><p class="studio-modal-description" data-modal-description hidden></p><img data-modal-image hidden alt=""><div class="see-modal-stage"><div class="see-viewer-loading" data-viewer-status role="status">Loading video…</div><iframe title="Video player" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
     document.body.appendChild(modal);
     if(lang==='ar'){modal.querySelector('[data-modal-close]').setAttribute('aria-label','إغلاق المعاينة');modal.querySelector('.see-modal-bottom span').textContent='قد يمنع إنستغرام تشغيل الفيديو داخل الموقع.';modal.querySelector('[data-original]').textContent='فتح الفيديو الأصلي ↗'}
     modal.querySelector('[data-modal-close]').addEventListener('click',function(){modal.close()});
@@ -425,9 +425,9 @@ document.addEventListener('submit',function(e){
   if(cv)pairs.push(texts.cv+': '+cv.name);
   var checked=Array.from(form.querySelectorAll('input[name="services"]:checked'));
   if(checked.length){pairs.push(texts.services+': '+checked.map(function(x){return x.closest('label').querySelector('span').textContent.trim()}).join(lang==='ar'?'، ':', '))}
-  var body=(isCareer?(lang==='ar'?'طلب تعاون جديد إلى 2See Media':'New collaboration application — 2SEE Media'):(lang==='ar'?'طلب مشروع جديد إلى 2See Media':'New project enquiry — 2SEE Media'))+'\n\n'+pairs.join('\n');
+  var body=(isCareer?(lang==='ar'?'طلب تعاون جديد إلى 2See Media':'New collaboration application — 2See Media'):(lang==='ar'?'طلب مشروع جديد إلى 2See Media':'New project enquiry — 2See Media'))+'\n\n'+pairs.join('\n');
   if(cv&&method!=='share')body+='\n\n'+(lang==='ar'?'تنبيه: يجب إرفاق السيرة الذاتية يدوياً قبل إرسال الرسالة.':'Reminder: attach the CV file manually before sending.');
-  var subject=isCareer?'2SEE Media | Collaboration application':'2SEE Media | Project enquiry';
+  var subject=isCareer?'2See Media | Collaboration application':'2See Media | Project enquiry';
   if(method==='share'&&cv){
     var payload={title:subject,text:body+'\n\n'+(lang==='ar'?'بريد 2SEE: ':'2SEE email: ')+String(data.brand.email||'2see.mediaa@gmail.com'),files:[cv]};
     var supported=false;
