@@ -413,7 +413,7 @@
 
   function update() {
     queued = false;
-    btn.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.9 && !inlineLinkInView() && !coversHideZone());
+    btn.classList.toggle('is-visible', window.scrollY > Math.min(320, window.innerHeight * 0.5));
     lift();
   }
   function schedule() {

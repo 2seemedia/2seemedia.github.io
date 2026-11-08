@@ -76,7 +76,7 @@
    var image=document.createElement('img');image.src=safeUrl(work.image);image.alt=workName(work);image.width=360;image.height=640;image.decoding='async';image.loading=i<2?'eager':'lazy';image.draggable=false;
    image.onerror=function(){image.onerror=null;image.src='assets/img/2see-placeholder.svg'};
    var label=document.createElement('span');label.className='v3-project-open';label.textContent=ar?'عرض المشروع ↗':'View project ↗';
-   link.append(image,label);card.append(link);
+   var publisher=String(work.publisher||work.client||'').trim(),meta=document.createElement('div');meta.className='see-project-meta';var owner=document.createElement('p');owner.className='see-project-owner';owner.dir='auto';owner.textContent=publisher;var title=document.createElement('h3');title.textContent=workName(work);var type=document.createElement('p');type.className='see-project-type';type.textContent=(ar?work.projectTypeAr:work.projectType)||(ar?'ريل':'Reel');var footer=document.createElement('span');footer.className='see-project-bottom';footer.textContent=ar?'شاهد العمل ↗':'View project ↗';meta.append(owner,title,type,footer);link.setAttribute('aria-label',workName(work)+' — '+publisher+' — '+(ar?'عرض المشروع':'View project'));link.append(image,meta);card.append(link);
    var videoSource=work.videoUrl||(/\.(mp4|webm)(?:[?#]|$)/i.test(work.url||'')?work.url:'');
    if(videoSource){
     var preview=document.createElement('video');preview.className='studio-reel-preview';preview.muted=true;preview.loop=true;preview.playsInline=true;preview.preload='none';preview.setAttribute('aria-hidden','true');link.append(preview);
@@ -88,6 +88,7 @@
    }
    track.append(card);
   });
+  if(!still()&&'IntersectionObserver'in window){var copyObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.intersectionRatio>=.35)entry.target.classList.add('is-copy-visible');else if(entry.intersectionRatio<.08)entry.target.classList.remove('is-copy-visible');});},{threshold:[0,.08,.35,.6]});Array.from(track.children).forEach(function(card){card.classList.add('has-copy-reveal');copyObserver.observe(card);});}
   var revealReady=still(),galleryVisible=false,galleryPaused=false,galleryUserPaused=false,galleryTimer=0;var pauseButton=document.querySelector('[data-gallery-pause]');
   function pauseLabel(){if(pauseButton){pauseButton.textContent=galleryUserPaused?(ar?'تشغيل السحب':'Play slides'):(ar?'إيقاف السحب':'Pause slides');pauseButton.setAttribute('aria-pressed',String(galleryUserPaused))}}
   if(pauseButton)pauseButton.addEventListener('click',function(){galleryUserPaused=!galleryUserPaused;pauseLabel()});pauseLabel();
@@ -173,10 +174,10 @@
   var veil=document.createElement('div');veil.className='v9-intro-veil';veil.setAttribute('aria-hidden','true');
   var circle=document.createElement('div');circle.className='v9-intro-circle';var mark=document.createElement('img');mark.src=safeUrl((data.brand||{}).logo||'assets/img/2see-logo.png');mark.alt='';circle.append(mark);
   var slogan=document.createElement('p');slogan.textContent='WE MAKE YOU SEEN';veil.append(slogan);document.body.append(veil,circle);
-  var size=Math.min(300,innerWidth*.62),oldOverflow=document.body.style.overflow,introDone=false,introTimer=0,introNodes=Array.from(document.querySelectorAll('.v3-header,main,footer'));introNodes.forEach(function(el){el.inert=true});var skip=document.createElement('button');skip.type='button';skip.className='studio-intro-skip';skip.textContent=ar?'تخطي المقدمة ↗':'Skip intro ↗';veil.removeAttribute('aria-hidden');veil.append(skip);skip.addEventListener('click',finish);skip.focus({preventScroll:true});
+  var size=Math.min(300,innerWidth*.62),oldOverflow=document.body.style.overflow,introDone=false,introTimer=0,introKeyboard=false,introNodes=Array.from(document.querySelectorAll('.v3-header,main,footer'));introNodes.forEach(function(el){el.inert=true});var skip=document.createElement('button');skip.type='button';skip.className='studio-intro-skip';skip.textContent=ar?'تخطي المقدمة ↗':'Skip intro ↗';veil.removeAttribute('aria-hidden');veil.append(skip);skip.addEventListener('keydown',function(){introKeyboard=true});skip.addEventListener('click',finish);skip.focus({preventScroll:true});
   circle.style.cssText='width:'+size+'px;height:'+size+'px;left:'+(innerWidth-size)/2+'px;top:'+(innerHeight-size)/2+'px';
   document.body.style.overflow='hidden';brand.style.opacity='0';
-  function finish(){if(introDone)return;introDone=true;clearTimeout(introTimer);var restoreFocus=document.activeElement===skip;introNodes.forEach(function(el){el.inert=false});document.body.style.overflow=oldOverflow;brand.style.opacity='';root.classList.remove('see-intro-playing');veil.remove();circle.remove();if(restoreFocus)brand.focus({preventScroll:true});}
+  function finish(){if(introDone)return;introDone=true;clearTimeout(introTimer);var restoreFocus=document.activeElement===skip;introNodes.forEach(function(el){el.inert=false});document.body.style.overflow=oldOverflow;brand.style.opacity='';root.classList.remove('see-intro-playing');veil.remove();circle.remove();if(restoreFocus&&introKeyboard)brand.focus({preventScroll:true});}
   introTimer=setTimeout(function(){if(introDone)return;var target=brand.getBoundingClientRect();veil.animate([{opacity:1},{opacity:0}],{duration:650,fill:'forwards'});slogan.style.opacity='0';
    circle.animate([{left:circle.style.left,top:circle.style.top,width:size+'px',height:size+'px'},{left:target.left+'px',top:target.top+'px',width:target.width+'px',height:target.height+'px'}],{duration:850,easing:'cubic-bezier(.65,0,.25,1)',fill:'forwards'}).finished.then(finish,finish);
   },Math.max(1000,Math.min(6000,Number(settings.introDurationMs)||3000)));
@@ -212,7 +213,8 @@
   el.addEventListener('pointerup',release);el.addEventListener('pointercancel',release);el.addEventListener('lostpointercapture',release);
   el.addEventListener('click',function(e){if(moved){e.preventDefault();moved=false}});
  });
- floor.addEventListener('focusin',function(){if(raf)cancelAnimationFrame(raf);raf=0;held=null;placeStatic()});
+ // Focusing a link must never move its hit target before the click completes.
+ floor.addEventListener('focusin',function(){if(held)return;if(raf)cancelAnimationFrame(raf);raf=0;if(bodies.length)render();else if(!floor.classList.contains('has-layout'))placeStatic()});
  var motionButton=document.querySelector('[data-motion-toggle]');
  function motionLabel(){if(!motionButton)return;motionButton.setAttribute('aria-pressed',String(userPaused));motionButton.textContent=userPaused?(ar?'تشغيل الحركات':'Play animations'):(ar?'إيقاف الحركات':'Pause animations');document.body.classList.toggle('studio-motion-paused',userPaused)}
  if(motionButton)motionButton.addEventListener('click',function(){userPaused=!userPaused;try{sessionStorage.setItem('2see-motion-paused',String(userPaused?1:0))}catch(e){}motionLabel();sceneSchedule();if(raf)cancelAnimationFrame(raf);raf=0;started=false;if(visible)start();else placeStatic();schedule()});motionLabel();
