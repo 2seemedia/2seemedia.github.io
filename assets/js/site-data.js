@@ -11687,8 +11687,8 @@ window.SEE_CMS_DATA = {
     {
       "id": "reel-02",
       "type": "reel",
-      "title": "Reel 02",
-      "titleAr": "ريل 02",
+      "title": "Palmyra · Bride of the Desert",
+      "titleAr": "تدمر عروس البادية",
       "client": "",
       "year": "",
       "description": "",
@@ -11696,13 +11696,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DWO9c9AEfvN.jpg",
       "featured": true,
       "visible": true,
-      "publisher": "إسراء منصور × 2See Media"
+      "publisher": "إسراء منصور × 2See Media",
+      "projectTypeAr": "محتوى ثقافي",
+      "projectType": "Cultural content"
     },
     {
       "id": "81b18044-5d0d-42c9-b029-285fee9c549e",
       "type": "reel",
-      "title": "Published video",
-      "titleAr": "فيديو منشور",
+      "title": "Building a Brand Presence",
+      "titleAr": "صناعة حضور العلامة",
       "client": "",
       "year": "",
       "description": "",
@@ -11710,13 +11712,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/media/1b7c5bda-7b94-4b77-8187-3a683ea0c87a.jpg",
       "featured": true,
       "visible": true,
-      "publisher": "2See Media"
+      "publisher": "2See Media",
+      "projectTypeAr": "محتوى تعريفي",
+      "projectType": "Agency content"
     },
     {
       "id": "reel-01",
       "type": "reel",
-      "title": "Reel 01",
-      "titleAr": "ريل 01",
+      "title": "A Signature for Your Brand",
+      "titleAr": "بصمة تليق بعلامتك",
       "client": "",
       "year": "",
       "description": "",
@@ -11724,13 +11728,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DeHhmlyOJrG.jpg",
       "featured": true,
       "visible": true,
-      "publisher": "2See Media"
+      "publisher": "2See Media",
+      "projectTypeAr": "محتوى تعريفي",
+      "projectType": "Agency content"
     },
     {
       "id": "reel-07",
       "type": "reel",
-      "title": "Reel 07",
-      "titleAr": "ريل 07",
+      "title": "Your Perfect Journey",
+      "titleAr": "رحلتك المثالية",
       "client": "",
       "year": "",
       "description": "",
@@ -11738,13 +11744,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DUOQ_0HDLw1.jpg",
       "featured": false,
       "visible": true,
-      "publisher": "@mirastore1.sy"
+      "publisher": "@mirastore1.sy",
+      "projectTypeAr": "عرض منتجات",
+      "projectType": "Product showcase"
     },
     {
       "id": "reel-14",
       "type": "reel",
-      "title": "Reel 14",
-      "titleAr": "ريل 14",
+      "title": "Programming & AI Training",
+      "titleAr": "تدريب البرمجة والذكاء الاصطناعي",
       "client": "",
       "year": "",
       "description": "",
@@ -11752,13 +11760,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-Dcf3ix9Or2n.jpg",
       "featured": false,
       "visible": true,
-      "publisher": "IRAD Academy · @irad.academy"
+      "publisher": "IRAD Academy · @irad.academy",
+      "projectTypeAr": "محتوى تعريفي",
+      "projectType": "Educational promotion"
     },
     {
       "id": "reel-03",
       "type": "reel",
-      "title": "Reel 03",
-      "titleAr": "ريل 03",
+      "title": "TABIB · The Teaser",
+      "titleAr": "تشويق تطبيق TABIB",
       "client": "",
       "year": "",
       "description": "",
@@ -11766,13 +11776,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DbBWjecAK0Q.jpg",
       "featured": true,
       "visible": true,
-      "publisher": "TABIB · @tabib.sy"
+      "publisher": "TABIB · @tabib.sy",
+      "projectTypeAr": "إعلان تشويقي",
+      "projectType": "Teaser reel"
     },
     {
       "id": "reel-04",
       "type": "reel",
-      "title": "Reel 04",
-      "titleAr": "ريل 04",
+      "title": "3 Mistakes That Hurt Your Page",
+      "titleAr": "3 أخطاء تضرّ بصفحتك",
       "client": "",
       "year": "",
       "description": "",
@@ -11780,13 +11792,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DRFNk8GCHAH.jpg",
       "featured": false,
       "visible": true,
-      "publisher": "2See Media"
+      "publisher": "2See Media",
+      "projectTypeAr": "نصائح سوشال ميديا",
+      "projectType": "Social media tips"
     },
     {
       "id": "reel-08",
       "type": "reel",
-      "title": "Reel 08",
-      "titleAr": "ريل 08",
+      "title": "The Details That Shine",
+      "titleAr": "تألّق التفاصيل",
       "client": "",
       "year": "",
       "description": "",
@@ -11794,13 +11808,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DTDhbdTghJR.jpg",
       "featured": false,
       "visible": true,
-      "publisher": "@mirastore1.sy"
+      "publisher": "@mirastore1.sy",
+      "projectTypeAr": "عرض مجوهرات",
+      "projectType": "Jewellery showcase"
     },
     {
       "id": "reel-05",
       "type": "reel",
-      "title": "Reel 05",
-      "titleAr": "ريل 05",
+      "title": "Al Azem Palace",
+      "titleAr": "قصر العظم",
       "client": "",
       "year": "",
       "description": "",
@@ -11808,13 +11824,15 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DaA1DYcM_kV.jpg",
       "featured": false,
       "visible": true,
-      "publisher": "إسراء منصور · @esraa_.mansour"
+      "publisher": "إسراء منصور · @esraa_.mansour",
+      "projectTypeAr": "محتوى ثقافي",
+      "projectType": "Cultural content"
     },
     {
       "id": "reel-24",
       "type": "reel",
-      "title": "Reel 24",
-      "titleAr": "ريل 24",
+      "title": "A Touch of Elegance",
+      "titleAr": "لمسة من الرقي",
       "client": "",
       "year": "",
       "description": "",
@@ -11822,7 +11840,9 @@ window.SEE_CMS_DATA = {
       "image": "https://2seemedia.github.io/assets/reel-DUixpqljHUs.jpg",
       "featured": false,
       "visible": true,
-      "publisher": "@mirastore1.sy"
+      "publisher": "@mirastore1.sy",
+      "projectTypeAr": "عرض منتجات",
+      "projectType": "Product showcase"
     },
     {
       "id": "reel-12",

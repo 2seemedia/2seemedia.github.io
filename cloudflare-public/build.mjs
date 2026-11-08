@@ -22,7 +22,7 @@ async function normalize(dir) {
     if (item.isDirectory()) await normalize(file);
     else if (/\.(html|css|js)$/.test(item.name)) {
       const text = await readFile(file, 'utf8');
-      await writeFile(file, text.replace(/\b2\s*see[ \t]+media\b/gi, '2See Media').replace(/scroll-story\.js\?[^"'\s<>]*/g, 'scroll-story.js?v=publisher-1').replace(/<\/head>/i, '<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/assets/css/cursor-dot.css?v=3"><link rel="stylesheet" href="/assets/css/contact-rail.css?v=5"></head>').replace(/<\/body>/i, '<script src="/assets/js/cursor-dot.js?v=4"></script><script src="/assets/js/contact-rail.js?v=2"></script><script src="/assets/js/brand-case.js?v=1"></script></body>').replaceAll('https://2seemedia.github.io/assets/', '/assets/').replaceAll('https://2seemedia.github.io/media/', '/media/'));
+      await writeFile(file, text.replace(/quote-wizard\.js\?[^"'\s<>]*/g,'quote-wizard.js?v=delivery-1').replace(/cv-builder\.js\?[^"'\s<>]*/g,'cv-builder.js?v=delivery-1').replace(/\b2\s*see[ \t]+media\b/gi, '2See Media').replace(/scroll-story\.js\?[^"'\s<>]*/g, 'scroll-story.js?v=poster-1').replace(/<\/head>/i, '<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/assets/css/cursor-dot.css?v=3"><link rel="stylesheet" href="/assets/css/contact-rail.css?v=6"></head>').replace(/<\/body>/i, '<script src="/assets/js/cursor-dot.js?v=4"></script><script src="/assets/js/contact-rail.js?v=2"></script><script src="/assets/js/brand-case.js?v=1"></script></body>').replaceAll('https://2seemedia.github.io/assets/', '/assets/').replaceAll('https://2seemedia.github.io/media/', '/media/'));
     }
   }
 }
