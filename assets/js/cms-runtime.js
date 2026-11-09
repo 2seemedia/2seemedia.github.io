@@ -324,7 +324,7 @@
     }
   }
   window.SEE_OPEN_WORK=openWork;
-  if(home||grid||document.getElementById('v3-opening-track')){
+  if(home||grid||document.getElementById('v3-opening-track')||document.querySelector('[data-quote-wizard]')){
     var modal=elt('dialog','see-modal');modal.id='see-work-modal';modal.setAttribute('aria-labelledby','studio-modal-title');modal.innerHTML='<div class="see-modal-header"><strong id="studio-modal-title" data-modal-title>2See Media</strong><button type="button" aria-label="Close video" data-modal-close>✕</button></div><p class="studio-modal-description" data-modal-description hidden></p><img data-modal-image hidden alt=""><div class="see-modal-stage"><div class="see-viewer-loading" data-viewer-status role="status">Loading video…</div><iframe title="Video player" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="see-modal-bottom"><span>Instagram may restrict embedded playback.</span><a data-original href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>';
     document.body.appendChild(modal);
     if(lang==='ar'){modal.querySelector('[data-modal-close]').setAttribute('aria-label','إغلاق المعاينة');modal.querySelector('.see-modal-bottom span').textContent='قد يمنع إنستغرام تشغيل الفيديو داخل الموقع.';modal.querySelector('[data-original]').textContent='فتح الفيديو الأصلي ↗'}
